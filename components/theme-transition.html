@@ -1,0 +1,84 @@
+<!-- ============================================================================
+     COMPONENT: Theme Transition (SVG bar wipe)
+     ----------------------------------------------------------------------------
+     A full-viewport section whose SVG bars converge on scroll while the section
+     cross-fades from the page's base theme into the OPPOSITE theme, bridging
+     into the footer that follows. Reusable + SVG-swappable.
+
+     DEPENDENCIES
+       • css/project.css  → .gl-theme-transition / .gl-tt_* / .gl-bar* rules
+       • js/gl-theme-transition.js  (load before </body>, after GSAP+ScrollTrigger)
+       • GSAP 3 + ScrollTrigger (already loaded on every main page)
+
+     HOW TO USE  (place immediately BEFORE the page <footer>)
+       1. Paste ONE of the two <section> variants below.
+       2. Give the page's <footer> the OPPOSITE theme class so the page ends
+          in the flipped theme:
+            Glass Lab pages → <footer class="gl-home_footer u-theme-light">
+            Pernia    pages → <footer class="pg-footer u-theme-dark">
+       3. Ensure  <script src="../js/gl-theme-transition.js"></script>  is loaded.
+
+     SWAPPING THE SVG  (the point of the component)
+       gl-theme-transition.js animates ANY descendant with class
+       "gl-bar gl-bar-l" (slides from the left) or "gl-bar gl-bar-r" (from the
+       right). Background, bar fill and quote colour are driven generically by
+       the direction class — nothing is hardcoded to these 12 polygons. To use a
+       different graphic, replace the <svg> inner content with new shapes tagged
+       the same way and keep everything else.
+
+       The bar fill is NOT set in the SVG (CSS sets it per direction), so the same
+       markup works for both directions.
+
+       Edit the <p class="gl-tt_quote"> copy per page as desired.
+     ============================================================================ -->
+
+
+<!-- ┌──────────────────────────────────────────────────────────────────────────┐
+     │  VARIANT A — GLASS LAB:  dark → light   (use class "is-to-light")          │
+     └──────────────────────────────────────────────────────────────────────────┘ -->
+<section class="gl-theme-transition is-to-light gl-section-border">
+  <svg class="gl-tt_bg" viewBox="0 0 3141.44 1107.24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- SWAP ME — Right-side bars (slide from right) -->
+    <polygon class="gl-bar gl-bar-r" data-bar="1" points="1778.35 131.97 2605.58 131.97 2634.58 131.97 2712.02 131.97 2881.98 24 2881.98 0 2634.58 0 2605.58 0 1608.38 0 1608.38 24 1778.35 131.97"></polygon>
+    <polygon class="gl-bar gl-bar-r" data-bar="3" points="1778.35 327.03 2605.58 327.03 2634.58 327.03 2712.02 327.03 2881.98 219.05 2881.98 195.05 2634.58 195.05 2605.58 195.05 1608.38 195.05 1608.38 219.05 1778.35 327.03"></polygon>
+    <polygon class="gl-bar gl-bar-r" data-bar="5" points="2037.8 522.08 2675.53 522.08 2704.52 522.08 2971.47 522.08 3141.44 414.1 3141.44 390.11 2704.52 390.11 2675.53 390.11 1867.84 390.11 1867.84 414.1 2037.8 522.08"></polygon>
+    <polygon class="gl-bar gl-bar-r" data-bar="7" points="2037.8 717.13 2675.53 717.14 2704.52 717.14 2971.47 717.14 3141.44 609.16 3141.44 585.16 2704.52 585.16 2675.53 585.16 1867.84 585.16 1867.84 609.16 2037.8 717.13"></polygon>
+    <polygon class="gl-bar gl-bar-r" data-bar="9" points="1778.35 912.19 2605.58 912.19 2634.58 912.19 2712.02 912.19 2881.98 804.21 2881.98 780.21 2634.58 780.21 2605.58 780.21 1608.38 780.21 1608.38 804.21 1778.35 912.19"></polygon>
+    <polygon class="gl-bar gl-bar-r" data-bar="11" points="1778.35 1107.24 2605.58 1107.24 2634.58 1107.24 2712.02 1107.24 2881.98 999.26 2881.98 975.27 2634.58 975.27 2605.58 975.27 1608.38 975.27 1608.38 999.26 1778.35 1107.24"></polygon>
+    <!-- SWAP ME — Left-side bars (slide from left) -->
+    <polygon class="gl-bar gl-bar-l" data-bar="2" points="1363.09 0 535.85 0 506.86 0 429.42 0 259.45 107.98 259.45 131.97 506.86 131.97 535.85 131.97 1533.05 131.97 1533.05 107.98 1363.09 0"></polygon>
+    <polygon class="gl-bar gl-bar-l" data-bar="4" points="1363.09 195.05 535.85 195.05 506.86 195.05 429.42 195.05 259.45 303.03 259.45 327.03 506.86 327.03 535.85 327.03 1533.05 327.03 1533.05 303.03 1363.09 195.05"></polygon>
+    <polygon class="gl-bar gl-bar-l" data-bar="6" points="1103.63 390.11 465.91 390.11 436.91 390.11 169.97 390.11 0 498.09 0 522.08 436.91 522.08 465.91 522.08 1273.6 522.08 1273.6 498.09 1103.63 390.11"></polygon>
+    <polygon class="gl-bar gl-bar-l" data-bar="8" points="1103.63 585.16 465.91 585.16 436.91 585.16 169.97 585.16 0 693.14 0 717.13 436.91 717.13 465.91 717.13 1273.6 717.14 1273.6 693.14 1103.63 585.16"></polygon>
+    <polygon class="gl-bar gl-bar-l" data-bar="10" points="1363.09 780.21 535.85 780.21 506.86 780.21 429.42 780.21 259.45 888.19 259.45 912.19 506.86 912.19 535.85 912.19 1533.05 912.19 1533.05 888.19 1363.09 780.21"></polygon>
+    <polygon class="gl-bar gl-bar-l" data-bar="12" points="1363.09 975.27 535.85 975.27 506.86 975.27 429.42 975.27 259.45 1083.25 259.45 1107.24 506.86 1107.24 535.85 1107.24 1533.05 1107.24 1533.05 1083.25 1363.09 975.27"></polygon>
+  </svg>
+  <div class="gl-tt_center">
+    <p class="gl-tt_quote">We work at the intersection of material and perception.</p>
+  </div>
+</section>
+
+
+<!-- ┌──────────────────────────────────────────────────────────────────────────┐
+     │  VARIANT B — PERNIA:  light → dark   (use class "is-to-dark")              │
+     │  Identical markup, only the section class differs.                        │
+     └──────────────────────────────────────────────────────────────────────────┘ -->
+<section class="gl-theme-transition is-to-dark gl-section-border">
+  <svg class="gl-tt_bg" viewBox="0 0 3141.44 1107.24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon class="gl-bar gl-bar-r" data-bar="1" points="1778.35 131.97 2605.58 131.97 2634.58 131.97 2712.02 131.97 2881.98 24 2881.98 0 2634.58 0 2605.58 0 1608.38 0 1608.38 24 1778.35 131.97"></polygon>
+    <polygon class="gl-bar gl-bar-r" data-bar="3" points="1778.35 327.03 2605.58 327.03 2634.58 327.03 2712.02 327.03 2881.98 219.05 2881.98 195.05 2634.58 195.05 2605.58 195.05 1608.38 195.05 1608.38 219.05 1778.35 327.03"></polygon>
+    <polygon class="gl-bar gl-bar-r" data-bar="5" points="2037.8 522.08 2675.53 522.08 2704.52 522.08 2971.47 522.08 3141.44 414.1 3141.44 390.11 2704.52 390.11 2675.53 390.11 1867.84 390.11 1867.84 414.1 2037.8 522.08"></polygon>
+    <polygon class="gl-bar gl-bar-r" data-bar="7" points="2037.8 717.13 2675.53 717.14 2704.52 717.14 2971.47 717.14 3141.44 609.16 3141.44 585.16 2704.52 585.16 2675.53 585.16 1867.84 585.16 1867.84 609.16 2037.8 717.13"></polygon>
+    <polygon class="gl-bar gl-bar-r" data-bar="9" points="1778.35 912.19 2605.58 912.19 2634.58 912.19 2712.02 912.19 2881.98 804.21 2881.98 780.21 2634.58 780.21 2605.58 780.21 1608.38 780.21 1608.38 804.21 1778.35 912.19"></polygon>
+    <polygon class="gl-bar gl-bar-r" data-bar="11" points="1778.35 1107.24 2605.58 1107.24 2634.58 1107.24 2712.02 1107.24 2881.98 999.26 2881.98 975.27 2634.58 975.27 2605.58 975.27 1608.38 975.27 1608.38 999.26 1778.35 1107.24"></polygon>
+    <polygon class="gl-bar gl-bar-l" data-bar="2" points="1363.09 0 535.85 0 506.86 0 429.42 0 259.45 107.98 259.45 131.97 506.86 131.97 535.85 131.97 1533.05 131.97 1533.05 107.98 1363.09 0"></polygon>
+    <polygon class="gl-bar gl-bar-l" data-bar="4" points="1363.09 195.05 535.85 195.05 506.86 195.05 429.42 195.05 259.45 303.03 259.45 327.03 506.86 327.03 535.85 327.03 1533.05 327.03 1533.05 303.03 1363.09 195.05"></polygon>
+    <polygon class="gl-bar gl-bar-l" data-bar="6" points="1103.63 390.11 465.91 390.11 436.91 390.11 169.97 390.11 0 498.09 0 522.08 436.91 522.08 465.91 522.08 1273.6 522.08 1273.6 498.09 1103.63 390.11"></polygon>
+    <polygon class="gl-bar gl-bar-l" data-bar="8" points="1103.63 585.16 465.91 585.16 436.91 585.16 169.97 585.16 0 693.14 0 717.13 436.91 717.13 465.91 717.13 1273.6 717.14 1273.6 693.14 1103.63 585.16"></polygon>
+    <polygon class="gl-bar gl-bar-l" data-bar="10" points="1363.09 780.21 535.85 780.21 506.86 780.21 429.42 780.21 259.45 888.19 259.45 912.19 506.86 912.19 535.85 912.19 1533.05 912.19 1533.05 888.19 1363.09 780.21"></polygon>
+    <polygon class="gl-bar gl-bar-l" data-bar="12" points="1363.09 975.27 535.85 975.27 506.86 975.27 429.42 975.27 259.45 1083.25 259.45 1107.24 506.86 1107.24 535.85 1107.24 1533.05 1107.24 1533.05 1083.25 1363.09 975.27"></polygon>
+  </svg>
+  <div class="gl-tt_center">
+    <p class="gl-tt_quote">Del laboratorio a la arquitectura.</p>
+  </div>
+</section>

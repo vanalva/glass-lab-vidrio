@@ -1,0 +1,72 @@
+<!-- ════════════════════════════════════════════════════════════
+     COMPONENT: Parallelogram Button (gl-btn_skew)
+
+     Notched shape with chamfered top-left and bottom-right corners.
+     SVG outline uses currentColor — auto-adapts to any theme.
+     Text offset lower-left for the "cube face" feel.
+
+     CSS: src/css/project.css
+     ════════════════════════════════════════════════════════════ -->
+
+<!-- OUTLINE (default) — stroke only, inherits theme text color -->
+<div class="gl-btn_skew_wrap">
+    <svg class="gl-btn_skew_shape" viewBox="0 0 240 56" preserveAspectRatio="none" fill="none">
+        <path d="M16,1 L239,1 L239,42 L224,55 L1,55 L1,14 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="miter" vector-effect="non-scaling-stroke"/>
+    </svg>
+    <a href="#" class="gl-btn_skew_element">
+        <span class="gl-btn_skew_text">Catalogo</span>
+    </a>
+</div>
+
+<!-- FILLED — solid bg, text inverts to background color -->
+<div class="gl-btn_skew_wrap gl-btn_skew_wrap_filled">
+    <svg class="gl-btn_skew_shape" viewBox="0 0 240 56" preserveAspectRatio="none" fill="none">
+        <path d="M16,1 L239,1 L239,42 L224,55 L1,55 L1,14 Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="miter" vector-effect="non-scaling-stroke"/>
+    </svg>
+    <a href="#" class="gl-btn_skew_element">
+        <span class="gl-btn_skew_text">Explorar</span>
+    </a>
+</div>
+
+<!-- BRAND FILLED — accent color bg -->
+<div class="gl-btn_skew_wrap gl-btn_skew_wrap_brand">
+    <svg class="gl-btn_skew_shape" viewBox="0 0 240 56" preserveAspectRatio="none" fill="none">
+        <path d="M16,1 L239,1 L239,42 L224,55 L1,55 L1,14 Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="miter" vector-effect="non-scaling-stroke"/>
+    </svg>
+    <a href="#" class="gl-btn_skew_element">
+        <span class="gl-btn_skew_text">Ver Mas</span>
+    </a>
+</div>
+
+<!-- BRAND OUTLINE — accent color stroke only -->
+<div class="gl-btn_skew_wrap gl-btn_skew_wrap_brand-outline">
+    <svg class="gl-btn_skew_shape" viewBox="0 0 240 56" preserveAspectRatio="none" fill="none">
+        <path d="M16,1 L239,1 L239,42 L224,55 L1,55 L1,14 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="miter" vector-effect="non-scaling-stroke"/>
+    </svg>
+    <a href="#" class="gl-btn_skew_element">
+        <span class="gl-btn_skew_text">Ver Mas</span>
+    </a>
+</div>
+
+<!-- GHOST — subtle low-opacity -->
+<div class="gl-btn_skew_wrap gl-btn_skew_wrap_ghost">
+    <svg class="gl-btn_skew_shape" viewBox="0 0 240 56" preserveAspectRatio="none" fill="none">
+        <path d="M16,1 L239,1 L239,42 L224,55 L1,55 L1,14 Z" stroke="currentColor" stroke-width="1" stroke-linejoin="miter" vector-effect="non-scaling-stroke"/>
+    </svg>
+    <a href="#" class="gl-btn_skew_element">
+        <span class="gl-btn_skew_text">Contacto</span>
+    </a>
+</div>
+
+<!-- SVG SNIPPET (reusable — same for all variants):
+<svg class="gl-btn_skew_shape" viewBox="0 0 240 56" preserveAspectRatio="none" fill="none">
+    <path d="M16,1 L239,1 L239,42 L224,55 L1,55 L1,14 Z"
+        stroke="currentColor" fill="none"
+        stroke-width="1.5" stroke-linejoin="miter" vector-effect="non-scaling-stroke"/>
+</svg>
+
+For FILLED variants, add fill="currentColor" to the polygon.
+The wrap class controls the color. currentColor inherits it.
+
+SIZES: Add gl-btn_skew_element_sm / _lg and gl-btn_skew_text_sm / _lg
+-->

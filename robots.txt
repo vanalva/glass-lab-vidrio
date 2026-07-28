@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /styleguide.html
+Disallow: /modals.html
+
+Sitemap: https://glasslb.com/sitemap.xml

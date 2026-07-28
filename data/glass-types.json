@@ -1,0 +1,2217 @@
+{
+  "$schema": "./glass-types.schema.json",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-20",
+  "brand": "glass-lab",
+  "grid": {
+    "cols": 18,
+    "mainRows": 7,
+    "offsetRows": 2,
+    "totalSlots": 118,
+    "comment": "Real periodic-table topology — H position is the brand monogram (outside numbered slots). Numbered slots 1-118 follow region-fill order: COLORES (1-15 + 16-17 empty) → INSERCIONES top-right block (18-30) → INSERCIONES mesh row (31-45) → INSERCIONES rest (46-90) → REFLECTIVOS lanthanide row (91-104) → REFLECTIVOS actinide row (105-118 empty)."
+  },
+  "monogram": {
+    "type": "monogram",
+    "row": 1,
+    "col": 1,
+    "atomicNumber": 14,
+    "atomicMass": "28.086",
+    "symbol": "GL",
+    "subtitle": "SiO₂",
+    "rationale": "Silicon (atomic #14, mass 28.086) is the chemistry of glass. The GL monogram occupies the H position of the periodic table — the brand IS the substrate."
+  },
+  "categories": [
+    {
+      "id": "colores",
+      "name": {
+        "es": "Colores",
+        "en": "Colors"
+      },
+      "borderColor": "var(--swatch--brand-300)",
+      "borderColorComment": "Light blue — soft introduction to the catalog. brand-500 mixed with 40% white.",
+      "labelPosition": "left",
+      "subcategories": [
+        {
+          "id": "vidrios-base-claros",
+          "name": {
+            "es": "Vidrios base claros",
+            "en": "Base clear glass"
+          }
+        },
+        {
+          "id": "vidrios-tintados",
+          "name": {
+            "es": "Vidrios tintados",
+            "en": "Tinted glass"
+          }
+        },
+        {
+          "id": "vidrios-acanalados",
+          "name": {
+            "es": "Vidrios acanalados",
+            "en": "Reeded glass"
+          }
+        },
+        {
+          "id": "vidrios-texturizados",
+          "name": {
+            "es": "Vidrios texturizados",
+            "en": "Textured glass"
+          }
+        },
+        {
+          "id": "vidrios-eva-opacos",
+          "name": {
+            "es": "Vidrios EVA opacos",
+            "en": "Opaque EVA glass"
+          }
+        }
+      ]
+    },
+    {
+      "id": "inserciones",
+      "name": {
+        "es": "Inserciones",
+        "en": "Insertions"
+      },
+      "borderColor": "var(--swatch--brand-500)",
+      "borderColorComment": "Electric brand blue (#1400FF) — the signature color. Heart of decorative variety.",
+      "labelPosition": "right",
+      "subcategories": [
+        {
+          "id": "gradientes",
+          "name": {
+            "es": "Gradientes",
+            "en": "Gradients"
+          }
+        },
+        {
+          "id": "dicroicos",
+          "name": {
+            "es": "Dicroicos",
+            "en": "Dichroic"
+          }
+        },
+        {
+          "id": "interlayer-color",
+          "name": {
+            "es": "Interlayer color",
+            "en": "Color interlayer"
+          }
+        },
+        {
+          "id": "impresiones",
+          "name": {
+            "es": "Impresiones",
+            "en": "Prints"
+          }
+        },
+        {
+          "id": "textiles",
+          "name": {
+            "es": "Textiles",
+            "en": "Textiles"
+          }
+        },
+        {
+          "id": "mallas-serie-a",
+          "name": {
+            "es": "Mallas Serie A",
+            "en": "Mesh Series A"
+          },
+          "tier": "premium"
+        },
+        {
+          "id": "mallas-serie-b",
+          "name": {
+            "es": "Mallas Serie B",
+            "en": "Mesh Series B"
+          },
+          "tier": "alternativa"
+        },
+        {
+          "id": "mallas-serie-c",
+          "name": {
+            "es": "Mallas Serie C",
+            "en": "Mesh Series C"
+          }
+        }
+      ]
+    },
+    {
+      "id": "reflectivos",
+      "name": {
+        "es": "Reflectivos",
+        "en": "Reflective"
+      },
+      "borderColor": "var(--swatch--brand-700)",
+      "borderColorComment": "Deep blue-purple — brand-500 mixed with 40% black. Carries the weight of the mirrored family.",
+      "labelPosition": "right",
+      "subcategories": [
+        {
+          "id": "espejos-base",
+          "name": {
+            "es": "Espejos base",
+            "en": "Base mirrors"
+          }
+        },
+        {
+          "id": "espejo-color-interlayer",
+          "name": {
+            "es": "Espejo color (Interlayer)",
+            "en": "Color mirror (Interlayer)"
+          }
+        },
+        {
+          "id": "espejos-custom",
+          "name": {
+            "es": "Espejos custom",
+            "en": "Custom mirrors"
+          }
+        },
+        {
+          "id": "espejos-texturizados",
+          "name": {
+            "es": "Espejos texturizados",
+            "en": "Textured mirrors"
+          }
+        },
+        {
+          "id": "espejos-con-film-poly",
+          "name": {
+            "es": "Espejos con film/poly",
+            "en": "Mirrors with film/poly"
+          }
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "slot": 1,
+      "row": 1,
+      "col": 1,
+      "code": "Vc",
+      "category": "colores",
+      "subcategory": "vidrios-base-claros",
+      "name": {
+        "es": "Vidrio Claro",
+        "en": "Clear Glass"
+      },
+      "shortName": {
+        "es": "Claro",
+        "en": "Clear"
+      },
+      "attributes": {
+        "acabado": [
+          "claro"
+        ],
+        "transparencia": "transparente",
+        "colorBase": "claro",
+        "disponibilidad": "disponible",
+        "personalizacionColor": "color-unico"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/vc/vc-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/vc/vc-01-stand-a.webp",
+          "assets/media/glass-samples-opt/vc/vc-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/vc/vc-08-app-door.webp",
+          "assets/media/glass-samples-opt/vc/vc-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 2,
+      "row": 2,
+      "col": 1,
+      "code": "Vu",
+      "category": "colores",
+      "subcategory": "vidrios-base-claros",
+      "name": {
+        "es": "Vidrio Ultraclaro",
+        "en": "Ultra-clear Glass"
+      },
+      "shortName": {
+        "es": "Ultraclaro",
+        "en": "Ultraclear"
+      },
+      "attributes": {
+        "acabado": [
+          "claro"
+        ],
+        "transparencia": "transparente",
+        "colorBase": "ultraclaro",
+        "disponibilidad": "disponible",
+        "personalizacionColor": "color-unico"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/vu/vu-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/vu/vu-01-stand-a.webp",
+          "assets/media/glass-samples-opt/vu/vu-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/vu/vu-08-app-door.webp",
+          "assets/media/glass-samples-opt/vu/vu-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 3,
+      "row": 2,
+      "col": 2,
+      "code": "Vp",
+      "category": "colores",
+      "subcategory": "vidrios-tintados",
+      "name": {
+        "es": "Vidrio Pacífica",
+        "en": "Pacific Glass"
+      },
+      "shortName": {
+        "es": "Pacífica",
+        "en": "Pacific"
+      },
+      "attributes": {
+        "acabado": [
+          "coloreado"
+        ],
+        "transparencia": "transparente",
+        "colorBase": "pacifica",
+        "disponibilidad": "disponible"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/vp/vp-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/vp/vp-01-stand-a.webp",
+          "assets/media/glass-samples-opt/vp/vp-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/vp/vp-08-app-door.webp",
+          "assets/media/glass-samples-opt/vp/vp-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 4,
+      "row": 3,
+      "col": 1,
+      "code": "Vi",
+      "category": "colores",
+      "subcategory": "vidrios-tintados",
+      "name": {
+        "es": "Vidrio Indigo",
+        "en": "Indigo Glass"
+      },
+      "shortName": {
+        "es": "Indigo",
+        "en": "Indigo"
+      },
+      "attributes": {
+        "acabado": [
+          "coloreado"
+        ],
+        "transparencia": "transparente",
+        "colorBase": "indigo",
+        "disponibilidad": "disponible"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/vi/vi-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/vi/vi-01-stand-a.webp",
+          "assets/media/glass-samples-opt/vi/vi-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/vi/vi-08-app-door.webp",
+          "assets/media/glass-samples-opt/vi/vi-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 5,
+      "row": 3,
+      "col": 2,
+      "code": "Vb",
+      "category": "colores",
+      "subcategory": "vidrios-tintados",
+      "name": {
+        "es": "Vidrio Bronce",
+        "en": "Bronze Glass"
+      },
+      "shortName": {
+        "es": "Bronce",
+        "en": "Bronze"
+      },
+      "attributes": {
+        "acabado": [
+          "coloreado"
+        ],
+        "transparencia": "transparente",
+        "colorBase": "bronce",
+        "disponibilidad": "disponible"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/vb/vb-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/vb/vb-01-stand-a.webp",
+          "assets/media/glass-samples-opt/vb/vb-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/vb/vb-08-app-door.webp",
+          "assets/media/glass-samples-opt/vb/vb-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 6,
+      "row": 4,
+      "col": 1,
+      "code": "Vg",
+      "category": "colores",
+      "subcategory": "vidrios-tintados",
+      "name": {
+        "es": "Vidrio Gris",
+        "en": "Grey Glass"
+      },
+      "shortName": {
+        "es": "Gris",
+        "en": "Grey"
+      },
+      "attributes": {
+        "acabado": [
+          "coloreado"
+        ],
+        "transparencia": "transparente",
+        "colorBase": "gris",
+        "disponibilidad": "disponible"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/vg/vg-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/vg/vg-01-stand-a.webp",
+          "assets/media/glass-samples-opt/vg/vg-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/vg/vg-08-app-door.webp",
+          "assets/media/glass-samples-opt/vg/vg-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 7,
+      "row": 4,
+      "col": 2,
+      "code": "Va",
+      "category": "colores",
+      "subcategory": "vidrios-acanalados",
+      "name": {
+        "es": "Vidrio Acanalado",
+        "en": "Reeded Glass"
+      },
+      "shortName": {
+        "es": "Acanalado",
+        "en": "Reeded"
+      },
+      "attributes": {
+        "acabado": [
+          "acanalado"
+        ],
+        "transparencia": "translucido",
+        "patron": "acanalado-vertical",
+        "colorBase": "claro",
+        "disponibilidad": "disponible"
+      },
+      "relations": {
+        "variantesDeColor": [
+          "Vab",
+          "Vag"
+        ]
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/va/va-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/va/va-01-stand-a.webp",
+          "assets/media/glass-samples-opt/va/va-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/va/va-08-app-door.webp",
+          "assets/media/glass-samples-opt/va/va-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 8,
+      "row": 4,
+      "col": 3,
+      "code": "Val",
+      "category": "colores",
+      "subcategory": "vidrios-acanalados",
+      "name": {
+        "es": "Vidrio Acanalado Lite",
+        "en": "Light Reeded Glass"
+      },
+      "shortName": {
+        "es": "Acanalado-lite",
+        "en": "Reeded-lite"
+      },
+      "attributes": {
+        "acabado": [
+          "acanalado"
+        ],
+        "transparencia": "translucido",
+        "patron": "acanalado-fino",
+        "colorBase": "claro",
+        "disponibilidad": "disponible"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/val/val-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/val/val-01-stand-a.webp",
+          "assets/media/glass-samples-opt/val/val-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/val/val-08-app-door.webp",
+          "assets/media/glass-samples-opt/val/val-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 9,
+      "row": 5,
+      "col": 1,
+      "code": "Ve",
+      "category": "colores",
+      "subcategory": "vidrios-texturizados",
+      "name": {
+        "es": "Vidrio Esmerilado",
+        "en": "Frosted Glass"
+      },
+      "shortName": {
+        "es": "Esmerilado",
+        "en": "Frosted"
+      },
+      "attributes": {
+        "acabado": [
+          "esmerilado"
+        ],
+        "transparencia": "translucido",
+        "colorBase": "claro",
+        "disponibilidad": "disponible"
+      },
+      "relations": {
+        "esVersionEspejoDe": "Ee"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/ve/ve-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/ve/ve-01-stand-a.webp",
+          "assets/media/glass-samples-opt/ve/ve-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/ve/ve-08-app-door.webp",
+          "assets/media/glass-samples-opt/ve/ve-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 10,
+      "row": 5,
+      "col": 2,
+      "code": "Vt",
+      "category": "colores",
+      "subcategory": "vidrios-texturizados",
+      "name": {
+        "es": "Vidrio Texturizado",
+        "en": "Textured Glass"
+      },
+      "shortName": {
+        "es": "Texturizado",
+        "en": "Textured"
+      },
+      "attributes": {
+        "acabado": [
+          "texturizado"
+        ],
+        "transparencia": "translucido",
+        "colorBase": "claro",
+        "disponibilidad": "disponible"
+      },
+      "relations": {
+        "esVersionEspejoDe": "Et"
+      },
+      "mediaQualityFlag": "low",
+      "media": {
+        "hero": "assets/media/glass-samples-opt/vt/vt-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/vt/vt-01-stand-a.webp",
+          "assets/media/glass-samples-opt/vt/vt-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/vt/vt-08-app-door.webp",
+          "assets/media/glass-samples-opt/vt/vt-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 11,
+      "row": 5,
+      "col": 3,
+      "code": "Vd",
+      "category": "colores",
+      "subcategory": "vidrios-texturizados",
+      "name": {
+        "es": "Vidrio Diamante",
+        "en": "Diamond Glass"
+      },
+      "shortName": {
+        "es": "Diamante",
+        "en": "Diamond"
+      },
+      "attributes": {
+        "acabado": [
+          "texturizado"
+        ],
+        "transparencia": "translucido",
+        "patron": "diamante-grid",
+        "colorBase": "claro",
+        "disponibilidad": "disponible"
+      },
+      "relations": {
+        "esVersionEspejoDe": "Ed"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/vd/vd-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/vd/vd-01-stand-a.webp"
+        ]
+      }
+    },
+    {
+      "slot": 12,
+      "row": 6,
+      "col": 1,
+      "code": "Veb",
+      "category": "colores",
+      "subcategory": "vidrios-eva-opacos",
+      "name": {
+        "es": "Vidrio Eva Blanca",
+        "en": "White EVA Glass"
+      },
+      "shortName": {
+        "es": "Eva Blanca",
+        "en": "White EVA"
+      },
+      "attributes": {
+        "acabado": [
+          "coloreado"
+        ],
+        "transparencia": "opaco",
+        "colorBase": "blanco",
+        "disponibilidad": "disponible"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/veb/veb-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/veb/veb-01-stand-a.webp",
+          "assets/media/glass-samples-opt/veb/veb-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/veb/veb-08-app-door.webp",
+          "assets/media/glass-samples-opt/veb/veb-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 13,
+      "row": 6,
+      "col": 2,
+      "code": "Ven",
+      "category": "colores",
+      "subcategory": "vidrios-eva-opacos",
+      "name": {
+        "es": "Vidrio Eva Negra",
+        "en": "Black EVA Glass"
+      },
+      "shortName": {
+        "es": "Eva Negra",
+        "en": "Black EVA"
+      },
+      "attributes": {
+        "acabado": [
+          "coloreado"
+        ],
+        "transparencia": "opaco",
+        "colorBase": "negro",
+        "disponibilidad": "disponible"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/ven/ven-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/ven/ven-01-stand-a.webp",
+          "assets/media/glass-samples-opt/ven/ven-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/ven/ven-08-app-door.webp",
+          "assets/media/glass-samples-opt/ven/ven-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 14,
+      "row": 6,
+      "col": 3,
+      "code": "Vab",
+      "category": "colores",
+      "subcategory": "vidrios-acanalados",
+      "name": {
+        "es": "Vidrio Acanalado Bronce",
+        "en": "Bronze Reeded Glass"
+      },
+      "shortName": {
+        "es": "Acanalado Bronce",
+        "en": "Bronze Reeded"
+      },
+      "attributes": {
+        "acabado": [
+          "acanalado",
+          "coloreado"
+        ],
+        "transparencia": "translucido",
+        "patron": "acanalado-vertical",
+        "colorBase": "bronce",
+        "disponibilidad": "disponible"
+      },
+      "relations": {
+        "esVarianteDeColorDe": "Va",
+        "variantesDeColor": [
+          "Va",
+          "Vag"
+        ]
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/vab/vab-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/vab/vab-01-stand-a.webp",
+          "assets/media/glass-samples-opt/vab/vab-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/vab/vab-08-app-door.webp",
+          "assets/media/glass-samples-opt/vab/vab-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 15,
+      "row": 7,
+      "col": 1,
+      "code": "Vag",
+      "category": "colores",
+      "subcategory": "vidrios-acanalados",
+      "name": {
+        "es": "Vidrio Acanalado Gris",
+        "en": "Grey Reeded Glass"
+      },
+      "shortName": {
+        "es": "Acanalado Gris",
+        "en": "Grey Reeded"
+      },
+      "attributes": {
+        "acabado": [
+          "acanalado",
+          "coloreado"
+        ],
+        "transparencia": "translucido",
+        "patron": "acanalado-vertical",
+        "colorBase": "gris",
+        "disponibilidad": "disponible"
+      },
+      "relations": {
+        "esVarianteDeColorDe": "Va",
+        "variantesDeColor": [
+          "Va",
+          "Vab"
+        ]
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/vag/vag-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/vag/vag-01-stand-a.webp",
+          "assets/media/glass-samples-opt/vag/vag-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/vag/vag-08-app-door.webp",
+          "assets/media/glass-samples-opt/vag/vag-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 18,
+      "row": 1,
+      "col": 18,
+      "code": "Gr",
+      "category": "inserciones",
+      "subcategory": "gradientes",
+      "name": {
+        "es": "Gradient",
+        "en": "Gradient"
+      },
+      "shortName": {
+        "es": "Gradient",
+        "en": "Gradient"
+      },
+      "attributes": {
+        "acabado": [
+          "gradient"
+        ],
+        "transparencia": "translucido",
+        "disponibilidad": "disponible"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/gr/gr-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/gr/gr-01-stand-a.webp",
+          "assets/media/glass-samples-opt/gr/gr-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/gr/gr-08-app-door.webp",
+          "assets/media/glass-samples-opt/gr/gr-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 19,
+      "row": 2,
+      "col": 13,
+      "code": "Gra",
+      "category": "inserciones",
+      "subcategory": "gradientes",
+      "name": {
+        "es": "Gradient Acidado",
+        "en": "Acid-etched Gradient"
+      },
+      "shortName": {
+        "es": "Gra-Acidado",
+        "en": "Acid Gradient"
+      },
+      "attributes": {
+        "acabado": [
+          "gradient",
+          "esmerilado"
+        ],
+        "transparencia": "translucido",
+        "disponibilidad": "disponible"
+      },
+      "relations": {
+        "esVersionAcidadaDe": "Gr"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/gra/gra-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/gra/gra-01-stand-a.webp",
+          "assets/media/glass-samples-opt/gra/gra-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/gra/gra-08-app-door.webp",
+          "assets/media/glass-samples-opt/gra/gra-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 20,
+      "row": 2,
+      "col": 14,
+      "code": "Ds",
+      "category": "inserciones",
+      "subcategory": "dicroicos",
+      "name": {
+        "es": "Dichroic Sunset",
+        "en": "Dichroic Sunset"
+      },
+      "shortName": {
+        "es": "Sunset",
+        "en": "Sunset"
+      },
+      "attributes": {
+        "acabado": [
+          "dicroico"
+        ],
+        "transparencia": "translucido",
+        "disponibilidad": "disponible"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/ds/ds-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/ds/ds-01-stand-a.webp",
+          "assets/media/glass-samples-opt/ds/ds-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/ds/ds-08-app-door.webp",
+          "assets/media/glass-samples-opt/ds/ds-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 21,
+      "row": 2,
+      "col": 15,
+      "code": "Dsa",
+      "category": "inserciones",
+      "subcategory": "dicroicos",
+      "name": {
+        "es": "Dichroic Sunset Acidado",
+        "en": "Acid Dichroic Sunset"
+      },
+      "shortName": {
+        "es": "Di-Acidado",
+        "en": "Acid Dichroic"
+      },
+      "attributes": {
+        "acabado": [
+          "dicroico",
+          "esmerilado"
+        ],
+        "transparencia": "translucido",
+        "disponibilidad": "disponible"
+      },
+      "relations": {
+        "esVersionAcidadaDe": "Ds"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/dsa/dsa-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/dsa/dsa-01-stand-a.webp",
+          "assets/media/glass-samples-opt/dsa/dsa-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/dsa/dsa-08-app-door.webp",
+          "assets/media/glass-samples-opt/dsa/dsa-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 22,
+      "row": 2,
+      "col": 16,
+      "code": "In",
+      "category": "inserciones",
+      "subcategory": "interlayer-color",
+      "name": {
+        "es": "Interlayer",
+        "en": "Interlayer"
+      },
+      "shortName": {
+        "es": "Interlayer",
+        "en": "Interlayer"
+      },
+      "attributes": {
+        "acabado": [
+          "interlayer"
+        ],
+        "transparencia": "translucido",
+        "disponibilidad": "disponible",
+        "personalizacionColor": "300-colores"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/in/in-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/in/in-01-stand-a.webp",
+          "assets/media/glass-samples-opt/in/in-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/in/in-08-app-door.webp",
+          "assets/media/glass-samples-opt/in/in-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 23,
+      "row": 2,
+      "col": 17,
+      "code": "Ina",
+      "category": "inserciones",
+      "subcategory": "interlayer-color",
+      "name": {
+        "es": "Interlayer Acidado",
+        "en": "Acid Interlayer"
+      },
+      "shortName": {
+        "es": "Int-Acidado",
+        "en": "Acid Interlayer"
+      },
+      "attributes": {
+        "acabado": [
+          "interlayer",
+          "esmerilado"
+        ],
+        "transparencia": "translucido",
+        "disponibilidad": "disponible",
+        "personalizacionColor": "300-colores"
+      },
+      "relations": {
+        "esVersionAcidadaDe": "In"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/ina/ina-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/ina/ina-01-stand-a.webp",
+          "assets/media/glass-samples-opt/ina/ina-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/ina/ina-08-app-door.webp",
+          "assets/media/glass-samples-opt/ina/ina-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 24,
+      "row": 2,
+      "col": 18,
+      "code": "Imc",
+      "category": "inserciones",
+      "subcategory": "impresiones",
+      "name": {
+        "es": "Impresión Cuadros",
+        "en": "Grid Print"
+      },
+      "shortName": {
+        "es": "Imp-Cuadros",
+        "en": "Grid Print"
+      },
+      "attributes": {
+        "acabado": [
+          "impreso"
+        ],
+        "transparencia": "translucido",
+        "patron": "cuadros",
+        "disponibilidad": "disponible"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/imc/imc-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/imc/imc-01-stand-a.webp",
+          "assets/media/glass-samples-opt/imc/imc-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/imc/imc-08-app-door.webp",
+          "assets/media/glass-samples-opt/imc/imc-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 25,
+      "row": 3,
+      "col": 13,
+      "code": "Iml",
+      "category": "inserciones",
+      "subcategory": "impresiones",
+      "name": {
+        "es": "Impresión Líneas",
+        "en": "Line Print"
+      },
+      "shortName": {
+        "es": "Imp-líneas",
+        "en": "Line Print"
+      },
+      "attributes": {
+        "acabado": [
+          "impreso"
+        ],
+        "transparencia": "translucido",
+        "patron": "lineas",
+        "disponibilidad": "disponible"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/iml/iml-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/iml/iml-01-stand-a.webp",
+          "assets/media/glass-samples-opt/iml/iml-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/iml/iml-08-app-door.webp",
+          "assets/media/glass-samples-opt/iml/iml-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 26,
+      "row": 3,
+      "col": 14,
+      "code": "Tl",
+      "category": "inserciones",
+      "subcategory": "textiles",
+      "name": {
+        "es": "Tela Lino",
+        "en": "Linen Textile"
+      },
+      "shortName": {
+        "es": "Te-Lino",
+        "en": "Linen"
+      },
+      "attributes": {
+        "acabado": [
+          "metalizado"
+        ],
+        "transparencia": "translucido",
+        "patron": "linen",
+        "disponibilidad": "disponible"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/tl/tl-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/tl/tl-01-stand-a.webp",
+          "assets/media/glass-samples-opt/tl/tl-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/tl/tl-08-app-door.webp",
+          "assets/media/glass-samples-opt/tl/tl-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 31,
+      "row": 4,
+      "col": 4,
+      "code": "Ae",
+      "category": "inserciones",
+      "subcategory": "mallas-serie-a",
+      "name": {
+        "es": "Malla Serie A — Entramado",
+        "en": "Mesh A — Gauze"
+      },
+      "shortName": {
+        "es": "SA-Entramado",
+        "en": "SA-Gauze"
+      },
+      "attributes": {
+        "acabado": [
+          "metalizado"
+        ],
+        "transparencia": "translucido",
+        "patron": "entramado",
+        "tier": "premium",
+        "disponibilidad": "disponible"
+      },
+      "relations": {
+        "comparteFamiliaCon": [
+          "Ap",
+          "Af",
+          "Al",
+          "Az",
+          "Aq",
+          "Ah",
+          "Ab",
+          "At",
+          "Ac"
+        ],
+        "tieneTierAlternativo": "Be"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/ae/ae-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/ae/ae-01-stand-a.webp",
+          "assets/media/glass-samples-opt/ae/ae-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/ae/ae-08-app-door.webp",
+          "assets/media/glass-samples-opt/ae/ae-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 32,
+      "row": 4,
+      "col": 5,
+      "code": "Ap",
+      "category": "inserciones",
+      "subcategory": "mallas-serie-a",
+      "name": {
+        "es": "Malla Serie A — Pulida",
+        "en": "Mesh A — Polished"
+      },
+      "shortName": {
+        "es": "SA-Pulida",
+        "en": "SA-Polished"
+      },
+      "attributes": {
+        "acabado": [
+          "metalizado"
+        ],
+        "transparencia": "translucido",
+        "patron": "pulida",
+        "tier": "premium",
+        "disponibilidad": "disponible"
+      },
+      "relations": {},
+      "media": {
+        "hero": "assets/media/glass-samples-opt/ap/ap-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/ap/ap-01-stand-a.webp",
+          "assets/media/glass-samples-opt/ap/ap-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/ap/ap-08-app-door.webp",
+          "assets/media/glass-samples-opt/ap/ap-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 33,
+      "row": 4,
+      "col": 6,
+      "code": "Af",
+      "category": "inserciones",
+      "subcategory": "mallas-serie-a",
+      "name": {
+        "es": "Malla Serie A — Fabric",
+        "en": "Mesh A — Fabric"
+      },
+      "shortName": {
+        "es": "SA-Fabric",
+        "en": "SA-Fabric"
+      },
+      "attributes": {
+        "acabado": [
+          "metalizado"
+        ],
+        "transparencia": "translucido",
+        "patron": "fabric",
+        "tier": "premium",
+        "disponibilidad": "disponible"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/af/af-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/af/af-01-stand-a.webp",
+          "assets/media/glass-samples-opt/af/af-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/af/af-08-app-door.webp",
+          "assets/media/glass-samples-opt/af/af-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 34,
+      "row": 4,
+      "col": 7,
+      "code": "Al",
+      "category": "inserciones",
+      "subcategory": "mallas-serie-a",
+      "name": {
+        "es": "Malla Serie A — Lisa",
+        "en": "Mesh A — Plain"
+      },
+      "shortName": {
+        "es": "SA-Lisa",
+        "en": "SA-Plain"
+      },
+      "attributes": {
+        "acabado": [
+          "metalizado"
+        ],
+        "transparencia": "translucido",
+        "patron": "lisa",
+        "tier": "premium",
+        "disponibilidad": "disponible"
+      },
+      "relations": {
+        "tieneTierAlternativo": "Bl"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/al/al-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/al/al-01-stand-a.webp",
+          "assets/media/glass-samples-opt/al/al-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/al/al-08-app-door.webp",
+          "assets/media/glass-samples-opt/al/al-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 35,
+      "row": 4,
+      "col": 8,
+      "code": "Az",
+      "category": "inserciones",
+      "subcategory": "mallas-serie-a",
+      "name": {
+        "es": "Malla Serie A — Zigzag",
+        "en": "Mesh A — Zigzag"
+      },
+      "shortName": {
+        "es": "SA-Zigzag",
+        "en": "SA-Zigzag"
+      },
+      "attributes": {
+        "acabado": [
+          "metalizado"
+        ],
+        "transparencia": "translucido",
+        "patron": "zigzag",
+        "tier": "premium",
+        "disponibilidad": "disponible"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/az/az-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/az/az-01-stand-a.webp",
+          "assets/media/glass-samples-opt/az/az-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/az/az-08-app-door.webp",
+          "assets/media/glass-samples-opt/az/az-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 36,
+      "row": 4,
+      "col": 9,
+      "code": "Aq",
+      "category": "inserciones",
+      "subcategory": "mallas-serie-a",
+      "name": {
+        "es": "Malla Serie A — Qubo",
+        "en": "Mesh A — Cube"
+      },
+      "shortName": {
+        "es": "SA-Qubo",
+        "en": "SA-Cube"
+      },
+      "attributes": {
+        "acabado": [
+          "metalizado"
+        ],
+        "transparencia": "translucido",
+        "patron": "qubo",
+        "tier": "premium",
+        "disponibilidad": "disponible"
+      },
+      "relations": {
+        "tieneTierAlternativo": "Bq"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/aq/aq-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/aq/aq-01-stand-a.webp",
+          "assets/media/glass-samples-opt/aq/aq-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/aq/aq-08-app-door.webp",
+          "assets/media/glass-samples-opt/aq/aq-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 37,
+      "row": 4,
+      "col": 10,
+      "code": "Ah",
+      "category": "inserciones",
+      "subcategory": "mallas-serie-a",
+      "name": {
+        "es": "Malla Serie A — Herringbone",
+        "en": "Mesh A — Herringbone"
+      },
+      "shortName": {
+        "es": "SA-Herringbone",
+        "en": "SA-Herringbone"
+      },
+      "attributes": {
+        "acabado": [
+          "metalizado"
+        ],
+        "transparencia": "translucido",
+        "patron": "herringbone",
+        "tier": "premium",
+        "disponibilidad": "disponible"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/ah/ah-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/ah/ah-01-stand-a.webp",
+          "assets/media/glass-samples-opt/ah/ah-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/ah/ah-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 38,
+      "row": 4,
+      "col": 11,
+      "code": "Ab",
+      "category": "inserciones",
+      "subcategory": "mallas-serie-a",
+      "name": {
+        "es": "Malla Serie A — Bilineal",
+        "en": "Mesh A — Bilinear"
+      },
+      "shortName": {
+        "es": "SA-Bilineal",
+        "en": "SA-Bilinear"
+      },
+      "attributes": {
+        "acabado": [
+          "metalizado"
+        ],
+        "transparencia": "translucido",
+        "patron": "bilineal",
+        "tier": "premium",
+        "disponibilidad": "disponible"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/ab/ab-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/ab/ab-01-stand-a.webp",
+          "assets/media/glass-samples-opt/ab/ab-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/ab/ab-08-app-door.webp",
+          "assets/media/glass-samples-opt/ab/ab-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 39,
+      "row": 4,
+      "col": 12,
+      "code": "At",
+      "category": "inserciones",
+      "subcategory": "mallas-serie-a",
+      "name": {
+        "es": "Malla Serie A — Tejida",
+        "en": "Mesh A — Woven"
+      },
+      "shortName": {
+        "es": "SA-Tejida",
+        "en": "SA-Woven"
+      },
+      "attributes": {
+        "acabado": [
+          "metalizado"
+        ],
+        "transparencia": "translucido",
+        "patron": "tejida",
+        "tier": "premium",
+        "disponibilidad": "disponible"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/at/at-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/at/at-01-stand-a.webp"
+        ]
+      }
+    },
+    {
+      "slot": 40,
+      "row": 4,
+      "col": 13,
+      "code": "Ac",
+      "category": "inserciones",
+      "subcategory": "mallas-serie-a",
+      "name": {
+        "es": "Malla Serie A — Cuadros",
+        "en": "Mesh A — Square Grid"
+      },
+      "shortName": {
+        "es": "SA-Cuadros",
+        "en": "SA-Grid"
+      },
+      "attributes": {
+        "acabado": [
+          "metalizado"
+        ],
+        "transparencia": "translucido",
+        "patron": "cuadros",
+        "tier": "premium",
+        "disponibilidad": "disponible"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/ac/ac-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/ac/ac-01-stand-a.webp",
+          "assets/media/glass-samples-opt/ac/ac-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/ac/ac-08-app-door.webp",
+          "assets/media/glass-samples-opt/ac/ac-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 41,
+      "row": 4,
+      "col": 14,
+      "code": "Bq",
+      "category": "inserciones",
+      "subcategory": "mallas-serie-b",
+      "name": {
+        "es": "Malla Serie B — Qubo",
+        "en": "Mesh B — Cube"
+      },
+      "shortName": {
+        "es": "SB-Qubo",
+        "en": "SB-Cube"
+      },
+      "attributes": {
+        "acabado": [
+          "metalizado"
+        ],
+        "transparencia": "translucido",
+        "patron": "qubo",
+        "tier": "alternativa",
+        "disponibilidad": "disponible"
+      },
+      "relations": {
+        "esTierAlternativoDe": "Aq",
+        "esEquivalenteIdenticoDe": "Aq"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/bq/bq-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/bq/bq-01-stand-a.webp",
+          "assets/media/glass-samples-opt/bq/bq-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/bq/bq-08-app-door.webp",
+          "assets/media/glass-samples-opt/bq/bq-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 42,
+      "row": 4,
+      "col": 15,
+      "code": "Be",
+      "category": "inserciones",
+      "subcategory": "mallas-serie-b",
+      "name": {
+        "es": "Malla Serie B — Entramado",
+        "en": "Mesh B — Gauze"
+      },
+      "shortName": {
+        "es": "SB-Entramado",
+        "en": "SB-Gauze"
+      },
+      "attributes": {
+        "acabado": [
+          "metalizado"
+        ],
+        "transparencia": "translucido",
+        "patron": "entramado",
+        "tier": "alternativa",
+        "disponibilidad": "disponible"
+      },
+      "relations": {
+        "esTierAlternativoDe": "Ae"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/be/be-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/be/be-01-stand-a.webp",
+          "assets/media/glass-samples-opt/be/be-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/be/be-08-app-door.webp",
+          "assets/media/glass-samples-opt/be/be-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 43,
+      "row": 4,
+      "col": 16,
+      "code": "Bl",
+      "category": "inserciones",
+      "subcategory": "mallas-serie-b",
+      "name": {
+        "es": "Malla Serie B — Lisa",
+        "en": "Mesh B — Plain"
+      },
+      "shortName": {
+        "es": "SB-Lisa",
+        "en": "SB-Plain"
+      },
+      "attributes": {
+        "acabado": [
+          "metalizado"
+        ],
+        "transparencia": "translucido",
+        "patron": "lisa",
+        "tier": "alternativa",
+        "disponibilidad": "disponible"
+      },
+      "relations": {
+        "esTierAlternativoDe": "Al"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/bl/bl-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/bl/bl-01-stand-a.webp",
+          "assets/media/glass-samples-opt/bl/bl-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/bl/bl-08-app-door.webp",
+          "assets/media/glass-samples-opt/bl/bl-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 44,
+      "row": 4,
+      "col": 17,
+      "code": "Cm",
+      "category": "inserciones",
+      "subcategory": "mallas-serie-c",
+      "name": {
+        "es": "Malla Serie C — Mosquitera",
+        "en": "Mesh C — Mosquito"
+      },
+      "shortName": {
+        "es": "SC-Mosquitera",
+        "en": "SC-Mosquito"
+      },
+      "attributes": {
+        "acabado": [
+          "metalizado"
+        ],
+        "transparencia": "translucido",
+        "patron": "mosquitera",
+        "disponibilidad": "disponible"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/cm/cm-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/cm/cm-01-stand-a.webp",
+          "assets/media/glass-samples-opt/cm/cm-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/cm/cm-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 45,
+      "row": 4,
+      "col": 18,
+      "code": "Cn",
+      "category": "inserciones",
+      "subcategory": "mallas-serie-c",
+      "name": {
+        "es": "Malla Serie C — Negra",
+        "en": "Mesh C — Black"
+      },
+      "shortName": {
+        "es": "SC-Negra",
+        "en": "SC-Black"
+      },
+      "attributes": {
+        "acabado": [
+          "metalizado"
+        ],
+        "transparencia": "translucido",
+        "patron": "negra",
+        "disponibilidad": "disponible",
+        "colorBase": "negro"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/cn/cn-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/cn/cn-01-stand-a.webp",
+          "assets/media/glass-samples-opt/cn/cn-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/cn/cn-08-app-door.webp",
+          "assets/media/glass-samples-opt/cn/cn-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 91,
+      "row": 8,
+      "col": 5,
+      "code": "Ec",
+      "category": "reflectivos",
+      "subcategory": "espejos-base",
+      "name": {
+        "es": "Espejo Claro",
+        "en": "Clear Mirror"
+      },
+      "shortName": {
+        "es": "Es-Claro",
+        "en": "Es-Clear"
+      },
+      "attributes": {
+        "acabado": [
+          "espejado"
+        ],
+        "transparencia": "espejo",
+        "disponibilidad": "disponible"
+      },
+      "relations": {
+        "esVersionEspejoDe": "Vc"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/ec/ec-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/ec/ec-01-stand-a.webp",
+          "assets/media/glass-samples-opt/ec/ec-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/ec/ec-08-app-door.webp",
+          "assets/media/glass-samples-opt/ec/ec-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 92,
+      "row": 8,
+      "col": 6,
+      "code": "Eb",
+      "category": "reflectivos",
+      "subcategory": "espejos-base",
+      "name": {
+        "es": "Espejo Bronce",
+        "en": "Bronze Mirror"
+      },
+      "shortName": {
+        "es": "Es-Bronce",
+        "en": "Es-Bronze"
+      },
+      "attributes": {
+        "acabado": [
+          "espejado",
+          "coloreado"
+        ],
+        "transparencia": "espejo",
+        "colorBase": "bronce",
+        "disponibilidad": "disponible"
+      },
+      "relations": {
+        "esVersionEspejoDe": "Vb",
+        "esVarianteDeColorDe": "Ec"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/eb/eb-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/eb/eb-01-stand-a.webp",
+          "assets/media/glass-samples-opt/eb/eb-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/eb/eb-08-app-door.webp",
+          "assets/media/glass-samples-opt/eb/eb-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 93,
+      "row": 8,
+      "col": 7,
+      "code": "Eg",
+      "category": "reflectivos",
+      "subcategory": "espejos-base",
+      "name": {
+        "es": "Espejo Gris",
+        "en": "Grey Mirror"
+      },
+      "shortName": {
+        "es": "Es-Gris",
+        "en": "Es-Grey"
+      },
+      "attributes": {
+        "acabado": [
+          "espejado",
+          "coloreado"
+        ],
+        "transparencia": "espejo",
+        "colorBase": "gris",
+        "disponibilidad": "disponible"
+      },
+      "relations": {
+        "esVersionEspejoDe": "Vg",
+        "esVarianteDeColorDe": "Ec"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/eg/eg-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/eg/eg-01-stand-a.webp",
+          "assets/media/glass-samples-opt/eg/eg-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/eg/eg-08-app-door.webp",
+          "assets/media/glass-samples-opt/eg/eg-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 94,
+      "row": 8,
+      "col": 8,
+      "code": "Ei",
+      "category": "reflectivos",
+      "subcategory": "espejo-color-interlayer",
+      "name": {
+        "es": "Espejo Interlayer",
+        "en": "Interlayer Mirror"
+      },
+      "shortName": {
+        "es": "Es-Interlayer",
+        "en": "Es-Interlayer"
+      },
+      "attributes": {
+        "acabado": [
+          "espejado",
+          "interlayer"
+        ],
+        "transparencia": "espejo",
+        "disponibilidad": "disponible",
+        "personalizacionColor": "300-colores"
+      },
+      "relations": {
+        "esVersionEspejoDe": "In"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/ei/ei-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/ei/ei-01-stand-a.webp",
+          "assets/media/glass-samples-opt/ei/ei-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/ei/ei-08-app-door.webp",
+          "assets/media/glass-samples-opt/ei/ei-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 95,
+      "row": 8,
+      "col": 9,
+      "code": "Ep",
+      "category": "reflectivos",
+      "subcategory": "espejos-custom",
+      "name": {
+        "es": "Espejo Polychromatico",
+        "en": "Polychromatic Mirror"
+      },
+      "shortName": {
+        "es": "Es-Poly",
+        "en": "Es-Poly"
+      },
+      "attributes": {
+        "acabado": [
+          "espejado",
+          "dicroico"
+        ],
+        "transparencia": "espejo",
+        "disponibilidad": "custom"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/ep/ep-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/ep/ep-01-stand-a.webp",
+          "assets/media/glass-samples-opt/ep/ep-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/ep/ep-08-app-door.webp",
+          "assets/media/glass-samples-opt/ep/ep-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 96,
+      "row": 8,
+      "col": 10,
+      "code": "Ea",
+      "category": "reflectivos",
+      "subcategory": "espejos-texturizados",
+      "name": {
+        "es": "Espejo Acanalado",
+        "en": "Reeded Mirror"
+      },
+      "shortName": {
+        "es": "Es-Acanalado",
+        "en": "Es-Reeded"
+      },
+      "attributes": {
+        "acabado": [
+          "espejado",
+          "acanalado"
+        ],
+        "transparencia": "espejo",
+        "patron": "acanalado-vertical",
+        "disponibilidad": "disponible"
+      },
+      "relations": {
+        "esVersionEspejoDe": "Va"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/ea/ea-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/ea/ea-01-stand-a.webp",
+          "assets/media/glass-samples-opt/ea/ea-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/ea/ea-08-app-door.webp",
+          "assets/media/glass-samples-opt/ea/ea-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 97,
+      "row": 8,
+      "col": 11,
+      "code": "Eal",
+      "category": "reflectivos",
+      "subcategory": "espejos-texturizados",
+      "name": {
+        "es": "Espejo Acanalado Lite",
+        "en": "Light Reeded Mirror"
+      },
+      "shortName": {
+        "es": "Es-Acalite",
+        "en": "Es-Reeded-lite"
+      },
+      "attributes": {
+        "acabado": [
+          "espejado",
+          "acanalado"
+        ],
+        "transparencia": "espejo",
+        "patron": "acanalado-fino",
+        "disponibilidad": "disponible"
+      },
+      "relations": {
+        "esVersionEspejoDe": "Val"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/eal/eal-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/eal/eal-01-stand-a.webp",
+          "assets/media/glass-samples-opt/eal/eal-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/eal/eal-08-app-door.webp",
+          "assets/media/glass-samples-opt/eal/eal-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 98,
+      "row": 8,
+      "col": 12,
+      "code": "Ed",
+      "category": "reflectivos",
+      "subcategory": "espejos-texturizados",
+      "name": {
+        "es": "Espejo Diamante",
+        "en": "Diamond Mirror"
+      },
+      "shortName": {
+        "es": "Es-Diamante",
+        "en": "Es-Diamond"
+      },
+      "attributes": {
+        "acabado": [
+          "espejado",
+          "texturizado"
+        ],
+        "transparencia": "espejo",
+        "patron": "diamante-grid",
+        "disponibilidad": "disponible"
+      },
+      "relations": {
+        "esVersionEspejoDe": "Vd"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/ed/ed-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/ed/ed-01-stand-a.webp",
+          "assets/media/glass-samples-opt/ed/ed-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/ed/ed-08-app-door.webp",
+          "assets/media/glass-samples-opt/ed/ed-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 99,
+      "row": 8,
+      "col": 13,
+      "code": "Ee",
+      "category": "reflectivos",
+      "subcategory": "espejos-texturizados",
+      "name": {
+        "es": "Espejo Esmerilado",
+        "en": "Frosted Mirror"
+      },
+      "shortName": {
+        "es": "Es-Esmerilado",
+        "en": "Es-Frosted"
+      },
+      "attributes": {
+        "acabado": [
+          "espejado",
+          "esmerilado"
+        ],
+        "transparencia": "espejo",
+        "disponibilidad": "disponible",
+        "acabadoColor": [
+          "humo",
+          "bronce",
+          "negro"
+        ]
+      },
+      "relations": {
+        "esVersionEspejoDe": "Ve"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/ee/ee-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/ee/ee-01-stand-a.webp",
+          "assets/media/glass-samples-opt/ee/ee-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/ee/ee-08-app-door.webp",
+          "assets/media/glass-samples-opt/ee/ee-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 100,
+      "row": 8,
+      "col": 14,
+      "code": "Eef",
+      "category": "reflectivos",
+      "subcategory": "espejos-con-film-poly",
+      "name": {
+        "es": "Espejo Esmerilado Film",
+        "en": "Frosted Mirror Film"
+      },
+      "shortName": {
+        "es": "Es-Esfilm",
+        "en": "Es-Frosted-film"
+      },
+      "attributes": {
+        "acabado": [
+          "espejado",
+          "esmerilado",
+          "interlayer"
+        ],
+        "transparencia": "espejo",
+        "disponibilidad": "disponible",
+        "personalizacionColor": "300-colores"
+      },
+      "relations": {
+        "esVersionConFilmDe": "Ee"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/eef/eef-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/eef/eef-01-stand-a.webp",
+          "assets/media/glass-samples-opt/eef/eef-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/eef/eef-08-app-door.webp",
+          "assets/media/glass-samples-opt/eef/eef-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 101,
+      "row": 8,
+      "col": 15,
+      "code": "Eep",
+      "category": "reflectivos",
+      "subcategory": "espejos-custom",
+      "name": {
+        "es": "Espejo Polychromatico",
+        "en": "Polychromatic Mirror"
+      },
+      "shortName": {
+        "es": "Es-Espoly",
+        "en": "Es-Polychromatic"
+      },
+      "attributes": {
+        "acabado": [
+          "espejado",
+          "dicroico"
+        ],
+        "transparencia": "espejo",
+        "disponibilidad": "custom"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/eep/eep-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/eep/eep-01-stand-a.webp",
+          "assets/media/glass-samples-opt/eep/eep-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/eep/eep-08-app-door.webp",
+          "assets/media/glass-samples-opt/eep/eep-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 102,
+      "row": 8,
+      "col": 16,
+      "code": "Et",
+      "category": "reflectivos",
+      "subcategory": "espejos-texturizados",
+      "name": {
+        "es": "Espejo Texturizado",
+        "en": "Textured Mirror"
+      },
+      "shortName": {
+        "es": "Es-Texturizado",
+        "en": "Es-Textured"
+      },
+      "attributes": {
+        "acabado": [
+          "espejado",
+          "texturizado"
+        ],
+        "transparencia": "espejo",
+        "disponibilidad": "disponible"
+      },
+      "relations": {
+        "esVersionEspejoDe": "Vt"
+      },
+      "media": {
+        "hero": "assets/media/glass-samples-opt/et/et-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/et/et-01-stand-a.webp",
+          "assets/media/glass-samples-opt/et/et-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/et/et-08-app-door.webp",
+          "assets/media/glass-samples-opt/et/et-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 103,
+      "row": 8,
+      "col": 17,
+      "code": "Etf",
+      "category": "reflectivos",
+      "subcategory": "espejos-con-film-poly",
+      "name": {
+        "es": "Espejo Texturizado Film",
+        "en": "Textured Mirror Film"
+      },
+      "shortName": {
+        "es": "Es-Textfilm",
+        "en": "Es-Textured-film"
+      },
+      "attributes": {
+        "acabado": [
+          "espejado",
+          "texturizado",
+          "interlayer"
+        ],
+        "transparencia": "espejo",
+        "disponibilidad": "proximamente"
+      },
+      "relations": {
+        "esVersionConFilmDe": "Et"
+      },
+      "placeholder": "Muestra en desarrollo",
+      "media": {
+        "hero": "assets/media/glass-samples-opt/etf/etf-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/etf/etf-01-stand-a.webp",
+          "assets/media/glass-samples-opt/etf/etf-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/etf/etf-08-app-door.webp",
+          "assets/media/glass-samples-opt/etf/etf-09-app-table.webp"
+        ]
+      }
+    },
+    {
+      "slot": 104,
+      "row": 8,
+      "col": 18,
+      "code": "Etp",
+      "category": "reflectivos",
+      "subcategory": "espejos-con-film-poly",
+      "name": {
+        "es": "Espejo Texturizado Poly",
+        "en": "Textured Mirror Poly"
+      },
+      "shortName": {
+        "es": "Es-Textpoly",
+        "en": "Es-Textured-poly"
+      },
+      "attributes": {
+        "acabado": [
+          "espejado",
+          "texturizado",
+          "dicroico"
+        ],
+        "transparencia": "espejo",
+        "disponibilidad": "proximamente"
+      },
+      "placeholder": "Muestra en desarrollo",
+      "media": {
+        "hero": "assets/media/glass-samples-opt/etp/etp-01-stand-a.webp",
+        "gallery": [],
+        "heroSlides": [
+          "assets/media/glass-samples-opt/etp/etp-01-stand-a.webp"
+        ]
+      }
+    }
+  ],
+  "emptySlots": {
+    "comment": "Slots NOT in products[] that should still render as outlined-empty cells with corner numbers. Border color matches the region they fall in.",
+    "colores": {
+      "slots": [
+        16,
+        17
+      ],
+      "row1col1": {
+        "16": [
+          7,
+          2
+        ],
+        "17": [
+          7,
+          3
+        ]
+      }
+    },
+    "inserciones": {
+      "slots": [
+        27,
+        28,
+        29,
+        30,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90
+      ]
+    },
+    "reflectivos": {
+      "slots": [
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118
+      ],
+      "renderRow": 9,
+      "startCol": 5
+    }
+  }
+}

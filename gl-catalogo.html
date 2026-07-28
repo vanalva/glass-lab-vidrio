@@ -1,0 +1,1449 @@
+﻿<!DOCTYPE html>
+<html lang="es" class="gl-preloading" style="background-color:#0B0B0B">
+<head>
+    <meta charset="UTF-8">
+<script>window.GL_CROSS_BRAND_BASE = "https://perniaglass.com/";</script>
+  <meta name="color-scheme" content="dark">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+  /* Gate the Spline 3D viewer to real-mouse desktops. On touch / <=991px the
+     hero shows its static poster only (.gl-hero-poster) — loading the full
+     WebGL scene cost ~6s of main-thread time on a mid-tier phone and was the
+     single biggest mobile lag source. Same three-clause test the lens + wavy
+     engines use (the hover/pointer clauses catch iPad Pro, which reports a
+     desktop-width viewport yet chokes on the live scene). */
+  (function () {
+    var STATIC = window.matchMedia('(max-width: 991px)').matches
+      || window.matchMedia('(hover: none)').matches
+      || window.matchMedia('(pointer: coarse)').matches;
+    window.__glSplineStatic = STATIC;
+    if (STATIC) { document.documentElement.classList.add('gl-spline-static'); return; }
+    var s = document.createElement('script');
+    s.type = 'module';
+    s.src = 'https://unpkg.com/@splinetool/viewer@1.12.94/build/spline-viewer.js';
+    document.head.appendChild(s);
+  })();
+  </script>
+  <title>Catálogo | Glass Lab</title>
+  <meta name="description" content="53 vidrios decorativos y arquitectónicos clasificados por color, inserciones y reflectivos, con acabados laminado, esmerilado, espejado y metalizado.">
+  <link rel="canonical" href="https://glasslb.com/gl-catalogo.html">
+  <meta property="og:title" content="Catálogo | Glass Lab">
+  <meta property="og:description" content="53 vidrios decorativos y arquitectónicos clasificados por color, inserciones y reflectivos, con acabados laminado, esmerilado, espejado y metalizado.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://glasslb.com/gl-catalogo.html">
+  <meta property="og:site_name" content="Glass Lab">
+  <meta property="og:locale" content="es_PA">
+  <meta property="og:image" content="https://glasslb.com/assets/favicons/glass-lab/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Catálogo de vidrio de Glass Lab">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Catálogo | Glass Lab">
+  <meta name="twitter:description" content="53 vidrios decorativos y arquitectónicos clasificados por color, inserciones y reflectivos, con acabados laminado, esmerilado, espejado y metalizado.">
+  <meta name="twitter:image" content="https://glasslb.com/assets/favicons/glass-lab/og-default.png">
+  <link rel="icon" type="image/svg+xml" href="assets/favicons/glass-lab/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/favicons/glass-lab/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/glass-lab/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/glass-lab/favicon-16x16.png">
+  <link rel="shortcut icon" href="assets/favicons/glass-lab/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/glass-lab/apple-touch-icon.png">
+  <link rel="manifest" href="assets/favicons/glass-lab/site.webmanifest">
+  <meta name="theme-color" content="#0B0B0B">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css?v=3703e9fe">
+  <link rel="stylesheet" href="css/project.css?v=5b68975f">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Catálogo | Glass Lab",
+    "description": "Catálogo de 53 vidrios decorativos y arquitectónicos de laboratorio.",
+    "url": "https://glasslb.com/gl-catalogo.html",
+    "inLanguage": "es",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Glass Lab",
+      "url": "https://glasslb.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Glass Lab",
+      "url": "https://glasslb.com/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://glasslb.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Catálogo",
+        "item": "https://glasslb.com/gl-catalogo.html"
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="u-theme-dark">
+  <div class="gl-preloader" aria-hidden="true"><img src="assets/logos/gl-logotipo-h-white.svg" alt="" class="gl-preloader_logo"></div>
+
+  <!-- ============================================================ -->
+  <!-- NAVBAR                                                        -->
+  <!-- ============================================================ -->
+  <nav class="gl-home_nav-edge is-fixed">
+    <div class="gl-home_nav">
+      <a href="gl-index.html" class="gl-home_nav_logo">
+        <img src="assets/logos/gl-logotipo-h-white.svg" alt="Glass Lab" class="gl-home_nav_logo-img">
+      </a>
+      <div class="gl-home_nav_links">
+        <div class="gl-home_nav_group">
+          <button type="button" class="gl-home_nav_link gl-home_nav_trigger" aria-haspopup="true" aria-expanded="false">Laboratorio</button>
+          <div class="gl-home_nav_popover" role="menu">
+            <a href="gl-catalogo.html" class="gl-home_nav_popover_link" role="menuitem">Catálogo</a>
+            <a href="gl-visor.html" class="gl-home_nav_popover_link" role="menuitem">Visor</a>
+            <a href="https://perniaglass.com/" class="gl-home_nav_popover_link" role="menuitem">Pernia Glass</a>
+          </div>
+        </div>
+        <a href="gl-laboratorio.html" class="gl-home_nav_link">Estudio</a>
+        <div class="gl-home_nav_group">
+          <button type="button" class="gl-home_nav_link gl-home_nav_trigger" aria-haspopup="true" aria-expanded="false">Bitácora</button>
+          <div class="gl-home_nav_popover" role="menu">
+            <a href="gl-instalaciones.html" class="gl-home_nav_popover_link" role="menuitem">Instalaciones</a>
+            <a href="gl-blog.html" class="gl-home_nav_popover_link" role="menuitem">Diario</a>
+          </div>
+        </div>
+      </div>
+      <div class="gl-home_nav_right">
+        <span class="gl-mono gl-mono_muted">ES / EN</span>
+        <div class="gl-btn_skew_wrap">
+          <svg class="gl-btn_skew_shape" viewBox="0 0 240 56" preserveAspectRatio="none" fill="none">
+            <path d="M16,1 L239,1 L239,42 L224,55 L1,55 L1,14 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="miter" vector-effect="non-scaling-stroke"/>
+          </svg>
+          <a href="gl-contacto.html" class="gl-btn_skew_element gl-btn_skew_element_sm">
+            <span class="gl-btn_skew_text gl-btn_skew_text_sm">Contacto</span>
+          </a>
+        </div>
+        <div class="gl-home_nav_burger"></div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================ -->
+    <!-- 01 // CATALOGO HERO — IDENTITY + FILTER BAR                  -->
+    <!-- ============================================================ -->
+    <section class="gl-catalogo_header gl-hero-with-bar gl-section-border">
+
+      <div class="gl-hero-poster" aria-hidden="true"></div>
+      <spline-viewer url="https://prod.spline.design/b-4stATMI1eJyYNR/scene.splinecode" class="gl-home_hero_bg" loading="eager" data-pt-prewarm="assets/media/glass-lab/glass-render-hero-poster.jpg"></spline-viewer>
+
+      <div class="gl-blur-bottom" aria-hidden="true">
+        <div class="gl-blur-bottom_layer is-1"></div>
+        <div class="gl-blur-bottom_layer is-2"></div>
+        <div class="gl-blur-bottom_layer is-3"></div>
+        <div class="gl-blur-bottom_layer is-4"></div>
+        <div class="gl-blur-bottom_layer is-5"></div>
+        <div class="gl-blur-bottom_layer is-6"></div>
+        <div class="gl-blur-bottom_layer is-7"></div>
+        <div class="gl-blur-bottom_layer is-8"></div>
+        <div class="gl-blur-bottom_layer is-9"></div>
+        <div class="gl-blur-bottom_layer is-10"></div>
+      </div>
+
+      <!-- Header identity: grows to fill vertical space above the filter bar -->
+      <div class="gl-catalogo_header_inner">
+        <div>
+          <span class="gl-section-number">01 // Catalogo</span>
+          <h1 class="gl-catalogo_header_title gl-no-wavy">Catalogo</h1>
+          <p class="u-text-style-main gl-mono_muted gl-catalogo_header_desc">Vidrio decorativo y arquitectonico de laboratorio.</p>
+        </div>
+        <span class="gl-mono gl-mono_muted">53 vidrios</span>
+      </div>
+
+      <!-- Monogram + filters: margin-top: auto anchors this to the bottom of the hero -->
+      <div class="gl-catalogo_monogram-wrap gl-catalogo_monogram-wrap--bottom u-margin-top-7">
+        <div class="gl-catalogo_monogram-cell">
+          <div class="gl-catalogo_monogram">
+            <div class="gl-catalogo_monogram_top">
+              <span class="gl-catalogo_monogram_atomic">14&nbsp;&nbsp;28.086</span>
+            </div>
+            <img src="assets/logos/gl-isologo-white.svg" alt="GL" class="gl-catalogo_monogram_logo">
+            <span class="gl-catalogo_monogram_formula">SiO₂</span>
+          </div>
+        </div>
+
+        <!-- Filters: display-contents so filters-grid slots into col 2 of monogram-wrap -->
+        <div class="gl-catalogo_filters">
+
+          <!-- Inner block: capped width, 3-row grid — lands in center auto column -->
+          <div class="gl-catalogo_filters-grid">
+
+            <div class="gl-filter-input gl-filter-input_search">
+              <input type="search"
+                     class="gl-filter-search-input"
+                     placeholder="Buscar vidrio..."
+                     data-flwr-list-field="code,name,shortName,colorBase,tags"
+                     data-flwr-list-list="#gl-catalogo-grid">
+            </div>
+
+            <label class="gl-filter-input gl-filter-radio-pill gl-filter-cat-pill">
+              <input type="radio" name="gl-cat" class="gl-sr-only"
+                     data-flwr-list-field="cat"
+                     data-flwr-list-value="colores"
+                     data-flwr-list-list="#gl-catalogo-grid">
+              <span class="gl-catalogo_legend_swatch gl-catalogo_legend_swatch_filled gl-cell_cat-colores"></span>
+              Colores
+            </label>
+            <label class="gl-filter-input gl-filter-radio-pill gl-filter-cat-pill">
+              <input type="radio" name="gl-cat" class="gl-sr-only"
+                     data-flwr-list-field="cat"
+                     data-flwr-list-value="inserciones"
+                     data-flwr-list-list="#gl-catalogo-grid">
+              <span class="gl-catalogo_legend_swatch gl-catalogo_legend_swatch_filled gl-cell_cat-inserciones"></span>
+              Inserciones
+            </label>
+            <label class="gl-filter-input gl-filter-radio-pill gl-filter-cat-pill">
+              <input type="radio" name="gl-cat" class="gl-sr-only"
+                     data-flwr-list-field="cat"
+                     data-flwr-list-value="reflectivos"
+                     data-flwr-list-list="#gl-catalogo-grid">
+              <span class="gl-catalogo_legend_swatch gl-catalogo_legend_swatch_filled gl-cell_cat-reflectivos"></span>
+              Reflectivos
+            </label>
+
+            <label class="gl-filter-input gl-filter-radio-pill">
+              <input type="checkbox" class="gl-sr-only"
+                     data-flwr-list-field="acabado"
+                     data-flwr-list-value="laminado"
+                     data-flwr-list-list="#gl-catalogo-grid">
+              Laminado
+            </label>
+            <label class="gl-filter-input gl-filter-radio-pill">
+              <input type="checkbox" class="gl-sr-only"
+                     data-flwr-list-field="acabado"
+                     data-flwr-list-value="espejado"
+                     data-flwr-list-list="#gl-catalogo-grid">
+              Espejado
+            </label>
+            <label class="gl-filter-input gl-filter-radio-pill">
+              <input type="checkbox" class="gl-sr-only"
+                     data-flwr-list-field="acabado"
+                     data-flwr-list-value="esmerilado"
+                     data-flwr-list-list="#gl-catalogo-grid">
+              Esmerilado
+            </label>
+            <label class="gl-filter-input gl-filter-radio-pill">
+              <input type="checkbox" class="gl-sr-only"
+                     data-flwr-list-field="acabado"
+                     data-flwr-list-value="impreso"
+                     data-flwr-list-list="#gl-catalogo-grid">
+              Impreso
+            </label>
+            <label class="gl-filter-input gl-filter-radio-pill">
+              <input type="checkbox" class="gl-sr-only"
+                     data-flwr-list-field="acabado"
+                     data-flwr-list-value="interlayer"
+                     data-flwr-list-list="#gl-catalogo-grid">
+              Interlayer
+            </label>
+            <label class="gl-filter-input gl-filter-radio-pill">
+              <input type="checkbox" class="gl-sr-only"
+                     data-flwr-list-field="acabado"
+                     data-flwr-list-value="metalizado"
+                     data-flwr-list-list="#gl-catalogo-grid">
+              Metalizado
+            </label>
+
+          </div>
+
+          <!-- Tags: col 3 of 1fr auto 1fr sub-grid inside gl-catalogo_filters -->
+          <div class="gl-catalogo_tags-area">
+            <template data-flwr-target="tag-template" data-flwr-list-list="#gl-catalogo-grid">
+              <span class="gl-filter-tag">
+                <span data-flwr-target="tag-label"></span>
+                <button class="gl-filter-tag_close" data-flwr-target="tag-remove" aria-label="Quitar filtro">×</button>
+              </span>
+            </template>
+            <div data-flwr-target="tags" data-flwr-list-list="#gl-catalogo-grid" class="gl-catalogo_active-filters"></div>
+            <span class="gl-catalogo_filter-hint" id="gl-filter-hint">Selecciona un filtro</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 02 // PERIODIC TABLE GRID                                     -->
+    <!-- ============================================================ -->
+    <section class="gl-catalogo_grid-section">
+
+      <div id="gl-catalogo-grid"
+           class="gl-catalogo_grid"
+           data-total-slots="118"
+           data-named-products="53"
+           data-flwr="list"
+           data-flwr-list-fieldmatch="or"
+           data-flwr-list-conditionsmatch="and"
+           data-flwr-list-accent="strip"
+           data-flwr-list-hidden-class="gl-cell_filtered-out">
+
+        <!-- Empty state (shows when 0 items match) -->
+        <div data-flwr-target="empty" class="gl-catalogo_empty" hidden>
+          No hay vidrios que coincidan con los filtros activos.
+        </div>
+        <!-- Section labels (rotated vertical) -->
+        <span class="gl-catalogo_section-label gl-catalogo_section-label_colores">Colores</span>
+        <span class="gl-catalogo_section-label gl-catalogo_section-label_inserciones">Inserciones</span>
+        <span class="gl-catalogo_section-label gl-catalogo_section-label_reflectivos">Reflectivos</span>
+
+        <!-- ROW 1 -->
+        <a href="gl-vidrio.html?code=Vc" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores" data-flwr-list-item data-r="1" data-c="1" data-code="Vc" data-cat="colores">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">001</span>
+          </div>
+          <span class="gl-cell_symbol">Vc</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Claro</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Gr" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" data-flwr-list-item data-r="1" data-c="18" data-code="Gr" data-cat="inserciones">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">018</span>
+          </div>
+          <span class="gl-cell_symbol">Gr</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Gradient</span>
+          </div>
+        </a>
+        <!-- ROW 2 -->
+        <a href="gl-vidrio.html?code=Vu" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores" data-flwr-list-item data-r="2" data-c="1" data-code="Vu" data-cat="colores">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">002</span>
+          </div>
+          <span class="gl-cell_symbol">Vu</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Ultraclaro</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Vp" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores" data-flwr-list-item data-r="2" data-c="2" data-code="Vp" data-cat="colores">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">003</span>
+          </div>
+          <span class="gl-cell_symbol">Vp</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Pacífica</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Gra" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" data-flwr-list-item data-r="2" data-c="13" data-code="Gra" data-cat="inserciones">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">019</span>
+          </div>
+          <span class="gl-cell_symbol">Gra</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Gra-Acidado</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Ds" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" data-flwr-list-item data-r="2" data-c="14" data-code="Ds" data-cat="inserciones">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">020</span>
+          </div>
+          <span class="gl-cell_symbol">Ds</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Sunset</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Dsa" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" data-flwr-list-item data-r="2" data-c="15" data-code="Dsa" data-cat="inserciones">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">021</span>
+          </div>
+          <span class="gl-cell_symbol">Dsa</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Di-Acidado</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=In" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" data-flwr-list-item data-r="2" data-c="16" data-code="In" data-cat="inserciones">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">022</span> <span class="gl-cell_badge">300C</span>
+          </div>
+          <span class="gl-cell_symbol">In</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Interlayer</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Ina" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" data-flwr-list-item data-r="2" data-c="17" data-code="Ina" data-cat="inserciones">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">023</span> <span class="gl-cell_badge">300C</span>
+          </div>
+          <span class="gl-cell_symbol">Ina</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Int-Acidado</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Imc" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" data-flwr-list-item data-r="2" data-c="18" data-code="Imc" data-cat="inserciones">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">024</span>
+          </div>
+          <span class="gl-cell_symbol">Imc</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Imp-Cuadros</span>
+          </div>
+        </a>
+        <!-- ROW 3 -->
+        <a href="gl-vidrio.html?code=Vi" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores" data-flwr-list-item data-r="3" data-c="1" data-code="Vi" data-cat="colores">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">004</span>
+          </div>
+          <span class="gl-cell_symbol">Vi</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Indigo</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Vb" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores" data-flwr-list-item data-r="3" data-c="2" data-code="Vb" data-cat="colores">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">005</span>
+          </div>
+          <span class="gl-cell_symbol">Vb</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Bronce</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Iml" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" data-flwr-list-item data-r="3" data-c="13" data-code="Iml" data-cat="inserciones">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">025</span>
+          </div>
+          <span class="gl-cell_symbol">Iml</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Imp-líneas</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Tl" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" data-flwr-list-item data-r="3" data-c="14" data-code="Tl" data-cat="inserciones">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">026</span>
+          </div>
+          <span class="gl-cell_symbol">Tl</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Te-Lino</span>
+          </div>
+        </a>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="3" data-c="15">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">027</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="3" data-c="16">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">028</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="3" data-c="17">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">029</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="3" data-c="18">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">030</span>
+          </div>
+        </div>
+        <!-- ROW 4 -->
+        <a href="gl-vidrio.html?code=Vg" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores" data-flwr-list-item data-r="4" data-c="1" data-code="Vg" data-cat="colores">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">006</span>
+          </div>
+          <span class="gl-cell_symbol">Vg</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Gris</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Va" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores" data-flwr-list-item data-r="4" data-c="2" data-code="Va" data-cat="colores">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">007</span>
+          </div>
+          <span class="gl-cell_symbol">Va</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Acanalado</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Val" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores" data-flwr-list-item data-r="4" data-c="3" data-code="Val" data-cat="colores">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">008</span>
+          </div>
+          <span class="gl-cell_symbol">Val</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Acanalado-lite</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Ae" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" data-flwr-list-item data-r="4" data-c="4" data-code="Ae" data-cat="inserciones">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">031</span>
+          </div>
+          <span class="gl-cell_symbol">Ae</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">SA-Entramado</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Ap" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" data-flwr-list-item data-r="4" data-c="5" data-code="Ap" data-cat="inserciones">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">032</span>
+          </div>
+          <span class="gl-cell_symbol">Ap</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">SA-Pulida</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Af" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" data-flwr-list-item data-r="4" data-c="6" data-code="Af" data-cat="inserciones">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">033</span>
+          </div>
+          <span class="gl-cell_symbol">Af</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">SA-Fabric</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Al" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" data-flwr-list-item data-r="4" data-c="7" data-code="Al" data-cat="inserciones">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">034</span>
+          </div>
+          <span class="gl-cell_symbol">Al</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">SA-Lisa</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Az" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" data-flwr-list-item data-r="4" data-c="8" data-code="Az" data-cat="inserciones">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">035</span>
+          </div>
+          <span class="gl-cell_symbol">Az</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">SA-Zigzag</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Aq" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" data-flwr-list-item data-r="4" data-c="9" data-code="Aq" data-cat="inserciones">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">036</span>
+          </div>
+          <span class="gl-cell_symbol">Aq</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">SA-Qubo</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Ah" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" data-flwr-list-item data-r="4" data-c="10" data-code="Ah" data-cat="inserciones">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">037</span>
+          </div>
+          <span class="gl-cell_symbol">Ah</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">SA-Herringbone</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Ab" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" data-flwr-list-item data-r="4" data-c="11" data-code="Ab" data-cat="inserciones">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">038</span>
+          </div>
+          <span class="gl-cell_symbol">Ab</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">SA-Bilineal</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=At" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" data-flwr-list-item data-r="4" data-c="12" data-code="At" data-cat="inserciones">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">039</span>
+          </div>
+          <span class="gl-cell_symbol">At</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">SA-Tejida</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Ac" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" data-flwr-list-item data-r="4" data-c="13" data-code="Ac" data-cat="inserciones">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">040</span>
+          </div>
+          <span class="gl-cell_symbol">Ac</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">SA-Cuadros</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Bq" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" data-flwr-list-item data-r="4" data-c="14" data-code="Bq" data-cat="inserciones">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">041</span>
+          </div>
+          <span class="gl-cell_symbol">Bq</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">SB-Qubo</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Be" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" data-flwr-list-item data-r="4" data-c="15" data-code="Be" data-cat="inserciones">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">042</span>
+          </div>
+          <span class="gl-cell_symbol">Be</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">SB-Entramado</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Bl" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" data-flwr-list-item data-r="4" data-c="16" data-code="Bl" data-cat="inserciones">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">043</span>
+          </div>
+          <span class="gl-cell_symbol">Bl</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">SB-Lisa</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Bp" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" data-flwr-list-item data-r="4" data-c="17" data-code="Bp" data-cat="inserciones">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">044</span>
+          </div>
+          <span class="gl-cell_symbol">Bp</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">SB-Pulida</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Cm" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" data-flwr-list-item data-r="4" data-c="18" data-code="Cm" data-cat="inserciones">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">045</span>
+          </div>
+          <span class="gl-cell_symbol">Cm</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">SC-Mosquitera</span>
+          </div>
+        </a>
+        <!-- ROW 5 -->
+        <a href="gl-vidrio.html?code=Ve" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores" data-flwr-list-item data-r="5" data-c="1" data-code="Ve" data-cat="colores">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">009</span>
+          </div>
+          <span class="gl-cell_symbol">Ve</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Esmerilado</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Vt" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores" data-flwr-list-item data-r="5" data-c="2" data-code="Vt" data-cat="colores">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">010</span>
+          </div>
+          <span class="gl-cell_symbol">Vt</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Texturizado</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Vd" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores" data-flwr-list-item data-r="5" data-c="3" data-code="Vd" data-cat="colores">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">011</span>
+          </div>
+          <span class="gl-cell_symbol">Vd</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Diamante</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Cn" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" data-flwr-list-item data-r="5" data-c="4" data-code="Cn" data-cat="inserciones">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">046</span>
+          </div>
+          <span class="gl-cell_symbol">Cn</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">SC-Negra</span>
+          </div>
+        </a>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="5" data-c="5">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">047</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="5" data-c="6">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">048</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="5" data-c="7">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">049</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="5" data-c="8">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">050</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="5" data-c="9">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">051</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="5" data-c="10">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">052</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="5" data-c="11">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">053</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="5" data-c="12">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">054</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="5" data-c="13">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">055</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="5" data-c="14">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">056</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="5" data-c="15">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">057</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="5" data-c="16">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">058</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="5" data-c="17">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">059</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="5" data-c="18">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">060</span>
+          </div>
+        </div>
+        <!-- ROW 6 -->
+        <a href="gl-vidrio.html?code=Veb" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores" data-flwr-list-item data-r="6" data-c="1" data-code="Veb" data-cat="colores">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">012</span>
+          </div>
+          <span class="gl-cell_symbol">Veb</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Eva Blanca</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Ven" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores" data-flwr-list-item data-r="6" data-c="2" data-code="Ven" data-cat="colores">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">013</span>
+          </div>
+          <span class="gl-cell_symbol">Ven</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Eva Negra</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Vab" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores" data-flwr-list-item data-r="6" data-c="3" data-code="Vab" data-cat="colores">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">014</span>
+          </div>
+          <span class="gl-cell_symbol">Vab</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Acanalado Bronce</span>
+          </div>
+        </a>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="6" data-c="4">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">061</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="6" data-c="5">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">062</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="6" data-c="6">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">063</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="6" data-c="7">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">064</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="6" data-c="8">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">065</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="6" data-c="9">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">066</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="6" data-c="10">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">067</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="6" data-c="11">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">068</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="6" data-c="12">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">069</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="6" data-c="13">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">070</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="6" data-c="14">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">071</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="6" data-c="15">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">072</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="6" data-c="16">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">073</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="6" data-c="17">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">074</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="6" data-c="18">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">075</span>
+          </div>
+        </div>
+        <!-- ROW 7 -->
+        <a href="gl-vidrio.html?code=Vag" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores" data-flwr-list-item data-r="7" data-c="1" data-code="Vag" data-cat="colores">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">015</span>
+          </div>
+          <span class="gl-cell_symbol">Vag</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Acanalado Gris</span>
+          </div>
+        </a>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-colores" data-r="7" data-c="2">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">016</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-colores" data-r="7" data-c="3">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">017</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="7" data-c="4">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">076</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="7" data-c="5">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">077</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="7" data-c="6">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">078</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="7" data-c="7">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">079</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="7" data-c="8">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">080</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="7" data-c="9">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">081</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="7" data-c="10">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">082</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="7" data-c="11">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">083</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="7" data-c="12">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">084</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="7" data-c="13">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">085</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="7" data-c="14">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">086</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="7" data-c="15">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">087</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="7" data-c="16">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">088</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="7" data-c="17">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">089</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-inserciones" data-r="7" data-c="18">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">090</span>
+          </div>
+        </div>
+        <!-- ROW 8 -->
+        <a href="gl-vidrio.html?code=Ec" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos" data-flwr-list-item data-r="8" data-c="5" data-code="Ec" data-cat="reflectivos">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">091</span>
+          </div>
+          <span class="gl-cell_symbol">Ec</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Es-Claro</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Eb" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos" data-flwr-list-item data-r="8" data-c="6" data-code="Eb" data-cat="reflectivos">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">092</span>
+          </div>
+          <span class="gl-cell_symbol">Eb</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Es-Bronce</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Eg" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos" data-flwr-list-item data-r="8" data-c="7" data-code="Eg" data-cat="reflectivos">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">093</span>
+          </div>
+          <span class="gl-cell_symbol">Eg</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Es-Gris</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Ei" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos" data-flwr-list-item data-r="8" data-c="8" data-code="Ei" data-cat="reflectivos">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">094</span> <span class="gl-cell_badge">300C</span>
+          </div>
+          <span class="gl-cell_symbol">Ei</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Es-Interlayer</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Ep" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos" data-flwr-list-item data-r="8" data-c="9" data-code="Ep" data-cat="reflectivos">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">095</span> <span class="gl-cell_badge">CUSTOM</span>
+          </div>
+          <span class="gl-cell_symbol">Ep</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Es-Poly</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Ea" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos" data-flwr-list-item data-r="8" data-c="10" data-code="Ea" data-cat="reflectivos">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">096</span>
+          </div>
+          <span class="gl-cell_symbol">Ea</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Es-Acanalado</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Eal" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos" data-flwr-list-item data-r="8" data-c="11" data-code="Eal" data-cat="reflectivos">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">097</span>
+          </div>
+          <span class="gl-cell_symbol">Eal</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Es-Acalite</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Ed" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos" data-flwr-list-item data-r="8" data-c="12" data-code="Ed" data-cat="reflectivos">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">098</span>
+          </div>
+          <span class="gl-cell_symbol">Ed</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Es-Diamante</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Ee" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos" data-flwr-list-item data-r="8" data-c="13" data-code="Ee" data-cat="reflectivos">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">099</span>
+          </div>
+          <span class="gl-cell_symbol">Ee</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Es-Esmerilado</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Eef" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos" data-flwr-list-item data-r="8" data-c="14" data-code="Eef" data-cat="reflectivos">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">100</span> <span class="gl-cell_badge">300C</span>
+          </div>
+          <span class="gl-cell_symbol">Eef</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Es-Esfilm</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Eep" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos" data-flwr-list-item data-r="8" data-c="15" data-code="Eep" data-cat="reflectivos">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">101</span> <span class="gl-cell_badge">CUSTOM</span>
+          </div>
+          <span class="gl-cell_symbol">Eep</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Es-Espoly</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Et" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos" data-flwr-list-item data-r="8" data-c="16" data-code="Et" data-cat="reflectivos">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">102</span>
+          </div>
+          <span class="gl-cell_symbol">Et</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Es-Texturizado</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Etf" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos" data-flwr-list-item data-r="8" data-c="17" data-code="Etf" data-cat="reflectivos">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">103</span> <span class="gl-cell_badge">PRÓX.</span>
+          </div>
+          <span class="gl-cell_symbol">Etf</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Es-Textfilm</span>
+          </div>
+        </a>
+        <a href="gl-vidrio.html?code=Etp" class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos" data-flwr-list-item data-r="8" data-c="18" data-code="Etp" data-cat="reflectivos">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">104</span> <span class="gl-cell_badge">PRÓX.</span>
+          </div>
+          <span class="gl-cell_symbol">Etp</span>
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_name">Es-Textpoly</span>
+          </div>
+        </a>
+        <!-- ROW 9 -->
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-reflectivos" data-r="9" data-c="5">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">105</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-reflectivos" data-r="9" data-c="6">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">106</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-reflectivos" data-r="9" data-c="7">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">107</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-reflectivos" data-r="9" data-c="8">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">108</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-reflectivos" data-r="9" data-c="9">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">109</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-reflectivos" data-r="9" data-c="10">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">110</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-reflectivos" data-r="9" data-c="11">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">111</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-reflectivos" data-r="9" data-c="12">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">112</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-reflectivos" data-r="9" data-c="13">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">113</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-reflectivos" data-r="9" data-c="14">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">114</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-reflectivos" data-r="9" data-c="15">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">115</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-reflectivos" data-r="9" data-c="16">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">116</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-reflectivos" data-r="9" data-c="17">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">117</span>
+          </div>
+        </div>
+        <div class="gl-cell gl-cell_numbered-empty gl-cell_cat-reflectivos" data-r="9" data-c="18">
+          <div class="gl-home_catalog_cell-meta">
+            <span class="gl-cell_code">118</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 03 // GRID LEGEND                                             -->
+    <!-- ============================================================ -->
+    <section class="gl-catalogo_legend gl-section-border">
+      <div class="gl-catalogo_legend_items">
+        <span class="gl-mono gl-mono_muted">15 colores · 24 inserciones · 14 reflectivos</span>
+      </div>
+      <!-- Live count updated via flwr:list:filtered event in page-catalogo.js -->
+      <span class="gl-mono gl-mono_muted gl-catalogo_legend-count" id="gl-legend-count">53 elementos activos · 65 espacios reservados</span>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 04 // PRÓXIMAS ADICIONES — new product launch teaser           -->
+    <!-- ============================================================ -->
+    <section class="gl-catalogo_proximas gl-section-border">
+      <div class="gl-catalogo_proximas_inner">
+        <div class="gl-catalogo_proximas_left">
+          <span class="gl-section-number">04 // El laboratorio crece</span>
+          <h2 class="gl-catalogo_proximas_heading">Nuevos elementos.<br>Cada uno, un lanzamiento.</h2>
+          <p class="gl-catalogo_proximas_desc">Las 65 celdas vacías no son ausencia — son espacio para lo que viene. Cada nuevo vidrio se lanza como una pieza de colección: código, historia, y presencia visual antes de llegar al catálogo.</p>
+        </div>
+        <div class="gl-catalogo_proximas_right">
+          <div class="gl-catalogo_proximas_cells u-gap-collapse u-radius-inner-3">
+            <div class="gl-cell gl-cell_numbered-empty gl-catalogo_proximas_cell">
+              <div class="gl-home_catalog_cell-meta"><span class="gl-cell_code">054</span></div>
+              <span class="gl-cell_symbol gl-catalogo_proximas_symbol">?</span>
+              <div class="gl-home_catalog_cell-meta"><span class="gl-cell_name">Próximamente</span></div>
+            </div>
+            <div class="gl-cell gl-cell_numbered-empty gl-catalogo_proximas_cell">
+              <div class="gl-home_catalog_cell-meta"><span class="gl-cell_code">055</span></div>
+              <span class="gl-cell_symbol gl-catalogo_proximas_symbol">?</span>
+              <div class="gl-home_catalog_cell-meta"><span class="gl-cell_name">Próximamente</span></div>
+            </div>
+            <div class="gl-cell gl-cell_numbered-empty gl-catalogo_proximas_cell">
+              <div class="gl-home_catalog_cell-meta"><span class="gl-cell_code">056</span></div>
+              <span class="gl-cell_symbol gl-catalogo_proximas_symbol">?</span>
+              <div class="gl-home_catalog_cell-meta"><span class="gl-cell_name">Próximamente</span></div>
+            </div>
+          </div>
+          <a href="gl-contacto.html" class="gl-catalogo_proximas_cta gl-link-reset">
+            <span class="gl-mono">Ser el primero en saber &nbsp;→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- THEME TRANSITION (reusable SVG bar wipe — swap SVG to change) -->
+    <!-- ============================================================ -->
+
+</main>
+
+  <!-- ============================================================ -->
+  <!-- FOOTER                                                        -->
+  <!-- ============================================================ -->
+  <footer class="gl-home_footer" role="contentinfo">
+    <div class="gl-home_footer_inner">
+      <div class="gl-home_footer_grid">
+        <div class="gl-home_footer_col">
+          <div class="gl-home_footer_brand">
+            <svg class="gl-home_footer_brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 665 289.34" fill="currentColor" aria-label="Glass Lab">
+              <path d="M289.34,65.26h143.22c1.18-1.95,1.51-2.5,2.7-4.45l-13.87-18.41h-188.51c-1.18,1.95-1.51,2.5-2.7,4.45l14.48,18.41h44.68Z"/>
+              <path d="M244.01,109.48h91.29c1.18-1.95,1.51-2.5,2.7-4.45l-13.87-18.41h-91.68c-1.18,1.95-1.51,2.5-2.7,4.45l13.87,18.41h.4Z"/>
+              <path d="M341.27,22.86h91.29c1.18-1.95,1.51-2.5,2.7-4.45l-13.87-18.41h-91.68c-1.18,1.95-1.51,2.5-2.7,4.45l13.87,18.41h.4Z"/>
+              <path d="M60.24,243.36h-28.68c-5.17,0-7.77-2.15-7.77-5.6s2.73-5.62,7.07-5.62h13.69c12.97,0,37.18-3.61,37.18-26.38,0-4.74-1.02-8.65-2.73-11.81h11.38v-13.26h-32.57c-4.9-1.02-9.51-1.31-13.26-1.31-12.98,0-37.04,3.61-37.04,26.38,0,10.23,4.75,16.58,11.25,20.46-6.5,1.31-11.54,6.21-11.54,13.12,0,5.76,3.16,8.92,5.33,10.37-5.62,1.74-12.54,6.48-12.54,16.44,0,14.41,14.57,23.2,45.4,23.2,28.82,0,46.55-7.36,46.55-25.36,0-13.41-10.52-20.62-31.71-20.62ZM44.54,192.78c14.12,0,21.03,4.75,21.03,12.97s-6.91,12.83-21.03,12.83-20.91-4.61-20.91-12.83,6.78-12.97,20.91-12.97ZM44.54,275.07c-20.33,0-28.25-3.46-28.25-9.8,0-4.74,4.33-8.06,11.25-8.06h35.44c7.65,0,12.4,2.44,12.4,7.34,0,5.78-7.34,10.52-30.83,10.52Z"/>
+              <path d="M168.23,180.68h-37.76v13.98h37.04c16.71,0,21.19,5.9,21.19,12.83v1.72h-37.04c-21.19,0-30.83,9.8-30.83,22.63,0,13.98,12.54,24.5,36.3,24.5,15.43,0,26.24-4.04,31.71-9.51v8.2s16.15,0,16.15,0v-48.13c0-14.7-10.95-26.22-36.75-26.22ZM188.7,226.08c0,9.08-8.79,16.58-29.11,16.58-15.99,0-22.2-4.2-22.2-10.95,0-6.35,5.62-9.53,15-9.53h36.32v3.9Z"/>
+              <path d="M264.6,211.37l-20.03-2.6c-9.65-1.29-13.55-3.46-13.55-7.63,0-5.49,7.36-8.51,20.46-8.51,15.13,0,23.06,4.04,23.78,11.25h16.15c0-14.41-12.69-24.5-39.05-24.5-24.08,0-37.76,9.37-37.76,22.79,0,12.11,10.09,18.73,26.65,20.74l19.6,2.46c11.97,1.58,15.99,4.04,15.99,8.06,0,5.49-7.63,8.79-22.61,8.79-16.44,0-24.8-2.44-26.67-11.95h-16.42c1.02,16.28,15.7,26.09,42.37,26.09,22.47,0,40.07-8.22,40.07-23.78,0-11.97-10.09-18.59-28.98-21.19Z"/>
+              <path d="M353.19,211.37l-20.03-2.6c-9.67-1.29-13.55-3.46-13.55-7.63,0-5.49,7.36-8.51,20.46-8.51,15.13,0,23.06,4.04,23.78,11.25h16.15c0-14.41-12.69-24.5-39.05-24.5-24.07,0-37.76,9.37-37.76,22.79,0,12.11,10.08,18.73,26.65,20.74l19.6,2.46c11.97,1.58,15.99,4.04,15.99,8.06,0,5.49-7.63,8.79-22.61,8.79-16.44,0-24.8-2.44-26.67-11.95h-16.42c1,16.28,15.7,26.09,42.37,26.09,22.47,0,40.05-8.22,40.05-23.78,0-11.97-10.07-18.59-28.96-21.19Z"/>
+              <path d="M496.91,180.68h-37.76v13.98h37.04c16.71,0,21.19,5.9,21.19,12.83v1.72h-37.04c-21.19,0-30.85,9.8-30.85,22.63,0,13.98,12.54,24.5,36.32,24.5,15.43,0,26.24-4.04,31.71-9.51v8.2h16.15v-48.13c0-14.7-10.95-26.22-36.75-26.22ZM517.38,226.08c0,9.08-8.81,16.58-29.11,16.58-16.01,0-22.2-4.2-22.2-10.95,0-6.35,5.62-9.53,15-9.53h36.32v3.9Z"/>
+              <path d="M590.31,179.37c-16.15,0-26.38,5.62-31.55,11.4v-40.43c-1.41-.85-1.8-1.09-3.2-1.94l-13.24,9.98v96.65h16.44v-9.51c5.76,5.92,15.41,10.82,31.55,10.82,27.53,0,44.25-15.13,44.25-38.62,0-22.06-15-38.35-44.25-38.35ZM588.14,241.77c-18.6,0-27.71-8.93-29.39-20.12v-7.8c1.69-11.09,10.89-19.91,29.39-19.91,21.48,0,29.83,10.95,29.83,23.78s-8.36,24.06-29.83,24.06Z"/>
+              <path d="M98.17,158.38v96.65h16.44v-104.69c-1.41-.85-1.8-1.09-3.2-1.94l-13.24,9.98Z"/>
+              <path d="M424.4,158.38v96.65h16.44v-104.69c-1.41-.85-1.8-1.09-3.2-1.94l-13.24,9.98Z"/>
+              <path d="M663.06,237.17h-19.31l-9.98,14.66c.85,1.41,1.09,1.8,1.94,3.2h19.31l9.98-14.67c-.85-1.41-1.09-1.8-1.94-3.2Z"/>
+            </svg>
+            <svg class="gl-home_footer_brand-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 205.51 109.48" fill="currentColor" aria-hidden="true">
+              <path d="M191.64,42.4H3.13c-1.18,1.95-1.51,2.5-2.7,4.45l14.48,18.41h187.9c1.18-1.95,1.51-2.5,2.7-4.45l-13.87-18.41Z"/>
+              <path d="M92.43,86.63H2.7c-1.18,1.95-1.51,2.5-2.7,4.45l13.87,18.41h91.68c1.18-1.95,1.51-2.5,2.7-4.45l-13.87-18.41h-1.95Z"/>
+              <path d="M111.53,22.86h91.29c1.18-1.95,1.51-2.5,2.7-4.45L191.64,0h-91.68c-1.18,1.95-1.51,2.5-2.7,4.45l13.87,18.41h.4Z"/>
+            </svg>
+          </div>
+          <p class="gl-mono gl-mono_muted gl-home_footer_brand-desc">Laboratorio experimental de vidrio</p>
+          <p class="gl-mono gl-mono_muted">Panama City, Panama</p>
+        </div>
+        <div class="gl-home_footer_col">
+          <span class="gl-mono gl-mono_label gl-home_footer_col-title">Navegacion</span>
+          <a href="gl-catalogo.html" class="gl-home_footer_link">Catalogo</a>
+          <a href="gl-instalaciones.html" class="gl-home_footer_link">Instalaciones</a>
+          <a href="gl-laboratorio.html" class="gl-home_footer_link">Estudio</a>
+          <a href="gl-contacto.html" class="gl-home_footer_link">Contacto</a>
+          <a href="https://perniaglass.com/" class="gl-home_footer_link">Pernia Glass</a>
+        </div>
+        <div class="gl-home_footer_col">
+          <span class="gl-mono gl-mono_label gl-home_footer_col-title">Contacto</span>
+          <a href="mailto:proyectos@glasslb.com" class="gl-home_footer_link">proyectos@glasslb.com</a>
+          <a href="tel:+50761272034" class="gl-home_footer_link">+507 6127-2034</a>
+          <a href="https://wa.me/50761272034" class="gl-home_footer_link" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+        <div class="gl-home_footer_col">
+          <span class="gl-mono gl-mono_label gl-home_footer_col-title">Social</span>
+          <a href="https://www.instagram.com/glasslb_/" class="gl-home_footer_link" target="_blank" rel="noopener">Instagram</a>
+          <span class="gl-mono gl-mono_label gl-home_footer_col-title gl-home_footer_col-title_spaced">Legal</span>
+          <a href="legal-privacidad.html" class="gl-home_footer_link">Privacidad</a>
+          <a href="legal-terminos.html" class="gl-home_footer_link">Terminos</a>
+          <a href="legal-cookies.html" class="gl-home_footer_link">Cookies</a>
+        </div>
+      </div>
+      <div class="gl-home_footer_newsletter">
+        <div>
+          <span class="gl-mono gl-mono_muted">NEWSLETTER</span>
+          <p class="u-text-style-main gl-mono_muted gl-home_footer_newsletter-desc">Vidrio, luz y material. Sin spam.</p>
+        </div>
+        <div class="gl-home_footer_newsletter-form">
+          <input type="email" class="gl-filter-input gl-home_footer_newsletter-input" data-nl-input placeholder="tu@email.com" aria-label="Tu correo electrónico" autocomplete="email" required>
+          <div class="gl-btn_skew_wrap">
+            <svg class="gl-btn_skew_shape" viewBox="0 0 240 56" preserveAspectRatio="none" fill="none">
+              <path d="M16,1 L239,1 L239,42 L224,55 L1,55 L1,14 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="miter" vector-effect="non-scaling-stroke"/>
+            </svg>
+            <button type="button" data-nl-submit class="gl-btn_skew_element gl-btn_skew_element_sm"><span class="gl-btn_skew_text gl-btn_skew_text_sm">Suscribir &gt;&gt;&gt;</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="gl-home_footer_bottom">
+        <span class="gl-mono gl-mono_muted">2026 Glass Lab. Todos los derechos reservados.</span>
+        <span class="gl-mono gl-mono_muted">Designed by Van Alva</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data-loader.js?v=af676964"></script>
+  <!-- flwr runtime — provides data-flwr="list" filter engine -->
+  <script src="js/flwr-runtime.js?v=3894ca2a"></script>
+  <script src="js/page-catalogo.js?v=e263eede"></script>
+
+  <script>
+  /* ── Grid corner radius — neighbor detection ──────────────────────
+     All cells default to radius--subtle on all 4 corners (CSS).
+     This script zeroes any corner that touches an adjacent cell,
+     so only true outer corners stay rounded.
+
+     Two modes:
+     • Desktop (>991px) — 18-col explicit grid: uses data-r/data-c
+       to detect actual periodic-table neighbors. Special gap between
+       rows 7 and 8 (spacer grid-row keeps them visually apart).
+     • Reflow (≤991px) — auto-fit grid: reads the computed column
+       count from the browser and uses DOM index position to find
+       neighbors (cells flow in DOM order in this mode).
+  ────────────────────────────────────────────────────────────────── */
+  (function () {
+    var GRID = document.getElementById('gl-catalogo-grid');
+    if (!GRID) return;
+
+    function applyCorners() {
+      var cells = Array.from(GRID.querySelectorAll('.gl-cell[data-r][data-c]'));
+
+      if (window.innerWidth > 991) {
+        /* ── Desktop: data-r/data-c neighbor detection ── */
+        var occupied = new Set();
+        cells.forEach(function (c) {
+          occupied.add(c.dataset.r + ',' + c.dataset.c);
+        });
+
+        cells.forEach(function (cell) {
+          var r = +cell.dataset.r;
+          var c = +cell.dataset.c;
+          var hasAbove = r !== 8 && occupied.has((r - 1) + ',' + c);
+          var hasBelow = r !== 7 && occupied.has((r + 1) + ',' + c);
+          var hasLeft  = occupied.has(r + ',' + (c - 1));
+          var hasRight = occupied.has(r + ',' + (c + 1));
+
+          cell.style.borderTopLeftRadius     = (hasAbove || hasLeft)  ? '0px' : '';
+          cell.style.borderTopRightRadius    = (hasAbove || hasRight) ? '0px' : '';
+          cell.style.borderBottomLeftRadius  = (hasBelow || hasLeft)  ? '0px' : '';
+          cell.style.borderBottomRightRadius = (hasBelow || hasRight) ? '0px' : '';
+        });
+
+      } else {
+        /* ── Reflow: index-based neighbor detection ── */
+        /* Read how many columns the auto-fit grid actually made. */
+        var colStr = getComputedStyle(GRID).gridTemplateColumns;
+        var N = colStr.trim().split(/\s+/).length;
+        var total = cells.length;
+
+        cells.forEach(function (cell, i) {
+          var hasAbove = i >= N;
+          var hasBelow = i + N < total;
+          var hasLeft  = i % N !== 0;
+          var hasRight = (i + 1) % N !== 0 && i + 1 < total;
+
+          cell.style.borderTopLeftRadius     = (hasAbove || hasLeft)  ? '0px' : '';
+          cell.style.borderTopRightRadius    = (hasAbove || hasRight) ? '0px' : '';
+          cell.style.borderBottomLeftRadius  = (hasBelow || hasLeft)  ? '0px' : '';
+          cell.style.borderBottomRightRadius = (hasBelow || hasRight) ? '0px' : '';
+        });
+      }
+    }
+
+    /* Defer first run so the browser has computed layout. */
+    requestAnimationFrame(applyCorners);
+    window.addEventListener('resize', function () {
+      requestAnimationFrame(applyCorners);
+    }, { passive: true });
+  })();
+  </script>
+
+  <script>
+  /* ── Search / filter / monogram interaction → scroll full search area to top */
+  (() => {
+    const anchor = document.querySelector('.gl-catalogo_monogram-wrap');
+    if (!anchor) return;
+
+    const scrollSearchAreaToTop = () => {
+      const rect = anchor.getBoundingClientRect();
+      const breathingRoom = 16;
+      // Position the monogram-wrap top near viewport top (16px breathing).
+      // This pushes the title block fully above the viewport, regardless of nav visibility.
+      const targetY = window.scrollY + rect.top - breathingRoom;
+      if (Math.abs(window.scrollY - targetY) < 4) return; // already there, skip
+      window.scrollTo({ top: targetY, behavior: 'smooth' });
+    };
+
+    // Search input: focus
+    const search = document.querySelector('.gl-filter-search-input');
+    if (search) search.addEventListener('focus', scrollSearchAreaToTop);
+
+    // Filter pills + SiO₂ monogram cell: click — delayed so it fires after
+    // flwr-runtime's scroll-to-first-result (which runs ~50ms after the click)
+    const deferredScroll = () => setTimeout(scrollSearchAreaToTop, 120);
+    document.querySelectorAll('.gl-filter-radio-pill, .gl-filter-cat-pill, .gl-catalogo_monogram-cell').forEach(el => {
+      el.addEventListener('click', deferredScroll);
+    });
+  })();
+  </script>
+
+  <!-- GSAP -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js'></script>
+  <script src='js/gl-nav-scroll.js?v=652db92a'></script>
+  <script src='js/gl-catalogo-animations.js?v=7bf54d23'></script>
+  <script src='js/gl-wavy-bend.js?v=9cfc9d3b'></script>
+
+  <!-- FULLSCREEN MENU -->
+  <aside class="gl-dock" aria-label="Navegacion flotante">
+    <div class="gl-dock_inner">
+      <a href="gl-index.html" class="gl-dock_logo" aria-label="Glass Lab — inicio">
+        <img src="assets/logos/gl-isologo-white.svg" alt="">
+      </a>
+      <span class="gl-dock_divider" aria-hidden="true"></span>
+      <a href="gl-catalogo.html" class="gl-dock_link">Catalogo</a>
+      <a href="gl-visor.html" class="gl-dock_link">Visor</a>
+      <a href="gl-contacto.html" class="gl-dock_link">Contacto</a>
+      <span class="gl-dock_divider" aria-hidden="true"></span>
+      <div class="gl-dock_toggle_wrap">
+        <button type="button" class="gl-dock_toggle" aria-label="Mas opciones" aria-haspopup="menu">
+          <span class="gl-dock_toggle_icon" aria-hidden="true"></span>
+        </button>
+        <div class="gl-dock_popover" role="menu">
+          <a href="gl-laboratorio.html" class="gl-dock_popover_link" role="menuitem">Estudio</a>
+          <a href="gl-instalaciones.html" class="gl-dock_popover_link" role="menuitem">Instalaciones</a>
+          <a href="gl-blog.html" class="gl-dock_popover_link" role="menuitem">Diario</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="gl-menu u-theme-dark" id="gl-menu" role="dialog" aria-modal="true" aria-label="Menu de navegacion">
+    <div class="gl-menu_header">
+      <img src="assets/logos/gl-logotipo-h-white.svg" alt="Glass Lab" class="gl-menu_header-logo" style="height:1.5rem">
+      <button class="gl-menu_close" aria-label="Cerrar menu">
+        <span>Cerrar</span>
+        <span class="gl-menu_close-icon"></span>
+      </button>
+    </div>
+    <nav class="gl-menu_nav">
+      <ul class="gl-menu_items">
+        <li class="gl-menu_item"><a href="gl-index.html" class="gl-menu_link"><span class="gl-menu_link-num">01</span><span class="gl-menu_link-text">Inicio</span><span class="gl-menu_link-arrow">→</span></a></li>
+        <li class="gl-menu_item"><a href="gl-catalogo.html" class="gl-menu_link"><span class="gl-menu_link-num">02</span><span class="gl-menu_link-text">Catalogo</span><span class="gl-menu_link-arrow">→</span></a></li>
+        <li class="gl-menu_item"><a href="gl-visor.html" class="gl-menu_link"><span class="gl-menu_link-num">03</span><span class="gl-menu_link-text">Visor</span><span class="gl-menu_link-arrow">→</span></a></li>
+        <li class="gl-menu_item"><a href="gl-instalaciones.html" class="gl-menu_link"><span class="gl-menu_link-num">04</span><span class="gl-menu_link-text">Instalaciones</span><span class="gl-menu_link-arrow">→</span></a></li>
+        <li class="gl-menu_item"><a href="gl-laboratorio.html" class="gl-menu_link"><span class="gl-menu_link-num">05</span><span class="gl-menu_link-text">Estudio</span><span class="gl-menu_link-arrow">→</span></a></li>
+        <li class="gl-menu_item"><a href="gl-blog.html" class="gl-menu_link"><span class="gl-menu_link-num">06</span><span class="gl-menu_link-text">Diario</span><span class="gl-menu_link-arrow">→</span></a></li>
+        <li class="gl-menu_item"><a href="gl-contacto.html" class="gl-menu_link"><span class="gl-menu_link-num">07</span><span class="gl-menu_link-text">Contacto</span><span class="gl-menu_link-arrow">→</span></a></li>
+        <!-- Chat lives in the menu instead of a floating launcher — the old
+             button sat on top of the dock on mobile. gl-menu.js closes the
+             menu and then clicks the off-screen [data-vanny-toggle]. -->
+        <li class="gl-menu_item"><button type="button" class="gl-menu_link" data-gl-chat><span class="gl-menu_link-num">08</span><span class="gl-menu_link-text">Chat</span><span class="gl-menu_link-arrow">&rarr;</span></button></li>
+      </ul>
+    </nav>
+    <div class="gl-menu_footer">
+      <div class="gl-menu_footer-brand">
+        <a href="https://perniaglass.com/" class="gl-menu_footer-link">Pernia Glass →</a>
+        <span class="gl-mono gl-mono_muted">Panama City, Panama</span>
+      </div>
+      <span class="gl-menu_footer-lang">ES / EN</span>
+    </div>
+  </div>
+  <script src='js/gl-menu.js?v=6026605e'></script>
+  <script src="js/gl-interactions.js?v=5e94091b"></script>
+  <script src="js/gl-spline-poster.js?v=5959e4f6"></script>
+  <script src="js/gl-preloader.js?v=d33052c5"></script>
+  <script src="js/gl-page-transition.js?v=6f4350e2"></script>
+  <script src="js/gl-theme-transition.js?v=6f8154b4"></script>
+  <script src="js/newsletter.js?v=6d3257eb"></script>
+  <script src="js/gl-dock-vitrina.js?v=ade98636"></script>
+  <script src="js/gl-dock.js?v=b71aab41"></script>
+  <!-- vanny-widget -->
+  <!-- vanny chat launcher: floating GL-CHAT button, DESKTOP ONLY. Hidden at
+       <=991px via .vanny-widget-launch, where chat is reached from the "Chat"
+       entry in the fullscreen menu instead. That menu item clicks this same
+       [data-vanny-toggle]; the widget shows/hides this element itself. -->
+  <button type="button" class="gl-btn_skew_wrap gl-btn_skew_wrap_brand vanny-widget-launch" data-vanny-toggle aria-label="Hablar con GL">
+    <svg class="gl-btn_skew_shape" viewBox="0 0 240 56" preserveAspectRatio="none" fill="none"><path d="M16,1 L239,1 L239,42 L224,55 L1,55 L1,14 Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="miter" vector-effect="non-scaling-stroke"/></svg>
+    <span class="gl-btn_skew_element gl-btn_skew_element_sm"><span class="gl-btn_skew_text gl-btn_skew_text_sm">GL &mdash; CHAT</span></span>
+  </button>
+  <script src="https://vanny.chat/vanny-widget.js" data-tenant="glass-lab" async></script>
+</body>
+</html>

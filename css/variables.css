@@ -1,0 +1,499 @@
+/* ═══════════════════════════════════════════════════════════════════
+   Glass Lab + Pernia Glass — Design System Variables
+   Framework: LUMOS
+   Source: Wireframe extraction (minimal brutalist aesthetic)
+
+   Two themes sharing one variable system:
+   - Glass Lab  → u-theme-dark  (dark bg, white text)
+   - Pernia Glass → u-theme-light (white bg, dark text)
+
+   The accent color #1400FF (electric blue) is the brand differentiator.
+   Zero border-radius throughout — brutalist sharp corners.
+   ═══════════════════════════════════════════════════════════════════ */
+
+
+@font-face {
+    font-family: 'Mainframe';
+    src: url('../assets/fonts/Mainframe-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+
+/* ── Viewport Scale ──────────────────────────────────── */
+/* LUMOS fluid system anchors: 20rem min → 90rem max */
+/* These feed into all clamp() calculations below */
+
+
+/* ── Primitive Swatches ──────────────────────────────── */
+
+/* Dark end */
+--swatch--dark-900: #0B0B0B;
+--swatch--dark-800: #1a1a1a;
+--swatch--dark-900-o20: color-mix(in srgb, var(--swatch--dark-900) 20%, transparent);
+
+/* Light end */
+--swatch--light-100: #ede7dd;
+--swatch--light-200: #f5f5f0;
+--swatch--light-100-o20: color-mix(in srgb, var(--swatch--light-100) 20%, transparent);
+
+/* Brand accent (electric blue) */
+--swatch--brand-500: #1400FF;
+--swatch--brand-400: color-mix(in srgb, var(--swatch--brand-500), white 20%);
+--swatch--brand-300: color-mix(in srgb, var(--swatch--brand-500), white 40%);
+--swatch--brand-200: color-mix(in srgb, var(--swatch--brand-500), white 60%);
+--swatch--brand-100: color-mix(in srgb, var(--swatch--brand-500), white 80%);
+--swatch--brand-600: color-mix(in srgb, var(--swatch--brand-500), black 20%);
+--swatch--brand-700: color-mix(in srgb, var(--swatch--brand-500), black 40%);
+--swatch--brand-800: color-mix(in srgb, var(--swatch--brand-500), black 60%);
+--swatch--brand-900: color-mix(in srgb, var(--swatch--brand-500), black 80%);
+--swatch--brand-text: var(--swatch--light-100);
+--swatch--brand-text-o20: color-mix(in srgb, var(--swatch--brand-text) 20%, transparent);
+--swatch--transparent: transparent;
+
+/* Material palette (from Pernia Glass system swatches) */
+--swatch--material-gold: #c9a84c;
+--swatch--material-burgundy: #4a1520;
+--swatch--material-navy: #1a3a5c;
+--swatch--material-bronze: #b08d6e;
+--swatch--material-walnut: #5c4a3a;
+--swatch--material-forest: #3a4a2a;
+--swatch--material-amber: #8a5a2a;
+--swatch--material-silver: #c0c0c0;
+
+
+/* ── Theme: Default (matches Light / Pernia Glass) ───── */
+
+--_theme---background: var(--swatch--light-100);
+--_theme---background-2: var(--swatch--light-200);
+--_theme---text: var(--swatch--dark-900);
+--_theme---heading-accent: var(--swatch--brand-500);
+--_theme---border: var(--swatch--dark-900-o20);
+--_theme---background-skeleton: color-mix(in lab, currentcolor 10%, transparent);
+
+/* Button primary: brand accent */
+--_theme---button-primary--text: var(--swatch--brand-text);
+--_theme---button-primary--text-hover: var(--_theme---background);
+--_theme---button-primary--background: var(--swatch--brand-500);
+--_theme---button-primary--background-hover: var(--_theme---text);
+--_theme---button-primary--border: var(--_theme---button-primary--background);
+--_theme---button-primary--border-hover: var(--_theme---button-primary--background-hover);
+
+/* Button secondary: ghost/outline (the wireframe btn-sharp) */
+--_theme---button-secondary--text: var(--_theme---text);
+--_theme---button-secondary--text-hover: var(--_theme---background);
+--_theme---button-secondary--background: var(--swatch--transparent);
+--_theme---button-secondary--background-hover: var(--_theme---text);
+--_theme---button-secondary--border: var(--_theme---border);
+--_theme---button-secondary--border-hover: var(--_theme---button-secondary--background-hover);
+
+/* Links */
+--_theme---text-link--border: var(--_theme---border);
+--_theme---text-link--text: var(--_theme---text);
+--_theme---text-link--text-hover: var(--_theme---text-link--text);
+--_theme---text-link--border-hover: var(--_theme---text);
+
+/* Selection */
+--_theme---selection--background: var(--swatch--brand-300);
+--_theme---selection--text: var(--swatch--brand-text);
+
+/* Nav */
+--_theme---nav--background: var(--_theme---background-2);
+
+
+/* ── Typography ──────────────────────────────────────── */
+
+/* Primary: Display / headings — Host Grotesk (Google Fonts, variable 300..800).
+   Was 'Roobert', which was never loaded anywhere — no @font-face, no CDN link,
+   no file on disk — so all 114 declarations using this token silently fell back
+   to system-ui. Pages load it via the Google Fonts <link> in <head>. */
+--_typography---font--primary-family: 'Host Grotesk', system-ui, sans-serif;
+--_typography---font--primary-regular: 400;
+--_typography---font--primary-medium: 500;
+--_typography---font--primary-bold: 700;
+--_typography---font--primary-trim-top: .33em;
+--_typography---font--primary-trim-bottom: .38em;
+
+/* Secondary: Monospace — body, UI labels, navigation, buttons (brand book: JetBrains Mono) */
+--_typography---font--secondary-family: 'Mainframe', 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+/* Line heights */
+--_typography---line-height--tightest:  0.9;
+--_typography---line-height--tighter:   0.95;
+--_typography---line-height--small: 1;
+--_typography---line-height--compact:   1.05;
+--_typography---line-height--snug:      1.15;
+--_typography---line-height--medium: 1.1;
+--_typography---line-height--large: 1.3;
+--_typography---line-height--relaxed:   1.35;
+--_typography---line-height--huge: 1.6;
+--_typography---line-height--loose:     1.75;
+
+/* Letter spacing */
+--_typography---letter-spacing--tight: -0.03em;
+--_typography---letter-spacing--normal: 0em;
+--_typography---letter-spacing--negative-lg: -0.04em;
+--_typography---letter-spacing--negative-md: -0.02em;
+--_typography---letter-spacing--negative-sm: -0.01em;
+--_typography---letter-spacing--wide-sm:      0.04em;
+--_typography---letter-spacing--wide-md:      0.08em;
+--_typography---letter-spacing--wide-lg:      0.12em;
+--_typography---letter-spacing--wide-xl:      0.25em;
+
+/* Text transforms */
+--_typography---text-transform--none: none;
+--_typography---text-transform--uppercase: uppercase;
+--_typography---text-transform--capitalize: capitalize;
+--_typography---text-transform--lowercase: lowercase;
+
+/* Fluid type scale (LUMOS clamp formula) */
+/* Display: wireframe 2.5rem → 5rem */
+--_typography---font-size--display: clamp(4 * 1rem, ((4 - ((7 - 4) / (90 - 20) * 20)) * 1rem + ((7 - 4) / (90 - 20)) * 100vw), 7 * 1rem);
+
+/* ── Extended scale (added for glass-lab project) ── */
+--_typography---font-size--h: clamp(1.75 * 1rem, ((1.75 - ((2.5 - 1.75) / (90 - 20) * 20)) * 1rem + ((2.5 - 1.75) / (90 - 20)) * 100vw), 2.5 * 1rem);
+--_typography---font-size--h-section: clamp(2 * 1rem, ((2 - ((3.5 - 2) / (90 - 20) * 20)) * 1rem + ((3.5 - 2) / (90 - 20)) * 100vw), 3.5 * 1rem);
+--_typography---font-size--h-subhead: clamp(1.125 * 1rem, ((1.125 - ((1.375 - 1.125) / (90 - 20) * 20)) * 1rem + ((1.375 - 1.125) / (90 - 20)) * 100vw), 1.375 * 1rem);
+--_typography---font-size--label-lg: clamp(.875 * 1rem, ((.875 - ((1 - .875) / (90 - 20) * 20)) * 1rem + ((1 - .875) / (90 - 20)) * 100vw), 1 * 1rem);
+--_typography---font-size--label: clamp(.75 * 1rem, ((.75 - ((.875 - .75) / (90 - 20) * 20)) * 1rem + ((.875 - .75) / (90 - 20)) * 100vw), .875 * 1rem);
+--_typography---font-size--label-sm: clamp(.625 * 1rem, ((.625 - ((.75 - .625) / (90 - 20) * 20)) * 1rem + ((.75 - .625) / (90 - 20)) * 100vw), .75 * 1rem);
+
+/* Cell symbol — periodic-table cell glyphs. Custom 62em→120em bounds (992px→1920px) because
+   the 18-col layout only exists in that range; below 992px we reflow to auto-fit and use h4/h5. */
+--_typography---font-size--cell-symbol: clamp(.875 * 1rem, ((.875 - ((2 - .875) / (120 - 62) * 62)) * 1rem + ((2 - .875) / (120 - 62)) * 100vw), 2 * 1rem);
+
+/* ── Display / hero sizes ── */
+--_typography---font-size--hero:    clamp(2.5rem,  7vw,  6rem);
+--_typography---font-size--jumbo:   clamp(5rem,   12vw, 10rem);
+--_typography---font-size--menu:    clamp(2.5rem,  6vw,  5.5rem);
+--_typography---font-size--404:     clamp(8rem,   20vw, 16rem);
+
+/* H1: wireframe 2rem → 3.5rem */
+--_typography---font-size--h1: clamp(3 * 1rem, ((3 - ((5 - 3) / (90 - 20) * 20)) * 1rem + ((5 - 3) / (90 - 20)) * 100vw), 5 * 1rem);
+
+/* H2: wireframe 1.5rem → 2.5rem */
+--_typography---font-size--h2: clamp(2.5 * 1rem, ((2.5 - ((4 - 2.5) / (90 - 20) * 20)) * 1rem + ((4 - 2.5) / (90 - 20)) * 100vw), 4 * 1rem);
+
+/* H3: wireframe 1.25rem → 1.5rem */
+--_typography---font-size--h3: clamp(2.25 * 1rem, ((2.25 - ((3 - 2.25) / (90 - 20) * 20)) * 1rem + ((3 - 2.25) / (90 - 20)) * 100vw), 3 * 1rem);
+
+/* H4 */
+--_typography---font-size--h4: clamp(1.75 * 1rem, ((1.75 - ((2 - 1.75) / (90 - 20) * 20)) * 1rem + ((2 - 1.75) / (90 - 20)) * 100vw), 2 * 1rem);
+
+/* H5 */
+--_typography---font-size--h5: clamp(1.375 * 1rem, ((1.375 - ((1.5 - 1.375) / (90 - 20) * 20)) * 1rem + ((1.5 - 1.375) / (90 - 20)) * 100vw), 1.5 * 1rem);
+
+/* H6 */
+--_typography---font-size--h6: clamp(1 * 1rem, ((1 - ((1.125 - 1) / (90 - 20) * 20)) * 1rem + ((1.125 - 1) / (90 - 20)) * 100vw), 1.125 * 1rem);
+
+/* Body */
+--_typography---font-size--text-main: clamp(1 * 1rem, ((1 - ((1.375 - 1) / (90 - 20) * 20)) * 1rem + ((1.375 - 1) / (90 - 20)) * 100vw), 1.375 * 1rem);
+--_typography---font-size--text-large: clamp(1.25 * 1rem, ((1.25 - ((2 - 1.25) / (90 - 20) * 20)) * 1rem + ((2 - 1.25) / (90 - 20)) * 100vw), 2 * 1rem);
+--_typography---font-size--text-small: clamp(.875 * 1rem, ((.875 - ((1 - .875) / (90 - 20) * 20)) * 1rem + ((1 - .875) / (90 - 20)) * 100vw), 1 * 1rem);
+
+
+/* ── Text Style Defaults ─────────────────────────────── */
+
+--_text-style---font-family: var(--_typography---font--secondary-family);
+--_text-style---font-size: var(--_typography---font-size--text-main);
+--_text-style---line-height: var(--_typography---line-height--huge);
+--_text-style---font-weight: var(--_typography---font--primary-regular);
+--_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
+--_text-style---text-wrap: pretty;
+--_text-style---text-transform: var(--_typography---text-transform--none);
+--_text-style---margin-top: var(--_spacing---space--4);
+--_text-style---margin-bottom: var(--_spacing---space--4);
+--_text-style---trim-top: var(--_typography---font--primary-trim-top);
+--_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
+
+
+/* ── Spacing (Fluid 8-Point Scale) ───────────────────── */
+
+/* space--1: ~6-8px (wireframe xs) */
+--_spacing---space--1: clamp(.375 * 1rem, ((.375 - ((.5 - .375) / (90 - 20) * 20)) * 1rem + ((.5 - .375) / (90 - 20)) * 100vw), .5 * 1rem);
+
+/* space--2: ~10-12px (wireframe sm) */
+--_spacing---space--2: clamp(.625 * 1rem, ((.625 - ((.75 - .625) / (90 - 20) * 20)) * 1rem + ((.75 - .625) / (90 - 20)) * 100vw), .75 * 1rem);
+
+/* space--3: ~14-16px */
+--_spacing---space--3: clamp(.875 * 1rem, ((.875 - ((1 - .875) / (90 - 20) * 20)) * 1rem + ((1 - .875) / (90 - 20)) * 100vw), 1 * 1rem);
+
+/* space--4: ~20-24px (wireframe md) */
+--_spacing---space--4: clamp(1.25 * 1rem, ((1.25 - ((1.5 - 1.25) / (90 - 20) * 20)) * 1rem + ((1.5 - 1.25) / (90 - 20)) * 100vw), 1.5 * 1rem);
+
+/* space--5: ~28-32px (wireframe lg) */
+--_spacing---space--5: clamp(1.75 * 1rem, ((1.75 - ((2 - 1.75) / (90 - 20) * 20)) * 1rem + ((2 - 1.75) / (90 - 20)) * 100vw), 2 * 1rem);
+
+/* space--6: ~32-40px */
+--_spacing---space--6: clamp(2 * 1rem, ((2 - ((2.5 - 2) / (90 - 20) * 20)) * 1rem + ((2.5 - 2) / (90 - 20)) * 100vw), 2.5 * 1rem);
+
+/* space--7: ~36-48px (wireframe xl) */
+--_spacing---space--7: clamp(2.25 * 1rem, ((2.25 - ((3 - 2.25) / (90 - 20) * 20)) * 1rem + ((3 - 2.25) / (90 - 20)) * 100vw), 3 * 1rem);
+
+/* space--8: ~40-64px (wireframe 2xl) */
+--_spacing---space--8: clamp(2.5 * 1rem, ((2.5 - ((4 - 2.5) / (90 - 20) * 20)) * 1rem + ((4 - 2.5) / (90 - 20)) * 100vw), 4 * 1rem);
+
+/* Section spacing */
+--_spacing---section-space--none: 0px;
+--_spacing---section-space--small: clamp(3 * 1rem, ((3 - ((5 - 3) / (90 - 20) * 20)) * 1rem + ((5 - 3) / (90 - 20)) * 100vw), 5 * 1rem);
+--_spacing---section-space--main: clamp(4 * 1rem, ((4 - ((7 - 4) / (90 - 20) * 20)) * 1rem + ((7 - 4) / (90 - 20)) * 100vw), 7 * 1rem);
+--_spacing---section-space--large: clamp(5.5 * 1rem, ((5.5 - ((10 - 5.5) / (90 - 20) * 20)) * 1rem + ((10 - 5.5) / (90 - 20)) * 100vw), 10 * 1rem);
+--_spacing---section-space--page-top: clamp(10 * 1rem, ((10 - ((14 - 10) / (90 - 20) * 20)) * 1rem + ((14 - 10) / (90 - 20)) * 100vw), 14 * 1rem);
+
+
+/* ── Component Spacing ───────────────────────────────── */
+
+/* Button padding — sm/md/lg. md values match default gl-btn_skew_element. */
+/* Note: skew buttons use asymmetric v-padding for optical alignment — see project.css. */
+--_spacing---component--button-sm-v:  0.7rem;
+--_spacing---component--button-sm-h:  1.25rem;
+--_spacing---component--button-md-v:  1.1rem;
+--_spacing---component--button-md-h:  1.75rem;
+--_spacing---component--button-lg-v:  1.4rem;
+--_spacing---component--button-lg-h:  2.5rem;
+
+
+/* ── Gap ─────────────────────────────────────────────── */
+
+--_gap---size: var(--site--gutter);
+
+
+/* ── Site Layout ─────────────────────────────────────── */
+
+--site--viewport-max: 90;
+--site--viewport-min: 20;
+--site--column-count: 12;
+--site--gutter: clamp(1 * 1rem, ((1 - ((2 - 1) / (90 - 20) * 20)) * 1rem + ((2 - 1) / (90 - 20)) * 100vw), 2 * 1rem);
+--site--margin: clamp(1 * 1rem, ((1 - ((3 - 1) / (90 - 20) * 20)) * 1rem + ((3 - 1) / (90 - 20)) * 100vw), 3 * 1rem);
+--max-width--main: calc(var(--site--viewport-max) * 1rem);
+--max-width--small: 50rem;
+--max-width--full: 100%;
+--site--column-width: calc((min(var(--max-width--main), 100% - var(--site--margin) * 2) - (var(--site--gutter) * (var(--site--column-count) - 1))) / var(--site--column-count));
+--site--column-split: 1fr 1.2fr;
+
+
+/* ── Section Height Modes ────────────────────────────── */
+/* Nav-aware height scale for hero and feature sections.
+   Use u-h-{mode} on any section element to set its height.
+   On Webflow paste these become @var_UUID bindings — editable
+   per-section in the Variables panel without touching CSS. */
+
+--section--height--full:   calc(100svh - var(--nav--height));
+--section--height--hero:   calc(80svh  - var(--nav--height));
+--section--height--large:  calc(65svh  - var(--nav--height));
+--section--height--medium: 50svh;
+
+
+/* ── Border Radius ───────────────────────────────────── */
+/* ZERO everywhere — brutalist sharp corners */
+
+--radius--main: 0px;
+--radius--small: 0px;
+--radius--round: 0px;
+
+
+/* ── Border Width ────────────────────────────────────── */
+
+--border-width--main: 1px;
+
+/* ── Border Divider Colors ───────────────────────────── */
+
+--_border---divider-color:    color-mix(in srgb, var(--_theme---text)  8%, transparent);
+--_border---divider-color-md: color-mix(in srgb, var(--_theme---text) 12%, transparent);
+--_border---divider-color-lg: color-mix(in srgb, var(--_theme---text) 20%, transparent);
+
+/* ── Radius ──────────────────────────────────────────── */
+
+--radius--subtle: 4px;
+
+
+/* ── Responsive Flags ────────────────────────────────── */
+
+--_responsive---large: 1;
+--_responsive---medium: 0;
+--_responsive---small: 0;
+--_responsive---xsmall: 0;
+
+
+/* ── Column Count ────────────────────────────────────── */
+
+--_column-count---value: 1;
+
+
+/* ── Trigger System ──────────────────────────────────── */
+
+--_trigger---on: 1;
+--_trigger---off: 0;
+--_state---false: 0;
+--_state---true: 1;
+
+
+/* ── Focus ───────────────────────────────────────────── */
+
+--focus--width: .125rem;
+--focus--offset-inner: calc(var(--focus--width) * -1);
+--focus--offset-outer: .1875rem;
+
+
+/* ── Nav ─────────────────────────────────────────────── */
+
+--nav--max-width-outer: var(--max-width--main);
+--nav--max-width-inner: var(--max-width--main);
+--nav--spacing-outer-horizontal: var(--site--margin);
+--nav--spacing-outer-vertical: var(--site--margin);
+--nav--spacing-inner-horizontal: var(--_spacing---space--5);
+--nav--radius: var(--radius--small);
+--nav--height: 4rem;
+--nav--height-total: calc(var(--nav--height) + var(--nav--spacing-outer-vertical));
+--nav--hamburger-thickness: var(--border-width--main);
+--nav--hamburger-gap: var(--_spacing---space--2);
+--nav--banner-height: 2.4rem;
+
+
+/* ── Dock ────────────────────────────────────────────── */
+
+--dock--height: 3.5rem;
+--dock--bottom-offset: var(--_spacing---space--5);
+--dock--clearance: calc(var(--dock--height) + var(--dock--bottom-offset) + var(--_spacing---space--3));
+
+
+/* ── Button Sizes ────────────────────────────────────── */
+
+--button-size--medium: 3rem;
+--button-size--large: 5rem;
+}
+
+/* ── Theme: Light (Pernia Glass default) ─────────────── */
+.u-theme-light {
+  background-color: var(--_theme---background);
+  color: var(--_theme---text);
+  --_theme---background: var(--swatch--light-100);
+  --_theme---text: var(--swatch--dark-900);
+  --_theme---background-2: var(--swatch--light-200);
+  --_theme---background-skeleton: color-mix(in lab, currentcolor 10%, transparent);
+  --_theme---heading-accent: var(--swatch--brand-500);
+  --_theme---border: var(--swatch--dark-900-o20);
+  --_theme---button-primary--text: var(--swatch--brand-text);
+  --_theme---button-primary--text-hover: var(--_theme---background);
+  --_theme---button-primary--background: var(--swatch--brand-500);
+  --_theme---button-primary--background-hover: var(--_theme---text);
+  --_theme---button-primary--border: var(--_theme---button-primary--background);
+  --_theme---button-primary--border-hover: var(--_theme---button-primary--background-hover);
+  --_theme---button-secondary--text: var(--_theme---text);
+  --_theme---button-secondary--text-hover: var(--_theme---background);
+  --_theme---button-secondary--background: var(--swatch--transparent);
+  --_theme---button-secondary--background-hover: var(--_theme---text);
+  --_theme---button-secondary--border: var(--_theme---border);
+  --_theme---button-secondary--border-hover: var(--_theme---button-secondary--background-hover);
+  --_theme---text-link--border: var(--_theme---border);
+  --_theme---text-link--text: var(--_theme---text);
+  --_theme---text-link--text-hover: var(--_theme---text-link--text);
+  --_theme---text-link--border-hover: var(--_theme---text);
+  --_theme---nav--background: var(--_theme---background-2);
+  --_theme---selection--background: var(--swatch--brand-300);
+  --_theme---selection--text: var(--swatch--brand-text);
+}
+
+/* ── Theme: Dark (Glass Lab default) ─────────────────── */
+.u-theme-dark {
+  background-color: var(--_theme---background);
+  color: var(--_theme---text);
+  --_theme---background: var(--swatch--dark-900);
+  --_theme---text: var(--swatch--light-100);
+  --_theme---background-2: var(--swatch--dark-800);
+  --_theme---background-skeleton: color-mix(in lab, currentcolor 10%, transparent);
+  --_theme---heading-accent: var(--swatch--brand-500);
+  --_theme---border: var(--swatch--light-100-o20);
+  --_theme---button-primary--text: var(--swatch--brand-text);
+  --_theme---button-primary--text-hover: var(--_theme---background);
+  --_theme---button-primary--background: var(--swatch--brand-500);
+  --_theme---button-primary--background-hover: var(--_theme---text);
+  --_theme---button-primary--border: var(--_theme---button-primary--background);
+  --_theme---button-primary--border-hover: var(--_theme---button-primary--background-hover);
+  --_theme---button-secondary--text: var(--_theme---text);
+  --_theme---button-secondary--text-hover: var(--_theme---background);
+  --_theme---button-secondary--background: var(--swatch--transparent);
+  --_theme---button-secondary--background-hover: var(--_theme---text);
+  --_theme---button-secondary--border: var(--_theme---border);
+  --_theme---button-secondary--border-hover: var(--_theme---button-secondary--background-hover);
+  --_theme---text-link--border: var(--_theme---border);
+  --_theme---text-link--text: var(--_theme---text);
+  --_theme---text-link--text-hover: var(--_theme---text-link--text);
+  --_theme---text-link--border-hover: var(--_theme---text);
+  --_theme---nav--background: var(--_theme---background-2);
+  --_theme---selection--background: var(--swatch--brand-700);
+  --_theme---selection--text: var(--swatch--light-100);
+}
+
+/* ── Theme: Brand (accent sections) ──────────────────── */
+.u-theme-brand {
+  background-color: var(--_theme---background);
+  color: var(--_theme---text);
+  --_theme---background: var(--swatch--brand-500);
+  --_theme---text: var(--swatch--light-100);
+  --_theme---background-2: var(--swatch--brand-600);
+  --_theme---heading-accent: var(--swatch--light-100);
+  --_theme---border: var(--swatch--light-100-o20);
+  --_theme---button-primary--text: var(--swatch--brand-500);
+  --_theme---button-primary--text-hover: var(--swatch--brand-500);
+  --_theme---button-primary--background: var(--swatch--light-100);
+  --_theme---button-primary--background-hover: var(--swatch--light-200);
+  --_theme---button-primary--border: var(--_theme---button-primary--background);
+  --_theme---button-primary--border-hover: var(--_theme---button-primary--background-hover);
+  --_theme---button-secondary--text: var(--_theme---text);
+  --_theme---button-secondary--text-hover: var(--swatch--brand-500);
+  --_theme---button-secondary--background: var(--swatch--transparent);
+  --_theme---button-secondary--background-hover: var(--swatch--light-100);
+  --_theme---button-secondary--border: var(--_theme---border);
+  --_theme---button-secondary--border-hover: var(--_theme---button-secondary--background-hover);
+  --_theme---text-link--border: var(--_theme---border);
+  --_theme---text-link--text: var(--_theme---text);
+  --_theme---text-link--text-hover: var(--_theme---text-link--text);
+  --_theme---text-link--border-hover: var(--_theme---text);
+  --_theme---nav--background: var(--_theme---background-2);
+  --_theme---selection--background: var(--swatch--brand-800);
+  --_theme---selection--text: var(--swatch--light-100);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   MOBILE TYPE SCALE — token-level overrides
+   ───────────────────────────────────────────────────────────────────
+   The fluid clamps above are anchored 20rem → 90rem, which leaves the
+   big display roles with floors that are simply too large for a phone
+   column (display bottomed out at 4rem/64px — "configuraciones" renders
+   ~460px wide inside a 344px column, so it overflowed on every page
+   that uses a display-size headline).
+
+   These override the SIZE TOKENS rather than the components, so every
+   headline class that already reads --font-size--display / --h1 / --h2
+   is corrected at once, and any new one inherits the fix for free.
+
+   Scoped to (max-width: 767px) only — desktop and tablet keep the
+   original scale untouched. The vw-based middle term keeps them fluid
+   inside the mobile range instead of stepping.
+   ═══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 767px) {
+  :root {
+    /* 64px floor → fluid 32px…64px. Fits the longest word in the copy
+       ("configuraciones", 15ch) inside the content column at every
+       width from 320px up to the breakpoint. */
+    --_typography---font-size--display: clamp(2 * 1rem, 10vw, 4 * 1rem);
+
+    /* 48px floor → fluid 28px…52px. */
+    --_typography---font-size--h1: clamp(1.75 * 1rem, 8vw, 3.25 * 1rem);
+
+    /* 40px floor → fluid 26px…48px. */
+    --_typography---font-size--h2: clamp(1.625 * 1rem, 7vw, 3 * 1rem);
+
+    /* 36px floor → fluid 24px…40px. */
+    --_typography---font-size--h3: clamp(1.5 * 1rem, 6vw, 2.5 * 1rem);
+
+    /* Oversized decorative roles used as background/marquee words. */
+    --_typography---font-size--jumbo: clamp(3.5 * 1rem, 15vw, 7 * 1rem);
+    --_typography---font-size--hero:  clamp(2.25 * 1rem, 9vw, 4 * 1rem);
+  }
+}
