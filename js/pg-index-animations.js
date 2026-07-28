@@ -47,7 +47,12 @@
 
     mm.add('(prefers-reduced-motion: no-preference)', () => {
       runAnimations();
-      return () => ScrollTrigger.getAll().forEach(t => t.kill());
+      /* No custom cleanup: gsap.matchMedia already reverts every tween,
+         set() and ScrollTrigger created inside this context when the query
+         stops matching. The previous `ScrollTrigger.getAll().kill()` killed
+         EVERY trigger on the page — including ones owned by gl-nav-scroll,
+         gl-wavy-bend, pg-index-find and gl-theme-transition — which left
+         those features dead for the rest of the session. */
     });
 
     /* Reduced motion: do nothing — page renders fully visible by default. */
@@ -182,6 +187,48 @@
     });
 
     ScrollTrigger.refresh();
+
+    /* ── Fail-safe: content must never stay invisible ──────────────────
+       Everything above is hidden with autoAlpha:0 and depends on a
+       ScrollTrigger firing to come back. That chain has several ways to
+       break — trigger positions measured before the lazy images below the
+       fold have loaded, another script throwing mid-setup, a trigger killed
+       by something else — and when it breaks the reader gets a blank
+       section rather than merely an unanimated one.
+
+       Losing the animation is acceptable. Losing the content is not. */
+    const GUARDED = [
+      '.pg-index_projects_heading', '.pg-index_projects_card',
+      '.pg-index_cta_heading', '.pg-index_cta_sub', '.pg-index_cta_buttons',
+      '.pg-index_stats_item', '.pg-index_featured_visual',
+      '.pg-index_featured_info', '.pg-footer_col'
+    ].join(',');
+
+    let sweepQueued = false;
+    function sweep() {
+      sweepQueued = false;
+      let stillHidden = 0;
+      document.querySelectorAll(GUARDED).forEach((el) => {
+        if (parseFloat(getComputedStyle(el).opacity) > 0.05) return;
+        /* Only rescue what the reader has actually reached; anything still
+           below the fold keeps its chance to animate in normally. */
+        if (el.getBoundingClientRect().top > window.innerHeight) { stillHidden++; return; }
+        gsap.set(el, { autoAlpha: 1, x: 0, y: 0 });
+      });
+      if (!stillHidden) window.removeEventListener('scroll', onScroll);
+    }
+    function onScroll() {
+      if (sweepQueued) return;
+      sweepQueued = true;
+      requestAnimationFrame(sweep);
+    }
+
+    /* Images below the fold are what actually determine each trigger's start
+       position, and they are still loading when boot() runs. Re-measure once
+       they are in, then verify nothing was left behind. */
+    window.addEventListener('load', () => { ScrollTrigger.refresh(); sweep(); }, { once: true });
+    window.addEventListener('scroll', onScroll, { passive: true });
+    setTimeout(sweep, 4000);
   }
 
   /* ── Boot when the preloader hands off (same contract as GL) ────── */
