@@ -150,8 +150,19 @@
      Idempotent (per-section dataset guard), so the re-execution that
      gl-page-transition triggers after each SPA swap re-arms the new
      page's section without double-initialising anything. */
-  boot();
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', boot);
-  }
+  /* Pin only once layout has settled.
+
+     ScrollTrigger's `pin: true` freezes the element's CURRENT width into an
+     inline `max-width` (it has to, because the element becomes position:fixed),
+     and this section is overflow:hidden. Booting at parse time captured a
+     pre-layout width — 1998px inside a 2553px viewport — which clipped the bar
+     wipe ~625px short of the right edge for the life of the page. A later
+     ScrollTrigger.refresh() does NOT undo it; the pin has to be built against
+     final layout.
+
+     `load` guarantees images and fonts are done. On the SPA re-execution that
+     gl-page-transition triggers, readyState is already 'complete', so boot
+     runs immediately there and navigation is unaffected. */
+  if (document.readyState === 'complete') boot();
+  else window.addEventListener('load', boot, { once: true });
 })();
