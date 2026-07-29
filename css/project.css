@@ -470,7 +470,12 @@ input.gl-filter-input.is-invalid { border-top-color: var(--swatch--brand-500); b
 
 .gl-home_statement_quote { font-family: var(--_typography---font--secondary-family); font-size: clamp(0.625rem, 1vw, 0.8125rem); font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: color-mix(in srgb, var(--swatch--light-100) 70%, transparent); line-height: 2; }
 
-.gl-theme-transition { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+/* Capped, not 100vh. The section centres ~970px of content, so on a tall
+   display a bare 100vh left ~850px of dead beige around it (1818px section at
+   a 1818px viewport). The cap sits just above the content height: unchanged on
+   viewports up to ~1000px, and the pinned scrub still works because
+   gl-theme-transition.js ends on `+=100%` relative to this element. */
+.gl-theme-transition { position: relative; min-height: min(100vh, 1000px); display: flex; align-items: center; justify-content: center; overflow: hidden; }
 
 .gl-theme-transition.is-to-light { background-color: var(--swatch--dark-900); }
 
