@@ -56,15 +56,25 @@
     if (heroLoc)   tl.to(heroLoc,   { autoAlpha: 1, y: 0, duration: 0.55 }, '-=0.4');
     if (heroTags)  tl.to(heroTags,  { autoAlpha: 1, y: 0, duration: 0.55 }, '-=0.35');
 
+    /* This page is now populated by page-proyecto.js from
+       pernia-proyectos.json, so several of these targets legitimately do not
+       exist for a given project: section 02 is hidden unless the client has
+       supplied narrative, and section 04 unless the project has confirmed
+       systems. Calling gsap on an empty selector logs "target not found" on
+       every load, so route every optional target through this guard. */
+    const gsapIf = (selector, method, vars) => {
+      if (document.querySelector(selector)) gsap[method](selector, vars);
+    };
+
     /* ── PRE-HIDE scroll-animated elements ───────────────────────── */
-    gsap.set('.pg-proyecto_description_text', { autoAlpha: 0, y: 28 });
-    gsap.set('.pg-proyecto_system-ref', { autoAlpha: 0, y: 20 });
-    gsap.set('.pg-proyecto_gallery_img-pano, .pg-proyecto_gallery_img-half', { autoAlpha: 0 });
-    gsap.set('.pg-footer_col', { autoAlpha: 0, y: 20 });
+    gsapIf('.pg-proyecto_description_text', 'set', { autoAlpha: 0, y: 28 });
+    gsapIf('.pg-proyecto_system-ref', 'set', { autoAlpha: 0, y: 20 });
+    gsapIf('.pg-proyecto_gallery_img-pano, .pg-proyecto_gallery_img-half', 'set', { autoAlpha: 0 });
+    gsapIf('.pg-footer_col', 'set', { autoAlpha: 0, y: 20 });
 
     /* ── SCROLL REVEALS ───────────────────────────────────────────── */
 
-    gsap.to('.pg-proyecto_description_text', {
+    gsapIf('.pg-proyecto_description_text', 'to', {
       autoAlpha: 1, y: 0, duration: 0.7, stagger: 0.15,
       scrollTrigger: { trigger: '.pg-proyecto_description', start: 'top 82%', toggleActions: 'play none none none' }
     });
@@ -77,7 +87,7 @@
       once: true
     });
 
-    gsap.to('.pg-proyecto_system-ref', {
+    gsapIf('.pg-proyecto_system-ref', 'to', {
       autoAlpha: 1, y: 0, duration: 0.65, stagger: 0.1,
       scrollTrigger: { trigger: '.pg-proyecto_systems', start: 'top 82%', toggleActions: 'play none none none' }
     });

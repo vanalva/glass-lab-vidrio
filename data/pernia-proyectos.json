@@ -1,0 +1,508 @@
+{
+  "title": "Pernia Glass — proyectos",
+  "note": "Per-project detail data for pg-proyecto.html (?slug=). Fields are limited to facts already published on the pg-proyectos.html grid cards plus real files on disk. `description` is intentionally empty for every project — the client has not supplied per-project narrative, and it must not be invented. Seacat/Seacho/Torre600 intentionally have no category/location/year for the same reason. Photo prefix note: Torre600 files are named t600-*, and Seazeit files were shot under the photographer name \"Seapoint\" but the project is Seazeit.",
+  "updated": "2026-07-29",
+  "count": 9,
+  "projects": [
+    {
+      "slug": "lantana",
+      "title": "Lantana",
+      "hero": {
+        "src": "assets/media/pernia/aplicaciones/lantana-1.webp",
+        "w": 1600,
+        "h": 1067
+      },
+      "gallery": [
+        {
+          "src": "assets/media/pernia/aplicaciones/lantana-2.webp",
+          "w": 1600,
+          "h": 1067
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/lantana-3.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/lantana-4.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/lantana-5.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/lantana-6.webp",
+          "w": 1600,
+          "h": 1067
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/lantana-7.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/lantana-8.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/lantana-9.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/lantana-10.webp",
+          "w": 1600,
+          "h": 2399
+        }
+      ],
+      "systems": [],
+      "description": [],
+      "category": "residencial",
+      "categoryLabel": "Residencial",
+      "location": "Panamá",
+      "year": "2025"
+    },
+    {
+      "slug": "pradera",
+      "title": "Pradera",
+      "hero": {
+        "src": "assets/media/pernia/aplicaciones/pradera-1.webp",
+        "w": 1600,
+        "h": 1067
+      },
+      "gallery": [
+        {
+          "src": "assets/media/pernia/aplicaciones/pradera-2.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/pradera-3.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/pradera-4.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/pradera-5.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/pradera-6.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/pradera-7.webp",
+          "w": 1600,
+          "h": 2399
+        }
+      ],
+      "systems": [],
+      "description": [],
+      "category": "comercial",
+      "categoryLabel": "Comercial",
+      "location": "Panamá",
+      "year": "2024"
+    },
+    {
+      "slug": "tdm",
+      "title": "TDM",
+      "hero": {
+        "src": "assets/media/pernia/aplicaciones/tdm-1.webp",
+        "w": 1600,
+        "h": 1067
+      },
+      "gallery": [
+        {
+          "src": "assets/media/pernia/aplicaciones/tdm-2.webp",
+          "w": 1600,
+          "h": 1067
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/tdm-3.webp",
+          "w": 1280,
+          "h": 1920
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/tdm-4.webp",
+          "w": 1280,
+          "h": 1920
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/tdm-5.webp",
+          "w": 1280,
+          "h": 1920
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/tdm-6.webp",
+          "w": 1280,
+          "h": 1920
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/tdm-7.webp",
+          "w": 1600,
+          "h": 1067
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/tdm-8.webp",
+          "w": 1280,
+          "h": 1920
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/tdm-9.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/tdm-10.webp",
+          "w": 1600,
+          "h": 2399
+        }
+      ],
+      "systems": [],
+      "description": [],
+      "category": "hoteleria",
+      "categoryLabel": "Hoteleria",
+      "location": "Panamá",
+      "year": "2025"
+    },
+    {
+      "slug": "aqua",
+      "title": "Aqua",
+      "hero": {
+        "src": "assets/media/pernia/aplicaciones/aqua-2.webp",
+        "w": 1920,
+        "h": 2879
+      },
+      "gallery": [
+        {
+          "src": "assets/media/pernia/aplicaciones/aqua-1.webp",
+          "w": 1920,
+          "h": 2879
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/aqua-3.webp",
+          "w": 1920,
+          "h": 1281
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/aqua-4.webp",
+          "w": 1280,
+          "h": 1920
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/aqua-5.webp",
+          "w": 1920,
+          "h": 1281
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/aqua-6.webp",
+          "w": 1920,
+          "h": 1281
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/aqua-7.webp",
+          "w": 1280,
+          "h": 1920
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/aqua-8.webp",
+          "w": 1920,
+          "h": 1281
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/aqua-9.webp",
+          "w": 1920,
+          "h": 2879
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/aqua-10.webp",
+          "w": 1280,
+          "h": 1920
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/aqua-11.webp",
+          "w": 1920,
+          "h": 2879
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/aqua-12.webp",
+          "w": 1920,
+          "h": 1281
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/aqua-13.webp",
+          "w": 1920,
+          "h": 2879
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/aqua-14.webp",
+          "w": 1920,
+          "h": 2879
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/aqua-15.webp",
+          "w": 1920,
+          "h": 2879
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/aqua-16.webp",
+          "w": 1280,
+          "h": 1920
+        }
+      ],
+      "systems": [],
+      "description": [],
+      "category": "residencial",
+      "categoryLabel": "Residencial",
+      "location": "Panamá",
+      "year": "2026"
+    },
+    {
+      "slug": "seazeit",
+      "title": "Seazeit",
+      "hero": {
+        "src": "assets/media/pernia/aplicaciones/seazeit-1.webp",
+        "w": 1600,
+        "h": 2400
+      },
+      "gallery": [
+        {
+          "src": "assets/media/pernia/aplicaciones/seazeit-2.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/seazeit-3.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/seazeit-4.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/seazeit-5.webp",
+          "w": 1600,
+          "h": 2400
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/seazeit-6.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/seazeit-7.webp",
+          "w": 1600,
+          "h": 1067
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/seazeit-8.webp",
+          "w": 1600,
+          "h": 2399
+        }
+      ],
+      "systems": [],
+      "description": [],
+      "category": "residencial",
+      "categoryLabel": "Residencial",
+      "location": "Panamá",
+      "year": "2026"
+    },
+    {
+      "slug": "fairways",
+      "title": "Fairways",
+      "hero": {
+        "src": "assets/media/pernia/aplicaciones/fairways-1.webp",
+        "w": 1920,
+        "h": 1281
+      },
+      "gallery": [
+        {
+          "src": "assets/media/pernia/aplicaciones/fairways-2.webp",
+          "w": 1920,
+          "h": 2879
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/fairways-3.webp",
+          "w": 1920,
+          "h": 2879
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/fairways-5.webp",
+          "w": 1920,
+          "h": 2879
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/fairways-6.webp",
+          "w": 1920,
+          "h": 2879
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/fairways-8.webp",
+          "w": 1920,
+          "h": 2879
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/fairways-9.webp",
+          "w": 1920,
+          "h": 1281
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/fairways-10.webp",
+          "w": 1920,
+          "h": 2879
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/fairways-11.webp",
+          "w": 1920,
+          "h": 2880
+        }
+      ],
+      "systems": [],
+      "description": [],
+      "category": "residencial",
+      "categoryLabel": "Residencial",
+      "location": "Panamá",
+      "year": "2026"
+    },
+    {
+      "slug": "seacat",
+      "title": "Seacat",
+      "hero": {
+        "src": "assets/media/pernia/aplicaciones/seacat-2.webp",
+        "w": 1024,
+        "h": 683
+      },
+      "gallery": [
+        {
+          "src": "assets/media/pernia/aplicaciones/seacat-0-2.webp",
+          "w": 1024,
+          "h": 683
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/seacat-1.webp",
+          "w": 1024,
+          "h": 683
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/seacat-3.webp",
+          "w": 1024,
+          "h": 1536
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/seacat-4.webp",
+          "w": 1024,
+          "h": 1536
+        }
+      ],
+      "systems": [
+        "pglass-3b"
+      ],
+      "description": []
+    },
+    {
+      "slug": "seacho",
+      "title": "Seacho",
+      "hero": {
+        "src": "assets/media/pernia/aplicaciones/seacho-6.webp",
+        "w": 1024,
+        "h": 1536
+      },
+      "gallery": [
+        {
+          "src": "assets/media/pernia/aplicaciones/seacho-5.webp",
+          "w": 1024,
+          "h": 1536
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/seacho-7.webp",
+          "w": 1024,
+          "h": 1536
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/seacho-8.webp",
+          "w": 1024,
+          "h": 1536
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/seacho-9.webp",
+          "w": 1024,
+          "h": 1536
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/seacho-10.webp",
+          "w": 1024,
+          "h": 683
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/seacho-11.webp",
+          "w": 1024,
+          "h": 683
+        }
+      ],
+      "systems": [
+        "pglass-4a",
+        "pglass-2b"
+      ],
+      "description": []
+    },
+    {
+      "slug": "torre600",
+      "title": "Torre600",
+      "hero": {
+        "src": "assets/media/pernia/aplicaciones/t600-7.webp",
+        "w": 1280,
+        "h": 854
+      },
+      "gallery": [
+        {
+          "src": "assets/media/pernia/aplicaciones/t600-1.webp",
+          "w": 854,
+          "h": 1280
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/t600-2.webp",
+          "w": 854,
+          "h": 1280
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/t600-3.webp",
+          "w": 1280,
+          "h": 854
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/t600-4.webp",
+          "w": 854,
+          "h": 1280
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/t600-5.webp",
+          "w": 1280,
+          "h": 854
+        },
+        {
+          "src": "assets/media/pernia/aplicaciones/t600-6.webp",
+          "w": 854,
+          "h": 1280
+        }
+      ],
+      "systems": [
+        "pglass-2b",
+        "pglass-2a",
+        "pglass-4c"
+      ],
+      "description": []
+    }
+  ]
+}
