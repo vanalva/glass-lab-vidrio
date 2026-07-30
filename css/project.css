@@ -2139,7 +2139,7 @@ a.gl-catalogo_hero-caption { text-decoration-line: none; }
 
 .pg-proyecto_hero { padding-top: var(--_spacing---space--8); padding-bottom: var(--_spacing---space--7); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); }
 
-.pg-proyecto_hero_head { padding-left: var(--site--margin); padding-right: var(--site--margin); margin-bottom: var(--_spacing---space--6); }
+.pg-proyecto_hero_head { max-width: var(--max-width--main); margin-left: auto; margin-right: auto; padding-left: var(--site--margin); padding-right: var(--site--margin); margin-bottom: var(--_spacing---space--6); }
 
 .pg-proyecto_hero_breadcrumb { display: block; margin-bottom: var(--_spacing---space--4); color: color-mix(in srgb, var(--_theme---text) 45%, transparent); }
 
@@ -2155,7 +2155,11 @@ a.gl-catalogo_hero-caption { text-decoration-line: none; }
 
 .pg-proyecto_hero_location { color: color-mix(in srgb, var(--_theme---text) 55%, transparent); margin-top: 0px; margin-bottom: 0px; }
 
-.pg-proyecto_hero_media-wrap { margin-left: var(--site--margin); margin-right: var(--site--margin); overflow: hidden; border-top-left-radius: var(--radius--subtle); border-top-right-radius: var(--radius--subtle); border-bottom-left-radius: var(--radius--subtle); border-bottom-right-radius: var(--radius--subtle); }
+/* Capped like every other image container on the site (see .gl-contain and
+   .pg-mob_gallery_grid). This wrap is the rounded/clipped image box itself, so
+   it takes the page gutter as width rather than padding — otherwise the radius
+   and overflow would sit outside the photo. */
+.pg-proyecto_hero_media-wrap { width: calc(100% - 2 * var(--site--margin)); max-width: calc(var(--max-width--main) - 2 * var(--site--margin)); margin-left: auto; margin-right: auto; overflow: hidden; border-top-left-radius: var(--radius--subtle); border-top-right-radius: var(--radius--subtle); border-bottom-left-radius: var(--radius--subtle); border-bottom-right-radius: var(--radius--subtle); }
 
 .pg-proyecto_hero_media { width: 100%; aspect-ratio: 16 / 9; max-height: 68vh; object-fit: cover; display: block; }
 
@@ -2167,7 +2171,7 @@ a.gl-catalogo_hero-caption { text-decoration-line: none; }
 
 .pg-proyecto_description { padding-top: var(--_spacing---section-space--main); padding-bottom: var(--_spacing---section-space--main); }
 
-.pg-proyecto_description_inner { padding-left: var(--site--margin); padding-right: var(--site--margin); }
+.pg-proyecto_description_inner { max-width: var(--max-width--main); margin-left: auto; margin-right: auto; padding-left: var(--site--margin); padding-right: var(--site--margin); }
 
 .pg-proyecto_description_content { max-width: 40rem; margin-left: auto; margin-right: auto; }
 
@@ -2177,7 +2181,10 @@ a.gl-catalogo_hero-caption { text-decoration-line: none; }
 
 .pg-proyecto_gallery { padding-top: var(--_spacing---section-space--main); padding-bottom: var(--_spacing---section-space--main); }
 
-.pg-proyecto_gallery_inner { padding-left: var(--site--margin); padding-right: var(--site--margin); }
+/* Was the only gallery on the site with no max-width, so on a wide display it
+   ran edge to edge and each half-image rendered ~1800px wide (4/3 => ~1350px
+   tall). Same cap + centring as .pg-mob_gallery_grid / .pg-sistema_apps_grid. */
+.pg-proyecto_gallery_inner { max-width: var(--max-width--main); margin-left: auto; margin-right: auto; padding-left: var(--site--margin); padding-right: var(--site--margin); }
 
 .pg-proyecto_gallery_grid { display: flex; flex-direction: column; row-gap: var(--_spacing---space--3); margin-top: var(--_spacing---space--5); }
 
@@ -2189,7 +2196,7 @@ a.gl-catalogo_hero-caption { text-decoration-line: none; }
 
 .pg-proyecto_systems { padding-top: var(--_spacing---section-space--main); padding-bottom: var(--_spacing---section-space--main); }
 
-.pg-proyecto_systems_inner { padding-left: var(--site--margin); padding-right: var(--site--margin); }
+.pg-proyecto_systems_inner { max-width: var(--max-width--main); margin-left: auto; margin-right: auto; padding-left: var(--site--margin); padding-right: var(--site--margin); }
 
 .pg-proyecto_systems_row { display: flex; column-gap: var(--_spacing---space--3); row-gap: var(--_spacing---space--3); flex-wrap: wrap; margin-top: var(--_spacing---space--5); }
 

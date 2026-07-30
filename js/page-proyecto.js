@@ -107,8 +107,10 @@ function render(project, index, projects, systemsDoc) {
   if (heroImg && project.hero) {
     heroImg.src = project.hero.src;
     heroImg.alt = `Proyecto ${title} — sistema de vidrio Pernia Glass`;
-    if (project.hero.w) heroImg.width = project.hero.w;
-    if (project.hero.h) heroImg.height = project.hero.h;
+    // No width/height for the same reason as the gallery images below — the
+    // class already sets aspect-ratio 16/9 plus a max-height cap.
+    heroImg.removeAttribute('width');
+    heroImg.removeAttribute('height');
   }
 
   // ── 02 Description — hidden until real copy exists ───────
@@ -219,10 +221,16 @@ function buildGallery(shots, title) {
   return out.join('');
 }
 
+/* No width/height attributes here on purpose. They land as presentational
+   hints (height: 1536px), which makes the height definite — and `aspect-ratio`
+   only applies when one axis is auto. With them set, .pg-proyecto_gallery_img-*
+   lost its 21/9 and 4/3 crop and every photo rendered at full intrinsic height
+   (a 1024x1536 shot came out 1536px tall at every viewport, phone included).
+   The CSS aspect-ratio already reserves the box, so it covers CLS anyway.
+   The w/h in pernia-proyectos.json are still used — to pick the slot. */
 function img(s, title, kind) {
   const cls = kind === 'pano' ? 'pg-proyecto_gallery_img-pano' : 'pg-proyecto_gallery_img-half';
-  const dim = (s.w && s.h) ? ` width="${s.w}" height="${s.h}"` : '';
-  return `<img src="${esc(s.src)}" alt="Proyecto ${esc(title)} — vidrio Pernia Glass" class="${cls}" loading="lazy"${dim}>`;
+  return `<img src="${esc(s.src)}" alt="Proyecto ${esc(title)} — vidrio Pernia Glass" class="${cls}" loading="lazy">`;
 }
 
 function fillPrevNext(selector, project, total) {

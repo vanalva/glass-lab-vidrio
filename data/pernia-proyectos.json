@@ -1,6 +1,6 @@
 {
   "title": "Pernia Glass — proyectos",
-  "note": "Per-project detail data for pg-proyecto.html (?slug=). Fields are limited to facts already published on the pg-proyectos.html grid cards plus real files on disk. `description` is intentionally empty for every project — the client has not supplied per-project narrative, and it must not be invented. Seacat/Seacho/Torre600 intentionally have no category/location/year for the same reason. Photo prefix note: Torre600 files are named t600-*, and Seazeit files were shot under the photographer name \"Seapoint\" but the project is Seazeit.",
+  "note": "Per-project detail data for pg-proyecto.html (?slug=). Titles, category, location and year come from the pg-proyectos.html grid cards; galleries are the real photo sets in assets/media/pernia/aplicaciones. `description` is the client's own copy, verbatim from references/content/Edits/TEXTOS PROYECTOS.docx — do not rewrite it. Seacat/Seacho/Torre600 still have no category/location/year: Guillermo has not supplied them and they must not be guessed. Photo prefix note: Torre600 files are named t600-*, and Seazeit files were shot under the photographer name \"Seapoint\" but the project is Seazeit.",
   "updated": "2026-07-29",
   "count": 9,
   "projects": [
@@ -60,7 +60,9 @@
         }
       ],
       "systems": [],
-      "description": [],
+      "description": [
+        "Este proyecto nace de la intención de crear una división elegante entre la sala y el den, aportando mayor privacidad sin interrumpir la armonía del espacio. La solución integra tres puertas telescópicas en acabado bronce anodizado, combinadas con malla AP Galena, el tejido más cerrado de nuestra colección. Su trama permite resguardar visualmente el ambiente y, al mismo tiempo, conservar una sensación de ligereza y continuidad. El tono cálido del bronce dialoga con la iluminación y los materiales del interior, convirtiendo la división en un elemento arquitectónico sutil, funcional y cuidadosamente integrado a la estética del proyecto."
+      ],
       "category": "residencial",
       "categoryLabel": "Residencial",
       "location": "Panamá",
@@ -107,7 +109,9 @@
         }
       ],
       "systems": [],
-      "description": [],
+      "description": [
+        "Una división ligera conecta la habitación con el clóset a través de dos paneles: uno fijo y otro corredizo. La propuesta permite que la luz natural atraviese el espacio, mientras la malla Ae - Hierro en tono champagne tamiza las vistas y aporta la privacidad necesaria. La estructura de aluminio negro define el conjunto con líneas precisas y un contraste sutil. A su vez, el matiz cálido de la malla dialoga con el piso de madera del clóset, creando una composición equilibrada y coherente. El resultado es una solución funcional y elegante que separa ambos ambientes sin restarles amplitud ni continuidad visual."
+      ],
       "category": "comercial",
       "categoryLabel": "Comercial",
       "location": "Panamá",
@@ -169,7 +173,9 @@
         }
       ],
       "systems": [],
-      "description": [],
+      "description": [
+        "La malla AZ Hierro, con su distintivo patrón en zigzag, se convierte en el hilo conductor de este proyecto. Enmarcada en perfilería negra, reviste dos puertas corredizas tipo pocket que separan sutilmente la sala del den y contrastan con la calidez del panelado de madera clara. La misma combinación se utilizó en el cerramiento de la oficina, permitiendo el paso de la luz natural sin renunciar a la privacidad. Para completar la propuesta, el vidrio con malla se incorporó también en la puerta de la vinera, creando un lenguaje visual homogéneo, elegante y coherente en todo el espacio."
+      ],
       "category": "hoteleria",
       "categoryLabel": "Hoteleria",
       "location": "Panamá",
@@ -261,7 +267,9 @@
         }
       ],
       "systems": [],
-      "description": [],
+      "description": [
+        "En este proyecto, todas las puertas de la residencia fueron concebidas bajo un mismo lenguaje material, creando continuidad entre los distintos ambientes. La perfilería en acabado bronce enmarca el vidrio con malla AZ Hierro, reconocible por su singular patrón en zigzag y su carácter decorativo. Esta combinación aporta textura y profundidad sin restar ligereza ni luminosidad a los espacios. Los matices metálicos dialogan con la madera, los textiles y la paleta neutra del interior, reforzando la atmósfera cálida de la vivienda. El resultado es una propuesta coherente y elegante, en la que cada puerta forma parte integral de la arquitectura."
+      ],
       "category": "residencial",
       "categoryLabel": "Residencial",
       "location": "Panamá",
@@ -313,7 +321,9 @@
         }
       ],
       "systems": [],
-      "description": [],
+      "description": [
+        "La flexibilidad fue el punto de partida de este proyecto: crear divisiones capaces de integrar los ambientes o independizarlos según cada momento y necesidad. Para lograrlo, se instalaron puertas corredizas dobles tipo pocket, sistema Pglass 2B, con vidrio de seguridad bronce y perfilería en el mismo acabado. Al abrirse, las puertas desaparecen y permiten una conexión fluida entre los espacios; al cerrarse, brindan privacidad sin perder profundidad visual. Como detalle distintivo, se incorporaron celosías verticales que aportan textura, ritmo y movimiento, transformando las divisiones en elementos arquitectónicos con carácter propio y una presencia cálida y elegante."
+      ],
       "category": "residencial",
       "categoryLabel": "Residencial",
       "location": "Panamá",
@@ -370,7 +380,9 @@
         }
       ],
       "systems": [],
-      "description": [],
+      "description": [
+        "Este proyecto articula el comedor, la cocina y el estudio mediante cerramientos que combinan paños fijos y puertas corredizas. En sintonía con la paleta de tonos taupe y crema, se eligió perfilería champagne con malla Ap-bronce, una combinación que filtra la luz y aporta privacidad sin oscurecer los espacios. Para la oficina, se diseñó una puerta escamoteable de dos paños con cerradura, perfilería bronce y malla Bq-champagne. Su textura y proporción le otorgan una presencia más definida y señorial. El resultado es una composición cálida y elegante, con soluciones funcionales integradas naturalmente a la arquitectura."
+      ],
       "category": "residencial",
       "categoryLabel": "Residencial",
       "location": "Panamá",
@@ -409,7 +421,9 @@
       "systems": [
         "pglass-3b"
       ],
-      "description": []
+      "description": [
+        "La intención de este proyecto fue crear una conexión fluida entre el desayunador y la sala, permitiendo integrar o separar ambos ambientes según el momento. Para lograrlo, se diseñaron tres puertas corredizas que se ocultan completamente dentro de un pocket, liberando el paso y ampliando la percepción del espacio. La perfilería champagne aporta calidez y ligereza al conjunto, mientras la malla AH en tono bronce introduce una textura delicada y decorativa. Su trama tamiza sutilmente las vistas y enriquece la luz, convirtiendo el cerramiento en un elemento funcional que complementa la arquitectura con una presencia serena y elegante."
+      ]
     },
     {
       "slug": "seacho",
@@ -455,7 +469,9 @@
         "pglass-4a",
         "pglass-2b"
       ],
-      "description": []
+      "description": [
+        "La privacidad y el paso de la luz natural guiaron el diseño de los dos cerramientos de esta residencia. Para el den de televisión se creó una composición de cuatro paños —dos fijos y dos corredizos— con malla AP Dorada, cuyo tono complementa la calidez del interior. El segundo cerramiento incorpora dos puertas corredizas tipo pocket, capaces de desaparecer para integrar por completo la sala con las áreas privadas. Al cerrarse, ambos sistemas se leen como una composición continua de seis paños: un solo gesto arquitectónico que unifica elementos con funciones distintas y aporta ritmo, ligereza y coherencia visual al espacio."
+      ]
     },
     {
       "slug": "torre600",
@@ -502,7 +518,9 @@
         "pglass-2a",
         "pglass-4c"
       ],
-      "description": []
+      "description": [
+        "La propuesta arquitectónica contempló las puertas como elementos de integración, concebidos para complementar los interiores sin asumir un protagonismo excesivo. La perfilería de aluminio negro y el vidrio bronce establecen una relación armónica con las maderas, los cueros y los textiles presentes en la residencia, reforzando su paleta cálida y sofisticada. En los espacios que requerían mayor privacidad, se especificó vidrio bronce acanalado Vab, que conserva la uniformidad cromática del conjunto e incorpora una textura capaz de limitar la visibilidad directa. El resultado es una solución sobria y coherente, cuidadosamente integrada al lenguaje material y estético del proyecto."
+      ]
     }
   ]
 }
