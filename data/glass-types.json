@@ -209,7 +209,19 @@
         "transparencia": "transparente",
         "colorBase": "claro",
         "disponibilidad": "disponible",
-        "personalizacionColor": "color-unico"
+        "personalizacionColor": "color-unico",
+        "espesorMm": [
+          4,
+          5,
+          6,
+          8,
+          10,
+          12
+        ],
+        "dimensionMaxMm": [
+          2400,
+          3600
+        ]
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/vc/vc-01-stand-a.webp",
@@ -244,7 +256,17 @@
         "transparencia": "transparente",
         "colorBase": "ultraclaro",
         "disponibilidad": "disponible",
-        "personalizacionColor": "color-unico"
+        "personalizacionColor": "color-unico",
+        "espesorMm": [
+          4,
+          5,
+          6,
+          10
+        ],
+        "dimensionMaxMm": [
+          2400,
+          3600
+        ]
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/vu/vu-01-stand-a.webp",
@@ -278,7 +300,14 @@
         ],
         "transparencia": "transparente",
         "colorBase": "pacifica",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          6
+        ],
+        "dimensionMaxMm": [
+          2400,
+          3300
+        ]
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/vp/vp-01-stand-a.webp",
@@ -312,7 +341,14 @@
         ],
         "transparencia": "transparente",
         "colorBase": "indigo",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          6
+        ],
+        "dimensionMaxMm": [
+          2400,
+          3300
+        ]
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/vi/vi-01-stand-a.webp",
@@ -346,7 +382,16 @@
         ],
         "transparencia": "transparente",
         "colorBase": "bronce",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          6,
+          8,
+          10
+        ],
+        "dimensionMaxMm": [
+          2400,
+          3300
+        ]
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/vb/vb-01-stand-a.webp",
@@ -380,7 +425,16 @@
         ],
         "transparencia": "transparente",
         "colorBase": "gris",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          6,
+          8,
+          10
+        ],
+        "dimensionMaxMm": [
+          2400,
+          3300
+        ]
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/vg/vg-01-stand-a.webp",
@@ -415,7 +469,16 @@
         "transparencia": "translucido",
         "patron": "acanalado-vertical",
         "colorBase": "claro",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          5,
+          8
+        ],
+        "dimensionMaxMm": [
+          2100,
+          3300
+        ],
+        "privacidad": "sin-vista"
       },
       "relations": {
         "variantesDeColor": [
@@ -456,7 +519,15 @@
         "transparencia": "translucido",
         "patron": "acanalado-fino",
         "colorBase": "claro",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          5
+        ],
+        "dimensionMaxMm": [
+          2100,
+          3300
+        ],
+        "privacidad": "sin-vista"
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/val/val-01-stand-a.webp",
@@ -490,7 +561,15 @@
         ],
         "transparencia": "translucido",
         "colorBase": "claro",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          5
+        ],
+        "dimensionMaxMm": [
+          2400,
+          3300
+        ],
+        "privacidad": "sin-vista"
       },
       "relations": {
         "esVersionEspejoDe": "Ee"
@@ -527,7 +606,15 @@
         ],
         "transparencia": "translucido",
         "colorBase": "claro",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          6
+        ],
+        "dimensionMaxMm": [
+          2100,
+          3300
+        ],
+        "privacidad": "sin-vista"
       },
       "relations": {
         "esVersionEspejoDe": "Et"
@@ -566,7 +653,15 @@
         "transparencia": "translucido",
         "patron": "diamante-grid",
         "colorBase": "claro",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          5
+        ],
+        "dimensionMaxMm": [
+          2400,
+          3300
+        ],
+        "privacidad": "sin-vista"
       },
       "relations": {
         "esVersionEspejoDe": "Ed"
@@ -600,7 +695,14 @@
         ],
         "transparencia": "opaco",
         "colorBase": "blanco",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          8
+        ],
+        "dimensionMaxMm": [
+          2000,
+          3000
+        ]
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/veb/veb-01-stand-a.webp",
@@ -634,7 +736,15 @@
         ],
         "transparencia": "opaco",
         "colorBase": "negro",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          8,
+          10
+        ],
+        "dimensionMaxMm": [
+          2000,
+          3000
+        ]
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/ven/ven-01-stand-a.webp",
@@ -670,7 +780,15 @@
         "transparencia": "translucido",
         "patron": "acanalado-vertical",
         "colorBase": "bronce",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          9
+        ],
+        "dimensionMaxMm": [
+          2000,
+          3000
+        ],
+        "privacidad": "sin-vista"
       },
       "relations": {
         "esVarianteDeColorDe": "Va",
@@ -713,7 +831,15 @@
         "transparencia": "translucido",
         "patron": "acanalado-vertical",
         "colorBase": "gris",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          9
+        ],
+        "dimensionMaxMm": [
+          2000,
+          3000
+        ],
+        "privacidad": "sin-vista"
       },
       "relations": {
         "esVarianteDeColorDe": "Va",
@@ -753,7 +879,15 @@
           "gradient"
         ],
         "transparencia": "translucido",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          8,
+          12
+        ],
+        "dimensionMaxMm": [
+          1500,
+          3000
+        ]
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/gr/gr-01-stand-a.webp",
@@ -787,7 +921,16 @@
           "esmerilado"
         ],
         "transparencia": "translucido",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          8,
+          12
+        ],
+        "dimensionMaxMm": [
+          1500,
+          3000
+        ],
+        "privacidad": "sin-vista"
       },
       "relations": {
         "esVersionAcidadaDe": "Gr"
@@ -823,7 +966,15 @@
           "dicroico"
         ],
         "transparencia": "translucido",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          8,
+          12
+        ],
+        "dimensionMaxMm": [
+          1500,
+          3000
+        ]
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/ds/ds-01-stand-a.webp",
@@ -857,7 +1008,15 @@
           "esmerilado"
         ],
         "transparencia": "translucido",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          8,
+          12
+        ],
+        "dimensionMaxMm": [
+          1500,
+          3000
+        ]
       },
       "relations": {
         "esVersionAcidadaDe": "Ds"
@@ -894,7 +1053,16 @@
         ],
         "transparencia": "translucido",
         "disponibilidad": "disponible",
-        "personalizacionColor": "300-colores"
+        "personalizacionColor": "300-colores",
+        "espesorMm": [
+          8,
+          10,
+          12
+        ],
+        "dimensionMaxMm": [
+          1200,
+          3000
+        ]
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/in/in-01-stand-a.webp",
@@ -929,7 +1097,17 @@
         ],
         "transparencia": "translucido",
         "disponibilidad": "disponible",
-        "personalizacionColor": "300-colores"
+        "personalizacionColor": "300-colores",
+        "espesorMm": [
+          8,
+          10,
+          12
+        ],
+        "dimensionMaxMm": [
+          1200,
+          3000
+        ],
+        "privacidad": "sin-vista"
       },
       "relations": {
         "esVersionAcidadaDe": "In"
@@ -966,7 +1144,15 @@
         ],
         "transparencia": "translucido",
         "patron": "cuadros",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          8,
+          12
+        ],
+        "dimensionMaxMm": [
+          1600,
+          3000
+        ]
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/imc/imc-01-stand-a.webp",
@@ -1000,7 +1186,15 @@
         ],
         "transparencia": "translucido",
         "patron": "lineas",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          8,
+          12
+        ],
+        "dimensionMaxMm": [
+          1600,
+          3000
+        ]
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/iml/iml-01-stand-a.webp",
@@ -1034,7 +1228,15 @@
         ],
         "transparencia": "translucido",
         "patron": "linen",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          8,
+          12
+        ],
+        "dimensionMaxMm": [
+          1500,
+          3000
+        ]
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/tl/tl-01-stand-a.webp",
@@ -1069,7 +1271,15 @@
         "transparencia": "translucido",
         "patron": "entramado",
         "tier": "premium",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          8,
+          12
+        ],
+        "dimensionMaxMm": [
+          1500,
+          3000
+        ]
       },
       "relations": {
         "comparteFamiliaCon": [
@@ -1118,7 +1328,15 @@
         "transparencia": "translucido",
         "patron": "pulida",
         "tier": "premium",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          8,
+          12
+        ],
+        "dimensionMaxMm": [
+          1500,
+          3000
+        ]
       },
       "relations": {},
       "media": {
@@ -1154,7 +1372,15 @@
         "transparencia": "translucido",
         "patron": "fabric",
         "tier": "premium",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          8,
+          12
+        ],
+        "dimensionMaxMm": [
+          1500,
+          3000
+        ]
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/af/af-01-stand-a.webp",
@@ -1227,7 +1453,15 @@
         "transparencia": "translucido",
         "patron": "zigzag",
         "tier": "premium",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          8,
+          12
+        ],
+        "dimensionMaxMm": [
+          1500,
+          3000
+        ]
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/az/az-01-stand-a.webp",
@@ -1262,7 +1496,15 @@
         "transparencia": "translucido",
         "patron": "qubo",
         "tier": "premium",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          8,
+          12
+        ],
+        "dimensionMaxMm": [
+          1500,
+          3000
+        ]
       },
       "relations": {
         "tieneTierAlternativo": "Bq"
@@ -1300,7 +1542,15 @@
         "transparencia": "translucido",
         "patron": "herringbone",
         "tier": "premium",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          8,
+          12
+        ],
+        "dimensionMaxMm": [
+          1500,
+          3000
+        ]
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/ah/ah-01-stand-a.webp",
@@ -1334,7 +1584,15 @@
         "transparencia": "translucido",
         "patron": "bilineal",
         "tier": "premium",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          8,
+          12
+        ],
+        "dimensionMaxMm": [
+          1500,
+          3000
+        ]
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/ab/ab-01-stand-a.webp",
@@ -1369,7 +1627,15 @@
         "transparencia": "translucido",
         "patron": "tejida",
         "tier": "premium",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          8,
+          12
+        ],
+        "dimensionMaxMm": [
+          1500,
+          3000
+        ]
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/at/at-01-stand-a.webp",
@@ -1401,7 +1667,15 @@
         "transparencia": "translucido",
         "patron": "cuadros",
         "tier": "premium",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          8,
+          12
+        ],
+        "dimensionMaxMm": [
+          1500,
+          3000
+        ]
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/ac/ac-01-stand-a.webp",
@@ -1436,7 +1710,15 @@
         "transparencia": "translucido",
         "patron": "qubo",
         "tier": "alternativa",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          8,
+          12
+        ],
+        "dimensionMaxMm": [
+          2000,
+          3000
+        ]
       },
       "relations": {
         "esTierAlternativoDe": "Aq",
@@ -1475,7 +1757,15 @@
         "transparencia": "translucido",
         "patron": "entramado",
         "tier": "alternativa",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          8,
+          12
+        ],
+        "dimensionMaxMm": [
+          2000,
+          3000
+        ]
       },
       "relations": {
         "esTierAlternativoDe": "Ae"
@@ -1513,7 +1803,15 @@
         "transparencia": "translucido",
         "patron": "lisa",
         "tier": "alternativa",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          8,
+          12
+        ],
+        "dimensionMaxMm": [
+          2000,
+          3000
+        ]
       },
       "relations": {
         "esTierAlternativoDe": "Al"
@@ -1527,6 +1825,47 @@
           "assets/media/glass-samples-opt/bl/bl-08-app-door.webp",
           "assets/media/glass-samples-opt/bl/bl-09-app-table.webp"
         ]
+      }
+    },
+    {
+      "slot": 44,
+      "row": 4,
+      "col": 17,
+      "code": "Bp",
+      "category": "inserciones",
+      "subcategory": "mallas-serie-b",
+      "name": {
+        "es": "Malla Serie B — Pulida",
+        "en": "Mesh B — Polished"
+      },
+      "shortName": {
+        "es": "SB-Pulida",
+        "en": "SB-Polished"
+      },
+      "attributes": {
+        "acabado": [
+          "metalizado"
+        ],
+        "transparencia": "translucido",
+        "patron": "pulida",
+        "tier": "alternativa",
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          8,
+          12
+        ],
+        "dimensionMaxMm": [
+          2000,
+          3000
+        ]
+      },
+      "relations": {
+        "esTierAlternativoDe": "Ap"
+      },
+      "media": {
+        "hero": null,
+        "gallery": [],
+        "heroSlides": []
       }
     },
     {
@@ -1550,7 +1889,15 @@
         ],
         "transparencia": "translucido",
         "patron": "mosquitera",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          8,
+          12
+        ],
+        "dimensionMaxMm": [
+          1200,
+          3000
+        ]
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/cm/cm-01-stand-a.webp",
@@ -1584,7 +1931,15 @@
         "transparencia": "translucido",
         "patron": "negra",
         "disponibilidad": "disponible",
-        "colorBase": "negro"
+        "colorBase": "negro",
+        "espesorMm": [
+          8,
+          12
+        ],
+        "dimensionMaxMm": [
+          1200,
+          3000
+        ]
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/cn/cn-01-stand-a.webp",
@@ -1617,7 +1972,14 @@
           "espejado"
         ],
         "transparencia": "espejo",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          6
+        ],
+        "dimensionMaxMm": [
+          2400,
+          3300
+        ]
       },
       "relations": {
         "esVersionEspejoDe": "Vc"
@@ -1655,7 +2017,14 @@
         ],
         "transparencia": "espejo",
         "colorBase": "bronce",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          6
+        ],
+        "dimensionMaxMm": [
+          2400,
+          3300
+        ]
       },
       "relations": {
         "esVersionEspejoDe": "Vb",
@@ -1694,7 +2063,14 @@
         ],
         "transparencia": "espejo",
         "colorBase": "gris",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          6
+        ],
+        "dimensionMaxMm": [
+          2400,
+          3300
+        ]
       },
       "relations": {
         "esVersionEspejoDe": "Vg",
@@ -1733,7 +2109,15 @@
         ],
         "transparencia": "espejo",
         "disponibilidad": "disponible",
-        "personalizacionColor": "300-colores"
+        "personalizacionColor": "300-colores",
+        "espesorMm": [
+          8,
+          10
+        ],
+        "dimensionMaxMm": [
+          1200,
+          3000
+        ]
       },
       "relations": {
         "esVersionEspejoDe": "In"
@@ -1770,7 +2154,15 @@
           "dicroico"
         ],
         "transparencia": "espejo",
-        "disponibilidad": "custom"
+        "disponibilidad": "custom",
+        "espesorMm": [
+          8,
+          10
+        ],
+        "dimensionMaxMm": [
+          1500,
+          3000
+        ]
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/ep/ep-01-stand-a.webp",
@@ -1805,7 +2197,14 @@
         ],
         "transparencia": "espejo",
         "patron": "acanalado-vertical",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          10
+        ],
+        "dimensionMaxMm": [
+          2000,
+          3000
+        ]
       },
       "relations": {
         "esVersionEspejoDe": "Va"
@@ -1843,7 +2242,14 @@
         ],
         "transparencia": "espejo",
         "patron": "acanalado-fino",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          10
+        ],
+        "dimensionMaxMm": [
+          2000,
+          3000
+        ]
       },
       "relations": {
         "esVersionEspejoDe": "Val"
@@ -1881,7 +2287,14 @@
         ],
         "transparencia": "espejo",
         "patron": "diamante-grid",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          10
+        ],
+        "dimensionMaxMm": [
+          2000,
+          3000
+        ]
       },
       "relations": {
         "esVersionEspejoDe": "Vd"
@@ -1923,6 +2336,14 @@
           "humo",
           "bronce",
           "negro"
+        ],
+        "espesorMm": [
+          6,
+          10
+        ],
+        "dimensionMaxMm": [
+          2000,
+          3000
         ]
       },
       "relations": {
@@ -1962,7 +2383,15 @@
         ],
         "transparencia": "espejo",
         "disponibilidad": "disponible",
-        "personalizacionColor": "300-colores"
+        "personalizacionColor": "300-colores",
+        "espesorMm": [
+          8,
+          10
+        ],
+        "dimensionMaxMm": [
+          1200,
+          3000
+        ]
       },
       "relations": {
         "esVersionConFilmDe": "Ee"
@@ -1999,7 +2428,15 @@
           "dicroico"
         ],
         "transparencia": "espejo",
-        "disponibilidad": "custom"
+        "disponibilidad": "custom",
+        "espesorMm": [
+          8,
+          10
+        ],
+        "dimensionMaxMm": [
+          1500,
+          3000
+        ]
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/eep/eep-01-stand-a.webp",
@@ -2033,7 +2470,14 @@
           "texturizado"
         ],
         "transparencia": "espejo",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          10
+        ],
+        "dimensionMaxMm": [
+          2000,
+          3000
+        ]
       },
       "relations": {
         "esVersionEspejoDe": "Vt"
@@ -2071,7 +2515,14 @@
           "interlayer"
         ],
         "transparencia": "espejo",
-        "disponibilidad": "proximamente"
+        "disponibilidad": "proximamente",
+        "espesorMm": [
+          10
+        ],
+        "dimensionMaxMm": [
+          1200,
+          3000
+        ]
       },
       "relations": {
         "esVersionConFilmDe": "Et"
@@ -2110,7 +2561,14 @@
           "dicroico"
         ],
         "transparencia": "espejo",
-        "disponibilidad": "proximamente"
+        "disponibilidad": "proximamente",
+        "espesorMm": [
+          10
+        ],
+        "dimensionMaxMm": [
+          1500,
+          3000
+        ]
       },
       "placeholder": "Muestra en desarrollo",
       "media": {
@@ -2212,6 +2670,13 @@
       ],
       "renderRow": 9,
       "startCol": 5
+    }
+  },
+  "provenance": {
+    "especificaciones": {
+      "source": "references/content/Edits/PRESENTACION TIPOS DE VIDRIO_V2.pdf (Guillermo Pernia, V2)",
+      "note": "espesorMm and dimensionMaxMm are per-glass and come from that deck. Before this they did not exist: pg/gl-vidrio showed a hardcoded \"8 mm\" and \"2100 x 3300 mm\" on all 53 glasses, of which only 33 and 3 respectively were correct. Al has no spec slide in the deck — leave absent rather than guessing.",
+      "privacidad": "Only the nine codes Guillermo listed (pasa luz pero no se ve) carry privacidad: sin-vista. The other glasses tagged translucido are deliberately NOT marked — he has not classified them."
     }
   }
 }

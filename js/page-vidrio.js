@@ -124,8 +124,8 @@ function renderProduct(product, glass, helpers) {
   // Hero spec rows (5)
   setSpec('categoria',    cat?.name?.es + (subcat ? ' · ' + subcat.name.es : '') || '—');
   setSpec('subcategoria', subcat?.name?.es || cap(a.acabado?.[0]) || '—');
-  setSpec('espesor',      '8mm laminado (estándar)');
-  setSpec('dimensiones',  '3300 × 2100 mm');
+  setSpec('espesor',      formatEspesor(a) || '—');
+  setSpec('dimensiones',  formatDimension(a) || '—');
   setSpec('transparencia', cap(a.transparencia) || '—');
 
   // Properties grid (6 cards)
@@ -133,12 +133,12 @@ function renderProduct(product, glass, helpers) {
               describeColor(a.colorBase));
   setPropCard('textura',        (a.acabado || []).map(cap).join(' · ') || 'Lisa',
               describeAcabado(a.acabado));
-  setPropCard('espesor',        '8 mm (estándar laminado)',
-              'Vidrio laminado en autoclave — el espesor universal de la línea.');
+  setPropCard('espesor',        formatEspesor(a) || 'Consultar',
+              describeEspesor(a));
   setPropCard('transparencia',  cap(a.transparencia) || 'Translúcido',
               describeTransparencia(a.transparencia));
-  setPropCard('dimensiones',    '2100 × 3300 mm',
-              'Tamaño de lámina estándar. Formatos jumbo bajo pedido.');
+  setPropCard('dimensiones',    formatDimension(a) || 'Consultar',
+              describeDimension(a));
   setPropCard('aplicaciones',   'Divisorias · Mobiliario · Decorativo',
               'Compatible con todos los sistemas de puerta Pernia.');
 
@@ -427,6 +427,44 @@ function buildHeroSlider(product) {
 function setText(selector, value) {
   const el = document.querySelector(selector);
   if (el) el.textContent = value;
+}
+
+/* ── Espesor / dimensiones ───────────────────────────────────
+   These are per-glass and come from Guillermo's "PRESENTACION TIPOS DE
+   VIDRIO_V2" deck, stored on each product as attributes.espesorMm[] and
+   attributes.dimensionMaxMm[w,h].
+
+   They used to be four hardcoded strings here — every one of the 53 glass
+   pages claimed "8 mm" and "2100 × 3300 mm" (the hero row even said
+   "3300 × 2100", contradicting the card below it). Only 33 of 52 glasses
+   actually offer 8 mm and only 3 are 2100 × 3300, so most pages were
+   publishing specs the glass does not have.
+
+   Al has no spec slide in the deck. Rather than inventing a value these
+   return null and the field shows "Consultar" / "—". */
+function formatEspesor(a) {
+  const e = a && a.espesorMm;
+  if (!Array.isArray(e) || !e.length) return null;
+  return e.length === 1 ? `${e[0]} mm` : `${e.join(' · ')} mm`;
+}
+
+function describeEspesor(a) {
+  const e = a && a.espesorMm;
+  if (!Array.isArray(e) || !e.length) return 'Espesor bajo consulta según formato y acabado.';
+  if (e.length === 1) return 'Espesor único disponible para este vidrio.';
+  return `Disponible en ${e.length} espesores, de ${Math.min(...e)} a ${Math.max(...e)} mm.`;
+}
+
+function formatDimension(a) {
+  const d = a && a.dimensionMaxMm;
+  if (!Array.isArray(d) || d.length !== 2) return null;
+  return `${d[0]} × ${d[1]} mm`;
+}
+
+function describeDimension(a) {
+  const d = a && a.dimensionMaxMm;
+  if (!Array.isArray(d) || d.length !== 2) return 'Dimensión máxima bajo consulta.';
+  return 'Dimensión máxima de lámina para este vidrio.';
 }
 
 function setSpec(key, value) {

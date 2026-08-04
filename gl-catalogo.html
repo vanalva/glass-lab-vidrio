@@ -225,6 +225,18 @@
               Reflectivos
             </label>
 
+            <!-- The question clients ask most often, per Guillermo: "pasa luz
+                 pero no se ve". Matches the nine glasses he classified — it is
+                 deliberately narrower than transparencia=translucido, which
+                 also covers meshes you can see straight through. -->
+            <label class="gl-filter-input gl-filter-radio-pill">
+              <input type="checkbox" class="gl-sr-only"
+                     data-flwr-list-field="privacidad"
+                     data-flwr-list-value="sin-vista"
+                     data-flwr-list-list="#gl-catalogo-grid">
+              Pasa luz, sin vista
+            </label>
+
             <label class="gl-filter-input gl-filter-radio-pill">
               <input type="checkbox" class="gl-sr-only"
                      data-flwr-list-field="acabado"
@@ -1262,7 +1274,7 @@
   <script src="js/data-loader.js?v=af676964"></script>
   <!-- flwr runtime — provides data-flwr="list" filter engine -->
   <script src="js/flwr-runtime.js?v=3894ca2a"></script>
-  <script src="js/page-catalogo.js?v=e263eede"></script>
+  <script src="js/page-catalogo.js?v=b4995f2e"></script>
 
   <script>
   /* ── Grid corner radius — neighbor detection ──────────────────────

@@ -102,6 +102,10 @@ function stampCells(products) {
     set('transparencia',         a.transparencia);
     set('disponibilidad',        a.disponibilidad);
     set('patron',                a.patron);
+    // "pasa luz pero no se ve" — Guillermo's most-asked client question.
+    // Only set on the nine glasses he classified; see glass-types.json
+    // provenance.especificaciones.privacidad.
+    set('privacidad',            a.privacidad);
     set('personalizacionColor',  a.personalizacionColor);
     set('tier',                  a.tier);
     set('acabado',               Array.isArray(a.acabado) ? a.acabado.join(',') : a.acabado);
