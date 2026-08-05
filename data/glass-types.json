@@ -871,7 +871,7 @@
         "acabado": [
           "gradient"
         ],
-        "transparencia": "semitransparente",
+        "transparencia": "transparente",
         "disponibilidad": "disponible",
         "espesorMm": [
           8,
@@ -957,7 +957,7 @@
         "acabado": [
           "dicroico"
         ],
-        "transparencia": "semitransparente",
+        "transparencia": "transparente",
         "disponibilidad": "disponible",
         "espesorMm": [
           8,
@@ -999,7 +999,7 @@
           "dicroico",
           "esmerilado"
         ],
-        "transparencia": "semitransparente",
+        "transparencia": "transparente",
         "disponibilidad": "disponible",
         "espesorMm": [
           8,
@@ -1043,7 +1043,7 @@
         "acabado": [
           "interlayer"
         ],
-        "transparencia": "semitransparente",
+        "transparencia": "transparente",
         "disponibilidad": "disponible",
         "personalizacionColor": "300-colores",
         "espesorMm": [
@@ -1133,7 +1133,7 @@
         "acabado": [
           "impreso"
         ],
-        "transparencia": "semitransparente",
+        "transparencia": "transparente",
         "patron": "cuadros",
         "disponibilidad": "disponible",
         "espesorMm": [
@@ -1175,7 +1175,7 @@
         "acabado": [
           "impreso"
         ],
-        "transparencia": "semitransparente",
+        "transparencia": "transparente",
         "patron": "lineas",
         "disponibilidad": "disponible",
         "espesorMm": [
@@ -1217,7 +1217,7 @@
         "acabado": [
           "metalizado"
         ],
-        "transparencia": "semitransparente",
+        "transparencia": "transparente",
         "patron": "linen",
         "disponibilidad": "disponible",
         "espesorMm": [
@@ -2682,7 +2682,7 @@
       "source": "references/content/Edits/PRESENTACION TIPOS DE VIDRIO_V2.pdf (Guillermo Pernia, V2)",
       "note": "espesorMm and dimensionMaxMm are per-glass and come from that deck. Before this they did not exist: pg/gl-vidrio showed a hardcoded \"8 mm\" and \"2100 x 3300 mm\" on all 53 glasses, of which only 33 and 3 respectively were correct. Al has no spec slide in the deck — leave absent rather than guessing.",
       "al": "Al no tenia lamina de especificaciones en el deck. Guillermo: \"Todas las A tienen la misma medida\" — se aplico 8-12 mm / 1500 x 3000 como el resto de la Serie A.",
-      "transparencia": "Terminologia confirmada por Guillermo: transparente = pasa luz y vista; translucido = pasa luz pero no vista; semitransparente = deja ver parcialmente (mallas, interlayers, impresos). Antes las 32 piezas que dejaban pasar luz estaban todas marcadas translucido, lo que era incorrecto para las 23 que si dejan ver."
+      "transparencia": "Terminologia de Guillermo: transparente = pasa luz y vista; translucido = pasa luz pero no vista; semitransparente = solo las mallas (dejan ver parcialmente). Gradient, dicroicos, interlayer, impresiones y tela lino son transparentes: tienen color o patron pero se ve a traves."
     }
   }
 }
