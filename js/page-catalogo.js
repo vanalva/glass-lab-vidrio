@@ -96,6 +96,10 @@ function stampCells(products) {
     }
 
     set('subcategory',           p.subcategory);
+    // "Semitransparentes serian solo mallas no? Quizas poner Malla" — Guillermo.
+    // Derived from subcategory rather than stored, so the mesh series stay the
+    // single source of truth and the filter can never drift from them.
+    set('familia',               /^mallas-/.test(p.subcategory || '') ? 'malla' : '');
     set('name',                  p.name && p.name.es);
     set('shortName',             p.shortName && p.shortName.es);
     set('colorBase',             a.colorBase);
