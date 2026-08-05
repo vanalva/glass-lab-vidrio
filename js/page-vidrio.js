@@ -518,10 +518,15 @@ function describeAcabado(acabados) {
   return acabados.map(cap).join(', ');
 }
 
+/* Wording follows Guillermo's definitions: transparente pasa luz y vista,
+   translucido pasa luz pero no vista. Semitransparente is the middle ground —
+   the mallas and interlayers, which used to be labelled translucido and so
+   claimed to block a view they do not block. */
 function describeTransparencia(t) {
   const map = {
-    transparente: 'Visión clara a través del vidrio.',
-    translucido: 'Deja pasar luz pero difumina la imagen.',
+    transparente: 'Pasa luz y vista — visión clara a través del vidrio.',
+    translucido: 'Pasa luz pero no vista — ilumina sin dejar ver.',
+    semitransparente: 'Pasa luz y deja ver parcialmente, filtrando la vista.',
     opaco: 'No deja pasar luz — bloqueo total visual.',
     espejo: 'Refleja en lugar de transmitir luz.'
   };

@@ -225,23 +225,24 @@
               Reflectivos
             </label>
 
-            <!-- Two halves of the same question, both confirmed by Guillermo.
-                 "Pasa luz, sin vista" is the one his clients ask for most —
-                 the nine glasses that let light through but block the view.
-                 "Semitransparente" is everything else that passes light but
-                 you can still see through (mallas, interlayers, impresos).
-                 Splitting them is what makes the answer useful: transparencia
-                 alone lumps all 32 together. -->
+            <!-- Guillermo's own definitions: "transparente es que pasa luz y
+                 vista", "translucido es que pasa luz pero no vista". So the
+                 answer to his clients' question is just the word translucido —
+                 an earlier label spelled the definition out instead of using
+                 it. Semitransparente covers what sits between the two (mallas,
+                 interlayers, impresos: you see through, but not clearly).
+                 Both read straight off `transparencia`, so the catalogue and
+                 each glass page can never disagree. -->
             <label class="gl-filter-input gl-filter-radio-pill">
               <input type="checkbox" class="gl-sr-only"
-                     data-flwr-list-field="privacidad"
-                     data-flwr-list-value="sin-vista"
+                     data-flwr-list-field="transparencia"
+                     data-flwr-list-value="translucido"
                      data-flwr-list-list="#gl-catalogo-grid">
-              Pasa luz, sin vista
+              Translúcido
             </label>
             <label class="gl-filter-input gl-filter-radio-pill">
               <input type="checkbox" class="gl-sr-only"
-                     data-flwr-list-field="privacidad"
+                     data-flwr-list-field="transparencia"
                      data-flwr-list-value="semitransparente"
                      data-flwr-list-list="#gl-catalogo-grid">
               Semitransparente
@@ -1284,7 +1285,7 @@
   <script src="js/data-loader.js?v=af676964"></script>
   <!-- flwr runtime — provides data-flwr="list" filter engine -->
   <script src="js/flwr-runtime.js?v=3894ca2a"></script>
-  <script src="js/page-catalogo.js?v=b4995f2e"></script>
+  <script src="js/page-catalogo.js?v=e263eede"></script>
 
   <script>
   /* ── Grid corner radius — neighbor detection ──────────────────────
