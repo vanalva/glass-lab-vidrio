@@ -2075,6 +2075,18 @@ a.gl-catalogo_hero-caption { text-decoration-line: none; }
 
 .pg-proyectos_card { display: flex; flex-direction: column; color: inherit; }
 
+/* Sticky rail — fixes the ragged whitespace in the projects grid.
+   Each grid row sizes to its tallest card, and cards stretch to fill it, so a
+   16/9 card sitting beside a 3/4 one left ~700px of empty space below itself
+   (2006px across the page, about a quarter of its height). The stretched card
+   is already the right length of track, so the fix is to let the content ride
+   down it instead of sitting at the top: the inner sticks under the nav and
+   travels until it reaches the bottom of its own card, then releases.
+
+   A card whose content already fills its row has zero travel room, so sticky
+   simply never engages there — the tall cards behave exactly as before. */
+.pg-proyectos_card_inner { position: sticky; top: calc(var(--nav--height) + var(--_spacing---space--5)); }
+
 .pg-proyectos_card-img-tall { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; border-top-left-radius: var(--radius--subtle); border-top-right-radius: var(--radius--subtle); border-bottom-left-radius: var(--radius--subtle); border-bottom-right-radius: var(--radius--subtle); }
 
 .pg-proyectos_card-img-wide { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; border-top-left-radius: var(--radius--subtle); border-top-right-radius: var(--radius--subtle); border-bottom-left-radius: var(--radius--subtle); border-bottom-right-radius: var(--radius--subtle); }
@@ -2398,6 +2410,10 @@ a.gl-catalogo_hero-caption { text-decoration-line: none; }
   .pg-sistema_related_grid { grid-template-columns: 1fr; }
   .pg-sistema_cta_inner { flex-direction: column; row-gap: var(--_spacing---space--3); text-align: center; }
   .pg-proyectos_grid { grid-template-columns: 1fr; }
+  /* One column: every card is its own row, so there is no taller neighbour to
+     ride alongside and nothing to fill. Sticky here would just pin cards over
+     each other as you scroll the stack. */
+  .pg-proyectos_card_inner { position: static; }
   .pg-proyecto_hero { min-height: 55vh; }
   .pg-proyecto_hero_media { min-height: 55vh; }
   .pg-proyecto_hero_overlay { flex-direction: column; align-items: flex-start; row-gap: var(--_spacing---space--2); }
