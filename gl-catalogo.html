@@ -225,16 +225,26 @@
               Reflectivos
             </label>
 
-            <!-- The question clients ask most often, per Guillermo: "pasa luz
-                 pero no se ve". Matches the nine glasses he classified — it is
-                 deliberately narrower than transparencia=translucido, which
-                 also covers meshes you can see straight through. -->
+            <!-- Two halves of the same question, both confirmed by Guillermo.
+                 "Pasa luz, sin vista" is the one his clients ask for most —
+                 the nine glasses that let light through but block the view.
+                 "Semitransparente" is everything else that passes light but
+                 you can still see through (mallas, interlayers, impresos).
+                 Splitting them is what makes the answer useful: transparencia
+                 alone lumps all 32 together. -->
             <label class="gl-filter-input gl-filter-radio-pill">
               <input type="checkbox" class="gl-sr-only"
                      data-flwr-list-field="privacidad"
                      data-flwr-list-value="sin-vista"
                      data-flwr-list-list="#gl-catalogo-grid">
               Pasa luz, sin vista
+            </label>
+            <label class="gl-filter-input gl-filter-radio-pill">
+              <input type="checkbox" class="gl-sr-only"
+                     data-flwr-list-field="privacidad"
+                     data-flwr-list-value="semitransparente"
+                     data-flwr-list-list="#gl-catalogo-grid">
+              Semitransparente
             </label>
 
             <label class="gl-filter-input gl-filter-radio-pill">

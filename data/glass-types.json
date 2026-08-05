@@ -887,7 +887,8 @@
         "dimensionMaxMm": [
           1500,
           3000
-        ]
+        ],
+        "privacidad": "semitransparente"
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/gr/gr-01-stand-a.webp",
@@ -974,7 +975,8 @@
         "dimensionMaxMm": [
           1500,
           3000
-        ]
+        ],
+        "privacidad": "semitransparente"
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/ds/ds-01-stand-a.webp",
@@ -1016,7 +1018,8 @@
         "dimensionMaxMm": [
           1500,
           3000
-        ]
+        ],
+        "privacidad": "semitransparente"
       },
       "relations": {
         "esVersionAcidadaDe": "Ds"
@@ -1062,7 +1065,8 @@
         "dimensionMaxMm": [
           1200,
           3000
-        ]
+        ],
+        "privacidad": "semitransparente"
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/in/in-01-stand-a.webp",
@@ -1152,7 +1156,8 @@
         "dimensionMaxMm": [
           1600,
           3000
-        ]
+        ],
+        "privacidad": "semitransparente"
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/imc/imc-01-stand-a.webp",
@@ -1194,7 +1199,8 @@
         "dimensionMaxMm": [
           1600,
           3000
-        ]
+        ],
+        "privacidad": "semitransparente"
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/iml/iml-01-stand-a.webp",
@@ -1236,7 +1242,8 @@
         "dimensionMaxMm": [
           1500,
           3000
-        ]
+        ],
+        "privacidad": "semitransparente"
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/tl/tl-01-stand-a.webp",
@@ -1279,7 +1286,8 @@
         "dimensionMaxMm": [
           1500,
           3000
-        ]
+        ],
+        "privacidad": "semitransparente"
       },
       "relations": {
         "comparteFamiliaCon": [
@@ -1336,7 +1344,8 @@
         "dimensionMaxMm": [
           1500,
           3000
-        ]
+        ],
+        "privacidad": "semitransparente"
       },
       "relations": {},
       "media": {
@@ -1380,7 +1389,8 @@
         "dimensionMaxMm": [
           1500,
           3000
-        ]
+        ],
+        "privacidad": "semitransparente"
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/af/af-01-stand-a.webp",
@@ -1415,7 +1425,16 @@
         "transparencia": "translucido",
         "patron": "lisa",
         "tier": "premium",
-        "disponibilidad": "disponible"
+        "disponibilidad": "disponible",
+        "espesorMm": [
+          8,
+          12
+        ],
+        "dimensionMaxMm": [
+          1500,
+          3000
+        ],
+        "privacidad": "semitransparente"
       },
       "relations": {
         "tieneTierAlternativo": "Bl"
@@ -1461,7 +1480,8 @@
         "dimensionMaxMm": [
           1500,
           3000
-        ]
+        ],
+        "privacidad": "semitransparente"
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/az/az-01-stand-a.webp",
@@ -1504,7 +1524,8 @@
         "dimensionMaxMm": [
           1500,
           3000
-        ]
+        ],
+        "privacidad": "semitransparente"
       },
       "relations": {
         "tieneTierAlternativo": "Bq"
@@ -1550,7 +1571,8 @@
         "dimensionMaxMm": [
           1500,
           3000
-        ]
+        ],
+        "privacidad": "semitransparente"
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/ah/ah-01-stand-a.webp",
@@ -1592,7 +1614,8 @@
         "dimensionMaxMm": [
           1500,
           3000
-        ]
+        ],
+        "privacidad": "semitransparente"
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/ab/ab-01-stand-a.webp",
@@ -1635,7 +1658,8 @@
         "dimensionMaxMm": [
           1500,
           3000
-        ]
+        ],
+        "privacidad": "semitransparente"
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/at/at-01-stand-a.webp",
@@ -1675,7 +1699,8 @@
         "dimensionMaxMm": [
           1500,
           3000
-        ]
+        ],
+        "privacidad": "semitransparente"
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/ac/ac-01-stand-a.webp",
@@ -1718,7 +1743,8 @@
         "dimensionMaxMm": [
           2000,
           3000
-        ]
+        ],
+        "privacidad": "semitransparente"
       },
       "relations": {
         "esTierAlternativoDe": "Aq",
@@ -1765,7 +1791,8 @@
         "dimensionMaxMm": [
           2000,
           3000
-        ]
+        ],
+        "privacidad": "semitransparente"
       },
       "relations": {
         "esTierAlternativoDe": "Ae"
@@ -1811,7 +1838,8 @@
         "dimensionMaxMm": [
           2000,
           3000
-        ]
+        ],
+        "privacidad": "semitransparente"
       },
       "relations": {
         "esTierAlternativoDe": "Al"
@@ -1857,16 +1885,23 @@
         "dimensionMaxMm": [
           2000,
           3000
-        ]
+        ],
+        "privacidad": "semitransparente"
       },
       "relations": {
         "esTierAlternativoDe": "Ap"
       },
       "media": {
-        "hero": null,
+        "hero": "assets/media/glass-samples-opt/ap/ap-01-stand-a.webp",
         "gallery": [],
-        "heroSlides": []
-      }
+        "heroSlides": [
+          "assets/media/glass-samples-opt/ap/ap-01-stand-a.webp",
+          "assets/media/glass-samples-opt/ap/ap-04-detail-surface.webp",
+          "assets/media/glass-samples-opt/ap/ap-08-app-door.webp",
+          "assets/media/glass-samples-opt/ap/ap-09-app-table.webp"
+        ]
+      },
+      "mediaNote": "Fotos prestadas de Ap — Guillermo confirmo que la muestra se ve igual y hara una version distinta mas adelante."
     },
     {
       "slot": 44,
@@ -1897,7 +1932,8 @@
         "dimensionMaxMm": [
           1200,
           3000
-        ]
+        ],
+        "privacidad": "semitransparente"
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/cm/cm-01-stand-a.webp",
@@ -1939,7 +1975,8 @@
         "dimensionMaxMm": [
           1200,
           3000
-        ]
+        ],
+        "privacidad": "semitransparente"
       },
       "media": {
         "hero": "assets/media/glass-samples-opt/cn/cn-01-stand-a.webp",
@@ -2676,7 +2713,8 @@
     "especificaciones": {
       "source": "references/content/Edits/PRESENTACION TIPOS DE VIDRIO_V2.pdf (Guillermo Pernia, V2)",
       "note": "espesorMm and dimensionMaxMm are per-glass and come from that deck. Before this they did not exist: pg/gl-vidrio showed a hardcoded \"8 mm\" and \"2100 x 3300 mm\" on all 53 glasses, of which only 33 and 3 respectively were correct. Al has no spec slide in the deck — leave absent rather than guessing.",
-      "privacidad": "Only the nine codes Guillermo listed (pasa luz pero no se ve) carry privacidad: sin-vista. The other glasses tagged translucido are deliberately NOT marked — he has not classified them."
+      "privacidad": "Dos grupos sobre el mismo eje. sin-vista = los nueve que Guillermo clasifico como \"pasa luz pero no se ve\". semitransparente = el resto de los translucidos, que dejan pasar luz pero permiten ver a traves (aprobado por el en WhatsApp). Transparente, opaco y espejo no llevan esta marca.",
+      "al": "Al no tenia lamina de especificaciones en el deck. Guillermo: \"Todas las A tienen la misma medida\" — se aplico 8-12 mm / 1500 x 3000 como el resto de la Serie A."
     }
   }
 }
