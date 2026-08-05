@@ -97,9 +97,11 @@ function stampCells(products) {
 
     set('subcategory',           p.subcategory);
     // "Semitransparentes serian solo mallas no? Quizas poner Malla" — Guillermo.
-    // Derived from subcategory rather than stored, so the mesh series stay the
-    // single source of truth and the filter can never drift from them.
-    set('familia',               /^mallas-/.test(p.subcategory || '') ? 'malla' : '');
+    // Derived from the mallas-serie-* subcategories so the series stay the
+    // single source of truth, with an explicit attributes.familia override for
+    // the odd one out: Tela Lino reads as a mesh but is filed under textiles,
+    // and its subcategory has to stay put because it drives the grid grouping.
+    set('familia',               (a.familia) || (/^mallas-/.test(p.subcategory || '') ? 'malla' : ''));
     set('name',                  p.name && p.name.es);
     set('shortName',             p.shortName && p.shortName.es);
     set('colorBase',             a.colorBase);
