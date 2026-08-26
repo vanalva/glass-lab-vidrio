@@ -35,7 +35,7 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/variables.css?v=3703e9fe">
-  <link rel="stylesheet" href="css/project.css?v=c07be3dd">
+  <link rel="stylesheet" href="css/project.css?v=ae75221f">
 
   <script type="application/ld+json">
   {
@@ -171,7 +171,7 @@
     <!-- ============================================================ -->
     <!-- 03 // ORIGEN — ALTERNATING TEXT/IMAGE                         -->
     <!-- ============================================================ -->
-    <section class="gl-lab_editorial gl-section-border">
+    <section class="gl-lab_editorial gl-section-border" data-gl-lightbox="Laboratorio">
       <span class="gl-section-number">03 // Origen</span>
 
       <!-- Block 1: text left, image right -->
@@ -377,9 +377,9 @@
       <div class="gl-person_inner">
         <div class="gl-person_visual">
           <div class="gl-person_portrait u-radius-subtle">
-            <img class="gl-person_portrait_img" src="assets/media/glass-lab/guillermo-pernia-founder.jpg" alt="Guillermo Pernia, fundador y director de Glass Lab y Pernia Glass, sentado en una silla de vidrio de degradado tornasolado" loading="lazy">
+            <img class="gl-person_portrait_img" data-gl-lightbox="Guillermo Pernia" src="assets/media/glass-lab/guillermo-pernia-founder.jpg" alt="Guillermo Pernia, fundador y director de Glass Lab y Pernia Glass, sentado en una silla de vidrio de degradado tornasolado" loading="lazy">
           </div>
-          <img src="assets/media/glass-lab/studio/archivo-estantes.webp" alt="Archivo de muestras de Glass Lab — cuadrícula de vidrios sobre fondo blanco, cada uno con su ficha de elemento (Af, At, Ah, Vg, Bl, Ve, Cm, Ec, Vt, Et, Al, Gra)" class="gl-person_portrait u-radius-subtle" style="aspect-ratio: 4/3;object-fit:cover" loading="lazy">
+          <img src="assets/media/glass-lab/studio/archivo-estantes.webp" alt="Archivo de muestras de Glass Lab — cuadrícula de vidrios sobre fondo blanco, cada uno con su ficha de elemento (Af, At, Ah, Vg, Bl, Ve, Cm, Ec, Vt, Et, Al, Gra)" class="gl-person_portrait u-radius-subtle" style="aspect-ratio: 4/3;object-fit:cover" loading="lazy" data-gl-lightbox="Archivo de muestras">
         </div>
         <div class="gl-person_info">
           <div class="gl-person_header">
@@ -639,6 +639,8 @@
     </div>
   </div>
   <script src='js/gl-menu.js?v=6026605e'></script>
+  <!-- Shared photo viewer — opt-in via data-gl-lightbox (see gl-lightbox.js) -->
+  <script src="js/gl-lightbox.js?v=54dd6498"></script>
   <script src="js/gl-page-transition.js?v=6f4350e2"></script>
   <script src="js/gl-theme-transition.js?v=00a7fb22"></script>
   <script src="js/newsletter.js?v=6d3257eb"></script>

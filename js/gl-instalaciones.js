@@ -399,127 +399,24 @@
     try {
       savedView = sessionStorage.getItem("gl-installations:view") || "grid";
     } catch (error) {}
-    /* ── Lightbox ───────────────────────────────────────────────────
-       Ratio-agnostic viewer: the frame adapts to whatever the photo is
-       (portrait, landscape, square, panorama). The image is never
-       cropped — it is contained inside the viewport with max-width /
-       max-height, so any aspect ratio is honoured as-is. */
-    let lbIndex = 0;
-    let lbOpen = false;
-    let lastFocused = null;
-
-    const lb = document.createElement("div");
-    lb.className = "gl-lightbox";
-    lb.setAttribute("role", "dialog");
-    lb.setAttribute("aria-modal", "true");
-    lb.setAttribute("aria-label", "Visor de instalaciones");
-    lb.hidden = true;
-    lb.innerHTML =
-      '<div class="gl-lightbox_backdrop" data-lb-close></div>' +
-      '<div class="gl-lightbox_frame">' +
-        '<figure class="gl-lightbox_figure">' +
-          '<img class="gl-lightbox_image" alt="" decoding="async">' +
-          '<figcaption class="gl-lightbox_caption">' +
-            '<span class="gl-mono gl-mono_label gl-lightbox_set"></span>' +
-            '<span class="gl-mono gl-mono_muted gl-lightbox_count"></span>' +
-          '</figcaption>' +
-        '</figure>' +
-      '</div>' +
-      '<button type="button" class="gl-lightbox_close" data-lb-close aria-label="Cerrar visor">' +
-        '<span class="gl-mono gl-mono_label gl-lightbox_close-label">Cerrar</span>' +
-        '<span class="gl-lightbox_close-icon" aria-hidden="true"></span>' +
-      '</button>' +
-      '<button type="button" class="gl-lightbox_nav gl-lightbox_nav-prev" data-lb-prev aria-label="Fotografía anterior">' +
-        '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M12 4L6 10L12 16" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
-      '</button>' +
-      '<button type="button" class="gl-lightbox_nav gl-lightbox_nav-next" data-lb-next aria-label="Siguiente fotografía">' +
-        '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M8 4L14 10L8 16" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
-      '</button>';
-    document.body.appendChild(lb);
-
-    const lbImage = lb.querySelector(".gl-lightbox_image");
-    const lbSet = lb.querySelector(".gl-lightbox_set");
-    const lbCount = lb.querySelector(".gl-lightbox_count");
-    const lbFigure = lb.querySelector(".gl-lightbox_figure");
-
-    function lbRender() {
-      const photo = photos[modulo(lbIndex, photos.length)];
-      if (!photo) return;
-      lbFigure.classList.add("gl-lightbox_figure-loading");
-      lbImage.src = photo.src;
-      lbImage.alt = photo.set ? photo.set + " — instalación" : "Instalación de Glass Lab";
-      lbSet.textContent = photo.set || "Archivo";
-      lbCount.textContent = padNumber(modulo(lbIndex, photos.length) + 1) + " / " + padNumber(photos.length);
-    }
-
-    lbImage.addEventListener("load", function () {
-      lbFigure.classList.remove("gl-lightbox_figure-loading");
-      /* Hand the real ratio to CSS so the frame hugs the photo whatever
-         its shape — no letterboxing, no cropping. */
-      if (lbImage.naturalWidth && lbImage.naturalHeight) {
-        lbFigure.style.setProperty("--lb-ratio", lbImage.naturalWidth + " / " + lbImage.naturalHeight);
-      }
-    });
-
+    /* ── Lightbox ──────────────────────────────────────────────────
+       The viewer itself lives in gl-lightbox.js — one implementation for
+       both sites. This grid only hands it the archive and a start index.
+       (This file used to carry its own copy of the same viewer; it was
+       folded into the shared module on 2026-08-26.) Resolved at call time
+       so script order does not matter. */
     function lbOpenAt(index) {
-      lbIndex = modulo(index, photos.length);
-      lastFocused = document.activeElement;
-      lb.hidden = false;
-      lbOpen = true;
-      document.body.classList.add("gl-lightbox-lock");
-      lbRender();
-      requestAnimationFrame(function () { lb.classList.add("gl-lightbox-visible"); });
-      const closeBtn = lb.querySelector(".gl-lightbox_close");
-      if (closeBtn) closeBtn.focus();
+      var viewer = window.GLLightbox;
+      if (!viewer) { console.warn("[gl-instalaciones] gl-lightbox.js is not loaded"); return; }
+      var list = photos.map(function (photo) {
+        return {
+          src: photo.src,
+          alt: photo.set ? photo.set + " — instalación" : "Instalación de Glass Lab",
+          label: photo.set || "Archivo"
+        };
+      });
+      viewer.open(list, index, { label: "Archivo" });
     }
-
-    function lbClose() {
-      lbOpen = false;
-      lb.classList.remove("gl-lightbox-visible");
-      document.body.classList.remove("gl-lightbox-lock");
-      window.setTimeout(function () { if (!lbOpen) lb.hidden = true; }, 200);
-      if (lastFocused && lastFocused.focus) lastFocused.focus();
-    }
-
-    function lbGo(step) {
-      if (!lbOpen) return;
-      lbIndex = modulo(lbIndex + step, photos.length);
-      lbRender();
-    }
-
-    lb.addEventListener("click", function (event) {
-      // closest() so a click on the inner <svg>/<path>/label still resolves
-      // to the control button.
-      if (event.target.closest("[data-lb-close]")) lbClose();
-      else if (event.target.closest("[data-lb-prev]")) lbGo(-1);
-      else if (event.target.closest("[data-lb-next]")) lbGo(1);
-    });
-
-    document.addEventListener("keydown", function (event) {
-      if (!lbOpen) return;
-      if (event.key === "Escape") { lbClose(); }
-      else if (event.key === "ArrowLeft") { lbGo(-1); }
-      else if (event.key === "ArrowRight") { lbGo(1); }
-      else if (event.key === "Tab") {
-        /* Simple focus trap — keep tabbing inside the dialog */
-        const focusables = lb.querySelectorAll("button");
-        if (!focusables.length) return;
-        const first = focusables[0];
-        const last = focusables[focusables.length - 1];
-        if (event.shiftKey && document.activeElement === first) { last.focus(); event.preventDefault(); }
-        else if (!event.shiftKey && document.activeElement === last) { first.focus(); event.preventDefault(); }
-      }
-    });
-
-    /* Swipe between photos on touch */
-    let lbTouchX = null;
-    lb.addEventListener("touchstart", function (e) { lbTouchX = e.changedTouches[0].clientX; }, { passive: true });
-    lb.addEventListener("touchend", function (e) {
-      if (lbTouchX === null) return;
-      const dx = e.changedTouches[0].clientX - lbTouchX;
-      if (Math.abs(dx) > 45) lbGo(dx < 0 ? 1 : -1);
-      lbTouchX = null;
-    }, { passive: true });
 
     /* Grid tiles open via the pointerup tap handler above (a click-based
        handler is unreliable here — see releasePointer). */

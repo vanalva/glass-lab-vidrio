@@ -59,7 +59,7 @@
   
   
 <link rel="stylesheet" href="css/variables.css?v=3703e9fe">
-<link rel="stylesheet" href="css/project.css?v=c07be3dd">
+<link rel="stylesheet" href="css/project.css?v=ae75221f">
 </head>
 <body class="u-theme-dark">
   <div class="gl-preloader" aria-hidden="true"><img src="assets/logos/gl-logotipo-h-white.svg" alt="" class="gl-preloader_logo"></div>
@@ -473,7 +473,7 @@
         </div>
       </div>
       <div class="gl-home_ficha_media">
-        <img src="assets/media/glass-samples-opt/aq/aq-04-detail-surface.webp" alt="Superficie del vidrio SA-Qubo en vista macro" class="gl-home_ficha_img" loading="lazy">
+        <img src="assets/media/glass-samples-opt/aq/aq-04-detail-surface.webp" alt="Superficie del vidrio SA-Qubo en vista macro" class="gl-home_ficha_img" data-gl-lightbox="Ficha" loading="lazy">
         <div class="gl-home_ficha_reticle" aria-hidden="true">
           <div class="gl-home_ficha_reticle-corner is-tl"></div>
           <div class="gl-home_ficha_reticle-corner is-tr"></div>
@@ -623,7 +623,7 @@
           </div>
         </div>
         <div class="gl-home_craft_visual u-radius-subtle">
-          <img src="assets/media/glass-lab/blog/elegir-vidrio.webp" alt="Muestras de vidrio proyectando color sobre fondo blanco bajo luz rasante" class="gl-home_hero_cards-img gl-home_hero_cards-default u-radius-subtle" loading="eager">
+          <img src="assets/media/glass-lab/blog/elegir-vidrio.webp" alt="Muestras de vidrio proyectando color sobre fondo blanco bajo luz rasante" class="gl-home_hero_cards-img gl-home_hero_cards-default u-radius-subtle" data-gl-lightbox="Laboratorio" loading="eager">
           <div class="gl-home_hero_zoom" style="background-image: url(&quot;assets/media/glass-lab/glass-render-hero-home.png&quot;);"></div>
         </div>
       </div>
@@ -1138,7 +1138,9 @@ window.addEventListener('load', function() {
   <script src="js/gl-page-transition.js?v=6f4350e2"></script>
   <script src="js/newsletter.js?v=6d3257eb"></script>
   <!-- Drives the "Archivo en obra" infinite grid + lightbox in section 07 -->
-  <script src="js/gl-instalaciones.js?v=5e96c595"></script>
+  <!-- Shared photo viewer — opt-in via data-gl-lightbox (see gl-lightbox.js) -->
+  <script src="js/gl-lightbox.js?v=54dd6498"></script>
+  <script src="js/gl-instalaciones.js?v=9d6cf7a0"></script>
   <!-- vanny-widget -->
   <!-- vanny chat launcher: floating GL-CHAT button, DESKTOP ONLY. Hidden at
        <=991px via .vanny-widget-launch, where chat is reached from the "Chat"

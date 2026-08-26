@@ -35,7 +35,7 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/variables.css?v=3703e9fe">
-  <link rel="stylesheet" href="css/project.css?v=c07be3dd">
+  <link rel="stylesheet" href="css/project.css?v=ae75221f">
 
   <script type="application/ld+json">
   {
@@ -134,7 +134,7 @@
     <!-- ============================================================ -->
     <section class="gl-hero-cap gl-vidrio_hero gl-section-border">
       <div class="gl-vidrio_hero_visual">
-        <div class="gl-vidrio_hero_slider" data-bind="heroSlider" tabindex="0" aria-roledescription="carousel" aria-label="Vistas del vidrio">
+        <div class="gl-vidrio_hero_slider" data-gl-lightbox="[data-bind=name]" data-bind="heroSlider" tabindex="0" aria-roledescription="carousel" aria-label="Vistas del vidrio">
           <!-- slides injected by page-vidrio.js -->
         </div>
         <div class="gl-vidrio_hero_controls" data-hero-controls hidden>
@@ -252,7 +252,7 @@
     <!-- ============================================================ -->
     <section class="gl-vidrio_gallery gl-section-border">
       <span class="gl-section-number">03 // Galería</span>
-      <div class="gl-vidrio_gallery_row" data-bind="gallery">
+      <div class="gl-vidrio_gallery_row" data-gl-lightbox="[data-bind=name]" data-bind="gallery">
         <div class="gl-img-placeholder gl-vidrio_gallery_img">
           <span class="gl-mono">DETALLE MACRO</span>
         </div>
@@ -462,6 +462,8 @@
     </div>
   </div>
   <script src='js/gl-menu.js?v=6026605e'></script>
+  <!-- Shared photo viewer — opt-in via data-gl-lightbox (see gl-lightbox.js) -->
+  <script src="js/gl-lightbox.js?v=54dd6498"></script>
   <script src="js/gl-interactions.js?v=5e94091b"></script>
   <script src="js/gl-page-transition.js?v=6f4350e2"></script>
   <script src="js/newsletter.js?v=6d3257eb"></script>

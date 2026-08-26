@@ -2206,6 +2206,7 @@ a.gl-catalogo_hero-caption { text-decoration-line: none; }
 
 .pg-proyecto_gallery_img-half { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; border-top-left-radius: var(--radius--subtle); border-top-right-radius: var(--radius--subtle); border-bottom-left-radius: var(--radius--subtle); border-bottom-right-radius: var(--radius--subtle); }
 
+
 .pg-proyecto_systems { padding-top: var(--_spacing---section-space--main); padding-bottom: var(--_spacing---section-space--main); }
 
 .pg-proyecto_systems_inner { max-width: var(--max-width--main); margin-left: auto; margin-right: auto; padding-left: var(--site--margin); padding-right: var(--site--margin); }
@@ -3691,6 +3692,12 @@ a.pg-index_systems_card:hover .pg-index_systems_card-link { color: var(--_theme-
 
 .gl-lightbox-lock { overflow: hidden; }
 
+/* Every image the shared viewer (gl-lightbox.js) can open — it marks them
+   with this attribute at bind time, so one rule covers both sites. */
+[data-gl-lightbox-item] { cursor: zoom-in; }
+
+[data-gl-lightbox-item]:focus-visible { outline-width: 2px; outline-style: solid; outline-color: var(--swatch--brand-500); outline-offset: 3px; }
+
 .gl-lightbox_backdrop { position: absolute; inset: 0px; background-color: color-mix(in srgb, var(--swatch--dark-900) 92%, transparent); cursor: pointer; }
 
 .gl-lightbox_frame { position: relative; display: flex; align-items: center; justify-content: center; max-width: 92vw; max-height: 88vh; padding: 0px; }
@@ -3698,6 +3705,9 @@ a.pg-index_systems_card:hover .pg-index_systems_card-link { color: var(--_theme-
 .gl-lightbox_figure { position: relative; display: flex; flex-direction: column; align-items: center; margin: 0px; transition-property: opacity; transition-duration: 0.18s; transition-timing-function: ease; }
 
 .gl-lightbox_figure-loading { opacity: 0.35; }
+
+/* SVG technical drawings (pg-mueble planos): light board + a real width, since an SVG in an <img> has no intrinsic size. Toggled by gl-lightbox.js. */
+.gl-lightbox_figure-plate .gl-lightbox_image { width: min(92vw, 1100px); padding-top: 2rem; padding-right: 2rem; padding-bottom: 2rem; padding-left: 2rem; background-color: var(--swatch--light-100); }
 
 .gl-lightbox_image { display: block; max-width: 92vw; max-height: 80vh; width: auto; height: auto; object-fit: contain; border-top-left-radius: var(--radius--subtle); border-top-right-radius: var(--radius--subtle); border-bottom-left-radius: var(--radius--subtle); border-bottom-right-radius: var(--radius--subtle); }
 
@@ -3716,6 +3726,9 @@ a.pg-index_systems_card:hover .pg-index_systems_card-link { color: var(--_theme-
 .gl-lightbox_nav-prev { left: var(--site--margin); }
 
 .gl-lightbox_nav-next { right: var(--site--margin); }
+
+/* Single-image sets: gl-lightbox.js sets the hidden attribute on the arrows, and the display rule above would otherwise override it. */
+.gl-lightbox_nav[hidden] { display: none; }
 
 .gl-lightbox_close:hover { color: var(--swatch--brand-500); }
 
