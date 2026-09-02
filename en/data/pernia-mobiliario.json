@@ -1,0 +1,815 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-07-21",
+  "brand": "pernia-glass",
+  "source": "PERNIA STUDIO — CATALOGUE 2022 (references/content/.../Documentos/PERNIA). Names, categories, dimensions and colourways transcribed from it. Material corrected to laminated glass per Guillermo Pernia, WhatsApp 2026-07-20.",
+  "family": {
+    "name": {
+      "es": "Mobiliario de vidrio Pernia",
+      "en": "Pernia Glass Furniture"
+    },
+    "comment": "Colección de 11 piezas en vidrio laminado de color. El vidrio NO se tiñe en masa — no usar «templado» ni «color en masa» en ninguna copy de mobiliario.",
+    "universal": {
+      "vidrio": {
+        "es": "Vidrio laminado de color",
+        "en": "Coloured laminated glass"
+      },
+      "cantos": {
+        "es": "Pulido brillante",
+        "en": "Polished bright edge"
+      },
+      "union": {
+        "es": "Adhesivo UV invisible",
+        "en": "Invisible UV adhesive"
+      },
+      "aMedida": {
+        "es": "Color y dimensión a elección",
+        "en": "Custom colour and dimension"
+      }
+    },
+    "categoryFilters": [
+      {
+        "id": "todos",
+        "name": {
+          "es": "Todos",
+          "en": "All"
+        }
+      },
+      {
+        "id": "centro",
+        "name": {
+          "es": "Centro",
+          "en": "Coffee"
+        }
+      },
+      {
+        "id": "comedor",
+        "name": {
+          "es": "Comedor",
+          "en": "Dining"
+        }
+      },
+      {
+        "id": "consola",
+        "name": {
+          "es": "Consolas",
+          "en": "Consoles"
+        }
+      },
+      {
+        "id": "mesita",
+        "name": {
+          "es": "Mesas de noche",
+          "en": "Nightstands"
+        }
+      },
+      {
+        "id": "auxiliar",
+        "name": {
+          "es": "Auxiliares",
+          "en": "Side tables"
+        }
+      },
+      {
+        "id": "silla",
+        "name": {
+          "es": "Sillas",
+          "en": "Chairs"
+        }
+      }
+    ]
+  },
+  "pieces": [
+    {
+      "code": "FOLDED",
+      "slug": "folded",
+      "name": {
+        "es": "Folded w/ Dekton",
+        "en": "Folded w/ Dekton"
+      },
+      "category": "centro",
+      "categoryLabel": {
+        "es": "Mesa de centro",
+        "en": "Coffee table"
+      },
+      "tagline": {
+        "es": "Un plano plegado sobre un bloque mineral.",
+        "en": "A folded plane over a mineral block."
+      },
+      "description": {
+        "es": "Una lámina de vidrio plegada en U que apoya sobre un bloque de Dekton, y sobre ella un segundo plano suspendido. El color vive en los cantos: se enciende donde el vidrio se dobla y desaparece en la superficie.",
+        "en": "A glass sheet folded into a U resting on a Dekton block, with a second suspended plane above it. Colour lives in the edges — it ignites where the glass folds and vanishes across the surface."
+      },
+      "specs": {
+        "material": {
+          "es": "Vidrio laminado de color + Dekton",
+          "en": "Coloured laminated glass + Dekton"
+        },
+        "medidas": {
+          "es": "160 × 80 × 35 cm",
+          "en": "160 × 80 × 35 cm"
+        },
+        "color": {
+          "es": "Azul · Rojo · a medida",
+          "en": "Blue · Red · custom"
+        }
+      },
+      "colorways": [
+        {
+          "name": {
+            "es": "Azul",
+            "en": "Blue"
+          },
+          "hex": "#1c4281"
+        },
+        {
+          "name": {
+            "es": "Rojo",
+            "en": "Red"
+          },
+          "hex": "#b65657"
+        }
+      ],
+      "media": {
+        "render": "../assets/media/pernia/catalogo/folded-render-b.webp",
+        "detailRender": "../assets/media/pernia/catalogo/folded-render-a.webp",
+        "diagram": "../assets/media/pernia/diagrams/folded-diagram.svg",
+        "gallery": []
+      }
+    },
+    {
+      "code": "FLOAT",
+      "slug": "float",
+      "name": {
+        "es": "Float",
+        "en": "Float"
+      },
+      "category": "centro",
+      "categoryLabel": {
+        "es": "Mesa de centro",
+        "en": "Coffee table"
+      },
+      "tagline": {
+        "es": "Una superficie que parece no tocar nada.",
+        "en": "A surface that seems to touch nothing."
+      },
+      "description": {
+        "es": "Un plano amplio sostenido por una cruz de vidrio que se retira hacia el centro. Desde cualquier ángulo de pie la estructura desaparece y queda sólo la superficie flotando sobre la alfombra.",
+        "en": "A wide plane held by a glass cross that withdraws toward the centre. From any standing angle the structure disappears and only the surface remains, floating above the rug."
+      },
+      "specs": {
+        "material": {
+          "es": "Vidrio laminado de color",
+          "en": "Coloured laminated glass"
+        },
+        "medidas": {
+          "es": "120 × 55 × 30 cm",
+          "en": "120 × 55 × 30 cm"
+        },
+        "color": {
+          "es": "Azul petróleo · Ámbar · a medida",
+          "en": "Petrol blue · Amber · custom"
+        }
+      },
+      "colorways": [
+        {
+          "name": {
+            "es": "Azul petróleo",
+            "en": "Petrol blue"
+          },
+          "hex": "#49768b"
+        },
+        {
+          "name": {
+            "es": "Ámbar",
+            "en": "Amber"
+          },
+          "hex": "#e9b548"
+        }
+      ],
+      "media": {
+        "render": "../assets/media/pernia/catalogo/float-render-b.webp",
+        "detailRender": "../assets/media/pernia/catalogo/float-render-a.webp",
+        "diagram": "../assets/media/pernia/diagrams/float-diagram.svg",
+        "gallery": []
+      }
+    },
+    {
+      "code": "NOGUCHI",
+      "slug": "noguchi-tribute",
+      "name": {
+        "es": "Noguchi Tribute",
+        "en": "Noguchi Tribute"
+      },
+      "category": "centro",
+      "categoryLabel": {
+        "es": "Mesa de centro",
+        "en": "Coffee table"
+      },
+      "tagline": {
+        "es": "Homenaje a una silueta que ya conoces.",
+        "en": "A tribute to a silhouette you already know."
+      },
+      "description": {
+        "es": "Un tablero biomórfico sobre dos soportes curvos que se traban entre sí — la geometría de Noguchi rehecha íntegramente en vidrio. El rayado de color recorre el tablero y cambia de tono según dónde te pares.",
+        "en": "A biomorphic top on two interlocking curved supports — Noguchi’s geometry rebuilt entirely in glass. Striped colour runs across the top and shifts with where you stand."
+      },
+      "specs": {
+        "material": {
+          "es": "Vidrio laminado de color",
+          "en": "Coloured laminated glass"
+        },
+        "medidas": {
+          "es": "127 × 91 × 40 cm",
+          "en": "127 × 91 × 40 cm"
+        },
+        "color": {
+          "es": "Ámbar · Verde agua · a medida",
+          "en": "Amber · Aqua green · custom"
+        }
+      },
+      "colorways": [
+        {
+          "name": {
+            "es": "Ámbar",
+            "en": "Amber"
+          },
+          "hex": "#c49547"
+        },
+        {
+          "name": {
+            "es": "Verde agua",
+            "en": "Aqua green"
+          },
+          "hex": "#52929c"
+        }
+      ],
+      "media": {
+        "render": "../assets/media/pernia/catalogo/noguchi-tribute-render-b.webp",
+        "detailRender": "../assets/media/pernia/catalogo/noguchi-tribute-render-a.webp",
+        "diagram": "../assets/media/pernia/diagrams/noguchi-tribute-diagram.svg",
+        "gallery": []
+      }
+    },
+    {
+      "code": "PERFORATA",
+      "slug": "perforata",
+      "name": {
+        "es": "Perforata",
+        "en": "Perforata"
+      },
+      "category": "comedor",
+      "categoryLabel": {
+        "es": "Mesa de comedor",
+        "en": "Dining table"
+      },
+      "tagline": {
+        "es": "El color multiplicado por la profundidad.",
+        "en": "Colour multiplied by depth."
+      },
+      "description": {
+        "es": "Láminas de vidrio dispuestas en franjas paralelas que forman la base y el faldón. Vistas de frente son una persiana de color; de canto casi desaparecen. La mesa cambia de densidad con la hora del día.",
+        "en": "Glass sheets set in parallel bands that form the base and apron. Head-on they read as a louvre of colour; edge-on they nearly vanish. The table changes density with the hour."
+      },
+      "specs": {
+        "material": {
+          "es": "Vidrio laminado de color",
+          "en": "Coloured laminated glass"
+        },
+        "medidas": {
+          "es": "200 × 100 × 75 cm",
+          "en": "200 × 100 × 75 cm"
+        },
+        "color": {
+          "es": "Azul · Ciruela · a medida",
+          "en": "Blue · Plum · custom"
+        }
+      },
+      "colorways": [
+        {
+          "name": {
+            "es": "Azul",
+            "en": "Blue"
+          },
+          "hex": "#2693d4"
+        },
+        {
+          "name": {
+            "es": "Ciruela",
+            "en": "Plum"
+          },
+          "hex": "#7e2752"
+        }
+      ],
+      "media": {
+        "render": "../assets/media/pernia/catalogo/perforata-render-b.webp",
+        "detailRender": "../assets/media/pernia/catalogo/perforata-render-a.webp",
+        "diagram": "../assets/media/pernia/diagrams/perforata-diagram.svg",
+        "gallery": []
+      }
+    },
+    {
+      "code": "ARLECCHINO",
+      "slug": "arlecchino",
+      "name": {
+        "es": "Arlecchino",
+        "en": "Arlecchino"
+      },
+      "category": "comedor",
+      "categoryLabel": {
+        "es": "Mesa de comedor",
+        "en": "Dining table"
+      },
+      "tagline": {
+        "es": "Un mosaico de color — homenaje al arlequín.",
+        "en": "A mosaic of colour — a tribute to the harlequin."
+      },
+      "description": {
+        "es": "Cuatro patas de vidrio, cada una en un tono distinto, bajo un tablero traslúcido. Cada cara enfrenta un color diferente y la pieza cambia con cada paso alrededor — nunca se ve dos veces igual.",
+        "en": "Four glass legs, each in a different tone, under a translucent top. Each face meets a different colour and the piece shifts with every step around it — never the same twice."
+      },
+      "specs": {
+        "material": {
+          "es": "Vidrio laminado de color",
+          "en": "Coloured laminated glass"
+        },
+        "medidas": {
+          "es": "180 × 90 × 75 cm",
+          "en": "180 × 90 × 75 cm"
+        },
+        "color": {
+          "es": "Morado · Naranja · a medida",
+          "en": "Purple · Orange · custom"
+        }
+      },
+      "colorways": [
+        {
+          "name": {
+            "es": "Morado",
+            "en": "Purple"
+          },
+          "hex": "#560e9e"
+        },
+        {
+          "name": {
+            "es": "Naranja",
+            "en": "Orange"
+          },
+          "hex": "#d97225"
+        }
+      ],
+      "media": {
+        "render": "../assets/media/pernia/catalogo/arlecchino-render-b.webp",
+        "detailRender": "../assets/media/pernia/catalogo/arlecchino-render-a.webp",
+        "diagram": "../assets/media/pernia/diagrams/arlecchino-diagram.svg",
+        "gallery": []
+      }
+    },
+    {
+      "code": "POMAROSA",
+      "slug": "pomarosa",
+      "name": {
+        "es": "Pomarosa",
+        "en": "Pomarosa"
+      },
+      "category": "consola",
+      "categoryLabel": {
+        "es": "Consola",
+        "en": "Console table"
+      },
+      "tagline": {
+        "es": "Planos que se cruzan sobre un solo apoyo.",
+        "en": "Planes crossing over a single support."
+      },
+      "description": {
+        "es": "Una consola construida por planos que se cruzan en voladizo sobre un único cuerpo vertical. Los tonos se superponen en los cruces y generan un tercer color que no está en ninguna de las dos piezas.",
+        "en": "A console built from planes that cross in cantilever over a single vertical body. The tones overlap at the crossings and produce a third colour present in neither sheet."
+      },
+      "specs": {
+        "material": {
+          "es": "Vidrio laminado de color",
+          "en": "Coloured laminated glass"
+        },
+        "medidas": {
+          "es": "115 × 30 × 75 cm",
+          "en": "115 × 30 × 75 cm"
+        },
+        "color": {
+          "es": "Vino · Ámbar · a medida",
+          "en": "Wine · Amber · custom"
+        }
+      },
+      "colorways": [
+        {
+          "name": {
+            "es": "Vino",
+            "en": "Wine"
+          },
+          "hex": "#680243"
+        },
+        {
+          "name": {
+            "es": "Ámbar",
+            "en": "Amber"
+          },
+          "hex": "#d2a832"
+        }
+      ],
+      "media": {
+        "render": "../assets/media/pernia/catalogo/pomarosa-render-b.webp",
+        "detailRender": "../assets/media/pernia/catalogo/pomarosa-render-a.webp",
+        "diagram": "../assets/media/pernia/diagrams/pomarosa-diagram.svg",
+        "gallery": []
+      }
+    },
+    {
+      "code": "REGIA",
+      "slug": "regia",
+      "name": {
+        "es": "Regia",
+        "en": "Regia"
+      },
+      "category": "consola",
+      "categoryLabel": {
+        "es": "Consola",
+        "en": "Console table"
+      },
+      "tagline": {
+        "es": "La consola larga del recibidor.",
+        "en": "The long console of the entryway."
+      },
+      "description": {
+        "es": "Dos costados de vidrio claro sostienen una tapa de color y una repisa inferior. Un perfil bajo y continuo que casi desaparece contra la pared — la pieza de recibidor y de pasillo.",
+        "en": "Two clear glass sides carry a coloured top and a lower shelf. A low, continuous profile that nearly disappears against the wall — the entryway and hallway piece."
+      },
+      "specs": {
+        "material": {
+          "es": "Vidrio laminado de color",
+          "en": "Coloured laminated glass"
+        },
+        "medidas": {
+          "es": "120 × 35 × 75 cm",
+          "en": "120 × 35 × 75 cm"
+        },
+        "color": {
+          "es": "Azul · Ámbar · a medida",
+          "en": "Blue · Amber · custom"
+        }
+      },
+      "colorways": [
+        {
+          "name": {
+            "es": "Azul",
+            "en": "Blue"
+          },
+          "hex": "#0d4b84"
+        },
+        {
+          "name": {
+            "es": "Ámbar",
+            "en": "Amber"
+          },
+          "hex": "#af6f28"
+        }
+      ],
+      "media": {
+        "render": "../assets/media/pernia/catalogo/regia-render-b.webp",
+        "detailRender": "../assets/media/pernia/catalogo/regia-render-a.webp",
+        "diagram": "../assets/media/pernia/diagrams/regia-diagram.svg",
+        "gallery": []
+      }
+    },
+    {
+      "code": "BIPLANAR",
+      "slug": "biplanar",
+      "name": {
+        "es": "Biplanar",
+        "en": "Biplanar"
+      },
+      "category": "mesita",
+      "categoryLabel": {
+        "es": "Mesa de noche",
+        "en": "Nightstand"
+      },
+      "tagline": {
+        "es": "Dos planos que se cruzan en voladizo.",
+        "en": "Two planes crossing in cantilever."
+      },
+      "description": {
+        "es": "Dos planos de vidrio que se cruzan en voladizo y arman un volumen abierto con repisa: la mesa de noche de la colección. Se ofrece en cuatro combinaciones de color de catálogo, dos de ellas esmeriladas.",
+        "en": "Two glass planes crossing in cantilever to form an open volume with a shelf — the collection’s nightstand. Offered in four catalogue colour pairings, two of them frosted."
+      },
+      "specs": {
+        "material": {
+          "es": "Vidrio laminado de color",
+          "en": "Coloured laminated glass"
+        },
+        "medidas": {
+          "es": "60 × 30 × 40 cm",
+          "en": "60 × 30 × 40 cm"
+        },
+        "color": {
+          "es": "4 combinaciones de catálogo · color a medida",
+          "en": "4 catalogue pairings · custom colour"
+        }
+      },
+      "colorways": [
+        {
+          "name": {
+            "es": "Amarillo · Azul",
+            "en": "Yellow · Blue"
+          },
+          "hex": "#e1c73e"
+        },
+        {
+          "name": {
+            "es": "Verde · Amarillo · Rojo",
+            "en": "Green · Yellow · Red"
+          },
+          "hex": "#afca47"
+        },
+        {
+          "name": {
+            "es": "Azul · Rojo (esmerilado)",
+            "en": "Blue · Red (frosted)"
+          },
+          "hex": "#12aac2"
+        },
+        {
+          "name": {
+            "es": "Naranja · Morado (esmerilado)",
+            "en": "Orange · Purple (frosted)"
+          },
+          "hex": "#e96d17"
+        }
+      ],
+      "media": {
+        "render": "../assets/media/pernia/catalogo/biplanar-render-b.webp",
+        "detailRender": "../assets/media/pernia/catalogo/biplanar-render-a.webp",
+        "diagram": "../assets/media/pernia/diagrams/biplanar-diagram.svg",
+        "gallery": [
+          "../assets/media/pernia/catalogo/biplanar-amarillo-azul.webp",
+          "../assets/media/pernia/catalogo/biplanar-verde-amarillo-rojo.webp",
+          "../assets/media/pernia/catalogo/biplanar-azul-rojo.webp",
+          "../assets/media/pernia/catalogo/biplanar-naranja-morado.webp"
+        ]
+      }
+    },
+    {
+      "code": "ACETATO",
+      "slug": "acetato",
+      "name": {
+        "es": "Acetato",
+        "en": "Acetato"
+      },
+      "category": "auxiliar",
+      "categoryLabel": {
+        "es": "Mesa auxiliar",
+        "en": "Side table"
+      },
+      "tagline": {
+        "es": "Un disco de color sobre una columna de piedra.",
+        "en": "A disc of colour on a stone column."
+      },
+      "description": {
+        "es": "Un cilindro macizo de piedra y, encima, un disco de vidrio con anillos concéntricos de color. El vidrio sobresale del apoyo: la mesa se lee como dos figuras que se rozan, no como una sola.",
+        "en": "A solid stone cylinder and, above it, a glass disc with concentric rings of colour. The glass overhangs its support: the table reads as two figures grazing, not one."
+      },
+      "specs": {
+        "material": {
+          "es": "Vidrio laminado de color + base de piedra",
+          "en": "Coloured laminated glass + stone base"
+        },
+        "medidas": {
+          "es": "30 Ø base · 50 Ø vidrio · 50 alto (cm)",
+          "en": "30 Ø base · 50 Ø vidrio · 50 alto (cm)"
+        },
+        "color": {
+          "es": "Ámbar · Rojo · Azul noche · a medida",
+          "en": "Amber · Red · Night blue · custom"
+        }
+      },
+      "colorways": [
+        {
+          "name": {
+            "es": "Ámbar",
+            "en": "Amber"
+          },
+          "hex": "#d6a614"
+        },
+        {
+          "name": {
+            "es": "Rojo",
+            "en": "Red"
+          },
+          "hex": "#a8121b"
+        },
+        {
+          "name": {
+            "es": "Azul noche",
+            "en": "Night blue"
+          },
+          "hex": "#1c2d51"
+        }
+      ],
+      "media": {
+        "render": "../assets/media/pernia/catalogo/acetato-render-b.webp",
+        "detailRender": "../assets/media/pernia/catalogo/acetato-render-a.webp",
+        "diagram": "../assets/media/pernia/diagrams/acetato-diagram.svg",
+        "gallery": []
+      }
+    },
+    {
+      "code": "HASHTAG",
+      "slug": "hashtag",
+      "name": {
+        "es": "Hashtag",
+        "en": "Hashtag"
+      },
+      "category": "auxiliar",
+      "categoryLabel": {
+        "es": "Mesa auxiliar",
+        "en": "Side table"
+      },
+      "tagline": {
+        "es": "Cuatro planos que se cruzan como un signo.",
+        "en": "Four planes crossing like a sign."
+      },
+      "description": {
+        "es": "Cuatro planos que se atraviesan formando el signo que le da nombre. Los sobrantes quedan a la vista a ambos lados y el color se dobla en cada intersección.",
+        "en": "Four planes crossing to form the sign it is named for. The overhangs stay visible on both sides and the colour doubles at every intersection."
+      },
+      "specs": {
+        "material": {
+          "es": "Vidrio laminado de color",
+          "en": "Coloured laminated glass"
+        },
+        "medidas": {
+          "es": "40 × 30 × 50 cm",
+          "en": "40 × 30 × 50 cm"
+        },
+        "color": {
+          "es": "Amarillo · Rosa · a medida",
+          "en": "Yellow · Pink · custom"
+        }
+      },
+      "colorways": [
+        {
+          "name": {
+            "es": "Amarillo",
+            "en": "Yellow"
+          },
+          "hex": "#e0ca5b"
+        },
+        {
+          "name": {
+            "es": "Rosa",
+            "en": "Pink"
+          },
+          "hex": "#dd66a8"
+        }
+      ],
+      "media": {
+        "render": "../assets/media/pernia/catalogo/hashtag-render-b.webp",
+        "detailRender": "../assets/media/pernia/catalogo/hashtag-render-a.webp",
+        "diagram": "../assets/media/pernia/diagrams/hashtag-diagram.svg",
+        "gallery": []
+      }
+    },
+    {
+      "code": "FRACA",
+      "slug": "fraca",
+      "name": {
+        "es": "Fraca",
+        "en": "Fraca"
+      },
+      "category": "silla",
+      "categoryLabel": {
+        "es": "Silla",
+        "en": "Chair"
+      },
+      "tagline": {
+        "es": "Una silla armada con planos que se atraviesan.",
+        "en": "A chair assembled from planes that pass through each other."
+      },
+      "description": {
+        "es": "Asiento, respaldo y brazos resueltos con planos de vidrio que se cruzan, y una pata en color que rompe la transparencia. La pieza más difícil de la colección y la que mejor explica el sistema.",
+        "en": "Seat, back and arms resolved with crossing glass planes, and one coloured leg that breaks the transparency. The hardest piece in the collection and the one that best explains the system."
+      },
+      "specs": {
+        "material": {
+          "es": "Vidrio laminado de color",
+          "en": "Coloured laminated glass"
+        },
+        "medidas": {
+          "es": "45 × 60 × 65 cm",
+          "en": "45 × 60 × 65 cm"
+        },
+        "color": {
+          "es": "Azul · Naranja · a medida",
+          "en": "Blue · Orange · custom"
+        }
+      },
+      "colorways": [
+        {
+          "name": {
+            "es": "Azul",
+            "en": "Blue"
+          },
+          "hex": "#1c96c7"
+        },
+        {
+          "name": {
+            "es": "Naranja",
+            "en": "Orange"
+          },
+          "hex": "#d97e22"
+        }
+      ],
+      "media": {
+        "render": "../assets/media/pernia/catalogo/fraca-render-b.webp",
+        "detailRender": "../assets/media/pernia/catalogo/fraca-render-a.webp",
+        "diagram": "../assets/media/pernia/diagrams/fraca-diagram.svg",
+        "gallery": []
+      }
+    },
+    {
+      "code": "STOA",
+      "slug": "stoa",
+      "name": {
+        "es": "Stoa",
+        "en": "Stoa"
+      },
+      "category": "consola",
+      "categoryLabel": {
+        "es": "Consola",
+        "en": "Console table"
+      },
+      "tagline": {
+        "es": "Una consola sostenida por la luz.",
+        "en": "A console held up by light."
+      },
+      "description": {
+        "es": "Planos de vidrio laminado y cantos pulidos que casi desaparecen contra la pared — la pieza de recibidor por excelencia. Dos modelos de base, cada uno disponible en dos acabados de vidrio.",
+        "en": "Laminated glass planes with polished edges that nearly vanish against the wall — the entryway piece par excellence. Two base models, each available in two glass finishes."
+      },
+      "specs": {
+        "material": {
+          "es": "Vidrio laminado de color",
+          "en": "Coloured laminated glass"
+        },
+        "medidas": {
+          "es": "A medida",
+          "en": "Custom"
+        },
+        "color": {
+          "es": "2 modelos · 2 acabados c/u · a medida",
+          "en": "2 models · 2 finishes each · custom"
+        }
+      },
+      "colorways": [
+        {
+          "name": {
+            "es": "Bronce",
+            "en": "Bronze"
+          },
+          "hex": "#8a5a2e"
+        },
+        {
+          "name": {
+            "es": "Bronce oscuro",
+            "en": "Dark bronze"
+          },
+          "hex": "#5a3f2a"
+        },
+        {
+          "name": {
+            "es": "Humo",
+            "en": "Smoke"
+          },
+          "hex": "#8c8a85"
+        },
+        {
+          "name": {
+            "es": "Grafito",
+            "en": "Graphite"
+          },
+          "hex": "#4a4946"
+        }
+      ],
+      "media": {
+        "render": "../assets/media/pernia/renders/console-iso-5.webp",
+        "detailRender": "../assets/media/pernia/renders/console-iso-1.webp",
+        "diagram": null,
+        "gallery": [
+          "../assets/media/pernia/renders/console-iso-2.webp",
+          "../assets/media/pernia/renders/console-iso-3.webp",
+          "../assets/media/pernia/renders/console-iso-4.webp",
+          "../assets/media/pernia/renders/console-iso-6.webp",
+          "../assets/media/pernia/renders/console-iso-7.webp",
+          "../assets/media/pernia/renders/console-iso-8.webp"
+        ]
+      }
+    }
+  ]
+}

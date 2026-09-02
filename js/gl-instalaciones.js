@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  const assetRoot = "assets/media/glass-lab/instalaciones/";
+  const assetRoot = (window.__FLWR_BASE__||"")+"assets/media/glass-lab/instalaciones/";
 
   // The installations archive — curated photographs of real Glass Lab glass
   // work in situ (colour panels, gradient partitions, reeded doors, sculptural

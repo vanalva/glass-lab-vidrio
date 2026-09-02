@@ -15,7 +15,7 @@
    half its images to exactly that). */
 (function () {
   "use strict";
-  var base = "assets/media/pernia/catalogo/";
+  var base = (window.__FLWR_BASE__||"")+"assets/media/pernia/catalogo/";
   var slugs = ["folded", "float", "noguchi-tribute", "perforata", "arlecchino",
                "pomarosa", "regia", "biplanar", "acetato", "hashtag", "fraca"];
   var pool = [];

@@ -1,0 +1,526 @@
+{
+  "title": "Pernia Glass — proyectos",
+  "note": "Per-project detail data for pg-proyecto.html (?slug=). Titles, category, location and year come from the pg-proyectos.html grid cards; galleries are the real photo sets in ../assets/media/pernia/aplicaciones. `description` is the client's own copy, verbatim from references/content/Edits/TEXTOS PROYECTOS.docx — do not rewrite it. Seacat/Seacho/Torre600 still have no category/location/year: Guillermo has not supplied them and they must not be guessed. Photo prefix note: Torre600 files are named t600-*, and Seazeit files were shot under the photographer name \"Seapoint\" but the project is Seazeit.",
+  "updated": "2026-07-29",
+  "count": 9,
+  "projects": [
+    {
+      "slug": "lantana",
+      "title": "Lantana",
+      "hero": {
+        "src": "../assets/media/pernia/aplicaciones/lantana-1.webp",
+        "w": 1600,
+        "h": 1067
+      },
+      "gallery": [
+        {
+          "src": "../assets/media/pernia/aplicaciones/lantana-2.webp",
+          "w": 1600,
+          "h": 1067
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/lantana-3.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/lantana-4.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/lantana-5.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/lantana-6.webp",
+          "w": 1600,
+          "h": 1067
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/lantana-7.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/lantana-8.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/lantana-9.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/lantana-10.webp",
+          "w": 1600,
+          "h": 2399
+        }
+      ],
+      "systems": [],
+      "description": [
+        "Este proyecto nace de la intención de crear una división elegante entre la sala y el den, aportando mayor privacidad sin interrumpir la armonía del espacio. La solución integra tres puertas telescópicas en acabado bronce anodizado, combinadas con malla AP Galena, el tejido más cerrado de nuestra colección. Su trama permite resguardar visualmente el ambiente y, al mismo tiempo, conservar una sensación de ligereza y continuidad. El tono cálido del bronce dialoga con la iluminación y los materiales del interior, convirtiendo la división en un elemento arquitectónico sutil, funcional y cuidadosamente integrado a la estética del proyecto."
+      ],
+      "category": "residencial",
+      "categoryLabel": "Residencial",
+      "location": "Panamá",
+      "year": "2025"
+    },
+    {
+      "slug": "pradera",
+      "title": "Pradera",
+      "hero": {
+        "src": "../assets/media/pernia/aplicaciones/pradera-1.webp",
+        "w": 1600,
+        "h": 1067
+      },
+      "gallery": [
+        {
+          "src": "../assets/media/pernia/aplicaciones/pradera-2.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/pradera-3.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/pradera-4.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/pradera-5.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/pradera-6.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/pradera-7.webp",
+          "w": 1600,
+          "h": 2399
+        }
+      ],
+      "systems": [],
+      "description": [
+        "Una división ligera conecta la habitación con el clóset a través de dos paneles: uno fijo y otro corredizo. La propuesta permite que la luz natural atraviese el espacio, mientras la malla Ae - Hierro en tono champagne tamiza las vistas y aporta la privacidad necesaria. La estructura de aluminio negro define el conjunto con líneas precisas y un contraste sutil. A su vez, el matiz cálido de la malla dialoga con el piso de madera del clóset, creando una composición equilibrada y coherente. El resultado es una solución funcional y elegante que separa ambos ambientes sin restarles amplitud ni continuidad visual."
+      ],
+      "category": "comercial",
+      "categoryLabel": "Comercial",
+      "location": "Panamá",
+      "year": "2024"
+    },
+    {
+      "slug": "tdm",
+      "title": "TDM",
+      "hero": {
+        "src": "../assets/media/pernia/aplicaciones/tdm-1.webp",
+        "w": 1600,
+        "h": 1067
+      },
+      "gallery": [
+        {
+          "src": "../assets/media/pernia/aplicaciones/tdm-2.webp",
+          "w": 1600,
+          "h": 1067
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/tdm-3.webp",
+          "w": 1280,
+          "h": 1920
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/tdm-4.webp",
+          "w": 1280,
+          "h": 1920
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/tdm-5.webp",
+          "w": 1280,
+          "h": 1920
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/tdm-6.webp",
+          "w": 1280,
+          "h": 1920
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/tdm-7.webp",
+          "w": 1600,
+          "h": 1067
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/tdm-8.webp",
+          "w": 1280,
+          "h": 1920
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/tdm-9.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/tdm-10.webp",
+          "w": 1600,
+          "h": 2399
+        }
+      ],
+      "systems": [],
+      "description": [
+        "La malla AZ Hierro, con su distintivo patrón en zigzag, se convierte en el hilo conductor de este proyecto. Enmarcada en perfilería negra, reviste dos puertas corredizas tipo pocket que separan sutilmente la sala del den y contrastan con la calidez del panelado de madera clara. La misma combinación se utilizó en el cerramiento de la oficina, permitiendo el paso de la luz natural sin renunciar a la privacidad. Para completar la propuesta, el vidrio con malla se incorporó también en la puerta de la vinera, creando un lenguaje visual homogéneo, elegante y coherente en todo el espacio."
+      ],
+      "category": "hoteleria",
+      "categoryLabel": "Hoteleria",
+      "location": "Panamá",
+      "year": "2025"
+    },
+    {
+      "slug": "aqua",
+      "title": "Aqua",
+      "hero": {
+        "src": "../assets/media/pernia/aplicaciones/aqua-2.webp",
+        "w": 1920,
+        "h": 2879
+      },
+      "gallery": [
+        {
+          "src": "../assets/media/pernia/aplicaciones/aqua-1.webp",
+          "w": 1920,
+          "h": 2879
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/aqua-3.webp",
+          "w": 1920,
+          "h": 1281
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/aqua-4.webp",
+          "w": 1280,
+          "h": 1920
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/aqua-5.webp",
+          "w": 1920,
+          "h": 1281
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/aqua-6.webp",
+          "w": 1920,
+          "h": 1281
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/aqua-7.webp",
+          "w": 1280,
+          "h": 1920
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/aqua-8.webp",
+          "w": 1920,
+          "h": 1281
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/aqua-9.webp",
+          "w": 1920,
+          "h": 2879
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/aqua-10.webp",
+          "w": 1280,
+          "h": 1920
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/aqua-11.webp",
+          "w": 1920,
+          "h": 2879
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/aqua-12.webp",
+          "w": 1920,
+          "h": 1281
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/aqua-13.webp",
+          "w": 1920,
+          "h": 2879
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/aqua-14.webp",
+          "w": 1920,
+          "h": 2879
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/aqua-15.webp",
+          "w": 1920,
+          "h": 2879
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/aqua-16.webp",
+          "w": 1280,
+          "h": 1920
+        }
+      ],
+      "systems": [],
+      "description": [
+        "En este proyecto, todas las puertas de la residencia fueron concebidas bajo un mismo lenguaje material, creando continuidad entre los distintos ambientes. La perfilería en acabado bronce enmarca el vidrio con malla AZ Hierro, reconocible por su singular patrón en zigzag y su carácter decorativo. Esta combinación aporta textura y profundidad sin restar ligereza ni luminosidad a los espacios. Los matices metálicos dialogan con la madera, los textiles y la paleta neutra del interior, reforzando la atmósfera cálida de la vivienda. El resultado es una propuesta coherente y elegante, en la que cada puerta forma parte integral de la arquitectura."
+      ],
+      "category": "residencial",
+      "categoryLabel": "Residencial",
+      "location": "Panamá",
+      "year": "2026"
+    },
+    {
+      "slug": "seazeit",
+      "title": "Seazeit",
+      "hero": {
+        "src": "../assets/media/pernia/aplicaciones/seazeit-1.webp",
+        "w": 1600,
+        "h": 2400
+      },
+      "gallery": [
+        {
+          "src": "../assets/media/pernia/aplicaciones/seazeit-2.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/seazeit-3.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/seazeit-4.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/seazeit-5.webp",
+          "w": 1600,
+          "h": 2400
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/seazeit-6.webp",
+          "w": 1600,
+          "h": 2399
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/seazeit-7.webp",
+          "w": 1600,
+          "h": 1067
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/seazeit-8.webp",
+          "w": 1600,
+          "h": 2399
+        }
+      ],
+      "systems": [],
+      "description": [
+        "La flexibilidad fue el punto de partida de este proyecto: crear divisiones capaces de integrar los ambientes o independizarlos según cada momento y necesidad. Para lograrlo, se instalaron puertas corredizas dobles tipo pocket, sistema Pglass 2B, con vidrio de seguridad bronce y perfilería en el mismo acabado. Al abrirse, las puertas desaparecen y permiten una conexión fluida entre los espacios; al cerrarse, brindan privacidad sin perder profundidad visual. Como detalle distintivo, se incorporaron celosías verticales que aportan textura, ritmo y movimiento, transformando las divisiones en elementos arquitectónicos con carácter propio y una presencia cálida y elegante."
+      ],
+      "category": "residencial",
+      "categoryLabel": "Residencial",
+      "location": "Panamá",
+      "year": "2026"
+    },
+    {
+      "slug": "fairways",
+      "title": "Fairways",
+      "hero": {
+        "src": "../assets/media/pernia/aplicaciones/fairways-1.webp",
+        "w": 1920,
+        "h": 1281
+      },
+      "gallery": [
+        {
+          "src": "../assets/media/pernia/aplicaciones/fairways-2.webp",
+          "w": 1920,
+          "h": 2879
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/fairways-3.webp",
+          "w": 1920,
+          "h": 2879
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/fairways-5.webp",
+          "w": 1920,
+          "h": 2879
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/fairways-6.webp",
+          "w": 1920,
+          "h": 2879
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/fairways-8.webp",
+          "w": 1920,
+          "h": 2879
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/fairways-9.webp",
+          "w": 1920,
+          "h": 1281
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/fairways-10.webp",
+          "w": 1920,
+          "h": 2879
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/fairways-11.webp",
+          "w": 1920,
+          "h": 2880
+        }
+      ],
+      "systems": [],
+      "description": [
+        "Este proyecto articula el comedor, la cocina y el estudio mediante cerramientos que combinan paños fijos y puertas corredizas. En sintonía con la paleta de tonos taupe y crema, se eligió perfilería champagne con malla Ap-bronce, una combinación que filtra la luz y aporta privacidad sin oscurecer los espacios. Para la oficina, se diseñó una puerta escamoteable de dos paños con cerradura, perfilería bronce y malla Bq-champagne. Su textura y proporción le otorgan una presencia más definida y señorial. El resultado es una composición cálida y elegante, con soluciones funcionales integradas naturalmente a la arquitectura."
+      ],
+      "category": "residencial",
+      "categoryLabel": "Residencial",
+      "location": "Panamá",
+      "year": "2026"
+    },
+    {
+      "slug": "seacat",
+      "title": "Seacat",
+      "hero": {
+        "src": "../assets/media/pernia/aplicaciones/seacat-2.webp",
+        "w": 1024,
+        "h": 683
+      },
+      "gallery": [
+        {
+          "src": "../assets/media/pernia/aplicaciones/seacat-0-2.webp",
+          "w": 1024,
+          "h": 683
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/seacat-1.webp",
+          "w": 1024,
+          "h": 683
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/seacat-3.webp",
+          "w": 1024,
+          "h": 1536
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/seacat-4.webp",
+          "w": 1024,
+          "h": 1536
+        }
+      ],
+      "systems": [
+        "pglass-3b"
+      ],
+      "description": [
+        "La intención de este proyecto fue crear una conexión fluida entre el desayunador y la sala, permitiendo integrar o separar ambos ambientes según el momento. Para lograrlo, se diseñaron tres puertas corredizas que se ocultan completamente dentro de un pocket, liberando el paso y ampliando la percepción del espacio. La perfilería champagne aporta calidez y ligereza al conjunto, mientras la malla AH en tono bronce introduce una textura delicada y decorativa. Su trama tamiza sutilmente las vistas y enriquece la luz, convirtiendo el cerramiento en un elemento funcional que complementa la arquitectura con una presencia serena y elegante."
+      ]
+    },
+    {
+      "slug": "seacho",
+      "title": "Seacho",
+      "hero": {
+        "src": "../assets/media/pernia/aplicaciones/seacho-6.webp",
+        "w": 1024,
+        "h": 1536
+      },
+      "gallery": [
+        {
+          "src": "../assets/media/pernia/aplicaciones/seacho-5.webp",
+          "w": 1024,
+          "h": 1536
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/seacho-7.webp",
+          "w": 1024,
+          "h": 1536
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/seacho-8.webp",
+          "w": 1024,
+          "h": 1536
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/seacho-9.webp",
+          "w": 1024,
+          "h": 1536
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/seacho-10.webp",
+          "w": 1024,
+          "h": 683
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/seacho-11.webp",
+          "w": 1024,
+          "h": 683
+        }
+      ],
+      "systems": [
+        "pglass-4a",
+        "pglass-2b"
+      ],
+      "description": [
+        "La privacidad y el paso de la luz natural guiaron el diseño de los dos cerramientos de esta residencia. Para el den de televisión se creó una composición de cuatro paños —dos fijos y dos corredizos— con malla AP Dorada, cuyo tono complementa la calidez del interior. El segundo cerramiento incorpora dos puertas corredizas tipo pocket, capaces de desaparecer para integrar por completo la sala con las áreas privadas. Al cerrarse, ambos sistemas se leen como una composición continua de seis paños: un solo gesto arquitectónico que unifica elementos con funciones distintas y aporta ritmo, ligereza y coherencia visual al espacio."
+      ]
+    },
+    {
+      "slug": "torre600",
+      "title": "Torre600",
+      "hero": {
+        "src": "../assets/media/pernia/aplicaciones/t600-7.webp",
+        "w": 1280,
+        "h": 854
+      },
+      "gallery": [
+        {
+          "src": "../assets/media/pernia/aplicaciones/t600-1.webp",
+          "w": 854,
+          "h": 1280
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/t600-2.webp",
+          "w": 854,
+          "h": 1280
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/t600-3.webp",
+          "w": 1280,
+          "h": 854
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/t600-4.webp",
+          "w": 854,
+          "h": 1280
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/t600-5.webp",
+          "w": 1280,
+          "h": 854
+        },
+        {
+          "src": "../assets/media/pernia/aplicaciones/t600-6.webp",
+          "w": 854,
+          "h": 1280
+        }
+      ],
+      "systems": [
+        "pglass-2b",
+        "pglass-2a",
+        "pglass-4c"
+      ],
+      "description": [
+        "La propuesta arquitectónica contempló las puertas como elementos de integración, concebidos para complementar los interiores sin asumir un protagonismo excesivo. La perfilería de aluminio negro y el vidrio bronce establecen una relación armónica con las maderas, los cueros y los textiles presentes en la residencia, reforzando su paleta cálida y sofisticada. En los espacios que requerían mayor privacidad, se especificó vidrio bronce acanalado Vab, que conserva la uniformidad cromática del conjunto e incorpora una textura capaz de limitar la visibilidad directa. El resultado es una solución sobria y coherente, cuidadosamente integrada al lenguaje material y estético del proyecto."
+      ]
+    }
+  ]
+}

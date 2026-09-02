@@ -1,63 +1,213 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://glasslb.com/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/"/>
+  </url>
+  <url>
+    <loc>https://glasslb.com/en/</loc>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/"/>
   </url>
   <url>
     <loc>https://glasslb.com/gl-blog-post.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/gl-blog-post.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/gl-blog-post.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/gl-blog-post.html"/>
+  </url>
+  <url>
+    <loc>https://glasslb.com/en/gl-blog-post.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/gl-blog-post.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/gl-blog-post.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/gl-blog-post.html"/>
   </url>
   <url>
     <loc>https://glasslb.com/gl-blog.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/gl-blog.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/gl-blog.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/gl-blog.html"/>
+  </url>
+  <url>
+    <loc>https://glasslb.com/en/gl-blog.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/gl-blog.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/gl-blog.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/gl-blog.html"/>
   </url>
   <url>
     <loc>https://glasslb.com/gl-catalogo.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/gl-catalogo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/gl-catalogo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/gl-catalogo.html"/>
+  </url>
+  <url>
+    <loc>https://glasslb.com/en/gl-catalogo.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/gl-catalogo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/gl-catalogo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/gl-catalogo.html"/>
   </url>
   <url>
     <loc>https://glasslb.com/gl-contacto.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/gl-contacto.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/gl-contacto.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/gl-contacto.html"/>
+  </url>
+  <url>
+    <loc>https://glasslb.com/en/gl-contacto.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/gl-contacto.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/gl-contacto.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/gl-contacto.html"/>
   </url>
   <url>
     <loc>https://glasslb.com/gl-instalaciones.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/gl-instalaciones.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/gl-instalaciones.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/gl-instalaciones.html"/>
+  </url>
+  <url>
+    <loc>https://glasslb.com/en/gl-instalaciones.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/gl-instalaciones.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/gl-instalaciones.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/gl-instalaciones.html"/>
   </url>
   <url>
     <loc>https://glasslb.com/gl-laboratorio.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/gl-laboratorio.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/gl-laboratorio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/gl-laboratorio.html"/>
+  </url>
+  <url>
+    <loc>https://glasslb.com/en/gl-laboratorio.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/gl-laboratorio.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/gl-laboratorio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/gl-laboratorio.html"/>
   </url>
   <url>
     <loc>https://glasslb.com/gl-proyecto.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/gl-proyecto.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/gl-proyecto.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/gl-proyecto.html"/>
+  </url>
+  <url>
+    <loc>https://glasslb.com/en/gl-proyecto.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/gl-proyecto.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/gl-proyecto.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/gl-proyecto.html"/>
   </url>
   <url>
     <loc>https://glasslb.com/gl-proyectos.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/gl-proyectos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/gl-proyectos.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/gl-proyectos.html"/>
+  </url>
+  <url>
+    <loc>https://glasslb.com/en/gl-proyectos.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/gl-proyectos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/gl-proyectos.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/gl-proyectos.html"/>
   </url>
   <url>
     <loc>https://glasslb.com/gl-vidrio-at.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/gl-vidrio-at.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/gl-vidrio-at.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/gl-vidrio-at.html"/>
+  </url>
+  <url>
+    <loc>https://glasslb.com/en/gl-vidrio-at.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/gl-vidrio-at.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/gl-vidrio-at.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/gl-vidrio-at.html"/>
   </url>
   <url>
     <loc>https://glasslb.com/gl-vidrio.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/gl-vidrio.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/gl-vidrio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/gl-vidrio.html"/>
+  </url>
+  <url>
+    <loc>https://glasslb.com/en/gl-vidrio.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/gl-vidrio.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/gl-vidrio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/gl-vidrio.html"/>
   </url>
   <url>
     <loc>https://glasslb.com/gl-visor.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/gl-visor.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/gl-visor.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/gl-visor.html"/>
+  </url>
+  <url>
+    <loc>https://glasslb.com/en/gl-visor.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/gl-visor.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/gl-visor.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/gl-visor.html"/>
   </url>
   <url>
     <loc>https://glasslb.com/legal-cookies.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/legal-cookies.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/legal-cookies.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/legal-cookies.html"/>
+  </url>
+  <url>
+    <loc>https://glasslb.com/en/legal-cookies.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/legal-cookies.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/legal-cookies.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/legal-cookies.html"/>
   </url>
   <url>
     <loc>https://glasslb.com/legal-privacidad.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/legal-privacidad.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/legal-privacidad.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/legal-privacidad.html"/>
+  </url>
+  <url>
+    <loc>https://glasslb.com/en/legal-privacidad.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/legal-privacidad.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/legal-privacidad.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/legal-privacidad.html"/>
   </url>
   <url>
     <loc>https://glasslb.com/legal-terminos.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/legal-terminos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/legal-terminos.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/legal-terminos.html"/>
+  </url>
+  <url>
+    <loc>https://glasslb.com/en/legal-terminos.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glasslb.com/legal-terminos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glasslb.com/en/legal-terminos.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glasslb.com/legal-terminos.html"/>
   </url>
 </urlset>

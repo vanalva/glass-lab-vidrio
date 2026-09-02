@@ -65,8 +65,8 @@
      (JS_ASSET_DIR_RE). The frame filenames are built at runtime, so without this
      literal the whole sequence would be pruned from dist/ and the page would
      silently fall back to the (janky) video. Keep the trailing slash. */
-  var FRAME_DIR_DEFAULT = 'assets/media/scroll-frames/lamination/';
-  var FRAME_DIR_MOBILE  = 'assets/media/scroll-frames/lamination-9x16/';
+  var FRAME_DIR_DEFAULT = (window.__FLWR_BASE__||"")+'assets/media/scroll-frames/lamination/';
+  var FRAME_DIR_MOBILE  = (window.__FLWR_BASE__||"")+'assets/media/scroll-frames/lamination-9x16/';
 
   /* ── Frame-sequence path ──────────────────────────────────────────────── */
   function startFrameMode() {

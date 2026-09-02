@@ -4532,3 +4532,49 @@ label.pg-contacto_form-tag {
   }
   .gl-scroll-stack > .is-active .gl-home_spectrum_panel-meta { opacity: 1; }
 }
+
+/* ── Language switcher ─────────────────────────────────────────────────────
+   Generated at build time into the [data-flwr-locale-switcher] mounts (the
+   nav bar and the menu footer). Only the inactive language is dimmed, so the
+   control reads as "you are here / go there" rather than as two equal links.
+
+   Longhand only, no relational selectors: the separator is its own element
+   so this whole block survives the Webflow converter as editable styleLess.  */
+.flwr-locale-switcher {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.4ch;
+}
+
+.flwr-locale-switcher_link {
+  color: inherit;
+  text-decoration-line: none;
+  opacity: 0.45;
+  transition-property: opacity;
+  transition-duration: 0.18s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+}
+
+.flwr-locale-switcher_link.is-current {
+  opacity: 1;
+}
+
+.flwr-locale-switcher_link:hover {
+  opacity: 1;
+}
+
+/* Keyboard users get the same affordance the mouse gets, plus a visible ring —
+   without it the only feedback for focus is an opacity change, which fails
+   against a dark nav. */
+.flwr-locale-switcher_link:focus-visible {
+  opacity: 1;
+  outline-width: 1px;
+  outline-style: solid;
+  outline-color: currentColor;
+  outline-offset: 2px;
+}
+
+.flwr-locale-switcher_sep {
+  opacity: 0.3;
+}

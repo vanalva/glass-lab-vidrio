@@ -1,0 +1,1082 @@
+{
+  "$schema": "./pernia-systems.schema.json",
+  "version": "2.0.0",
+  "lastUpdated": "2026-07-24",
+  "brand": "pernia-glass",
+  "provenance": {
+    "specSource": [
+      "Documentos/PERNIA/PUERTAS CORREDIZAS.ai",
+      "Documentos/PERNIA/PUERTAS ABATIBLES.ai",
+      "Documentos/PERNIA/SECCIONES PUERTAS_NUEVAS.ai"
+    ],
+    "clientConfirmations": "Guillermo Pernia, WhatsApp + nota de voz, 2026-07-17",
+    "note": "Specs extraidos de los archivos del cliente. SIN nombres comerciales por indicacion del cliente: los sistemas se identifican por codigo + configuracion. Nombres comerciales = fase 2 (sus 4 renders de puertas disenadas)."
+  },
+  "family": {
+    "name": {
+      "es": "Sistemas de puertas Pernia",
+      "en": "Pernia Door Systems"
+    },
+    "comment": "Una familia parametrica. 15 sistemas en 4 tipos (corrediza, pivotante, abatible, gabinete). Todos comparten vidrio laminado 8mm, perfil slim y mecanismo soft close. Difieren en cantidad de hojas, composicion fija/corrediza, sentido de apertura y dimensiones.",
+    "universal": {
+      "vidrio": {
+        "es": "8mm laminado",
+        "en": "8mm laminated"
+      },
+      "perfil": {
+        "es": "Aluminio slim anodizado",
+        "en": "Slim anodized aluminum"
+      },
+      "mecanismo": {
+        "es": "Soft close",
+        "en": "Soft close"
+      },
+      "header": {
+        "es": "Hierro 2x2 / 2x4 / 2x6 segun sistema",
+        "en": "Steel header 2x2 / 2x4 / 2x6 by system"
+      },
+      "soffit": {
+        "es": "GYPSUM (cielo raso)",
+        "en": "GYPSUM (suspended ceiling)"
+      },
+      "trim": {
+        "es": "MADERA 2x1 (opcional)",
+        "en": "Wood 2x1 (optional)"
+      }
+    },
+    "perfilColores": [
+      {
+        "id": "black",
+        "name": {
+          "es": "Black",
+          "en": "Black"
+        },
+        "ral": null,
+        "render": "../assets/media/pernia/perfiles/black.webp"
+      },
+      {
+        "id": "blanco",
+        "name": {
+          "es": "Blanco",
+          "en": "White"
+        },
+        "ral": "RAL 9016",
+        "render": "../assets/media/pernia/perfiles/blanco.webp"
+      },
+      {
+        "id": "brass",
+        "name": {
+          "es": "Brass",
+          "en": "Brass"
+        },
+        "ral": null,
+        "render": "../assets/media/pernia/perfiles/brass.webp"
+      },
+      {
+        "id": "burgundy",
+        "name": {
+          "es": "Burgundy",
+          "en": "Burgundy"
+        },
+        "ral": "RAL 3007",
+        "render": "../assets/media/pernia/perfiles/burgundy.webp"
+      },
+      {
+        "id": "cobalt-blue",
+        "name": {
+          "es": "Cobalt Blue",
+          "en": "Cobalt Blue"
+        },
+        "ral": "RAL 5013",
+        "render": "../assets/media/pernia/perfiles/cobalt-blue.webp"
+      },
+      {
+        "id": "gold-rose",
+        "name": {
+          "es": "Gold Rose",
+          "en": "Gold Rose"
+        },
+        "ral": null,
+        "render": "../assets/media/pernia/perfiles/gold-rose.webp"
+      },
+      {
+        "id": "marron",
+        "name": {
+          "es": "Marrón",
+          "en": "Brown"
+        },
+        "ral": null,
+        "render": "../assets/media/pernia/perfiles/marron.webp"
+      },
+      {
+        "id": "olive",
+        "name": {
+          "es": "Olive",
+          "en": "Olive"
+        },
+        "ral": "RAL 6003",
+        "render": "../assets/media/pernia/perfiles/olive.webp"
+      },
+      {
+        "id": "orange",
+        "name": {
+          "es": "Orange",
+          "en": "Orange"
+        },
+        "ral": "RAL 8002",
+        "render": "../assets/media/pernia/perfiles/orange.webp"
+      }
+    ],
+    "perfilesAll": "../assets/media/pernia/perfiles/todos.webp",
+    "applications": {
+      "_comment": "Real Pernia installations shown on each system detail page as an 'En obra' gallery. 'bySystem' is the precise per-system set, derived from Guillermo's project→system map (WhatsApp 2026-07-18) plus panel-count verification; the family lists below are the fallback for systems with no confirmed project photos.",
+      "_provenance": "Single-system projects are certain by definition: Lantana=3a, Pradera=2a, Seacat=3b, Seazeit=2b. Multi-system projects were resolved by counting panels against each system's panelComposition: TDM=1a(1 panel)/4c(2 fixed+2 sliding, central opening), Seacho=4a(4 panels), Aqua=4c. Photos that could not be counted confidently were left out rather than guessed. T600 not imported; 1b/2c/2d/3c/4b/piv/swi/CAB have no project photos in the client's map.",
+      "bySystem": {
+        "pglass-1a": [
+          "../assets/media/pernia/aplicaciones/tdm-9.webp",
+          "../assets/media/pernia/aplicaciones/tdm-10.webp"
+        ],
+        "pglass-2a": [
+          "../assets/media/pernia/aplicaciones/pradera-1.webp",
+          "../assets/media/pernia/aplicaciones/pradera-2.webp",
+          "../assets/media/pernia/aplicaciones/pradera-3.webp",
+          "../assets/media/pernia/aplicaciones/pradera-4.webp",
+          "../assets/media/pernia/aplicaciones/pradera-5.webp",
+          "../assets/media/pernia/aplicaciones/pradera-6.webp",
+          "../assets/media/pernia/aplicaciones/pradera-7.webp",
+          "../assets/media/pernia/aplicaciones/aqua-8.webp",
+          "../assets/media/pernia/aplicaciones/aqua-9.webp",
+          "../assets/media/pernia/aplicaciones/aqua-10.webp",
+          "../assets/media/pernia/aplicaciones/aqua-12.webp",
+          "../assets/media/pernia/aplicaciones/aqua-14.webp",
+          "../assets/media/pernia/aplicaciones/aqua-15.webp",
+          "../assets/media/pernia/aplicaciones/aqua-16.webp",
+          "../assets/media/pernia/aplicaciones/t600-1.webp",
+          "../assets/media/pernia/aplicaciones/t600-2.webp",
+          "../assets/media/pernia/aplicaciones/t600-3.webp"
+        ],
+        "pglass-2b": [
+          "../assets/media/pernia/aplicaciones/seazeit-1.webp",
+          "../assets/media/pernia/aplicaciones/seazeit-2.webp",
+          "../assets/media/pernia/aplicaciones/seazeit-3.webp",
+          "../assets/media/pernia/aplicaciones/seazeit-4.webp",
+          "../assets/media/pernia/aplicaciones/seazeit-5.webp",
+          "../assets/media/pernia/aplicaciones/seazeit-6.webp",
+          "../assets/media/pernia/aplicaciones/seazeit-7.webp",
+          "../assets/media/pernia/aplicaciones/seazeit-8.webp",
+          "../assets/media/pernia/aplicaciones/fairways-8.webp",
+          "../assets/media/pernia/aplicaciones/fairways-9.webp",
+          "../assets/media/pernia/aplicaciones/fairways-10.webp",
+          "../assets/media/pernia/aplicaciones/seacho-6.webp",
+          "../assets/media/pernia/aplicaciones/seacho-7.webp",
+          "../assets/media/pernia/aplicaciones/seacho-8.webp",
+          "../assets/media/pernia/aplicaciones/t600-6.webp",
+          "../assets/media/pernia/aplicaciones/t600-7.webp"
+        ],
+        "pglass-3a": [
+          "../assets/media/pernia/aplicaciones/lantana-1.webp",
+          "../assets/media/pernia/aplicaciones/lantana-2.webp",
+          "../assets/media/pernia/aplicaciones/lantana-3.webp",
+          "../assets/media/pernia/aplicaciones/lantana-4.webp",
+          "../assets/media/pernia/aplicaciones/lantana-5.webp",
+          "../assets/media/pernia/aplicaciones/lantana-6.webp",
+          "../assets/media/pernia/aplicaciones/lantana-7.webp",
+          "../assets/media/pernia/aplicaciones/lantana-8.webp",
+          "../assets/media/pernia/aplicaciones/lantana-9.webp",
+          "../assets/media/pernia/aplicaciones/lantana-10.webp"
+        ],
+        "pglass-3b": [
+          "../assets/media/pernia/aplicaciones/seacat-1.webp",
+          "../assets/media/pernia/aplicaciones/seacat-2.webp",
+          "../assets/media/pernia/aplicaciones/seacat-3.webp",
+          "../assets/media/pernia/aplicaciones/seacat-4.webp",
+          "../assets/media/pernia/aplicaciones/seacat-0-2.webp"
+        ],
+        "pglass-4c": [
+          "../assets/media/pernia/aplicaciones/aqua-2.webp",
+          "../assets/media/pernia/aplicaciones/aqua-5.webp",
+          "../assets/media/pernia/aplicaciones/seacho-10.webp",
+          "../assets/media/pernia/aplicaciones/seacho-11.webp",
+          "../assets/media/pernia/aplicaciones/tdm-1.webp",
+          "../assets/media/pernia/aplicaciones/tdm-2.webp",
+          "../assets/media/pernia/aplicaciones/tdm-7.webp",
+          "../assets/media/pernia/aplicaciones/aqua-1.webp",
+          "../assets/media/pernia/aplicaciones/aqua-3.webp",
+          "../assets/media/pernia/aplicaciones/aqua-4.webp",
+          "../assets/media/pernia/aplicaciones/aqua-6.webp",
+          "../assets/media/pernia/aplicaciones/aqua-7.webp",
+          "../assets/media/pernia/aplicaciones/tdm-3.webp",
+          "../assets/media/pernia/aplicaciones/tdm-4.webp",
+          "../assets/media/pernia/aplicaciones/tdm-5.webp",
+          "../assets/media/pernia/aplicaciones/tdm-6.webp",
+          "../assets/media/pernia/aplicaciones/tdm-8.webp",
+          "../assets/media/pernia/aplicaciones/seacho-5.webp",
+          "../assets/media/pernia/aplicaciones/seacho-9.webp",
+          "../assets/media/pernia/aplicaciones/t600-4.webp",
+          "../assets/media/pernia/aplicaciones/t600-5.webp",
+          "../assets/media/pernia/aplicaciones/fairways-1.webp",
+          "../assets/media/pernia/aplicaciones/fairways-2.webp",
+          "../assets/media/pernia/aplicaciones/fairways-5.webp"
+        ]
+      },
+      "sliding": [
+        "../assets/media/pernia/aplicaciones/aqua-1.webp",
+        "../assets/media/pernia/aplicaciones/fairways-1.webp",
+        "../assets/media/pernia/aplicaciones/aqua-2.webp",
+        "../assets/media/pernia/aplicaciones/fairways-2.webp",
+        "../assets/media/pernia/aplicaciones/aqua-3.webp",
+        "../assets/media/pernia/aplicaciones/fairways-3.webp",
+        "../assets/media/pernia/aplicaciones/aqua-5.webp",
+        "../assets/media/pernia/aplicaciones/fairways-5.webp",
+        "../assets/media/pernia/aplicaciones/aqua-6.webp",
+        "../assets/media/pernia/aplicaciones/fairways-6.webp",
+        "../assets/media/pernia/aplicaciones/aqua-8.webp",
+        "../assets/media/pernia/aplicaciones/fairways-8.webp",
+        "../assets/media/pernia/aplicaciones/aqua-9.webp",
+        "../assets/media/pernia/aplicaciones/fairways-9.webp",
+        "../assets/media/pernia/aplicaciones/aqua-11.webp",
+        "../assets/media/pernia/aplicaciones/fairways-10.webp",
+        "../assets/media/pernia/aplicaciones/aqua-12.webp",
+        "../assets/media/pernia/aplicaciones/fairways-11.webp",
+        "../assets/media/pernia/aplicaciones/aqua-14.webp",
+        "../assets/media/pernia/aplicaciones/aqua-15.webp"
+      ],
+      "cabinet": [
+        "../assets/media/pernia/aplicaciones/aqua-13.webp"
+      ]
+    }
+  },
+  "configurationFilters": [
+    {
+      "id": "todos",
+      "name": {
+        "es": "Todos",
+        "en": "All"
+      }
+    },
+    {
+      "id": "1-hoja",
+      "name": {
+        "es": "1 hoja",
+        "en": "1 panel"
+      }
+    },
+    {
+      "id": "2-hojas",
+      "name": {
+        "es": "2 hojas",
+        "en": "2 panels"
+      }
+    },
+    {
+      "id": "3-hojas",
+      "name": {
+        "es": "3 hojas",
+        "en": "3 panels"
+      }
+    },
+    {
+      "id": "4-hojas",
+      "name": {
+        "es": "4 hojas",
+        "en": "4 panels"
+      }
+    },
+    {
+      "id": "pivot",
+      "name": {
+        "es": "Pivotante",
+        "en": "Pivot"
+      }
+    },
+    {
+      "id": "swing",
+      "name": {
+        "es": "Abatible",
+        "en": "Swing"
+      }
+    },
+    {
+      "id": "cabinet",
+      "name": {
+        "es": "Gabinete",
+        "en": "Cabinet"
+      }
+    }
+  ],
+  "systems": [
+    {
+      "code": "pglass-1a",
+      "slug": "pglass-1a",
+      "family": "sliding",
+      "familyName": {
+        "es": "Corrediza",
+        "en": "Sliding"
+      },
+      "filterId": "1-hoja",
+      "name": {
+        "es": "pglass-1a — 1 hoja corrediza colgada de cielo",
+        "en": "pglass-1a — 1 ceiling-hung sliding panel"
+      },
+      "configuration": {
+        "es": "1 hoja corrediza colgada de cielo",
+        "en": "1 ceiling-hung sliding panel"
+      },
+      "panels": 1,
+      "panelComposition": [
+        "sliding"
+      ],
+      "dimensions": [
+        {
+          "width": 1000,
+          "height": 3000,
+          "unit": "mm"
+        },
+        {
+          "width": 1300,
+          "height": 2600,
+          "unit": "mm"
+        }
+      ],
+      "media": {
+        "render": "../assets/media/pernia/sistemas-obra/pglass-1a-tdm.webp",
+        "gallery": [
+          "../assets/media/pernia/systems/pglass-1a/1.webp",
+          "../assets/media/pernia/systems/pglass-1a/2.webp",
+          "../assets/media/pernia/systems/pglass-1a/3.webp",
+          "../assets/media/pernia/systems/pglass-1a/4.webp",
+          "../assets/media/pernia/systems/pglass-1a/5.webp"
+        ],
+        "sectionDrawing": "../assets/media/pernia/sections/pglass-1a.webp"
+      },
+      "availability": "disponible",
+      "pocket": true,
+      "mount": "ceiling",
+      "headerSteel": "2\" x 2\" hierro",
+      "headerDepth": {
+        "value": 75,
+        "unit": "mm"
+      }
+    },
+    {
+      "code": "pglass-1b",
+      "slug": "pglass-1b",
+      "family": "sliding",
+      "familyName": {
+        "es": "Corrediza",
+        "en": "Sliding"
+      },
+      "filterId": "1-hoja",
+      "name": {
+        "es": "pglass-1b — 1 hoja corrediza de pared",
+        "en": "pglass-1b — 1 wall-mounted sliding panel"
+      },
+      "configuration": {
+        "es": "1 hoja corrediza de pared",
+        "en": "1 wall-mounted sliding panel"
+      },
+      "panels": 1,
+      "panelComposition": [
+        "sliding"
+      ],
+      "dimensions": [
+        {
+          "width": 1200,
+          "height": 2400,
+          "unit": "mm"
+        },
+        {
+          "width": 1000,
+          "height": 2600,
+          "unit": "mm"
+        }
+      ],
+      "media": {
+        "render": "../assets/media/pernia/systems/pglass-1b/1.webp",
+        "gallery": [
+          "../assets/media/pernia/systems/pglass-1b/1.webp",
+          "../assets/media/pernia/systems/pglass-1b/2.webp"
+        ],
+        "sectionDrawing": null
+      },
+      "availability": "disponible",
+      "mount": "wall"
+    },
+    {
+      "code": "pglass-2a",
+      "slug": "pglass-2a",
+      "family": "sliding",
+      "familyName": {
+        "es": "Corrediza",
+        "en": "Sliding"
+      },
+      "filterId": "2-hojas",
+      "name": {
+        "es": "pglass-2a — 2 hojas — 1 fija + 1 corrediza",
+        "en": "pglass-2a — 2 panels — 1 fixed + 1 sliding"
+      },
+      "configuration": {
+        "es": "2 hojas — 1 fija + 1 corrediza",
+        "en": "2 panels — 1 fixed + 1 sliding"
+      },
+      "panels": 2,
+      "panelComposition": [
+        "fixed",
+        "sliding"
+      ],
+      "dimensions": [
+        {
+          "width": 2000,
+          "height": 3000,
+          "unit": "mm"
+        },
+        {
+          "width": 2500,
+          "height": 2600,
+          "unit": "mm"
+        }
+      ],
+      "media": {
+        "render": "../assets/media/pernia/sesiones/Pradera-1.jpg",
+        "gallery": [
+          "../assets/media/pernia/systems/pglass-2a/1.webp",
+          "../assets/media/pernia/systems/pglass-2a/2.webp",
+          "../assets/media/pernia/systems/pglass-2a/3.webp",
+          "../assets/media/pernia/systems/pglass-2a/4.webp",
+          "../assets/media/pernia/systems/pglass-2a/5.webp"
+        ],
+        "sectionDrawing": "../assets/media/pernia/sections/pglass-2a.webp"
+      },
+      "availability": "disponible",
+      "headerSteel": "2\" x 2\" hierro",
+      "headerDepth": {
+        "value": 75,
+        "unit": "mm"
+      },
+      "headerTrim": "2\" x 1\" madera"
+    },
+    {
+      "code": "pglass-2b",
+      "slug": "pglass-2b",
+      "family": "sliding",
+      "familyName": {
+        "es": "Corrediza",
+        "en": "Sliding"
+      },
+      "filterId": "2-hojas",
+      "name": {
+        "es": "pglass-2b — 2 hojas corredizas — ambas hacia el mismo lado, tipo pocket",
+        "en": "pglass-2b — 2 sliding panels — both to the same side, pocket type"
+      },
+      "configuration": {
+        "es": "2 hojas corredizas — ambas hacia el mismo lado, tipo pocket",
+        "en": "2 sliding panels — both to the same side, pocket type"
+      },
+      "panels": 2,
+      "panelComposition": [
+        "sliding",
+        "sliding"
+      ],
+      "dimensions": [
+        {
+          "width": 2000,
+          "height": 3000,
+          "unit": "mm"
+        },
+        {
+          "width": 2500,
+          "height": 2600,
+          "unit": "mm"
+        }
+      ],
+      "media": {
+        "render": "../assets/media/pernia/sistemas-obra/pglass-2b-seazeit.webp",
+        "gallery": [
+          "../assets/media/pernia/systems/pglass-2b/1.webp",
+          "../assets/media/pernia/systems/pglass-2b/2.webp",
+          "../assets/media/pernia/systems/pglass-2b/3.webp",
+          "../assets/media/pernia/systems/pglass-2b/4.webp",
+          "../assets/media/pernia/systems/pglass-2b/5.webp",
+          "../assets/media/pernia/systems/pglass-2b/6.webp"
+        ],
+        "sectionDrawing": "../assets/media/pernia/sections/pglass-2b.webp"
+      },
+      "availability": "disponible",
+      "travel": "same-side",
+      "pocket": true,
+      "headerSteel": "2\" x 4\" hierro",
+      "headerDepth": {
+        "value": 95,
+        "unit": "mm"
+      }
+    },
+    {
+      "code": "pglass-2c",
+      "slug": "pglass-2c",
+      "family": "sliding",
+      "familyName": {
+        "es": "Corrediza",
+        "en": "Sliding"
+      },
+      "filterId": "2-hojas",
+      "name": {
+        "es": "pglass-2c — 2 hojas corredizas — una corre a la izquierda y otra a la derecha",
+        "en": "pglass-2c — 2 sliding panels — one runs left, one runs right"
+      },
+      "configuration": {
+        "es": "2 hojas corredizas — una corre a la izquierda y otra a la derecha",
+        "en": "2 sliding panels — one runs left, one runs right"
+      },
+      "panels": 2,
+      "panelComposition": [
+        "sliding",
+        "sliding"
+      ],
+      "dimensions": [
+        {
+          "width": 4000,
+          "height": 3000,
+          "unit": "mm"
+        },
+        {
+          "width": 4600,
+          "height": 2600,
+          "unit": "mm"
+        }
+      ],
+      "media": {
+        "render": "../assets/media/pernia/systems-app/glss03-app-a.webp",
+        "gallery": [
+          "../assets/media/pernia/systems/pglass-2c/1.webp",
+          "../assets/media/pernia/systems/pglass-2c/2.webp",
+          "../assets/media/pernia/systems/pglass-2c/3.webp",
+          "../assets/media/pernia/systems/pglass-2c/4.webp",
+          "../assets/media/pernia/systems/pglass-2c/5.webp",
+          "../assets/media/pernia/systems/pglass-2c/6.webp"
+        ],
+        "sectionDrawing": "../assets/media/pernia/sections/pglass-2c.webp"
+      },
+      "availability": "disponible",
+      "pocket": true,
+      "travel": "parting",
+      "headerSteel": "2\" x 2\" hierro",
+      "headerDepth": {
+        "value": 95,
+        "unit": "mm"
+      }
+    },
+    {
+      "code": "pglass-2d",
+      "slug": "pglass-2d",
+      "family": "sliding",
+      "familyName": {
+        "es": "Corrediza",
+        "en": "Sliding"
+      },
+      "filterId": "2-hojas",
+      "name": {
+        "es": "pglass-2d — 2 hojas corredizas — ambos sentidos sobre el mismo riel",
+        "en": "pglass-2d — 2 sliding panels — both directions on a shared rail"
+      },
+      "configuration": {
+        "es": "2 hojas corredizas — ambos sentidos sobre el mismo riel",
+        "en": "2 sliding panels — both directions on a shared rail"
+      },
+      "panels": 2,
+      "panelComposition": [
+        "sliding",
+        "sliding"
+      ],
+      "dimensions": [
+        {
+          "width": 2000,
+          "height": 3000,
+          "unit": "mm"
+        },
+        {
+          "width": 2500,
+          "height": 2600,
+          "unit": "mm"
+        }
+      ],
+      "media": {
+        "render": "../assets/media/pernia/systems-app/glss02-app-b.webp",
+        "gallery": [
+          "../assets/media/pernia/systems/pglass-2d/1.webp",
+          "../assets/media/pernia/systems/pglass-2d/2.webp",
+          "../assets/media/pernia/systems/pglass-2d/3.webp",
+          "../assets/media/pernia/systems/pglass-2d/4.webp",
+          "../assets/media/pernia/systems/pglass-2d/5.webp"
+        ],
+        "sectionDrawing": "../assets/media/pernia/sections/pglass-2d.webp"
+      },
+      "availability": "disponible",
+      "travel": "shared-rail",
+      "headerSteel": "2\" x 4\" hierro",
+      "headerDepth": {
+        "value": 75,
+        "unit": "mm"
+      }
+    },
+    {
+      "code": "pglass-3a",
+      "slug": "pglass-3a",
+      "family": "sliding",
+      "familyName": {
+        "es": "Corrediza",
+        "en": "Sliding"
+      },
+      "filterId": "3-hojas",
+      "name": {
+        "es": "pglass-3a — 3 hojas — 1 fija + 2 corredizas",
+        "en": "pglass-3a — 3 panels — 1 fixed + 2 sliding"
+      },
+      "configuration": {
+        "es": "3 hojas — 1 fija + 2 corredizas",
+        "en": "3 panels — 1 fixed + 2 sliding"
+      },
+      "panels": 3,
+      "panelComposition": [
+        "fixed",
+        "sliding",
+        "sliding"
+      ],
+      "dimensions": [
+        {
+          "width": 3000,
+          "height": 3000,
+          "unit": "mm"
+        },
+        {
+          "width": 3500,
+          "height": 2600,
+          "unit": "mm"
+        }
+      ],
+      "media": {
+        "render": "../assets/media/pernia/sesiones/Lantana-3.jpg",
+        "gallery": [
+          "../assets/media/pernia/systems/pglass-3a/1.webp",
+          "../assets/media/pernia/systems/pglass-3a/2.webp",
+          "../assets/media/pernia/systems/pglass-3a/3.webp",
+          "../assets/media/pernia/systems/pglass-3a/4.webp",
+          "../assets/media/pernia/systems/pglass-3a/5.webp",
+          "../assets/media/pernia/systems/pglass-3a/6.webp"
+        ],
+        "sectionDrawing": "../assets/media/pernia/sections/pglass-3a.webp"
+      },
+      "availability": "disponible",
+      "headerSteel": "2\" x 4\" hierro",
+      "headerDepth": {
+        "value": 95,
+        "unit": "mm"
+      },
+      "headerTrim": "2\" x 1\" madera"
+    },
+    {
+      "code": "pglass-3b",
+      "slug": "pglass-3b",
+      "family": "sliding",
+      "familyName": {
+        "es": "Corrediza",
+        "en": "Sliding"
+      },
+      "filterId": "3-hojas",
+      "name": {
+        "es": "pglass-3b — 3 hojas corredizas",
+        "en": "pglass-3b — 3 sliding panels"
+      },
+      "configuration": {
+        "es": "3 hojas corredizas",
+        "en": "3 sliding panels"
+      },
+      "panels": 3,
+      "panelComposition": [
+        "sliding",
+        "sliding",
+        "sliding"
+      ],
+      "dimensions": [
+        {
+          "width": 4000,
+          "height": 3000,
+          "unit": "mm"
+        },
+        {
+          "width": 4600,
+          "height": 2600,
+          "unit": "mm"
+        }
+      ],
+      "media": {
+        "render": "../assets/media/pernia/sistemas-obra/pglass-3b-seacat.webp",
+        "gallery": [
+          "../assets/media/pernia/systems/pglass-3b/1.webp",
+          "../assets/media/pernia/systems/pglass-3b/2.webp",
+          "../assets/media/pernia/systems/pglass-3b/3.webp",
+          "../assets/media/pernia/systems/pglass-3b/4.webp",
+          "../assets/media/pernia/systems/pglass-3b/5.webp",
+          "../assets/media/pernia/systems/pglass-3b/6.webp"
+        ],
+        "sectionDrawing": "../assets/media/pernia/sections/pglass-3b.webp"
+      },
+      "availability": "disponible",
+      "pocket": true,
+      "headerSteel": "2\" x 6\" hierro",
+      "headerDepth": {
+        "value": 95,
+        "unit": "mm"
+      }
+    },
+    {
+      "code": "pglass-3c",
+      "slug": "pglass-3c",
+      "family": "sliding",
+      "familyName": {
+        "es": "Corrediza",
+        "en": "Sliding"
+      },
+      "filterId": "3-hojas",
+      "name": {
+        "es": "pglass-3c — 3 hojas corredizas",
+        "en": "pglass-3c — 3 sliding panels"
+      },
+      "configuration": {
+        "es": "3 hojas corredizas",
+        "en": "3 sliding panels"
+      },
+      "panels": 3,
+      "panelComposition": [
+        "sliding",
+        "sliding",
+        "sliding"
+      ],
+      "dimensions": [
+        {
+          "width": 3000,
+          "height": 3000,
+          "unit": "mm"
+        },
+        {
+          "width": 3500,
+          "height": 2600,
+          "unit": "mm"
+        }
+      ],
+      "media": {
+        "render": "../assets/media/pernia/systems-app/glss06-app-a.webp",
+        "gallery": [
+          "../assets/media/pernia/systems/pglass-3c/1.webp",
+          "../assets/media/pernia/systems/pglass-3c/2.webp",
+          "../assets/media/pernia/systems/pglass-3c/3.webp",
+          "../assets/media/pernia/systems/pglass-3c/4.webp",
+          "../assets/media/pernia/systems/pglass-3c/5.webp"
+        ],
+        "sectionDrawing": "../assets/media/pernia/sections/pglass-3c.webp"
+      },
+      "availability": "disponible",
+      "headerSteel": "2\" x 6\" hierro",
+      "headerDepth": {
+        "value": 55,
+        "unit": "mm"
+      }
+    },
+    {
+      "code": "pglass-4a",
+      "slug": "pglass-4a",
+      "family": "sliding",
+      "familyName": {
+        "es": "Corrediza",
+        "en": "Sliding"
+      },
+      "filterId": "4-hojas",
+      "name": {
+        "es": "pglass-4a — 4 hojas — 1 fija + 3 corredizas",
+        "en": "pglass-4a — 4 panels — 1 fixed + 3 sliding"
+      },
+      "configuration": {
+        "es": "4 hojas — 1 fija + 3 corredizas",
+        "en": "4 panels — 1 fixed + 3 sliding"
+      },
+      "panels": 4,
+      "panelComposition": [
+        "fixed",
+        "sliding",
+        "sliding",
+        "sliding"
+      ],
+      "dimensions": [
+        {
+          "width": 4000,
+          "height": 3000,
+          "unit": "mm"
+        },
+        {
+          "width": 4600,
+          "height": 2600,
+          "unit": "mm"
+        }
+      ],
+      "media": {
+        "render": "../assets/media/pernia/systems/pglass-4a/app.webp",
+        "gallery": [
+          "../assets/media/pernia/systems/pglass-4a/1.webp",
+          "../assets/media/pernia/systems/pglass-4a/2.webp",
+          "../assets/media/pernia/systems/pglass-4a/3.webp",
+          "../assets/media/pernia/systems/pglass-4a/4.webp",
+          "../assets/media/pernia/systems/pglass-4a/5.webp",
+          "../assets/media/pernia/systems/pglass-4a/6.webp"
+        ],
+        "sectionDrawing": "../assets/media/pernia/sections/pglass-4a.webp"
+      },
+      "availability": "disponible",
+      "headerSteel": "2\" x 6\" hierro",
+      "headerDepth": {
+        "value": 95,
+        "unit": "mm"
+      },
+      "headerTrim": "2\" x 1\" madera"
+    },
+    {
+      "code": "pglass-4b",
+      "slug": "pglass-4b",
+      "family": "sliding",
+      "familyName": {
+        "es": "Corrediza",
+        "en": "Sliding"
+      },
+      "filterId": "4-hojas",
+      "name": {
+        "es": "pglass-4b — 4 hojas corredizas",
+        "en": "pglass-4b — 4 sliding panels"
+      },
+      "configuration": {
+        "es": "4 hojas corredizas",
+        "en": "4 sliding panels"
+      },
+      "panels": 4,
+      "panelComposition": [
+        "sliding",
+        "sliding",
+        "sliding",
+        "sliding"
+      ],
+      "dimensions": [
+        {
+          "width": 5000,
+          "height": 3000,
+          "unit": "mm"
+        },
+        {
+          "width": 6000,
+          "height": 2600,
+          "unit": "mm"
+        }
+      ],
+      "media": {
+        "render": "../assets/media/pernia/systems/pglass-4b/app.webp",
+        "gallery": [
+          "../assets/media/pernia/systems/pglass-4b/1.webp",
+          "../assets/media/pernia/systems/pglass-4b/2.webp",
+          "../assets/media/pernia/systems/pglass-4b/3.webp",
+          "../assets/media/pernia/systems/pglass-4b/4.webp",
+          "../assets/media/pernia/systems/pglass-4b/5.webp",
+          "../assets/media/pernia/systems/pglass-4b/6.webp"
+        ],
+        "sectionDrawing": "../assets/media/pernia/sections/pglass-4b.webp"
+      },
+      "availability": "disponible",
+      "headerSteel": "2\" x 4\" hierro + 2\" x 4\" hierro",
+      "headerDepth": {
+        "value": 105,
+        "unit": "mm"
+      }
+    },
+    {
+      "code": "pglass-4c",
+      "slug": "pglass-4c",
+      "family": "sliding",
+      "familyName": {
+        "es": "Corrediza",
+        "en": "Sliding"
+      },
+      "filterId": "4-hojas",
+      "name": {
+        "es": "pglass-4c — 4 hojas — 2 fijas + 2 corredizas",
+        "en": "pglass-4c — 4 panels — 2 fixed + 2 sliding"
+      },
+      "configuration": {
+        "es": "4 hojas — 2 fijas + 2 corredizas",
+        "en": "4 panels — 2 fixed + 2 sliding"
+      },
+      "panels": 4,
+      "panelComposition": [
+        "fixed",
+        "sliding",
+        "sliding",
+        "fixed"
+      ],
+      "dimensions": [
+        {
+          "width": 4000,
+          "height": 3000,
+          "unit": "mm"
+        },
+        {
+          "width": 4600,
+          "height": 2600,
+          "unit": "mm"
+        }
+      ],
+      "media": {
+        "render": "../assets/media/pernia/sesiones/Glasslab-Aqua-2.jpg",
+        "gallery": [
+          "../assets/media/pernia/systems/pglass-4c/1.webp",
+          "../assets/media/pernia/systems/pglass-4c/2.webp",
+          "../assets/media/pernia/systems/pglass-4c/3.webp",
+          "../assets/media/pernia/systems/pglass-4c/4.webp",
+          "../assets/media/pernia/systems/pglass-4c/5.webp",
+          "../assets/media/pernia/systems/pglass-4c/6.webp"
+        ],
+        "sectionDrawing": "../assets/media/pernia/sections/pglass-4c.webp"
+      },
+      "availability": "disponible",
+      "headerSteel": "2\" x 2\" hierro",
+      "headerDepth": {
+        "value": 95,
+        "unit": "mm"
+      },
+      "headerTrim": "2\" x 1\" madera"
+    },
+    {
+      "code": "pglass-piv",
+      "slug": "pglass-piv",
+      "family": "pivot",
+      "familyName": {
+        "es": "Pivotante",
+        "en": "Pivot"
+      },
+      "filterId": "pivot",
+      "name": {
+        "es": "pglass-piv — Puerta pivotante",
+        "en": "pglass-piv — Pivot door"
+      },
+      "configuration": {
+        "es": "Puerta pivotante",
+        "en": "Pivot door"
+      },
+      "panels": 1,
+      "panelComposition": [
+        "pivot"
+      ],
+      "dimensions": [
+        {
+          "width": 1000,
+          "height": 3000,
+          "unit": "mm"
+        },
+        {
+          "width": 1500,
+          "height": 2500,
+          "unit": "mm"
+        }
+      ],
+      "media": {
+        "render": "../assets/media/pernia/systems/pglass-piv/app.webp",
+        "gallery": [
+          "../assets/media/pernia/systems/pglass-piv/app.webp",
+          "../assets/media/pernia/systems/pglass-piv/app-2.webp"
+        ],
+        "sectionDrawing": null
+      },
+      "availability": "disponible"
+    },
+    {
+      "code": "pglass-swi",
+      "slug": "pglass-swi",
+      "family": "swing",
+      "familyName": {
+        "es": "Abatible",
+        "en": "Swing"
+      },
+      "filterId": "swing",
+      "name": {
+        "es": "pglass-swi — Puerta abatible",
+        "en": "pglass-swi — Swing door"
+      },
+      "configuration": {
+        "es": "Puerta abatible",
+        "en": "Swing door"
+      },
+      "panels": 1,
+      "panelComposition": [
+        "swing"
+      ],
+      "dimensions": [
+        {
+          "width": 800,
+          "height": 2800,
+          "unit": "mm"
+        },
+        {
+          "width": 1000,
+          "height": 2400,
+          "unit": "mm"
+        }
+      ],
+      "media": {
+        "render": "../assets/media/pernia/systems/pglass-swi/app.webp",
+        "gallery": [
+          "../assets/media/pernia/systems/pglass-swi/1.webp",
+          "../assets/media/pernia/systems/pglass-swi/2.webp"
+        ],
+        "sectionDrawing": null
+      },
+      "availability": "disponible"
+    },
+    {
+      "code": "pglass-CAB",
+      "slug": "pglass-CAB",
+      "family": "cabinet",
+      "familyName": {
+        "es": "Gabinete",
+        "en": "Cabinet"
+      },
+      "filterId": "cabinet",
+      "name": {
+        "es": "pglass-CAB — Puerta de gabinete",
+        "en": "pglass-CAB — Cabinet door"
+      },
+      "configuration": {
+        "es": "Puerta de gabinete",
+        "en": "Cabinet door"
+      },
+      "panels": null,
+      "panelComposition": [
+        "cabinet"
+      ],
+      "dimensions": [
+        {
+          "width": 400,
+          "height": 3000,
+          "unit": "mm"
+        },
+        {
+          "width": 600,
+          "height": 1500,
+          "unit": "mm"
+        }
+      ],
+      "media": {
+        "render": "../assets/media/pernia/systems/pglass-CAB/1.webp",
+        "gallery": [
+          "../assets/media/pernia/systems/pglass-CAB/1.webp",
+          "../assets/media/pernia/systems/pglass-CAB/2.webp",
+          "../assets/media/pernia/systems/pglass-CAB/3.webp"
+        ],
+        "sectionDrawing": null
+      },
+      "availability": "disponible"
+    }
+  ]
+}

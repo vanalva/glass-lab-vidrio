@@ -1,0 +1,303 @@
+{
+  "title": "Presencia regional — Pernia Glass",
+  "note": "Cada punto es un proyecto donde Pernia Glass ha instalado sistemas de vidrio.",
+  "source": "Ubicaciones provistas por Pernia Glass (Guillermo Pernia), julio 2026.",
+  "updated": "2026-07-20",
+  "count": 49,
+  "locations": [
+    {
+      "area": "Punta Pacífica",
+      "city": "Ciudad de Panamá",
+      "lat": 8.970987,
+      "lng": -79.518109
+    },
+    {
+      "area": "Punta Pacífica",
+      "city": "Ciudad de Panamá",
+      "lat": 8.974264,
+      "lng": -79.512467
+    },
+    {
+      "area": "Punta Pacífica",
+      "city": "Ciudad de Panamá",
+      "lat": 8.974388,
+      "lng": -79.512641
+    },
+    {
+      "area": "Punta Pacífica",
+      "city": "Ciudad de Panamá",
+      "lat": 8.971755,
+      "lng": -79.530657
+    },
+    {
+      "area": "Punta Pacífica",
+      "city": "Ciudad de Panamá",
+      "lat": 8.97534,
+      "lng": -79.507249
+    },
+    {
+      "area": "Punta Pacífica",
+      "city": "Ciudad de Panamá",
+      "lat": 8.976002,
+      "lng": -79.507761
+    },
+    {
+      "area": "Punta Pacífica",
+      "city": "Ciudad de Panamá",
+      "lat": 8.979119,
+      "lng": -79.506953
+    },
+    {
+      "area": "Punta Pacífica",
+      "city": "Ciudad de Panamá",
+      "lat": 8.976713,
+      "lng": -79.507547
+    },
+    {
+      "area": "Santa María",
+      "city": "Ciudad de Panamá",
+      "lat": 9.027753,
+      "lng": -79.44458
+    },
+    {
+      "area": "Ciudad de Panamá",
+      "city": "Ciudad de Panamá",
+      "lat": 9.003546,
+      "lng": -79.505845
+    },
+    {
+      "area": "Ocean Reef",
+      "city": "Ciudad de Panamá",
+      "lat": 8.967137,
+      "lng": -79.501766
+    },
+    {
+      "area": "Ocean Reef",
+      "city": "Ciudad de Panamá",
+      "lat": 8.966513,
+      "lng": -79.501984
+    },
+    {
+      "area": "Ocean Reef",
+      "city": "Ciudad de Panamá",
+      "lat": 8.971005,
+      "lng": -79.503763
+    },
+    {
+      "area": "Ocean Reef",
+      "city": "Ciudad de Panamá",
+      "lat": 8.968737,
+      "lng": -79.502016
+    },
+    {
+      "area": "Ocean Reef",
+      "city": "Ciudad de Panamá",
+      "lat": 8.966513,
+      "lng": -79.501984
+    },
+    {
+      "area": "Punta Pacífica",
+      "city": "Ciudad de Panamá",
+      "lat": 8.973963,
+      "lng": -79.507203
+    },
+    {
+      "area": "Punta Pacífica",
+      "city": "Ciudad de Panamá",
+      "lat": 8.974082,
+      "lng": -79.50743
+    },
+    {
+      "area": "Ciudad de Panamá",
+      "city": "Ciudad de Panamá",
+      "lat": 9.025913,
+      "lng": -79.458859
+    },
+    {
+      "area": "Costa del Este",
+      "city": "Ciudad de Panamá",
+      "lat": 9.019181,
+      "lng": -79.462349
+    },
+    {
+      "area": "Punta Pacífica",
+      "city": "Ciudad de Panamá",
+      "lat": 8.973873,
+      "lng": -79.515994
+    },
+    {
+      "area": "Costa del Este",
+      "city": "Ciudad de Panamá",
+      "lat": 9.010738,
+      "lng": -79.463092
+    },
+    {
+      "area": "Costa del Este",
+      "city": "Ciudad de Panamá",
+      "lat": 9.012745,
+      "lng": -79.462562
+    },
+    {
+      "area": "Ciudad de Panamá",
+      "city": "Ciudad de Panamá",
+      "lat": 8.991912,
+      "lng": -79.506266
+    },
+    {
+      "area": "Santa María",
+      "city": "Ciudad de Panamá",
+      "lat": 9.029838,
+      "lng": -79.445453
+    },
+    {
+      "area": "Santa María",
+      "city": "Ciudad de Panamá",
+      "lat": 9.027664,
+      "lng": -79.448316
+    },
+    {
+      "area": "Santa María",
+      "city": "Ciudad de Panamá",
+      "lat": 9.028987,
+      "lng": -79.444828
+    },
+    {
+      "area": "Santa María",
+      "city": "Ciudad de Panamá",
+      "lat": 9.02722,
+      "lng": -79.443569
+    },
+    {
+      "area": "Punta Pacífica",
+      "city": "Ciudad de Panamá",
+      "lat": 8.976396,
+      "lng": -79.52339
+    },
+    {
+      "area": "Ciudad de Panamá",
+      "city": "Ciudad de Panamá",
+      "lat": 8.994682,
+      "lng": -79.497614
+    },
+    {
+      "area": "Ciudad de Panamá",
+      "city": "Ciudad de Panamá",
+      "lat": 8.994374,
+      "lng": -79.498004
+    },
+    {
+      "area": "Punta Pacífica",
+      "city": "Ciudad de Panamá",
+      "lat": 8.974388,
+      "lng": -79.516516
+    },
+    {
+      "area": "Punta Pacífica",
+      "city": "Ciudad de Panamá",
+      "lat": 8.970413,
+      "lng": -79.517359
+    },
+    {
+      "area": "Costa del Este",
+      "city": "Ciudad de Panamá",
+      "lat": 9.007959,
+      "lng": -79.478115
+    },
+    {
+      "area": "Costa del Este",
+      "city": "Ciudad de Panamá",
+      "lat": 9.007925,
+      "lng": -79.478126
+    },
+    {
+      "area": "Ciudad de Panamá",
+      "city": "Ciudad de Panamá",
+      "lat": 9.013137,
+      "lng": -79.544016
+    },
+    {
+      "area": "Boquete",
+      "city": "Boquete, Chiriquí",
+      "lat": 8.782973,
+      "lng": -82.431808
+    },
+    {
+      "area": "Punta Pacífica",
+      "city": "Ciudad de Panamá",
+      "lat": 8.974663,
+      "lng": -79.515203
+    },
+    {
+      "area": "Punta Pacífica",
+      "city": "Ciudad de Panamá",
+      "lat": 8.973738,
+      "lng": -79.514797
+    },
+    {
+      "area": "Punta Pacífica",
+      "city": "Ciudad de Panamá",
+      "lat": 8.971663,
+      "lng": -79.516922
+    },
+    {
+      "area": "Punta Pacífica",
+      "city": "Ciudad de Panamá",
+      "lat": 8.975765,
+      "lng": -79.525708
+    },
+    {
+      "area": "Costa del Este",
+      "city": "Ciudad de Panamá",
+      "lat": 9.009188,
+      "lng": -79.472672
+    },
+    {
+      "area": "Punta Pacífica",
+      "city": "Ciudad de Panamá",
+      "lat": 8.971588,
+      "lng": -79.515703
+    },
+    {
+      "area": "Costa del Este",
+      "city": "Ciudad de Panamá",
+      "lat": 9.01751,
+      "lng": -79.458847
+    },
+    {
+      "area": "Costa del Este",
+      "city": "Ciudad de Panamá",
+      "lat": 9.016763,
+      "lng": -79.460297
+    },
+    {
+      "area": "Punta Cana",
+      "city": "Punta Cana, Rep. Dominicana",
+      "lat": 18.557972,
+      "lng": -68.375559
+    },
+    {
+      "area": "Santa María",
+      "city": "Ciudad de Panamá",
+      "lat": 9.028013,
+      "lng": -79.444609
+    },
+    {
+      "area": "Santa María",
+      "city": "Ciudad de Panamá",
+      "lat": 9.026558,
+      "lng": -79.443982
+    },
+    {
+      "area": "Santa María",
+      "city": "Ciudad de Panamá",
+      "lat": 9.026738,
+      "lng": -79.454078
+    },
+    {
+      "area": "María Chiquita",
+      "city": "Portobelo, Colón",
+      "lat": 9.4417501,
+      "lng": -79.7767426
+    }
+  ]
+}
