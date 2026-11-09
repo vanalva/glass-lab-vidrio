@@ -24,7 +24,7 @@ export function reliefSlab(kind, thickness=.06) {
  const poly=swatchOutline(W,H), pos=[], norms=[], uv=[];
  const reed=kind==='reed', nx=reed?240:192, ny=reed?1:144;
  const height=(x,y)=>{
-  if(reed) return .006*(1+Math.cos(x/W*20*Math.PI*2));
+  if(reed) return .04*(1+Math.cos(x/W*20*Math.PI*2));
   const u=(x+y)/W*26, v=(x-y)/W*26;
   const tri=q=>Math.abs(2*(q-Math.floor(q)) - 1);
   return .008*(1-Math.max(tri(u),tri(v)));
@@ -362,7 +362,7 @@ export function createSample(code, coarse = false) {
   const materials = [];
   const laminated = ['gradient', 'dichroic', 'color'].includes(kind);
   const mirror = kind.startsWith('mirror');
-  const pane = glass({ thickness: distorts ? .185 : kind === 'frost' ? .36 : .185 });
+  const pane = glass({ thickness: distorts ? .72 : kind === 'frost' ? .36 : .185 });
   if (code === 'Vab') {
     pane.color.set('#d8b28f');
     pane.attenuationColor.set('#af784b');
@@ -508,7 +508,7 @@ export function createSample(code, coarse = false) {
       }
     },
     setDistortion(percent) {
-      if (distorts) pane.thickness = .035 + percent * .005;
+      if (distorts) pane.thickness = .12 + percent * .02;
     },
     setClarity(percent) {
       if (mirror) return;

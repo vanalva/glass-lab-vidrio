@@ -3,9 +3,9 @@
  * stacks separate; surface relief and mirror coatings remain bonded.
  */
 import * as THREE from 'three';
-import { createSample, presets, CATALOGUE } from './gl-visor-materials.js?v=1';
+import { createSample, presets, CATALOGUE } from './gl-visor-materials.js?v=3';
 import { makeQuboStudio } from './gl-visor-weave.js?v=1';
-import { createBackgroundControls } from './gl-visor-background.js?v=2';
+import { createBackgroundControls } from './gl-visor-background.js?v=4';
 
 const clamp = THREE.MathUtils.clamp;
 const DEFAULTS = { transparency: 60, distortion: 30, light: 75, 'background-blur': 30 };
@@ -45,7 +45,7 @@ function boot(mount) {
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1;
   const canvas = renderer.domElement;
-  canvas.style.cssText = 'display:block;width:100%;height:100%;cursor:grab;touch-action:pan-y';
+  canvas.style.cssText = 'display:block;width:100%;height:100%;cursor:grab;touch-action:none';
   canvas.setAttribute('aria-label', 'Muestra de vidrio en tres dimensiones');
   canvas.setAttribute('role', 'img');
   mount.appendChild(canvas);
@@ -67,7 +67,7 @@ function boot(mount) {
   fill.position.set(4, 0, 2);
   scene.add(ambient, key, fill);
   const holder = new THREE.Group();
-  holder.position.y = .12;
+  holder.position.y = 0;
   scene.add(holder);
 
   const layerTools = document.createElement('div');
@@ -106,7 +106,7 @@ function boot(mount) {
     wake();
   }
   listen(layerButton, 'click', () => setSpread(targetSpread ? 0 : 1));
-  const backgrounds = createBackgroundControls({ renderer, scene, mount, ui,
+  const backgrounds = createBackgroundControls({ renderer, scene, camera, mount, ui,
     studioEnvironment: environment.texture, wake, listen, coarse });
 
 
@@ -244,6 +244,8 @@ function boot(mount) {
       case 'rotate-up': target.x = clamp(target.x - step, -1.5, 1.5); break;
       case 'rotate-down': target.x = clamp(target.x + step, -1.5, 1.5); break;
       case 'zoom': zoom = zoom > 1.6 ? 1 : zoom + .35; resize(); break;
+      case 'zoom-in': zoom = clamp(zoom + .25, .7, 2); resize(); break;
+      case 'zoom-out': zoom = clamp(zoom - .25, .7, 2); resize(); break;
       case 'reset':
         target.x = -.12; target.y = -.34; zoom = 1;
         setSpread(0);
@@ -253,13 +255,27 @@ function boot(mount) {
     wake();
   }));
 
+  const touches = new Map();
+  let pinch = 0;
+  const pinchDistance = () => { const [a, b] = [...touches.values()]; return Math.hypot(a.x - b.x, a.y - b.y); };
   listen(canvas, 'pointerdown', event => {
-    if (event.button !== 0 || pointer) return;
-    pointer = { id: event.pointerId, x: event.clientX, y: event.clientY };
+    if (event.pointerType === 'mouse' && event.button !== 0) return;
     canvas.setPointerCapture(event.pointerId);
+    touches.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    if (touches.size === 2) { pinch = pinchDistance(); pointer = null; return; }
+    if (touches.size > 2 || pointer) return;
+    pointer = { id: event.pointerId, x: event.clientX, y: event.clientY };
     canvas.style.cursor = 'grabbing';
   });
   listen(canvas, 'pointermove', event => {
+    if (touches.has(event.pointerId)) touches.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    if (touches.size === 2 && pinch) {
+      const next = pinchDistance();
+      zoom = clamp(zoom * next / pinch, .7, 2);
+      pinch = next;
+      resize();
+      return;
+    }
     if (!pointer || pointer.id !== event.pointerId) return;
     target.y += (event.clientX - pointer.x) * .007;
     target.x = clamp(target.x + (event.clientY - pointer.y) * .007, -1.5, 1.5);
@@ -268,7 +284,10 @@ function boot(mount) {
   });
   const release = event => {
     if (canvas.hasPointerCapture(event.pointerId)) canvas.releasePointerCapture(event.pointerId);
-    pointer = null; canvas.style.cursor = 'grab';
+    touches.delete(event.pointerId);
+    if (touches.size < 2) pinch = 0;
+    if (pointer?.id === event.pointerId) pointer = null;
+    canvas.style.cursor = 'grab';
   };
   listen(canvas, 'pointerup', release);
   listen(canvas, 'pointercancel', release);
@@ -283,7 +302,8 @@ function boot(mount) {
     if (!w || !h) return;
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
-    camera.zoom = zoom * Math.min(1.1, camera.aspect * .98);
+    // Frame the whole sample (3 x 2.15 plus tilt) with margin at any aspect.
+    camera.zoom = zoom * Math.min(1.08, camera.aspect * (camera.aspect < 1 ? 1.05 : .9));
     camera.updateProjectionMatrix();
     backgrounds.resize();
     wake();
@@ -314,6 +334,14 @@ function boot(mount) {
     if (Math.abs(target.x - holder.rotation.x) > .0001 ||
         Math.abs(target.y - holder.rotation.y) > .0001 || spread !== targetSpread) wake();
     else lastTime = 0;
+  }
+
+  const settings = ui.querySelector('.gl-visor_settings');
+  if (settings) {
+    const phone = matchMedia('(max-width: 767px)');
+    const syncSettings = () => { settings.open = !phone.matches; };
+    syncSettings();
+    listen(phone, 'change', syncSettings);
   }
 
   const requested = new URLSearchParams(location.search).get('glass');

@@ -41,39 +41,76 @@
   <link rel="stylesheet" href="../css/variables.css?v=3703e9fe">
   <link rel="stylesheet" href="../css/project.css?v=f91c10b3">
   <style>
-    /* Visor viewer — the 3D stage owns the height, and the layer control
-       docks into the scene's bottom-left corner. */
+    /* Visor viewer: the 3D stage owns the height; the toolbar docks bottom-left,
+       the layer control bottom-centre, the panel scrolls on its own. */
     .gl-visor_viewer { height: calc(100svh - 78px); min-height: 600px; }
-    .gl-visor_scene { min-width: 0; min-height: 0; overflow: hidden; }
-    .gl-visor_scene_img { min-height: 0; }
-    .gl-visor_panel { min-height: 0; }
-    .gl-visor_layers { position: absolute; left: 2rem; bottom: 5.5rem; display: flex; flex-direction: column; align-items: flex-start; row-gap: 0.8rem; column-gap: 0.8rem; }
+    .gl-visor_scene { min-width: 0; min-height: 0; overflow-x: hidden; overflow-y: hidden; border-right-width: 0; }
+    .gl-visor_scene_img { position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: auto; height: auto; min-height: 0; }
+    .gl-visor_panel { min-height: 0; min-width: 0; border-left-width: 1px; border-left-style: solid; border-left-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); }
+    .gl-visor_panel_grid .gl-cell { aspect-ratio: 5 / 4; }
+    .gl-visor_scene_label { top: var(--_spacing---space--4); bottom: auto; right: var(--_spacing---space--4); left: auto; max-width: 32rem; text-align: right; pointer-events: none; }
+    .gl-visor_scene_controls { top: auto; right: auto; bottom: 1.25rem; left: 1.25rem; flex-direction: row; align-items: center; column-gap: 0.35rem; row-gap: 0.35rem; z-index: 2; }
+    .gl-visor_tool { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); border-right-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); border-bottom-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); border-left-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); background-color: color-mix(in srgb, var(--_theme---background) 55%, transparent); color: var(--_theme---text); cursor: pointer; }
+    .gl-visor_tool:hover { background-color: color-mix(in srgb, var(--_theme---text) 16%, transparent); }
+    .gl-visor_tool:focus-visible { outline-width: 2px; outline-style: solid; outline-color: var(--_theme---text); outline-offset: 2px; }
+    .gl-visor_tool_step { display: none; }
+    .gl-visor_layers { position: absolute; left: 50%; bottom: 1.25rem; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; row-gap: 0.4rem; column-gap: 0.4rem; z-index: 2; }
     .gl-visor_layers.is-hidden { display: none; }
-    .gl-visor_layers_caption { font-size: var(--_typography---font-size--label); letter-spacing: 0.08em; }
+    .gl-visor_layers_caption { font-size: var(--_typography---font-size--label-sm); letter-spacing: 0.08em; text-align: center; white-space: normal; width: max-content; max-width: calc(100% - 22rem); }
     .gl-visor_layers_button { border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; background-color: transparent; color: var(--_theme---text); font-family: inherit; font-size: inherit; }
     .gl-visor_layers_button:focus-visible { outline-width: 2px; outline-style: solid; outline-color: var(--_theme---text); outline-offset: 4px; }
-    /* Reuse the existing slider appearance, including keyboard interaction. */
     .gl-visor_control_row[hidden] { display: none; }
     .gl-visor_slider { touch-action: pan-y; }
-    .gl-visor_slider::before { content: ''; position: absolute; inset: -12px 0; }
-    .gl-visor_slider:focus-visible { outline: 2px solid currentColor; outline-offset: 7px; }
+    .gl-visor_slider::before { content: ''; position: absolute; top: -12px; right: 0; bottom: -12px; left: 0; }
+    .gl-visor_slider:focus-visible { outline-width: 2px; outline-style: solid; outline-color: currentColor; outline-offset: 7px; }
     .gl-visor_slider[aria-disabled="true"] { opacity: 0.35; cursor: default; }
-    .gl-visor_background_controls { display: flex; flex-direction: column; gap: 1rem; }
-    .gl-visor_background_options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
-    .gl-visor_background_options .gl-tag { justify-content: center; padding: 0.65rem 0.3rem; background: transparent; color: var(--_theme---text); cursor: pointer; }
-    .gl-visor_background_options .gl-tag[aria-pressed="true"] { background: var(--_theme---text); color: var(--_theme---background); }
+    .gl-visor_panel_controls { margin-top: 0; padding-bottom: 6rem; }
+    .gl-visor_control_buttons { flex-direction: column; row-gap: 0.75rem; margin-top: 0; }
+    .gl-visor_control_buttons .gl-btn_skew_wrap { width: 100%; }
+    .gl-visor_control_buttons .gl-btn_skew_text { white-space: nowrap; }
+    .gl-visor_settings { display: block; }
+    .gl-visor_settings_summary { display: none; cursor: pointer; list-style: none; padding-top: 0.9rem; padding-bottom: 0.9rem; }
+    .gl-visor_settings_summary::-webkit-details-marker { display: none; }
+    .gl-visor_settings_summary::after { content: '+'; float: right; }
+    .gl-visor_settings[open] .gl-visor_settings_summary::after { content: '\2212'; }
+    .gl-visor_settings_body { display: flex; flex-direction: column; row-gap: var(--_spacing---space--4); }
+    .gl-visor_background_controls { display: flex; flex-direction: column; row-gap: 0.75rem; column-gap: 0.75rem; padding-top: var(--_spacing---space--4); border-top-width: 1px; border-top-style: solid; border-top-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); }
+    .gl-visor_background_options { display: grid; grid-template-columns: repeat(3, 1fr); row-gap: 0.5rem; column-gap: 0.5rem; }
+    .gl-visor_background_options .gl-tag { justify-content: center; padding-top: 0.65rem; padding-bottom: 0.65rem; padding-left: 0.3rem; padding-right: 0.3rem; background-color: transparent; color: var(--_theme---text); cursor: pointer; }
+    .gl-visor_background_options .gl-tag[aria-pressed="true"] { background-color: var(--_theme---text); color: var(--_theme---background); }
     .gl-visor_background_options .gl-tag:disabled { opacity: 0.35; cursor: default; }
-    .gl-visor_background_options button:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+    .gl-visor_background_options button:focus-visible { outline-width: 2px; outline-style: solid; outline-color: currentColor; outline-offset: 3px; }
     .gl-visor_background_upload { align-self: flex-start; }
     .gl-visor_scene[data-background] .gl-btn_skew_wrap { color: var(--_theme---text); }
-    .gl-visor_background_status { display: block; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--_typography---font-size--label-sm); }
+    .gl-visor_background_status { display: block; max-width: 100%; white-space: normal; font-size: var(--_typography---font-size--label-sm); }
     .gl-visor_scene[data-background] .gl-visor_layers_caption,
     .gl-visor_scene[data-background] .gl-visor_scene_label .gl-mono { color: color-mix(in srgb, var(--_theme---text) 75%, transparent); }
+    @media (max-width: 991px) {
+      .gl-visor_viewer { height: auto; min-height: 0; grid-template-columns: 1fr; }
+      .gl-visor_scene { height: 62svh; min-height: 380px; }
+      .gl-visor_panel_grid { grid-template-columns: repeat(6, 1fr); }
+      .gl-visor_panel_grid .gl-cell { aspect-ratio: 1 / 1; }
+      .gl-visor_panel { overflow-x: visible; overflow-y: visible; border-left-width: 0; }
+      .gl-visor_panel_controls { padding-bottom: 5rem; }
+    }
     @media (max-width: 767px) {
-      .gl-visor_viewer { height: auto; min-height: 0; }
-      .gl-visor_scene { height: 65svh; min-height: 420px; }
-      .gl-visor_scene_controls { top: 1rem; left: 1rem; right: 1rem; display: grid; grid-template-columns: repeat(3, 1fr); row-gap: 0.5rem; column-gap: 0.5rem; }
-      .gl-visor_layers { left: 1rem; bottom: 4.5rem; }
+      .gl-visor_scene { height: 62svh; min-height: 340px; }
+      .gl-visor_scene_label { display: none; }
+      .gl-visor_scene_controls { bottom: 0.75rem; left: 0.75rem; }
+      .gl-visor_tool_rotate, .gl-visor_tool_zoom { display: none; }
+      .gl-visor_tool_step { display: inline-flex; }
+      .gl-visor_layers { left: auto; right: 0.75rem; bottom: 0.75rem; transform: none; align-items: flex-end; }
+      .gl-visor_layers_caption { display: none; }
+      .gl-visor_panel_header { display: none; }
+      .gl-visor_panel_grid { order: 1; display: flex; flex-direction: row; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; scrollbar-width: none; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); }
+      .gl-visor_panel_grid::-webkit-scrollbar { display: none; }
+      .gl-visor_panel_grid .gl-cell { flex-grow: 0; flex-shrink: 0; flex-basis: 5.5rem; aspect-ratio: 1 / 1; scroll-snap-align: start; padding-top: 0.5rem; padding-right: 0.5rem; padding-bottom: 0.5rem; padding-left: 0.5rem; }
+      .gl-visor_panel_grid .gl-cell_symbol { font-size: 1.6rem; }
+      .gl-visor_panel_info { order: 2; }
+      .gl-visor_panel_controls { order: 3; padding-top: 0; padding-bottom: 5.5rem; row-gap: var(--_spacing---space--3); }
+      .gl-visor_settings { border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); }
+      .gl-visor_settings_summary { display: block; }
+      .gl-visor_settings_body { padding-bottom: var(--_spacing---space--4); }
     }
   </style>
 
@@ -173,55 +210,31 @@
         <div class="gl-visor_scene_label">
           <span class="gl-mono gl-mono_muted" data-flwr-id="l10n-gl-visor-2q">Drag to rotate — Select a glass to change the sample</span>
         </div>
-        <div class="gl-visor_scene_controls">
-          <div class="gl-btn_skew_wrap" aria-label="Rotate up" data-flwr-id="l10n-gl-visor-2p">
-            <svg class="gl-btn_skew_shape" viewBox="0 0 240 56" preserveAspectRatio="none" fill="none">
-              <path d="M16,1 L239,1 L239,42 L224,55 L1,55 L1,14 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="miter" vector-effect="non-scaling-stroke"/>
-            </svg>
-            <a href="#" class="gl-btn_skew_element gl-btn_skew_element_sm" data-action="rotate-up">
-              <span class="gl-btn_skew_text gl-btn_skew_text_sm" data-flwr-id="l10n-gl-visor-2o">↑ Up</span>
-            </a>
-          </div>
-          <div class="gl-btn_skew_wrap" aria-label="Rotate down" data-flwr-id="l10n-gl-visor-2n">
-            <svg class="gl-btn_skew_shape" viewBox="0 0 240 56" preserveAspectRatio="none" fill="none">
-              <path d="M16,1 L239,1 L239,42 L224,55 L1,55 L1,14 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="miter" vector-effect="non-scaling-stroke"/>
-            </svg>
-            <a href="#" class="gl-btn_skew_element gl-btn_skew_element_sm" data-action="rotate-down">
-              <span class="gl-btn_skew_text gl-btn_skew_text_sm" data-flwr-id="l10n-gl-visor-2m">↓ Down</span>
-            </a>
-          </div>
-          <div class="gl-btn_skew_wrap" aria-label="Rotate left" data-flwr-id="l10n-gl-visor-2l">
-            <svg class="gl-btn_skew_shape" viewBox="0 0 240 56" preserveAspectRatio="none" fill="none">
-              <path d="M16,1 L239,1 L239,42 L224,55 L1,55 L1,14 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="miter" vector-effect="non-scaling-stroke"/>
-            </svg>
-            <a href="#" class="gl-btn_skew_element gl-btn_skew_element_sm" data-action="rotate-left">
-              <span class="gl-btn_skew_text gl-btn_skew_text_sm" data-flwr-id="l10n-gl-visor-2k">← Left</span>
-            </a>
-          </div>
-          <div class="gl-btn_skew_wrap" aria-label="Rotate right" data-flwr-id="l10n-gl-visor-2j">
-            <svg class="gl-btn_skew_shape" viewBox="0 0 240 56" preserveAspectRatio="none" fill="none">
-              <path d="M16,1 L239,1 L239,42 L224,55 L1,55 L1,14 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="miter" vector-effect="non-scaling-stroke"/>
-            </svg>
-            <a href="#" class="gl-btn_skew_element gl-btn_skew_element_sm" data-action="rotate-right">
-              <span class="gl-btn_skew_text gl-btn_skew_text_sm" data-flwr-id="l10n-gl-visor-2i">Right →</span>
-            </a>
-          </div>
-          <div class="gl-btn_skew_wrap" aria-label="Zoom" data-flwr-id="l10n-gl-visor-2h">
-            <svg class="gl-btn_skew_shape" viewBox="0 0 240 56" preserveAspectRatio="none" fill="none">
-              <path d="M16,1 L239,1 L239,42 L224,55 L1,55 L1,14 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="miter" vector-effect="non-scaling-stroke"/>
-            </svg>
-            <a href="#" class="gl-btn_skew_element gl-btn_skew_element_sm" data-action="zoom">
-              <span class="gl-btn_skew_text gl-btn_skew_text_sm" data-flwr-id="l10n-gl-visor-2g">Zoom</span>
-            </a>
-          </div>
-          <div class="gl-btn_skew_wrap" aria-label="Reset" data-flwr-id="l10n-gl-visor-2f">
-            <svg class="gl-btn_skew_shape" viewBox="0 0 240 56" preserveAspectRatio="none" fill="none">
-              <path d="M16,1 L239,1 L239,42 L224,55 L1,55 L1,14 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="miter" vector-effect="non-scaling-stroke"/>
-            </svg>
-            <a href="#" class="gl-btn_skew_element gl-btn_skew_element_sm" data-action="reset">
-              <span class="gl-btn_skew_text gl-btn_skew_text_sm" data-flwr-id="l10n-gl-visor-2e">Reset</span>
-            </a>
-          </div>
+        <div class="gl-visor_scene_controls" role="toolbar" aria-label="Controles de la muestra">
+          <button type="button" class="gl-visor_tool gl-visor_tool_rotate" data-action="rotate-up" aria-label="Rotar hacia arriba" title="Rotar hacia arriba">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+          </button>
+          <button type="button" class="gl-visor_tool gl-visor_tool_rotate" data-action="rotate-down" aria-label="Rotar hacia abajo" title="Rotar hacia abajo">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+          </button>
+          <button type="button" class="gl-visor_tool gl-visor_tool_rotate" data-action="rotate-left" aria-label="Rotar a la izquierda" title="Rotar a la izquierda">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+          </button>
+          <button type="button" class="gl-visor_tool gl-visor_tool_rotate" data-action="rotate-right" aria-label="Rotar a la derecha" title="Rotar a la derecha">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <button type="button" class="gl-visor_tool gl-visor_tool_zoom" data-action="zoom" aria-label="Acercar o alejar" title="Acercar o alejar">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5M10.5 8v5M8 10.5h5"/></svg>
+          </button>
+          <button type="button" class="gl-visor_tool gl-visor_tool_step" data-action="zoom-out" aria-label="Alejar" title="Alejar">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M5 12h14"/></svg>
+          </button>
+          <button type="button" class="gl-visor_tool gl-visor_tool_step" data-action="zoom-in" aria-label="Acercar" title="Acercar">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M5 12h14M12 5v14"/></svg>
+          </button>
+          <button type="button" class="gl-visor_tool" data-action="reset" aria-label="Restablecer vista" title="Restablecer vista">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 12a8 8 0 1 0 3-6.2M4 4v5h5"/></svg>
+          </button>
         </div>
       </div>
 
@@ -325,6 +338,9 @@
 
         <!-- CONTROLS -->
         <div class="gl-visor_panel_controls">
+          <details class="gl-visor_settings" open>
+            <summary class="gl-visor_settings_summary gl-mono gl-mono_label">Ajustes</summary>
+            <div class="gl-visor_settings_body">
           <div class="gl-visor_control_row" data-control="transparency">
             <div class="gl-visor_control_header">
               <span class="gl-mono gl-mono_label" data-flwr-id="l10n-gl-visor-1i">Transparency</span>
@@ -360,8 +376,8 @@
               <span class="gl-mono gl-mono_label">Fondo de escena</span>
             </div>
             <div class="gl-visor_background_options" role="group" aria-label="Fondo de escena">
-              <button type="button" class="gl-tag" data-background-mode="dark" aria-pressed="false">Oscuro</button>
-              <button type="button" class="gl-tag" data-background-mode="beige" aria-pressed="true">Beige</button>
+              <button type="button" class="gl-tag" data-background-mode="dark" aria-pressed="true">Oscuro</button>
+              <button type="button" class="gl-tag" data-background-mode="beige" aria-pressed="false">Beige</button>
               <button type="button" class="gl-tag" data-background-mode="image" aria-pressed="false" disabled>Imagen</button>
             </div>
             <button type="button" class="gl-btn_skew_wrap gl-visor_layers_button gl-visor_background_upload" data-background-upload>
@@ -383,6 +399,8 @@
               </div>
             </div>
           </div>
+            </div>
+          </details>
           <div class="gl-visor_control_buttons">
             <div class="gl-btn_skew_wrap gl-btn_skew_wrap_filled">
               <svg class="gl-btn_skew_shape" viewBox="0 0 240 56" preserveAspectRatio="none" fill="none">
@@ -491,7 +509,7 @@
     }
   }
   </script>
-  <script type="module" src="../js/gl-visor-glass3d.js?v=7"></script>
+  <script type="module" src="../js/gl-visor-glass3d.js?v=12"></script>
 
   <!-- FULLSCREEN MENU -->
   <aside class="gl-dock" aria-label="Floating navigation" data-flwr-id="l10n-gl-visor-r">

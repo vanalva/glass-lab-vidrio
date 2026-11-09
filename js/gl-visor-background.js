@@ -12,7 +12,36 @@ export function coverTransform(imageWidth, imageHeight, viewWidth, viewHeight) {
   return { x, y, offsetX: (1 - x) / 2, offsetY: (1 - y) / 2 };
 }
 
-export function createBackgroundControls({ renderer, scene, mount, ui, studioEnvironment, wake, listen, coarse }) {
+// The scene the glass refracts: a flat field, a faint thin grid and ONE thick
+// horizontal line the flutes stretch. Dark is the approved look; the beige
+// variant swaps to a dark ink line on a light field so the glass has something
+// to bend there too.
+export function makeBackdropTexture(theme) {
+  const c = document.createElement('canvas');
+  c.width = 1024; c.height = 640;
+  const g = c.getContext('2d');
+  const dark = theme !== 'beige';
+  g.fillStyle = dark ? '#0a0b0d' : BACKGROUND_COLORS.beige;
+  g.fillRect(0, 0, c.width, c.height);
+  g.strokeStyle = dark ? 'rgba(180,205,225,0.05)' : 'rgba(40,38,30,0.11)';
+  g.lineWidth = 1;
+  for (let x = 64; x < c.width; x += 64) { g.beginPath(); g.moveTo(x + .5, 0); g.lineTo(x + .5, c.height); g.stroke(); }
+  for (let y = 64; y < c.height; y += 64) { g.beginPath(); g.moveTo(0, y + .5); g.lineTo(c.width, y + .5); g.stroke(); }
+  g.strokeStyle = dark ? 'rgba(200,224,245,0.14)' : 'rgba(30,28,22,0.22)';
+  g.lineWidth = 1.5;
+  [200, 470].forEach(y => { g.beginPath(); g.moveTo(0, y + .5); g.lineTo(c.width, y + .5); g.stroke(); });
+  g.fillStyle = dark ? 'rgba(236,246,255,0.92)' : 'rgba(26,25,21,0.94)';
+  g.fillRect(0, 307, c.width, 26);
+  g.fillStyle = dark ? 'rgba(210,232,250,0.18)' : 'rgba(26,25,21,0.16)';
+  g.fillRect(0, 295, c.width, 8);
+  g.fillRect(0, 337, c.width, 8);
+  const texture = new THREE.CanvasTexture(c);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  texture.anisotropy = 4;
+  return texture;
+}
+
+export function createBackgroundControls({ renderer, scene, camera, mount, ui, studioEnvironment, wake, listen, coarse }) {
   const stage = mount.parentElement;
   const options = [...ui.querySelectorAll('[data-background-mode]')];
   const upload = ui.querySelector('[data-background-upload]');
@@ -30,7 +59,28 @@ export function createBackgroundControls({ renderer, scene, mount, ui, studioEnv
   ]), 1, 1);
   beigeBackground.colorSpace = THREE.LinearSRGBColorSpace;
   beigeBackground.needsUpdate = true;
-  let mode = 'beige', blur = 30, source = null, fileName = '';
+  const backdropTextures = { dark: makeBackdropTexture('dark'), beige: makeBackdropTexture('beige') };
+  const backdropMaterial = new THREE.MeshBasicMaterial({ map: backdropTextures.dark });
+  const backdrop = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), backdropMaterial);
+  backdrop.position.z = -3.2;
+  scene.add(backdrop);
+  // Soft contact shadow so the sample sits on the light field instead of floating.
+  const shadowCanvas = document.createElement('canvas');
+  shadowCanvas.width = shadowCanvas.height = 256;
+  const sg = shadowCanvas.getContext('2d');
+  const ramp = sg.createRadialGradient(128, 128, 20, 128, 128, 128);
+  ramp.addColorStop(0, 'rgba(26,25,21,0.34)');
+  ramp.addColorStop(.55, 'rgba(26,25,21,0.14)');
+  ramp.addColorStop(1, 'rgba(26,25,21,0)');
+  sg.fillStyle = ramp;
+  sg.fillRect(0, 0, 256, 256);
+  const shadowTexture = new THREE.CanvasTexture(shadowCanvas);
+  const shadow = new THREE.Mesh(new THREE.PlaneGeometry(4.9, 3.7),
+    new THREE.MeshBasicMaterial({ map: shadowTexture, transparent: true, depthWrite: false }));
+  shadow.position.set(.18, -.3, -.6);
+  shadow.visible = false;
+  scene.add(shadow);
+  let mode = 'dark', blur = 30, source = null, fileName = '';
   let backgroundTexture = null, imageEnvironment = null;
   let generation = 0, timer = 0, disposed = false;
   const pendingUrls = new Set();
@@ -62,10 +112,14 @@ export function createBackgroundControls({ renderer, scene, mount, ui, studioEnv
       status.title = fileName;
     } else {
       scene.background = mode === 'beige' ? beigeBackground : new THREE.Color(BACKGROUND_COLORS.dark);
+      backdropMaterial.map = backdropTextures[mode];
+      backdropMaterial.needsUpdate = true;
       scene.environment = studioEnvironment;
       status.textContent = source ? 'Imagen lista para volver a usar.' : 'La imagen se queda en tu dispositivo.';
       status.removeAttribute('title');
     }
+    backdrop.visible = mode !== 'image';
+    shadow.visible = mode === 'beige';
     syncStyle();
     resize();
     wake();
@@ -103,7 +157,15 @@ export function createBackgroundControls({ renderer, scene, mount, ui, studioEnv
     wake();
   }
 
+  function fitBackdrop() {
+    // Cover the whole visible frustum at the backdrop's distance.
+    const distance = camera.position.z - backdrop.position.z;
+    const height = 2 * distance * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) / camera.zoom;
+    backdrop.scale.set(height * camera.aspect * 1.04, height * 1.04, 1);
+  }
+
   function resize() {
+    fitBackdrop();
     if (!backgroundTexture || !mount.clientWidth || !mount.clientHeight) return;
     const t = coverTransform(source.canvas.width, source.canvas.height, mount.clientWidth, mount.clientHeight);
     backgroundTexture.repeat.set(t.x, t.y);
@@ -149,7 +211,7 @@ export function createBackgroundControls({ renderer, scene, mount, ui, studioEnv
     }
   });
 
-  setMode('beige', false);
+  setMode('dark', false);
   return {
     resize,
     setBlur(percent) {
@@ -177,6 +239,13 @@ export function createBackgroundControls({ renderer, scene, mount, ui, studioEnv
       backgroundTexture?.dispose();
       imageEnvironment?.dispose();
       beigeBackground.dispose();
+      scene.remove(backdrop, shadow);
+      shadow.geometry.dispose();
+      shadow.material.dispose();
+      shadowTexture.dispose();
+      backdrop.geometry.dispose();
+      backdropMaterial.dispose();
+      Object.values(backdropTextures).forEach(t => t.dispose());
       pmrem.dispose();
       source = null;
       scene.background = null;
