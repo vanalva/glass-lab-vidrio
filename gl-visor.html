@@ -25,11 +25,11 @@
   <meta name="twitter:title" content="Visor | Glass Lab">
   <meta name="twitter:description" content="Visor 3D de Glass Lab: rota una muestra de vidrio y compara acabados como acanalado, esmerilado, diamante, gradient o malla tejida en tiempo real.">
   <meta name="twitter:image" content="https://glasslb.com/assets/favicons/glass-lab/og-default.png">
-  <link rel="icon" type="image/svg+xml" href="assets/favicons/glass-lab/favicon.svg">
-  <link rel="icon" type="image/png" sizes="96x96" href="assets/favicons/glass-lab/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/glass-lab/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/glass-lab/favicon-16x16.png">
-  <link rel="shortcut icon" href="assets/favicons/glass-lab/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="assets/favicons/glass-lab/favicon.svg?v=2">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/favicons/glass-lab/favicon-96x96.png?v=2">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/glass-lab/favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/glass-lab/favicon-16x16.png?v=2">
+  <link rel="shortcut icon" href="assets/favicons/glass-lab/favicon.ico?v=2">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/glass-lab/apple-touch-icon.png">
   <link rel="manifest" href="assets/favicons/glass-lab/site.webmanifest">
   <meta name="theme-color" content="#0B0B0B">
@@ -39,7 +39,43 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/variables.css?v=3703e9fe">
-  <link rel="stylesheet" href="css/project.css?v=636af7af">
+  <link rel="stylesheet" href="css/project.css?v=f91c10b3">
+  <style>
+    /* Visor viewer — the 3D stage owns the height, and the layer control
+       docks into the scene's bottom-left corner. */
+    .gl-visor_viewer { height: calc(100svh - 78px); min-height: 600px; }
+    .gl-visor_scene { min-width: 0; min-height: 0; overflow: hidden; }
+    .gl-visor_scene_img { min-height: 0; }
+    .gl-visor_panel { min-height: 0; }
+    .gl-visor_layers { position: absolute; left: 2rem; bottom: 5.5rem; display: flex; flex-direction: column; align-items: flex-start; row-gap: 0.8rem; column-gap: 0.8rem; }
+    .gl-visor_layers.is-hidden { display: none; }
+    .gl-visor_layers_caption { font-size: var(--_typography---font-size--label); letter-spacing: 0.08em; }
+    .gl-visor_layers_button { border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; background-color: transparent; color: var(--_theme---text); font-family: inherit; font-size: inherit; }
+    .gl-visor_layers_button:focus-visible { outline-width: 2px; outline-style: solid; outline-color: var(--_theme---text); outline-offset: 4px; }
+    /* Reuse the existing slider appearance, including keyboard interaction. */
+    .gl-visor_control_row[hidden] { display: none; }
+    .gl-visor_slider { touch-action: pan-y; }
+    .gl-visor_slider::before { content: ''; position: absolute; inset: -12px 0; }
+    .gl-visor_slider:focus-visible { outline: 2px solid currentColor; outline-offset: 7px; }
+    .gl-visor_slider[aria-disabled="true"] { opacity: 0.35; cursor: default; }
+    .gl-visor_background_controls { display: flex; flex-direction: column; gap: 1rem; }
+    .gl-visor_background_options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+    .gl-visor_background_options .gl-tag { justify-content: center; padding: 0.65rem 0.3rem; background: transparent; color: var(--_theme---text); cursor: pointer; }
+    .gl-visor_background_options .gl-tag[aria-pressed="true"] { background: var(--_theme---text); color: var(--_theme---background); }
+    .gl-visor_background_options .gl-tag:disabled { opacity: 0.35; cursor: default; }
+    .gl-visor_background_options button:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+    .gl-visor_background_upload { align-self: flex-start; }
+    .gl-visor_scene[data-background] .gl-btn_skew_wrap { color: var(--_theme---text); }
+    .gl-visor_background_status { display: block; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--_typography---font-size--label-sm); }
+    .gl-visor_scene[data-background] .gl-visor_layers_caption,
+    .gl-visor_scene[data-background] .gl-visor_scene_label .gl-mono { color: color-mix(in srgb, var(--_theme---text) 75%, transparent); }
+    @media (max-width: 767px) {
+      .gl-visor_viewer { height: auto; min-height: 0; }
+      .gl-visor_scene { height: 65svh; min-height: 420px; }
+      .gl-visor_scene_controls { top: 1rem; left: 1rem; right: 1rem; display: grid; grid-template-columns: repeat(3, 1fr); row-gap: 0.5rem; column-gap: 0.5rem; }
+      .gl-visor_layers { left: 1rem; bottom: 4.5rem; }
+    }
+  </style>
 
   <script type="application/ld+json">
   {
@@ -299,6 +335,16 @@
               <div class="gl-visor_slider_thumb"></div>
             </div>
           </div>
+          <div class="gl-visor_control_row" data-control="distortion" hidden>
+            <div class="gl-visor_control_header">
+              <span class="gl-mono gl-mono_label" id="gl-visor-distortion-label">Distorsión</span>
+              <span class="gl-mono gl-mono_label">30%</span>
+            </div>
+            <div class="gl-visor_slider" aria-labelledby="gl-visor-distortion-label">
+              <div class="gl-visor_slider_fill"></div>
+              <div class="gl-visor_slider_thumb"></div>
+            </div>
+          </div>
           <div class="gl-visor_control_row" data-control="light">
             <div class="gl-visor_control_header">
               <span class="gl-mono gl-mono_label" data-flwr-id="l10n-gl-visor-1h">Intensidad de luz</span>
@@ -307,6 +353,34 @@
             <div class="gl-visor_slider">
               <div class="gl-visor_slider_fill"></div>
               <div class="gl-visor_slider_thumb"></div>
+            </div>
+          </div>
+          <div class="gl-visor_background_controls">
+            <div class="gl-visor_control_header">
+              <span class="gl-mono gl-mono_label">Fondo de escena</span>
+            </div>
+            <div class="gl-visor_background_options" role="group" aria-label="Fondo de escena">
+              <button type="button" class="gl-tag" data-background-mode="dark" aria-pressed="false">Oscuro</button>
+              <button type="button" class="gl-tag" data-background-mode="beige" aria-pressed="true">Beige</button>
+              <button type="button" class="gl-tag" data-background-mode="image" aria-pressed="false" disabled>Imagen</button>
+            </div>
+            <button type="button" class="gl-btn_skew_wrap gl-visor_layers_button gl-visor_background_upload" data-background-upload>
+              <svg class="gl-btn_skew_shape" viewBox="0 0 240 56" preserveAspectRatio="none" fill="none" aria-hidden="true">
+                <path d="M16,1 L239,1 L239,42 L224,55 L1,55 L1,14 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="miter" vector-effect="non-scaling-stroke"/>
+              </svg>
+              <span class="gl-btn_skew_element gl-btn_skew_element_sm"><span class="gl-btn_skew_text gl-btn_skew_text_sm">Cargar imagen</span></span>
+            </button>
+            <input type="file" accept="image/jpeg,image/png,image/webp,image/avif" data-background-file aria-label="Elegir imagen de entorno" hidden>
+            <span class="gl-mono gl-mono_muted gl-visor_background_status" data-background-status role="status" aria-live="polite">La imagen se queda en tu dispositivo.</span>
+            <div class="gl-visor_control_row" data-control="background-blur" hidden>
+              <div class="gl-visor_control_header">
+                <span class="gl-mono gl-mono_label">Desenfoque del fondo</span>
+                <span class="gl-mono gl-mono_label">30%</span>
+              </div>
+              <div class="gl-visor_slider">
+                <div class="gl-visor_slider_fill"></div>
+                <div class="gl-visor_slider_thumb"></div>
+              </div>
             </div>
           </div>
           <div class="gl-visor_control_buttons">
@@ -417,7 +491,7 @@
     }
   }
   </script>
-  <script type="module" src="js/gl-visor-glass3d.js?v=3"></script>
+  <script type="module" src="js/gl-visor-glass3d.js?v=7"></script>
 
   <!-- FULLSCREEN MENU -->
   <aside class="gl-dock" aria-label="Navegacion flotante" data-flwr-id="l10n-gl-visor-r">
