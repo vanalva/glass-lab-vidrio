@@ -71,7 +71,7 @@ function boot(mount) {
   scene.add(holder);
 
   const layerTools = document.createElement('div');
-  layerTools.className = 'gl-visor_layers is-hidden';
+  layerTools.className = 'gl-visor_layers';
   layerTools.innerHTML = '<span class="gl-mono gl-mono_muted gl-visor_layers_caption"></span>' +
     '<button type="button" class="gl-btn_skew_wrap gl-visor_layers_button" aria-pressed="false">' +
     '<svg class="gl-btn_skew_shape" viewBox="0 0 240 56" preserveAspectRatio="none" fill="none" aria-hidden="true">' +
@@ -195,7 +195,7 @@ function boot(mount) {
     }
     spread = targetSpread = 0;
     sample.setSeparation?.(0);
-    layerTools.classList.toggle('is-hidden', !sample.laminated);
+    layerButton.hidden = !sample.laminated;
     layerCaption.textContent = sample.construction;
     layerButton.setAttribute('aria-pressed', 'false');
     layerText.textContent = 'Separar capas';
@@ -297,7 +297,14 @@ function boot(mount) {
     resize();
   }, { passive: false });
 
+  const desktop = matchMedia('(min-width: 992px)');
+  function fitStage() {
+    // Desktop: the stage is exactly the space below the header, never more.
+    ui.style.height = desktop.matches
+      ? Math.max(480, Math.round(innerHeight - (ui.getBoundingClientRect().top + scrollY))) + 'px' : '';
+  }
   function resize() {
+    fitStage();
     const w = mount.clientWidth, h = mount.clientHeight;
     if (!w || !h) return;
     renderer.setSize(w, h, false);
@@ -315,6 +322,8 @@ function boot(mount) {
     if (inView) wake(); else stop();
   }, { threshold: .01 });
   intersectionObserver.observe(mount);
+  listen(window, 'resize', resize);
+  listen(window, 'load', resize);
   listen(document, 'visibilitychange', () => { if (document.hidden) stop(); else wake(); });
 
   function tick(time) {

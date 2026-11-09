@@ -43,20 +43,22 @@
   <style>
     /* Visor viewer: the 3D stage owns the height; the toolbar docks bottom-left,
        the layer control bottom-centre, the panel scrolls on its own. */
-    .gl-visor_viewer { height: calc(100svh - 78px); min-height: 600px; }
+    .gl-visor_viewer { height: calc(100svh - 78px); min-height: 480px; }
     .gl-visor_scene { min-width: 0; min-height: 0; overflow-x: hidden; overflow-y: hidden; border-right-width: 0; }
     .gl-visor_scene_img { position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: auto; height: auto; min-height: 0; }
     .gl-visor_panel { min-height: 0; min-width: 0; border-left-width: 1px; border-left-style: solid; border-left-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); }
     .gl-visor_panel_grid .gl-cell { aspect-ratio: 5 / 4; }
-    .gl-visor_scene_label { top: var(--_spacing---space--4); bottom: auto; right: var(--_spacing---space--4); left: auto; max-width: 32rem; text-align: right; pointer-events: none; }
-    .gl-visor_scene_controls { top: auto; right: auto; bottom: 1.25rem; left: 1.25rem; flex-direction: row; align-items: center; column-gap: 0.35rem; row-gap: 0.35rem; z-index: 2; }
+    .gl-visor_scene_label { top: calc(1.5rem + 3.1rem); bottom: auto; right: auto; left: 1.5rem; max-width: calc(100% - 3rem); text-align: left; white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis; pointer-events: none; }
+    .gl-visor_scene_controls { top: 1.5rem; right: auto; bottom: auto; left: 1.5rem; flex-direction: row; align-items: center; column-gap: 0.35rem; row-gap: 0.35rem; z-index: 2; }
     .gl-visor_tool { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); border-right-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); border-bottom-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); border-left-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); background-color: color-mix(in srgb, var(--_theme---background) 55%, transparent); color: var(--_theme---text); cursor: pointer; }
     .gl-visor_tool:hover { background-color: color-mix(in srgb, var(--_theme---text) 16%, transparent); }
     .gl-visor_tool:focus-visible { outline-width: 2px; outline-style: solid; outline-color: var(--_theme---text); outline-offset: 2px; }
     .gl-visor_tool_step { display: none; }
-    .gl-visor_layers { position: absolute; left: 50%; bottom: 1.25rem; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; row-gap: 0.4rem; column-gap: 0.4rem; z-index: 2; }
-    .gl-visor_layers.is-hidden { display: none; }
-    .gl-visor_layers_caption { font-size: var(--_typography---font-size--label-sm); letter-spacing: 0.08em; text-align: center; white-space: normal; width: max-content; max-width: calc(100% - 22rem); }
+    .gl-visor_layers { position: absolute; left: 1.5rem; right: 1.5rem; bottom: 1.5rem; display: flex; flex-direction: row; align-items: center; justify-content: space-between; column-gap: 1.5rem; row-gap: 0.5rem; z-index: 2; pointer-events: none; }
+    .gl-visor_layers > * { pointer-events: auto; }
+    .gl-visor_layers_button[hidden] { display: none; }
+    .gl-visor_layers_button .gl-btn_skew_text { white-space: nowrap; }
+    .gl-visor_layers_caption { font-size: var(--_typography---font-size--label-sm); letter-spacing: 0.08em; text-align: left; white-space: normal; max-width: calc(100% - 14rem); }
     .gl-visor_layers_button { border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; background-color: transparent; color: var(--_theme---text); font-family: inherit; font-size: inherit; }
     .gl-visor_layers_button:focus-visible { outline-width: 2px; outline-style: solid; outline-color: var(--_theme---text); outline-offset: 4px; }
     .gl-visor_control_row[hidden] { display: none; }
@@ -85,6 +87,9 @@
     .gl-visor_background_status { display: block; max-width: 100%; white-space: normal; font-size: var(--_typography---font-size--label-sm); }
     .gl-visor_scene[data-background] .gl-visor_layers_caption,
     .gl-visor_scene[data-background] .gl-visor_scene_label .gl-mono { color: color-mix(in srgb, var(--_theme---text) 75%, transparent); }
+    @media (max-width: 1199px) {
+      .gl-visor_scene_label { display: none; }
+    }
     @media (max-width: 991px) {
       .gl-visor_viewer { height: auto; min-height: 0; grid-template-columns: 1fr; }
       .gl-visor_scene { height: 62svh; min-height: 380px; }
@@ -94,13 +99,14 @@
       .gl-visor_panel_controls { padding-bottom: 5rem; }
     }
     @media (max-width: 767px) {
-      .gl-visor_scene { height: 62svh; min-height: 340px; }
+      .gl-visor_scene { height: calc(62svh + 3.5rem); min-height: 380px; }
+      .gl-visor_scene_img { bottom: 3.5rem; }
       .gl-visor_scene_label { display: none; }
-      .gl-visor_scene_controls { bottom: 0.75rem; left: 0.75rem; }
+      .gl-visor_scene_controls { top: auto; bottom: 4.25rem; left: 0.75rem; }
       .gl-visor_tool_rotate, .gl-visor_tool_zoom { display: none; }
       .gl-visor_tool_step { display: inline-flex; }
-      .gl-visor_layers { left: auto; right: 0.75rem; bottom: 0.75rem; transform: none; align-items: flex-end; }
-      .gl-visor_layers_caption { display: none; }
+      .gl-visor_layers { left: 0.75rem; right: 0.75rem; bottom: 0; height: 3.5rem; column-gap: 0.75rem; }
+      .gl-visor_layers_caption { max-width: calc(100% - 9rem); font-size: var(--_typography---font-size--label-sm); line-height: 1.4; }
       .gl-visor_panel_header { display: none; }
       .gl-visor_panel_grid { order: 1; display: flex; flex-direction: row; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; scrollbar-width: none; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); }
       .gl-visor_panel_grid::-webkit-scrollbar { display: none; }
@@ -509,7 +515,7 @@
     }
   }
   </script>
-  <script type="module" src="js/gl-visor-glass3d.js?v=12"></script>
+  <script type="module" src="js/gl-visor-glass3d.js?v=13"></script>
 
   <!-- FULLSCREEN MENU -->
   <aside class="gl-dock" aria-label="Navegacion flotante" data-flwr-id="l10n-gl-visor-r">
