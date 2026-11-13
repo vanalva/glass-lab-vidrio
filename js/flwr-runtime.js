@@ -482,9 +482,9 @@
   /* Hydrates [data-flwr="map"] onto Leaflet if window.L is present. */
 
   var TILE_URLS = {
-    light:   'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
-    voyager: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
-    dark:    'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+    light:   'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=cb1_586i_1_bbd1e2b6fd225bf6974a2e1f',
+    voyager: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_586i_1_bbd1e2b6fd225bf6974a2e1f',
+    dark:    'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png?key=cb1_586i_1_bbd1e2b6fd225bf6974a2e1f'
   };
 
   function initMap(wrap) {
@@ -529,7 +529,7 @@
         if (e.deltaY < 0) map.zoomIn(); else map.zoomOut();
       }
     }, { passive: false });
-    L.tileLayer(tileUrl, { attribution: '&copy; OpenStreetMap', subdomains: 'abcd', maxZoom: 20 }).addTo(map);
+    L.tileLayer(tileUrl, { attribution: '&copy; OpenStreetMap &copy; CARTO', subdomains: 'abcd', maxZoom: 20 }).addTo(map);
 
     var icon = L.divIcon({ className: 'flwr_map_marker', iconSize: [20, 20], iconAnchor: [10, 10] });
     var activeMarker = null;

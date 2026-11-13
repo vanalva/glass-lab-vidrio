@@ -3,7 +3,7 @@
 (function () {
   "use strict";
   // Works with file names (pg-sistemas.html) and with the clean URLs the live sites use (/sistemas).
-  var page = (location.pathname.split("/").pop() || "./").replace(/\.html$/, "");
+  var page = (location.pathname.split("/").pop() || "index").replace(/\.html$/, "");
   if (page === "index") page = "pg-index";
   if (!/^pg-/.test(page)) page = "pg-" + page;
   var qs = new URLSearchParams(location.search);

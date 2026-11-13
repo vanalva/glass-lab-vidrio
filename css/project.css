@@ -1483,7 +1483,9 @@ a.gl-catalogo_hero-caption { text-decoration-line: none; }
 
 .gl-map .leaflet-container { width: 100%; height: 100%; background-color: color-mix(in srgb, var(--_theme---text) 6%, transparent); font-family: inherit; }
 
-.gl-map .leaflet-control-attribution { display: none; }
+.gl-map .leaflet-control-attribution { background-color: transparent; color: color-mix(in srgb, var(--_theme---text) 45%, transparent); font-size: 10px; line-height: 1.4; padding-top: 2px; padding-right: 6px; padding-bottom: 2px; padding-left: 6px; }
+.gl-map .leaflet-control-attribution a { color: inherit; text-decoration-line: none; }
+.gl-map .leaflet-control-attribution .leaflet-attribution-flag { display: none; }
 
 .gl-map .leaflet-bar { border-width: 0px; box-shadow: none; }
 

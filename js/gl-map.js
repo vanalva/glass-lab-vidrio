@@ -62,13 +62,22 @@
     document.body.appendChild(svg);
   }
 
+  // CARTO basemaps need an API key since Sep 2026. One key for all of Juan's sites, locked to his
+  // domains in the CARTO dashboard. Their terms require the attribution to stay visible.
+  var CARTO_KEY = 'cb1_586i_1_bbd1e2b6fd225bf6974a2e1f';
+  var CARTO_ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>';
+  function cartoUrl(style) { return 'https://{s}.basemaps.cartocdn.com/' + style + '/{z}/{x}/{y}{r}.png?key=' + CARTO_KEY; }
+
   // Shared: add the themed CartoDB basemap + brand duotone recolor to a map.
   function addBasemap(map, theme) {
     var tileId = theme === 'light' ? 'light_all' : 'dark_all';
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/' + tileId + '/{z}/{x}/{y}{r}.png', {
+    L.tileLayer(cartoUrl(tileId), {
+      attribution: CARTO_ATTRIBUTION,
       subdomains: 'abcd',
       maxZoom: 20
     }).addTo(map);
+    // credit bottom-left: the 'Abrir en Google Maps' button owns the bottom-right corner
+    if (map.attributionControl) map.attributionControl.setPosition('bottomleft').setPrefix(false);
     var tilePane = map.getPane('tilePane');
     if (tilePane) {
       tilePane.style.filter = theme === 'light'
@@ -108,7 +117,7 @@
       zoom: zoom,
       zoomControl: true,
       scrollWheelZoom: false,
-      attributionControl: false
+      attributionControl: true
     });
 
     // Ctrl + wheel to zoom (keeps page scroll natural otherwise)
@@ -121,10 +130,13 @@
 
     // CartoDB basemap — dark_all for dark sections, light_all for light
     var tileId = theme === 'light' ? 'light_all' : 'dark_all';
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/' + tileId + '/{z}/{x}/{y}{r}.png', {
+    L.tileLayer(cartoUrl(tileId), {
+      attribution: CARTO_ATTRIBUTION,
       subdomains: 'abcd',
       maxZoom: 20
     }).addTo(map);
+    // credit bottom-left: the 'Abrir en Google Maps' button owns the bottom-right corner
+    if (map.attributionControl) map.attributionControl.setPosition('bottomleft').setPrefix(false);
 
     // Recolor the basemap into the brand duotone
     var tilePane = map.getPane('tilePane');
@@ -171,7 +183,7 @@
       zoom: zoom,
       zoomControl: true,
       scrollWheelZoom: false,
-      attributionControl: false
+      attributionControl: true
     });
     ctrlWheelZoom(el, map);
     addBasemap(map, theme);
