@@ -254,7 +254,7 @@ function renderSystem(system, pernia) {
     const FEATURED_CODES = ['Vc', 'Va', 'In', 'Aq', 'Ec', 'Ed'];
     FEATURED_CODES.forEach(code => {
       const a = document.createElement('a');
-      a.href = crossBrandHref(`gl-vidrio.html?code=${code}`);
+      a.href = crossBrandHref(`vidrio?code=${code}`);
       a.className = 'gl-link-reset gl-cell gl-cell_filled pg-sistema_glasslab_cell';
       a.style.textDecoration = 'none';
       a.innerHTML = `

@@ -24,7 +24,7 @@
 
   /* ─── Panel HTML ─────────────────────────────────────────────────── */
   function cellHTML(symbol, code, name) {
-    return '<a href="gl-vidrio.html?code=' + symbol + '" class="gl-vitrina_cell">' +
+    return '<a href="vidrio?code=' + symbol + '" class="gl-vitrina_cell">' +
       '<span class="gl-vitrina_cell_code">' + code + '</span>' +
       '<span class="gl-vitrina_cell_symbol">' + symbol + '</span>' +
       '<span class="gl-vitrina_cell_name">' + name + '</span>' +
@@ -35,7 +35,7 @@
     catalogo:
       '<div class="gl-vitrina_header">' +
         '<span class="gl-vitrina_title">Catálogo</span>' +
-        '<a href="gl-catalogo.html" class="gl-vitrina_header_link">Ver completo →</a>' +
+        '<a href="catalogo" class="gl-vitrina_header_link">Ver completo →</a>' +
       '</div>' +
       '<div class="gl-vitrina_cells">' +
         cellHTML('Vc',  '001', 'Claro') +
@@ -53,7 +53,7 @@
         '<span class="gl-vitrina_title">Visor</span>' +
       '</div>' +
       '<p class="gl-vitrina_desc u-text-style-small">Compositor interactivo de vidrio. Combina sistemas, capas y acabados en tiempo real.</p>' +
-      '<a href="gl-visor.html" class="gl-vitrina_cta">Abrir Visor →</a>',
+      '<a href="visor" class="gl-vitrina_cta">Abrir Visor →</a>',
 
     contacto:
       '<div class="gl-vitrina_header">' +

@@ -74,7 +74,7 @@ window.GL_DATA.then(({ glass, helpers }) => {
             : 'Hubo un error al cargar <code>data/glass-types.json</code>. Revisa la consola del navegador para el detalle.'}
         </p>
         <p class="gl-mono gl-mono_muted" style="font-size:0.8rem;">Error: ${(err && err.message) || err}</p>
-        <a href="gl-catalogo.html" class="gl-mono">&larr; Volver al catálogo</a>
+        <a href="catalogo" class="gl-mono">&larr; Volver al catálogo</a>
       </section>`;
   }
 });
@@ -233,7 +233,7 @@ function renderProduct(product, glass, helpers) {
 
 function renderRelatedCell(prod, kind) {
   const a = document.createElement('a');
-  a.href = `gl-vidrio.html?code=${prod.code}`;
+  a.href = `vidrio?code=${prod.code}`;
   a.className = `gl-link-reset gl-cell gl-cell_filled gl-cell_cat-${prod.category}`;
 
   const topMeta = document.createElement('div');
@@ -267,7 +267,7 @@ function renderRelatedCell(prod, kind) {
 
 function renderPerniaCard(system) {
   const a = document.createElement('a');
-  a.href = crossBrandHref(`pg-sistema.html?code=${system.code}`);
+  a.href = crossBrandHref(`sistema?code=${system.code}`);
   a.className = 'pg-sistemas_card gl-vidrio_pernia_card gl-link-reset';
 
   const img = document.createElement('img');
@@ -323,7 +323,7 @@ function renderNotFound(code) {
         <span class="gl-mono gl-mono_muted">404 — VIDRIO NO ENCONTRADO</span>
         <h1 class="gl-vidrio_hero_name" style="margin:1rem 0;">El código «${code}» no existe en el catálogo</h1>
         <p class="gl-mono gl-mono_muted" style="max-width:40ch;margin-bottom:2rem;">Tal vez el vidrio fue renombrado, o todavía no existe en la tabla periódica. Verifica el catálogo completo.</p>
-        <a href="gl-catalogo.html" class="gl-mono">&larr; Volver al catálogo</a>
+        <a href="catalogo" class="gl-mono">&larr; Volver al catálogo</a>
       </section>`;
   }
 }
