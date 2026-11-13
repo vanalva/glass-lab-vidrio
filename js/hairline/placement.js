@@ -120,6 +120,15 @@
   }
 
   // ---- mounting ------------------------------------------------------------------------------------------------------
+  // A figure that changes size moves everything below it, so the page's GSAP ScrollTriggers (the pinned theme
+  // transition on pg-index) must re-measure, or they fire in the wrong place: the CTA vanishes and the pin stops midway.
+  var refreshTimer = 0;
+  function refreshTriggers() {
+    clearTimeout(refreshTimer);
+    refreshTimer = setTimeout(function () { if (window.ScrollTrigger) window.ScrollTrigger.refresh(); }, 200);
+  }
+  var ro = "ResizeObserver" in window ? new ResizeObserver(refreshTriggers) : null;
+
   function mount(item) {
     if (item.done) return; item.done = true;
     Promise.resolve().then(function () {
@@ -132,6 +141,7 @@
       var mono = $(".gl-mono"); if (mono) item.block.style.setProperty("--hlp-mono", getComputedStyle(mono).fontFamily);
       item.handle = window.HairlineSite.mount(item.slot, f, { theme: themeOf(item.block) });
       window.__hlpMounted = (window.__hlpMounted || []).concat(item.fig);
+      if (ro) ro.observe(item.block); else refreshTriggers();
     }).catch(function (e) { console.error(e); });
   }
 
@@ -139,15 +149,9 @@
     layout();
     window.__hlpSlots = slots;
     if (!slots.length) return;
-    if (!("IntersectionObserver" in window)) { slots.forEach(mount); return; }
-    var io = new IntersectionObserver(function (es) {
-      es.forEach(function (e) {
-        if (!e.isIntersecting) return;
-        io.unobserve(e.target);
-        mount(slots.filter(function (s) { return s.block === e.target; })[0]);
-      });
-    }, { rootMargin: "400px 0px" });
-    slots.forEach(function (s) { io.observe(s.block); });
+    // Mount every figure up front (two to four per page): their final heights are in place before the page's own
+    // load-time ScrollTrigger.refresh(), instead of arriving mid-scroll and shifting the layout under a pin.
+    slots.forEach(mount);
   }
   function ready() { start(); }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", ready); else ready();

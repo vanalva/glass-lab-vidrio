@@ -4597,3 +4597,133 @@ label.pg-contacto_form-tag {
 .flwr-locale-switcher_sep {
   opacity: 0.3;
 }
+
+/* ══════════════════════════════════════════════════════════════════════
+   Custom select (custom-select.js) — same surface, type, spacing, hover
+   and motion as the navbar popover (.gl-home_nav_popover / .pg-nav_popover).
+   Colours come from --_theme--- so the panel follows the section theme
+   (dark on Glass Lab, cream on Pernia). The native <select> stays in the
+   DOM, hidden, and remains the source of truth.
+   ══════════════════════════════════════════════════════════════════════ */
+
+.gl-select { position: relative; width: 100%; min-width: 0px; }
+
+.gl-select > select.gl-select_native {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 1px;
+  height: 1px;
+  min-width: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  background-image: none;
+  opacity: 0;
+  pointer-events: none;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+button.gl-select_trigger {
+  appearance: none;
+  -webkit-appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 0.75rem;
+  width: 100%;
+  min-width: 0px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  color: var(--_theme---text);
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+  outline-width: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  transition-property: border-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+button.gl-contacto_form_input.gl-select_trigger {
+  padding-top: 0.5rem;
+  padding-right: 0px;
+  padding-bottom: 0.5rem;
+  padding-left: 0px;
+}
+
+button.pg-contacto_form-select.gl-select_trigger {
+  padding-top: 0.625rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.625rem;
+  padding-left: 0.75rem;
+}
+
+.gl-select_value { min-width: 0px; overflow-x: hidden; overflow-y: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.gl-select_trigger::after { content: ""; flex-shrink: 0; width: 0.34em; height: 0.34em; margin-right: 0.2em; border-right: 1px solid; border-bottom: 1px solid; transform: translateY(-0.12em) rotate(45deg); transition-property: transform; transition-duration: 0.2s; transition-timing-function: ease; }
+
+.gl-select.is-open .gl-select_trigger::after { transform: translateY(0.06em) rotate(225deg); }
+
+button.gl-contacto_form_input.gl-select_trigger:focus-visible,
+.gl-select.is-open button.gl-contacto_form_input.gl-select_trigger {
+  border-bottom-color: var(--_theme---text);
+}
+
+button.pg-contacto_form-select.gl-select_trigger:focus-visible,
+.gl-select.is-open button.pg-contacto_form-select.gl-select_trigger {
+  border-top-color: var(--_theme---text);
+  border-right-color: var(--_theme---text);
+  border-bottom-color: var(--_theme---text);
+  border-left-color: var(--_theme---text);
+}
+
+button.gl-contacto_form_input.gl-select_trigger.is-invalid { border-bottom-color: #C6462F; }
+
+button.pg-contacto_form-select.gl-select_trigger.is-invalid {
+  border-top-color: #C6462F;
+  border-right-color: #C6462F;
+  border-bottom-color: #C6462F;
+  border-left-color: #C6462F;
+}
+
+.gl-select_panel { position: absolute; top: calc(100% + 0.5rem); left: 0px; right: 0px; max-height: var(--gl-select-max, 18rem); overflow-y: auto; overscroll-behavior: contain; display: flex; flex-direction: column; background-color: var(--_theme---background); backdrop-filter: blur(14px); border-width: 1px; border-style: solid; border-top-color: color-mix(in srgb, var(--_theme---text) 16%, transparent); border-right-color: color-mix(in srgb, var(--_theme---text) 16%, transparent); border-bottom-color: color-mix(in srgb, var(--_theme---text) 16%, transparent); border-left-color: color-mix(in srgb, var(--_theme---text) 16%, transparent); border-top-left-radius: var(--radius--subtle); border-top-right-radius: var(--radius--subtle); border-bottom-left-radius: var(--radius--subtle); border-bottom-right-radius: var(--radius--subtle); opacity: 0; visibility: hidden; transform: translateY(-6px); pointer-events: none; outline-width: 0px; z-index: 60; transition-property: opacity, transform, visibility; transition-duration: 0.2s; transition-timing-function: ease; }
+
+.gl-select.opens-up .gl-select_panel { top: auto; bottom: calc(100% + 0.5rem); transform: translateY(6px); }
+
+.gl-select.is-open .gl-select_panel { opacity: 1; visibility: visible; transform: translateY(0px); pointer-events: auto; }
+
+.gl-select_option { flex-shrink: 0; font-family: var(--_typography---font--secondary-family); font-size: var(--_typography---font-size--label); letter-spacing: 0.08em; text-transform: uppercase; color: color-mix(in srgb, var(--_theme---text) 60%, transparent); padding-top: var(--_spacing---space--2); padding-bottom: var(--_spacing---space--2); padding-left: var(--_spacing---space--4); padding-right: var(--_spacing---space--4); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); display: flex; align-items: center; justify-content: space-between; column-gap: 0.75rem; cursor: pointer; transition-property: color, background-color; transition-duration: 0.2s; transition-timing-function: ease; }
+
+.gl-select_option:last-child { border-bottom-width: 0px; }
+
+.gl-select_option.is-active { color: var(--_theme---text); background-color: color-mix(in srgb, var(--_theme---text) 6%, transparent); }
+
+.gl-select_option.is-selected { color: var(--_theme---text); }
+
+.gl-select_option.is-selected::after { content: ""; flex-shrink: 0; width: 0.4rem; height: 0.4rem; border-top-left-radius: 50%; border-top-right-radius: 50%; border-bottom-left-radius: 50%; border-bottom-right-radius: 50%; background-color: currentColor; }
+
+.gl-select_option[aria-disabled="true"] { opacity: 0.35; cursor: default; }
+
+@media (max-width: 767px) {
+  .gl-select_option { padding-top: 0.875rem; padding-bottom: 0.875rem; white-space: normal; }
+}
+
+/* While a custom select is open its ancestors are lifted so the panel is
+   never painted under a later row (animated rows are their own stacking
+   contexts). Added and removed by custom-select.js. */
+.gl-select_lift { z-index: 60; }
+
+.gl-select_lift-rel { position: relative; }
