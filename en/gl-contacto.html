@@ -46,7 +46,7 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/variables.css?v=3703e9fe">
-  <link rel="stylesheet" href="../css/project.css?v=65a911af">
+  <link rel="stylesheet" href="../css/project.css?v=ef09bebe">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
   <script type="application/ld+json">
@@ -401,10 +401,6 @@
         <li class="gl-menu_item"><a href="/en/laboratorio" class="gl-menu_link"><span class="gl-menu_link-num">05</span><span class="gl-menu_link-text" data-flwr-id="l10n-gl-contacto-a">Studio</span><span class="gl-menu_link-arrow">→</span></a></li>
         <li class="gl-menu_item"><a href="/en/blog" class="gl-menu_link"><span class="gl-menu_link-num">06</span><span class="gl-menu_link-text" data-flwr-id="l10n-gl-contacto-9">Journal</span><span class="gl-menu_link-arrow">→</span></a></li>
         <li class="gl-menu_item"><a href="/en/contacto" class="gl-menu_link"><span class="gl-menu_link-num">07</span><span class="gl-menu_link-text" data-flwr-id="l10n-gl-contacto-8">Contact</span><span class="gl-menu_link-arrow">→</span></a></li>
-        <!-- Chat lives in the menu instead of a floating launcher — the old
-             button sat on top of the dock on mobile. gl-menu.js closes the
-             menu and then clicks the off-screen [data-vanny-toggle]. -->
-        <li class="gl-menu_item"><button type="button" class="gl-menu_link" data-gl-chat><span class="gl-menu_link-num">08</span><span class="gl-menu_link-text" data-flwr-id="l10n-gl-contacto-7">Chat</span><span class="gl-menu_link-arrow" data-flwr-id="l10n-gl-contacto-6">→</span></button></li>
       </ul>
     </nav>
     <div class="gl-menu_footer">
@@ -415,7 +411,7 @@
       <span class="gl-menu_footer-lang flwr-locale-switcher_mount" data-flwr-id="l10n-gl-contacto-3" data-flwr-locale-switcher><nav class="flwr-locale-switcher" aria-label="Language"><a href="/contacto" hreflang="es" lang="es" title="Español" data-flwr-locale="es" class="flwr-locale-switcher_link">ES</a><span class="flwr-locale-switcher_sep" aria-hidden="true">/</span><a href="/en/contacto" hreflang="en" lang="en" title="English" data-flwr-locale="en" class="flwr-locale-switcher_link is-current" aria-current="true">EN</a></nav></span>
     </div>
   </div>
-  <script src='../js/gl-menu.js?v=6026605e'></script>
+  <script src='../js/gl-menu.js?v=7bcdfa99'></script>
   <script src="../js/gl-page-transition.js?v=6f4350e2"></script>
   <script src="../js/gl-theme-transition.js?v=00a7fb22"></script>
   <script src="../js/newsletter.js?v=6d3257eb"></script>
@@ -423,15 +419,5 @@
   <script src="../js/forms.js?v=ff676ada"></script>
   <script src="../js/gl-dock.js?v=b71aab41"></script>
   <script src="../js/gl-lente.js?v=8f9d1149"></script><script src="../js/gl-dock-vitrina.js?v=ade98636"></script>
-  <!-- vanny-widget -->
-  <!-- vanny chat launcher: floating GL-CHAT button, DESKTOP ONLY. Hidden at
-       <=991px via .vanny-widget-launch, where chat is reached from the "Chat"
-       entry in the fullscreen menu instead. That menu item clicks this same
-       [data-vanny-toggle]; the widget shows/hides this element itself. -->
-  <button type="button" class="gl-btn_skew_wrap gl-btn_skew_wrap_brand vanny-widget-launch" data-vanny-toggle aria-label="Talk to GL" data-flwr-id="l10n-gl-contacto-2">
-    <svg class="gl-btn_skew_shape" viewBox="0 0 240 56" preserveAspectRatio="none" fill="none"><path d="M16,1 L239,1 L239,42 L224,55 L1,55 L1,14 Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="miter" vector-effect="non-scaling-stroke"/></svg>
-    <span class="gl-btn_skew_element gl-btn_skew_element_sm"><span class="gl-btn_skew_text gl-btn_skew_text_sm" data-flwr-id="l10n-gl-contacto-1">GL — CHAT</span></span>
-  </button>
-  <script src="https://vanny.chat/vanny-widget.js" data-tenant="glass-lab" async></script>
 </body>
 </html>

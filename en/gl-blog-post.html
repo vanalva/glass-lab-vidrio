@@ -39,7 +39,7 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/variables.css?v=3703e9fe">
-  <link rel="stylesheet" href="../css/project.css?v=65a911af">
+  <link rel="stylesheet" href="../css/project.css?v=ef09bebe">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -363,10 +363,6 @@
         <li class="gl-menu_item"><a href="/en/laboratorio" class="gl-menu_link"><span class="gl-menu_link-num">05</span><span class="gl-menu_link-text" data-flwr-id="l10n-gl-blog-post-a">Studio</span><span class="gl-menu_link-arrow">→</span></a></li>
         <li class="gl-menu_item"><a href="/en/blog" class="gl-menu_link"><span class="gl-menu_link-num">06</span><span class="gl-menu_link-text" data-flwr-id="l10n-gl-blog-post-9">Journal</span><span class="gl-menu_link-arrow">→</span></a></li>
         <li class="gl-menu_item"><a href="/en/contacto" class="gl-menu_link"><span class="gl-menu_link-num">07</span><span class="gl-menu_link-text" data-flwr-id="l10n-gl-blog-post-8">Contact</span><span class="gl-menu_link-arrow">→</span></a></li>
-        <!-- Chat lives in the menu instead of a floating launcher — the old
-             button sat on top of the dock on mobile. gl-menu.js closes the
-             menu and then clicks the off-screen [data-vanny-toggle]. -->
-        <li class="gl-menu_item"><button type="button" class="gl-menu_link" data-gl-chat><span class="gl-menu_link-num">08</span><span class="gl-menu_link-text" data-flwr-id="l10n-gl-blog-post-7">Chat</span><span class="gl-menu_link-arrow" data-flwr-id="l10n-gl-blog-post-6">→</span></button></li>
       </ul>
     </nav>
     <div class="gl-menu_footer">
@@ -380,7 +376,7 @@
   <!-- GSAP -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js'></script>
-  <script src='../js/gl-menu.js?v=6026605e'></script>
+  <script src='../js/gl-menu.js?v=7bcdfa99'></script>
   <script src='../js/gl-nav-scroll.js?v=652db92a'></script>
   <script src="../js/gl-blog-post-animations.js?v=c1108415"></script>
   <script src="../js/gl-interactions.js?v=5e94091b"></script>
@@ -388,15 +384,5 @@
   <script src="../js/newsletter.js?v=6d3257eb"></script>
   <script src="../js/gl-lente.js?v=8f9d1149"></script><script src="../js/gl-dock-vitrina.js?v=ade98636"></script>
   <script src="../js/gl-dock.js?v=b71aab41"></script>
-  <!-- vanny-widget -->
-  <!-- vanny chat launcher: floating GL-CHAT button, DESKTOP ONLY. Hidden at
-       <=991px via .vanny-widget-launch, where chat is reached from the "Chat"
-       entry in the fullscreen menu instead. That menu item clicks this same
-       [data-vanny-toggle]; the widget shows/hides this element itself. -->
-  <button type="button" class="gl-btn_skew_wrap gl-btn_skew_wrap_brand vanny-widget-launch" data-vanny-toggle aria-label="Talk to GL" data-flwr-id="l10n-gl-blog-post-2">
-    <svg class="gl-btn_skew_shape" viewBox="0 0 240 56" preserveAspectRatio="none" fill="none"><path d="M16,1 L239,1 L239,42 L224,55 L1,55 L1,14 Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="miter" vector-effect="non-scaling-stroke"/></svg>
-    <span class="gl-btn_skew_element gl-btn_skew_element_sm"><span class="gl-btn_skew_text gl-btn_skew_text_sm" data-flwr-id="l10n-gl-blog-post-1">GL — CHAT</span></span>
-  </button>
-  <script src="https://vanny.chat/vanny-widget.js" data-tenant="glass-lab" async></script>
 </body>
 </html>

@@ -153,19 +153,6 @@
     document.body.style.overflow = '';
   }, true);
 
-  /* Chat entry — the vanny widget owns its own toggle element, which lives
-     off-screen (see [data-vanny-toggle] in each page). Close the menu first,
-     then click it once the overlay has wiped away, so the chat panel doesn't
-     open underneath a full-screen overlay. */
-  document.querySelectorAll('[data-gl-chat]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      closeMenu();
-      var toggle = document.querySelector('[data-vanny-toggle]');
-      if (!toggle) return;
-      setTimeout(function () { toggle.click(); }, 420);
-    });
-  });
-
   /* Menu link arrow hover — purely decorative, so with no GSAP it simply
      doesn't move (the arrow is display:none at every breakpoint anyway). */
   if (useGsap) {

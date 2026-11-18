@@ -1204,17 +1204,51 @@ a.gl-catalogo_hero-caption { text-decoration-line: none; }
   .gl-vidrio_related_row.u-radius-inner-5 > :last-child { border-bottom-left-radius: var(--radius--subtle); }
 }
 
-.gl-visor_viewer { display: grid; grid-template-columns: 1fr 24rem; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); }
+/* Visor viewer. All visor rules live here, never in the page <head>: the SPA
+   page transition (gl-page-transition.js) swaps <body> and only carries head
+   <link> stylesheets, so an inline <style> on gl-visor.html is dropped when the
+   visor is reached from another page (stage shrinks, grey UA buttons, panel
+   spilling over the footer). Desktop: stage + panel fill the viewport below
+   the header (gl-visor-glass3d.js sets the exact height), the panel scrolls
+   on its own, the footer follows in normal flow. */
+.gl-visor_viewer { display: grid; grid-template-columns: minmax(0px, 1fr) 24rem; height: calc(100svh - 78px); min-height: 480px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); }
 
-.gl-visor_scene { position: relative; display: flex; align-items: center; justify-content: center; border-right-width: 1px; border-right-style: solid; border-right-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); }
+.gl-visor_scene { position: relative; display: flex; align-items: center; justify-content: center; min-width: 0px; min-height: 0px; overflow-x: hidden; overflow-y: hidden; }
 
-.gl-visor_scene_img { width: 100%; height: 100%; min-height: 60vh; display: block; }
+.gl-visor_scene_img { position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; display: block; }
 
-.gl-visor_scene_label { position: absolute; bottom: var(--_spacing---space--4); left: var(--_spacing---space--4); }
+.gl-visor_scene_label { position: absolute; top: calc(1.5rem + 3.1rem); left: 1.5rem; max-width: calc(100% - 3rem); text-align: left; white-space: nowrap; overflow-x: hidden; overflow-y: hidden; text-overflow: ellipsis; pointer-events: none; z-index: 1; }
 
-.gl-visor_scene_controls { position: absolute; top: var(--_spacing---space--4); right: var(--_spacing---space--4); display: flex; flex-direction: column; row-gap: var(--_spacing---space--1); }
+.gl-visor_scene_controls { position: absolute; top: 1.5rem; left: 1.5rem; display: flex; flex-direction: row; align-items: center; column-gap: 0.35rem; row-gap: 0.35rem; z-index: 2; }
 
-.gl-visor_panel { display: flex; flex-direction: column; overflow: hidden auto; }
+.gl-visor_tool { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); border-right-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); border-bottom-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); border-left-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); background-color: color-mix(in srgb, var(--_theme---background) 55%, transparent); color: var(--_theme---text); font-family: inherit; cursor: pointer; }
+
+.gl-visor_tool:hover { background-color: color-mix(in srgb, var(--_theme---text) 16%, transparent); }
+
+.gl-visor_tool:focus-visible { outline-width: 2px; outline-style: solid; outline-color: var(--_theme---text); outline-offset: 2px; }
+
+.gl-visor_tool_step { display: none; }
+
+/* Stage bottom bar, injected by gl-visor-glass3d.js: caption left, "Separar capas" right. */
+.gl-visor_layers { position: absolute; left: 1.5rem; right: 1.5rem; bottom: 1.5rem; display: flex; flex-direction: row; align-items: center; justify-content: space-between; column-gap: 1.5rem; row-gap: 0.5rem; z-index: 2; pointer-events: none; }
+
+.gl-visor_layers > * { pointer-events: auto; }
+
+.gl-visor_layers_caption { flex-grow: 1; flex-shrink: 1; flex-basis: 0%; min-width: 0px; font-size: var(--_typography---font-size--label-sm); letter-spacing: 0.08em; text-align: left; white-space: normal; }
+
+/* <button> used as the skew wrap: strip the user-agent button fill and border
+   so it looks like every other gl-btn_skew (outline shape, transparent fill). */
+.gl-visor_layers_button { flex-grow: 0; flex-shrink: 0; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; background-color: transparent; color: var(--_theme---text); font-family: inherit; font-size: inherit; -webkit-appearance: none; appearance: none; }
+
+.gl-visor_layers_button[hidden] { display: none; }
+
+.gl-visor_layers_button .gl-btn_skew_text { white-space: nowrap; }
+
+.gl-visor_layers_button:focus-visible { outline-width: 2px; outline-style: solid; outline-color: var(--_theme---text); outline-offset: 4px; }
+
+.gl-visor_panel { display: flex; flex-direction: column; min-width: 0px; min-height: 0px; overflow-x: hidden; overflow-y: auto; overscroll-behavior-y: contain; border-left-width: 1px; border-left-style: solid; border-left-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); }
+
+.gl-visor_panel > * { flex-shrink: 0; }
 
 .gl-visor_panel_header { padding-top: var(--_spacing---space--4); padding-bottom: var(--_spacing---space--4); padding-left: var(--_spacing---space--4); padding-right: var(--_spacing---space--4); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); }
 
@@ -1222,25 +1256,36 @@ a.gl-catalogo_hero-caption { text-decoration-line: none; }
 
 .gl-visor_panel_info_top { display: flex; flex-direction: column; align-items: flex-start; row-gap: var(--_spacing---space--2); }
 
+/* Product name and its catalogue line each get their own row. */
+.gl-visor_panel_info_top .gl-mono { display: block; line-height: 1.5; }
+
 .gl-visor_panel_info_symbol { font-family: var(--_typography---font--primary-family); font-size: var(--_typography---font-size--h); font-weight: 200; line-height: 1; }
 
 .gl-visor_panel_info_tags { display: flex; column-gap: var(--_spacing---space--1); row-gap: var(--_spacing---space--1); flex-wrap: wrap; }
 
-.gl-visor_panel_grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0px; }
+.gl-visor_panel_grid { display: grid; grid-template-columns: repeat(3, minmax(0px, 1fr)); row-gap: 0px; column-gap: 0px; }
 
-.gl-visor_panel_grid .gl-cell { min-width: 0px; overflow: hidden; }
+.gl-visor_panel_grid .gl-cell { min-width: 0px; overflow-x: hidden; overflow-y: hidden; aspect-ratio: 5 / 4; }
 
 .gl-visor_panel_grid .gl-cell_name { overflow-x: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 .gl-visor_cell_active { border-top-color: var(--_theme---text); border-right-color: var(--_theme---text); border-bottom-color: var(--_theme---text); border-left-color: var(--_theme---text); background-color: color-mix(in srgb, var(--_theme---text) 10%, transparent); }
 
-.gl-visor_panel_controls { padding-top: var(--_spacing---space--4); padding-bottom: var(--_spacing---space--4); padding-left: var(--_spacing---space--4); padding-right: var(--_spacing---space--4); border-top-width: 1px; border-top-style: solid; border-top-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); display: flex; flex-direction: column; row-gap: var(--_spacing---space--4); margin-top: auto; }
+.gl-visor_panel_controls { padding-top: var(--_spacing---space--4); padding-bottom: var(--_spacing---space--5); padding-left: var(--_spacing---space--4); padding-right: var(--_spacing---space--4); border-top-width: 1px; border-top-style: solid; border-top-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); display: flex; flex-direction: column; row-gap: var(--_spacing---space--4); margin-top: 0px; }
 
-.gl-visor_control_row { display: flex; flex-direction: column; row-gap: var(--_spacing---space--1); }
+.gl-visor_control_row { display: flex; flex-direction: column; row-gap: var(--_spacing---space--2); }
 
-.gl-visor_control_header { display: flex; justify-content: space-between; }
+.gl-visor_control_row[hidden] { display: none; }
 
-.gl-visor_slider { width: 100%; height: 2px; background-color: color-mix(in srgb, var(--_theme---text) 15%, transparent); position: relative; }
+.gl-visor_control_header { display: flex; justify-content: space-between; column-gap: var(--_spacing---space--2); }
+
+.gl-visor_slider { width: 100%; height: 2px; background-color: color-mix(in srgb, var(--_theme---text) 15%, transparent); position: relative; touch-action: pan-y; }
+
+.gl-visor_slider::before { content: ''; position: absolute; top: -12px; right: 0px; bottom: -12px; left: 0px; }
+
+.gl-visor_slider:focus-visible { outline-width: 2px; outline-style: solid; outline-color: currentcolor; outline-offset: 7px; }
+
+.gl-visor_slider[aria-disabled="true"] { opacity: 0.35; cursor: default; }
 
 .gl-visor_slider_fill { position: absolute; top: 0px; left: 0px; width: 60%; height: 100%; background-color: var(--_theme---text); }
 
@@ -1250,20 +1295,78 @@ a.gl-catalogo_hero-caption { text-decoration-line: none; }
 
 .gl-visor_slider_thumb_75 { left: 75%; }
 
-.gl-visor_control_buttons { display: flex; column-gap: var(--_spacing---space--2); margin-top: var(--_spacing---space--2); }
+.gl-visor_control_buttons { display: flex; flex-direction: column; row-gap: 0.75rem; column-gap: var(--_spacing---space--2); margin-top: 0px; }
+
+.gl-visor_control_buttons .gl-btn_skew_wrap { width: 100%; }
+
+.gl-visor_control_buttons .gl-btn_skew_element { width: 100%; }
+
+.gl-visor_control_buttons .gl-btn_skew_text { white-space: nowrap; }
+
+.gl-visor_settings { display: block; }
+
+.gl-visor_settings_summary { display: none; cursor: pointer; list-style-type: none; padding-top: 0.9rem; padding-bottom: 0.9rem; }
+
+.gl-visor_settings_summary::-webkit-details-marker { display: none; }
+
+.gl-visor_settings_summary::after { content: '+'; float: right; }
+
+.gl-visor_settings[open] .gl-visor_settings_summary::after { content: '\2212'; }
+
+.gl-visor_settings_body { display: flex; flex-direction: column; row-gap: var(--_spacing---space--4); }
+
+.gl-visor_background_controls { display: flex; flex-direction: column; align-items: stretch; row-gap: 0.75rem; column-gap: 0.75rem; padding-top: var(--_spacing---space--4); border-top-width: 1px; border-top-style: solid; border-top-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); }
+
+.gl-visor_background_options { display: grid; grid-template-columns: repeat(3, minmax(0px, 1fr)); row-gap: 0.5rem; column-gap: 0.5rem; }
+
+/* Scene-background chips are <button class="gl-tag">: outline chip like every
+   gl-tag on the site, filled only when pressed. */
+.gl-visor_background_options .gl-tag { align-self: stretch; justify-content: center; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0.65rem; padding-bottom: 0.65rem; padding-left: 0.3rem; padding-right: 0.3rem; background-color: transparent; color: var(--_theme---text); line-height: 1; cursor: pointer; -webkit-appearance: none; appearance: none; }
+
+.gl-visor_background_options .gl-tag[aria-pressed="true"] { background-color: var(--_theme---text); color: var(--_theme---background); }
+
+.gl-visor_background_options .gl-tag:disabled { opacity: 0.35; cursor: default; }
+
+.gl-visor_background_options button:focus-visible { outline-width: 2px; outline-style: solid; outline-color: currentcolor; outline-offset: 3px; }
+
+.gl-visor_background_upload { align-self: flex-start; }
+
+.gl-visor_background_status { display: block; max-width: 100%; white-space: normal; font-size: var(--_typography---font-size--label-sm); line-height: 1.5; }
+
+.gl-visor_scene[data-background] .gl-btn_skew_wrap { color: var(--_theme---text); }
+
+.gl-visor_scene[data-background] .gl-visor_layers_caption,
+.gl-visor_scene[data-background] .gl-visor_scene_label .gl-mono { color: color-mix(in srgb, var(--_theme---text) 75%, transparent); }
 
 @media (max-width: 991px) {
-  .gl-visor_viewer { grid-template-columns: 1fr 20rem; }
+  .gl-visor_viewer { height: auto; min-height: 0px; grid-template-columns: minmax(0px, 1fr); }
+  .gl-visor_scene { height: 62svh; min-height: 380px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); }
+  .gl-visor_scene_label { display: none; }
+  .gl-visor_panel { overflow-x: visible; overflow-y: visible; border-left-width: 0px; }
+  .gl-visor_panel_grid { grid-template-columns: repeat(6, minmax(0px, 1fr)); }
+  .gl-visor_panel_grid .gl-cell { aspect-ratio: 1 / 1; }
+  .gl-visor_panel_controls { padding-bottom: 5rem; }
 }
 
 @media (max-width: 767px) {
-  .gl-visor_viewer { grid-template-columns: 1fr; min-height: auto; }
-  .gl-visor_scene { min-height: 50vh; border-right-width: 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); }
-  .gl-visor_panel_grid { grid-template-columns: repeat(6, 1fr); }
-}
-
-@media (max-width: 478px) {
-  .gl-visor_panel_grid { grid-template-columns: repeat(4, 1fr); }
+  .gl-visor_scene { height: calc(62svh + 3.5rem); min-height: 380px; }
+  .gl-visor_scene_img { bottom: 3.5rem; }
+  .gl-visor_scene_controls { top: auto; bottom: 4.25rem; left: 0.75rem; }
+  .gl-visor_tool_rotate { display: none; }
+  .gl-visor_tool_zoom { display: none; }
+  .gl-visor_tool_step { display: inline-flex; }
+  .gl-visor_layers { left: 0.75rem; right: 0.75rem; bottom: 0px; height: 3.5rem; column-gap: 0.75rem; }
+  .gl-visor_layers_caption { line-height: 1.4; }
+  .gl-visor_panel_header { display: none; }
+  .gl-visor_panel_grid { order: 1; display: flex; flex-direction: row; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; scrollbar-width: none; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); }
+  .gl-visor_panel_grid::-webkit-scrollbar { display: none; }
+  .gl-visor_panel_grid .gl-cell { flex-grow: 0; flex-shrink: 0; flex-basis: 5.5rem; aspect-ratio: 1 / 1; scroll-snap-align: start; padding-top: 0.5rem; padding-right: 0.5rem; padding-bottom: 0.5rem; padding-left: 0.5rem; }
+  .gl-visor_panel_grid .gl-cell_symbol { font-size: 1.6rem; }
+  .gl-visor_panel_info { order: 2; }
+  .gl-visor_panel_controls { order: 3; padding-top: 0px; padding-bottom: 5.5rem; row-gap: var(--_spacing---space--3); }
+  .gl-visor_settings { border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); }
+  .gl-visor_settings_summary { display: block; }
+  .gl-visor_settings_body { padding-bottom: var(--_spacing---space--4); }
 }
 
 .gl-proyectos_header { padding-top: calc(var(--_spacing---section-space--main) + var(--nav--height)); padding-bottom: var(--_spacing---space--7); padding-left: var(--site--margin); padding-right: var(--site--margin); }
@@ -3820,17 +3923,7 @@ a.pg-index_systems_card:hover .pg-index_systems_card-link { color: var(--_theme-
   .gl-installations_list-count { grid-column-start: auto; }
 }
 
-.vanny-widget-launch { position: fixed; right: var(--_spacing---space--4, 1.5rem); bottom: var(--_spacing---space--4, 1.5rem); z-index: 990; padding: 0px; border-width: 0px; background-color: transparent; font-family: inherit; }
-
-.vanny-widget-launch .gl-btn_skew_shape { pointer-events: none; }
-
-@media (max-width: 991px) {
-  .vanny-widget-launch { display: none; }
-}
-
 button.gl-menu_link { width: 100%; background-color: transparent; border-width: 0px; font-family: inherit; cursor: pointer; }
-
-iframe[src*="vanny.chat"] { color-scheme: light !important; max-width: 100vw; }
 
 .gl-touch .gl-dock_toggle_wrap:hover .gl-dock_popover, .gl-touch .gl-home_nav_group:hover .gl-home_nav_popover, .gl-touch .pg-nav_group:hover .pg-nav_popover { opacity: 0; pointer-events: none; }
 
