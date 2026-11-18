@@ -39,7 +39,7 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/variables.css?v=3703e9fe">
-  <link rel="stylesheet" href="css/project.css?v=b002c7e4">
+  <link rel="stylesheet" href="css/project.css?v=3db68872">
 
   <script type="application/ld+json">
   {
@@ -192,6 +192,44 @@
             <span class="gl-tag" data-flwr-id="l10n-gl-visor-29">Translúcido</span>
             <span class="gl-tag" data-flwr-id="l10n-gl-visor-28">Patrón tejido</span>
             <span class="gl-tag" data-flwr-id="l10n-gl-visor-27">Tier premium</span>
+          </div>
+        </div>
+
+        <!-- SCENE BACKGROUND: right under the sample info on every width; on phones
+             it also sits above the featured strip (order in project.css). -->
+        <div class="gl-visor_background_controls">
+          <div class="gl-visor_control_header">
+            <span class="gl-mono gl-mono_label gl-visor_section_label">Fondo de escena</span>
+          </div>
+          <div class="gl-visor_background_options" role="group" aria-label="Fondo de escena">
+            <button type="button" class="gl-tag" data-background-mode="dark" aria-pressed="true">Oscuro</button>
+            <button type="button" class="gl-tag" data-background-mode="beige" aria-pressed="false">Beige</button>
+            <button type="button" class="gl-tag" data-background-mode="image" aria-pressed="false" disabled>Imagen</button>
+          </div>
+          <span class="gl-mono gl-mono_muted gl-visor_background_sublabel">Ambiente</span>
+          <div class="gl-visor_background_options gl-visor_background_options_env" role="group" aria-label="Ambiente">
+            <button type="button" class="gl-tag" data-background-env="line" aria-pressed="true">Línea</button>
+            <button type="button" class="gl-tag" data-background-env="atmosphere" aria-pressed="false">Bruma</button>
+            <button type="button" class="gl-tag" data-background-env="grid" aria-pressed="false">Retícula</button>
+            <button type="button" class="gl-tag" data-background-env="empty" aria-pressed="false">Vacío</button>
+          </div>
+          <button type="button" class="gl-btn_skew_wrap gl-visor_layers_button gl-visor_background_upload" data-background-upload>
+            <svg class="gl-btn_skew_shape" viewBox="0 0 240 56" preserveAspectRatio="none" fill="none" aria-hidden="true">
+              <path d="M16,1 L239,1 L239,42 L224,55 L1,55 L1,14 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="miter" vector-effect="non-scaling-stroke"/>
+            </svg>
+            <span class="gl-btn_skew_element gl-btn_skew_element_sm"><span class="gl-btn_skew_text gl-btn_skew_text_sm">Cargar imagen</span></span>
+          </button>
+          <input type="file" accept="image/jpeg,image/png,image/webp,image/avif" data-background-file aria-label="Elegir imagen de entorno" hidden>
+          <span class="gl-mono gl-mono_muted gl-visor_background_status" data-background-status role="status" aria-live="polite">La imagen se queda en tu dispositivo.</span>
+          <div class="gl-visor_control_row" data-control="background-blur" hidden>
+            <div class="gl-visor_control_header">
+              <span class="gl-mono gl-mono_label">Desenfoque del fondo</span>
+              <span class="gl-mono gl-mono_label">30%</span>
+            </div>
+            <div class="gl-visor_slider">
+              <div class="gl-visor_slider_fill"></div>
+              <div class="gl-visor_slider_thumb"></div>
+            </div>
           </div>
         </div>
 
@@ -555,42 +593,6 @@
           </div>
             </div>
           </details>
-          <!-- Scene background: outside the Ajustes disclosure so phones always see it (CSS order puts it above Ajustes on <=767px). -->
-          <div class="gl-visor_background_controls">
-            <div class="gl-visor_control_header">
-              <span class="gl-mono gl-mono_label gl-visor_section_label">Fondo de escena</span>
-            </div>
-            <div class="gl-visor_background_options" role="group" aria-label="Fondo de escena">
-              <button type="button" class="gl-tag" data-background-mode="dark" aria-pressed="true">Oscuro</button>
-              <button type="button" class="gl-tag" data-background-mode="beige" aria-pressed="false">Beige</button>
-              <button type="button" class="gl-tag" data-background-mode="image" aria-pressed="false" disabled>Imagen</button>
-            </div>
-            <span class="gl-mono gl-mono_muted gl-visor_background_sublabel">Ambiente</span>
-            <div class="gl-visor_background_options gl-visor_background_options_env" role="group" aria-label="Ambiente">
-              <button type="button" class="gl-tag" data-background-env="line" aria-pressed="true">Línea</button>
-              <button type="button" class="gl-tag" data-background-env="atmosphere" aria-pressed="false">Bruma</button>
-              <button type="button" class="gl-tag" data-background-env="grid" aria-pressed="false">Retícula</button>
-              <button type="button" class="gl-tag" data-background-env="empty" aria-pressed="false">Vacío</button>
-            </div>
-            <button type="button" class="gl-btn_skew_wrap gl-visor_layers_button gl-visor_background_upload" data-background-upload>
-              <svg class="gl-btn_skew_shape" viewBox="0 0 240 56" preserveAspectRatio="none" fill="none" aria-hidden="true">
-                <path d="M16,1 L239,1 L239,42 L224,55 L1,55 L1,14 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="miter" vector-effect="non-scaling-stroke"/>
-              </svg>
-              <span class="gl-btn_skew_element gl-btn_skew_element_sm"><span class="gl-btn_skew_text gl-btn_skew_text_sm">Cargar imagen</span></span>
-            </button>
-            <input type="file" accept="image/jpeg,image/png,image/webp,image/avif" data-background-file aria-label="Elegir imagen de entorno" hidden>
-            <span class="gl-mono gl-mono_muted gl-visor_background_status" data-background-status role="status" aria-live="polite">La imagen se queda en tu dispositivo.</span>
-            <div class="gl-visor_control_row" data-control="background-blur" hidden>
-              <div class="gl-visor_control_header">
-                <span class="gl-mono gl-mono_label">Desenfoque del fondo</span>
-                <span class="gl-mono gl-mono_label">30%</span>
-              </div>
-              <div class="gl-visor_slider">
-                <div class="gl-visor_slider_fill"></div>
-                <div class="gl-visor_slider_thumb"></div>
-              </div>
-            </div>
-          </div>
           <div class="gl-visor_control_buttons">
             <div class="gl-btn_skew_wrap gl-btn_skew_wrap_filled">
               <svg class="gl-btn_skew_shape" viewBox="0 0 240 56" preserveAspectRatio="none" fill="none">
@@ -699,9 +701,9 @@
     }
   }
   </script>
-  <script type="module" src="js/gl-visor-glass3d.js?v=16"></script>
+  <script type="module" src="js/gl-visor-glass3d.js?v=17"></script>
   <!-- After the engine (both deferred, document order) so the active cell exists. -->
-  <script defer src="js/gl-visor-browse.js?v=64f01408"></script>
+  <script defer src="js/gl-visor-browse.js?v=2"></script>
 
   <!-- FULLSCREEN MENU -->
   <aside class="gl-dock" aria-label="Navegacion flotante" data-flwr-id="l10n-gl-visor-r">

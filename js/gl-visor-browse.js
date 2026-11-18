@@ -70,6 +70,15 @@
       }
     }
     groups.forEach(syncIcon);
+
+    // The engine puts the featured strip's prev/next arrows in the canvas
+    // bottom bar. The strip now sits under the scene background, so the
+    // arrows move next to it (the engine keeps its references to them; the
+    // node is only re-parented). Visible on phones only, per project.css.
+    var viewer = browse.closest('.gl-visor_viewer');
+    var header = viewer && viewer.querySelector('.gl-visor_featured_header');
+    var nav = viewer && viewer.querySelector('.gl-visor_scene .gl-visor_strip_nav');
+    if (header && nav) header.appendChild(nav);
   }
 
   document.querySelectorAll('.gl-visor_browse').forEach(setup);
