@@ -1343,6 +1343,12 @@ a.gl-catalogo_hero-caption { text-decoration-line: none; }
 
 .gl-visor_background_options button:focus-visible { outline-width: 2px; outline-style: solid; outline-color: currentcolor; outline-offset: 3px; }
 
+.gl-visor_background_options_env { grid-template-columns: repeat(4, minmax(0px, 1fr)); margin-top: -0.25rem; }
+
+.gl-visor_background_options_env .gl-tag { padding-left: 0.15rem; padding-right: 0.15rem; letter-spacing: 0.06em; }
+
+.gl-visor_background_sublabel { font-size: var(--_typography---font-size--label-sm); letter-spacing: 0.1em; }
+
 .gl-visor_background_upload { align-self: flex-start; }
 
 .gl-visor_background_status { display: block; max-width: 100%; white-space: normal; font-size: var(--_typography---font-size--label-sm); line-height: 1.5; }
@@ -1372,10 +1378,11 @@ a.gl-catalogo_hero-caption { text-decoration-line: none; }
   .gl-visor_layers { left: 0.75rem; right: 0.75rem; bottom: 0px; height: 3.5rem; column-gap: 0.75rem; }
   .gl-visor_layers_caption { line-height: 1.35; letter-spacing: 0.04em; }
   .gl-visor_panel_header { display: none; }
-  .gl-visor_panel_grid { order: 1; display: flex; flex-direction: row; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; scrollbar-width: none; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); }
+  .gl-visor_panel_grid { order: 1; display: flex; flex-direction: row; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; scrollbar-width: none; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); }
   .gl-visor_panel_grid::-webkit-scrollbar { display: none; }
   .gl-visor_panel_grid .gl-cell { flex-grow: 0; flex-shrink: 0; flex-basis: 5.5rem; aspect-ratio: 1 / 1; scroll-snap-align: start; padding-top: 0.5rem; padding-right: 0.5rem; padding-bottom: 0.5rem; padding-left: 0.5rem; }
   .gl-visor_panel_grid .gl-cell_symbol { font-size: 1.6rem; }
+  .gl-visor_panel_grid .gl-cell { margin-bottom: 0px; height: 5.5rem; }
   .gl-visor_strip_nav { display: flex; }
   .gl-visor_strip_nav .gl-vidrio_hero_arrow { width: 2rem; height: 2.25rem; color: color-mix(in srgb, var(--_theme---text) 80%, transparent); }
   .gl-visor_strip_nav .gl-vidrio_hero_arrow:disabled { opacity: 0.25; }

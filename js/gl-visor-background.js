@@ -12,33 +12,78 @@ export function coverTransform(imageWidth, imageHeight, viewWidth, viewHeight) {
   return { x, y, offsetX: (1 - x) / 2, offsetY: (1 - y) / 2 };
 }
 
-// The scene the glass refracts: a flat field, a faint thin grid and ONE thick
-// horizontal line the flutes stretch. Dark is the approved look; the beige
-// variant swaps to a dark ink line on a light field so the glass has something
-// to bend there too.
-export function makeBackdropTexture(theme) {
+export const BACKGROUND_ENVIRONMENTS = ['line', 'atmosphere', 'grid', 'empty'];
+
+// The scene the glass refracts, per tone (dark | beige) and environment:
+// line       flat field, faint grid and ONE thick horizontal line the flutes stretch (approved look)
+// atmosphere soft radial glow + a hazy horizon band: "a vacuum with atmosphere", gentle to refract
+// grid       a clean drafting grid, no line
+// empty      the flat field only (clear glass reads almost invisible on it)
+export function makeBackdropTexture(theme, environment = 'line') {
   const c = document.createElement('canvas');
   c.width = 1024; c.height = 640;
   const g = c.getContext('2d');
   const dark = theme !== 'beige';
+  const W = c.width, H = c.height;
   g.fillStyle = dark ? '#0a0b0d' : BACKGROUND_COLORS.beige;
-  g.fillRect(0, 0, c.width, c.height);
-  g.strokeStyle = dark ? 'rgba(180,205,225,0.05)' : 'rgba(40,38,30,0.11)';
-  g.lineWidth = 1;
-  for (let x = 64; x < c.width; x += 64) { g.beginPath(); g.moveTo(x + .5, 0); g.lineTo(x + .5, c.height); g.stroke(); }
-  for (let y = 64; y < c.height; y += 64) { g.beginPath(); g.moveTo(0, y + .5); g.lineTo(c.width, y + .5); g.stroke(); }
-  g.strokeStyle = dark ? 'rgba(200,224,245,0.14)' : 'rgba(30,28,22,0.22)';
-  g.lineWidth = 1.5;
-  [200, 470].forEach(y => { g.beginPath(); g.moveTo(0, y + .5); g.lineTo(c.width, y + .5); g.stroke(); });
-  g.fillStyle = dark ? 'rgba(236,246,255,0.92)' : 'rgba(26,25,21,0.94)';
-  g.fillRect(0, 307, c.width, 26);
-  g.fillStyle = dark ? 'rgba(210,232,250,0.18)' : 'rgba(26,25,21,0.16)';
-  g.fillRect(0, 295, c.width, 8);
-  g.fillRect(0, 337, c.width, 8);
+  g.fillRect(0, 0, W, H);
+  if (environment === 'atmosphere') {
+    const glow = g.createRadialGradient(W * .5, H * .5, 0, W * .5, H * .5, W * .62);
+    glow.addColorStop(0, dark ? 'rgba(78,90,104,0.62)' : 'rgba(246,242,234,0.85)');
+    glow.addColorStop(.45, dark ? 'rgba(40,46,54,0.35)' : 'rgba(228,223,212,0.45)');
+    glow.addColorStop(1, dark ? 'rgba(10,11,13,0)' : 'rgba(206,200,187,0)');
+    g.fillStyle = glow; g.fillRect(0, 0, W, H);
+    const haze = g.createLinearGradient(0, H * .3, 0, H * .7);
+    const tint = dark ? '170,190,210' : '96,86,66';
+    haze.addColorStop(0, 'rgba(' + tint + ',0)');
+    haze.addColorStop(.42, 'rgba(' + tint + ',' + (dark ? .12 : .17) + ')');
+    haze.addColorStop(.5, 'rgba(' + tint + ',' + (dark ? .2 : .28) + ')');
+    haze.addColorStop(.58, 'rgba(' + tint + ',' + (dark ? .12 : .17) + ')');
+    haze.addColorStop(1, 'rgba(' + tint + ',0)');
+    g.fillStyle = haze; g.fillRect(0, 0, W, H);
+    const vignette = g.createRadialGradient(W * .5, H * .5, W * .3, W * .5, H * .5, W * .75);
+    vignette.addColorStop(0, 'rgba(0,0,0,0)');
+    vignette.addColorStop(1, dark ? 'rgba(0,0,0,0.55)' : 'rgba(110,100,82,0.36)');
+    g.fillStyle = vignette; g.fillRect(0, 0, W, H);
+    addGrain(g, W, H, dark ? 4 : 3);
+  } else if (environment === 'grid') {
+    for (let i = 1; i * 48 < Math.max(W, H); i++) {
+      const strong = i % 4 === 0;
+      g.strokeStyle = dark ? 'rgba(180,205,225,' + (strong ? .16 : .07) + ')' : 'rgba(40,38,30,' + (strong ? .24 : .11) + ')';
+      g.lineWidth = 1;
+      const v = i * 48 + .5;
+      if (v < W) { g.beginPath(); g.moveTo(v, 0); g.lineTo(v, H); g.stroke(); }
+      if (v < H) { g.beginPath(); g.moveTo(0, v); g.lineTo(W, v); g.stroke(); }
+    }
+  } else if (environment !== 'empty') {
+    g.strokeStyle = dark ? 'rgba(180,205,225,0.05)' : 'rgba(40,38,30,0.11)';
+    g.lineWidth = 1;
+    for (let x = 64; x < W; x += 64) { g.beginPath(); g.moveTo(x + .5, 0); g.lineTo(x + .5, H); g.stroke(); }
+    for (let y = 64; y < H; y += 64) { g.beginPath(); g.moveTo(0, y + .5); g.lineTo(W, y + .5); g.stroke(); }
+    g.strokeStyle = dark ? 'rgba(200,224,245,0.14)' : 'rgba(30,28,22,0.22)';
+    g.lineWidth = 1.5;
+    [200, 470].forEach(y => { g.beginPath(); g.moveTo(0, y + .5); g.lineTo(W, y + .5); g.stroke(); });
+    g.fillStyle = dark ? 'rgba(236,246,255,0.92)' : 'rgba(26,25,21,0.94)';
+    g.fillRect(0, 307, W, 26);
+    g.fillStyle = dark ? 'rgba(210,232,250,0.18)' : 'rgba(26,25,21,0.16)';
+    g.fillRect(0, 295, W, 8);
+    g.fillRect(0, 337, W, 8);
+  }
   const texture = new THREE.CanvasTexture(c);
   texture.colorSpace = THREE.SRGBColorSpace;
   texture.anisotropy = 4;
   return texture;
+}
+
+// A little noise so the soft gradients never band on 8-bit screens.
+function addGrain(g, w, h, amount) {
+  const data = g.getImageData(0, 0, w, h);
+  const px = data.data;
+  for (let i = 0; i < px.length; i += 4) {
+    const n = (Math.random() - .5) * 2 * amount;
+    px[i] += n; px[i + 1] += n; px[i + 2] += n;
+  }
+  g.putImageData(data, 0, 0);
 }
 
 export function createBackgroundControls({ renderer, scene, camera, mount, ui, studioEnvironment, wake, listen, coarse }) {
@@ -48,6 +93,7 @@ export function createBackgroundControls({ renderer, scene, camera, mount, ui, s
   const input = ui.querySelector('[data-background-file]');
   const status = ui.querySelector('[data-background-status]');
   const blurRow = ui.querySelector('[data-control="background-blur"]');
+  const envButtons = [...ui.querySelectorAll('[data-background-env]')];
   const pmrem = new THREE.PMREMGenerator(renderer);
   // Draw beige through the native screen background, including the transmission
   // pass. A clear color skips that pass's color conversion in Three r160.
@@ -59,8 +105,14 @@ export function createBackgroundControls({ renderer, scene, camera, mount, ui, s
   ]), 1, 1);
   beigeBackground.colorSpace = THREE.LinearSRGBColorSpace;
   beigeBackground.needsUpdate = true;
-  const backdropTextures = { dark: makeBackdropTexture('dark'), beige: makeBackdropTexture('beige') };
-  const backdropMaterial = new THREE.MeshBasicMaterial({ map: backdropTextures.dark });
+  let environment = 'line';
+  try {
+    const saved = localStorage.getItem('gl-visor-environment');
+    if (BACKGROUND_ENVIRONMENTS.includes(saved)) environment = saved;
+  } catch (error) { /* storage blocked: keep the default */ }
+  const backdropTextures = {};
+  const backdropTexture = (tone, env) => backdropTextures[tone + '-' + env] ||= makeBackdropTexture(tone, env);
+  const backdropMaterial = new THREE.MeshBasicMaterial({ map: backdropTexture('dark', environment) });
   const backdrop = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), backdropMaterial);
   backdrop.position.z = -3.2;
   scene.add(backdrop);
@@ -97,6 +149,11 @@ export function createBackgroundControls({ renderer, scene, camera, mount, ui, s
       if (button.dataset.backgroundMode === 'image') button.disabled = !source;
     });
     blurRow.hidden = mode !== 'image';
+    stage.dataset.environment = environment;
+    envButtons.forEach(button => {
+      button.setAttribute('aria-pressed', String(button.dataset.backgroundEnv === environment));
+      button.disabled = mode === 'image';
+    });
   }
 
   function setMode(next, cancelPending = true) {
@@ -112,7 +169,7 @@ export function createBackgroundControls({ renderer, scene, camera, mount, ui, s
       status.title = fileName;
     } else {
       scene.background = mode === 'beige' ? beigeBackground : new THREE.Color(BACKGROUND_COLORS.dark);
-      backdropMaterial.map = backdropTextures[mode];
+      backdropMaterial.map = backdropTexture(mode, environment);
       backdropMaterial.needsUpdate = true;
       scene.environment = studioEnvironment;
       status.textContent = source ? 'Imagen lista para volver a usar.' : 'La imagen se queda en tu dispositivo.';
@@ -175,6 +232,13 @@ export function createBackgroundControls({ renderer, scene, camera, mount, ui, s
 
   listen(upload, 'click', () => input.click());
   options.forEach(button => listen(button, 'click', () => setMode(button.dataset.backgroundMode)));
+  envButtons.forEach(button => listen(button, 'click', () => {
+    const next = button.dataset.backgroundEnv;
+    if (!BACKGROUND_ENVIRONMENTS.includes(next) || mode === 'image') return;
+    environment = next;
+    try { localStorage.setItem('gl-visor-environment', next); } catch (error) { /* not saved, still applied */ }
+    setMode(mode);
+  }));
   listen(input, 'change', async () => {
     const file = input.files?.[0];
     input.value = ''; // Choosing the same file again must still fire change.
@@ -292,7 +356,68 @@ function blurImage(source, percent) {
   const result = document.createElement('canvas');
   result.width = w; result.height = h;
   const ctx = result.getContext('2d');
+  if (radius > 0 && !canvasFilterWorks()) {
+    ctx.drawImage(softBlur(padded, radius), -pad, -pad);
+    return result;
+  }
   ctx.filter = radius > 0 ? `blur(${radius}px)` : 'none';
   ctx.drawImage(padded, -pad, -pad);
   return result;
+}
+
+// Safari (iOS included) can accept ctx.filter yet draw unblurred. Test it once.
+let filterSupport;
+function canvasFilterWorks() {
+  if (filterSupport !== undefined) return filterSupport;
+  try {
+    const c = document.createElement('canvas');
+    c.width = c.height = 9;
+    const x = c.getContext('2d');
+    x.filter = 'blur(2px)';
+    x.fillStyle = '#fff';
+    x.fillRect(4, 4, 1, 1);
+    filterSupport = x.getImageData(1, 4, 1, 1).data[3] > 0;
+  } catch (error) { filterSupport = false; }
+  if (/[?&]blur=js\b/.test(location.search)) filterSupport = false; // test hook
+  return filterSupport;
+}
+
+// Gaussian-like blur without ctx.filter: shrink, three box passes, scale back up.
+function softBlur(source, radius) {
+  const k = Math.max(1, radius / 4);
+  const w = Math.max(1, Math.round(source.width / k)), h = Math.max(1, Math.round(source.height / k));
+  const small = document.createElement('canvas');
+  small.width = w; small.height = h;
+  const s = small.getContext('2d');
+  s.imageSmoothingEnabled = true;
+  s.imageSmoothingQuality = 'high';
+  s.drawImage(source, 0, 0, w, h);
+  const r = Math.max(1, Math.round(radius / k * .58));
+  const img = s.getImageData(0, 0, w, h);
+  const a = img.data, b = new Uint8ClampedArray(a.length);
+  for (let pass = 0; pass < 3; pass++) { boxBlur(a, b, w, h, r, true); boxBlur(b, a, w, h, r, false); }
+  s.putImageData(img, 0, 0);
+  const out = document.createElement('canvas');
+  out.width = source.width; out.height = source.height;
+  const o = out.getContext('2d');
+  o.imageSmoothingEnabled = true;
+  o.imageSmoothingQuality = 'high';
+  o.drawImage(small, 0, 0, out.width, out.height);
+  return out;
+}
+
+function boxBlur(src, dst, w, h, r, horizontal) {
+  const lines = horizontal ? h : w, len = horizontal ? w : h;
+  const step = horizontal ? 4 : w * 4, span = r * 2 + 1;
+  for (let line = 0; line < lines; line++) {
+    const base = horizontal ? line * w * 4 : line * 4;
+    for (let ch = 0; ch < 4; ch++) {
+      let sum = 0;
+      for (let i = -r; i <= r; i++) sum += src[base + Math.min(len - 1, Math.max(0, i)) * step + ch];
+      for (let i = 0; i < len; i++) {
+        dst[base + i * step + ch] = sum / span;
+        sum += src[base + Math.min(len - 1, i + r + 1) * step + ch] - src[base + Math.max(0, i - r) * step + ch];
+      }
+    }
+  }
 }
