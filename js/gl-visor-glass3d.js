@@ -5,7 +5,7 @@
 import * as THREE from 'three';
 import { createSample, presets, CATALOGUE } from './gl-visor-materials.js?v=3';
 import { makeQuboStudio } from './gl-visor-weave.js?v=1';
-import { createBackgroundControls } from './gl-visor-background.js?v=5';
+import { createBackgroundControls } from './gl-visor-background.js?v=6';
 
 const clamp = THREE.MathUtils.clamp;
 const DEFAULTS = { transparency: 60, distortion: 30, light: 75, 'background-blur': 30 };

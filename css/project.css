@@ -1234,6 +1234,18 @@ a.gl-catalogo_hero-caption { text-decoration-line: none; }
 
 .gl-visor_tool_step { display: none; }
 
+/* Ambience dropdown on the stage, opposite the zoom tools (custom-select.js, same look as the tool buttons). */
+.gl-visor_scene_env { position: absolute; top: 1.5rem; right: 1.5rem; width: 9.5rem; z-index: 3; }
+
+.gl-visor_scene[data-background="image"] .gl-visor_scene_env { display: none; }
+
+button.gl-visor_env_select.gl-select_trigger { height: 2.5rem; padding-top: 0px; padding-right: 0.85rem; padding-bottom: 0px; padding-left: 0.85rem; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); border-right-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); border-bottom-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); border-left-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); border-top-left-radius: var(--radius--subtle); border-top-right-radius: var(--radius--subtle); border-bottom-left-radius: var(--radius--subtle); border-bottom-right-radius: var(--radius--subtle); background-color: color-mix(in srgb, var(--_theme---background) 55%, transparent); color: var(--_theme---text); font-family: var(--_typography---font--secondary-family); font-size: var(--_typography---font-size--label-sm); letter-spacing: 0.1em; text-transform: uppercase; }
+
+button.gl-visor_env_select.gl-select_trigger:hover,
+.gl-select.is-open button.gl-visor_env_select.gl-select_trigger { background-color: color-mix(in srgb, var(--_theme---text) 16%, transparent); }
+
+.gl-visor_scene_env .gl-select_panel { border-top-left-radius: var(--radius--subtle); border-top-right-radius: var(--radius--subtle); border-bottom-left-radius: var(--radius--subtle); border-bottom-right-radius: var(--radius--subtle); }
+
 /* Glass strip helpers (phones only): arrows right of the stage caption, soft floating thumb under the strip. */
 .gl-visor_strip_nav { display: none; flex-grow: 0; flex-shrink: 0; align-items: center; column-gap: 0.25rem; }
 
@@ -1375,6 +1387,10 @@ a.gl-catalogo_hero-caption { text-decoration-line: none; }
   .gl-visor_tool_rotate { display: none; }
   .gl-visor_tool_zoom { display: none; }
   .gl-visor_tool_step { display: inline-flex; }
+  .gl-visor_scene_env { top: auto; bottom: 4.25rem; right: 0.75rem; width: 8.5rem; }
+  .gl-visor_scene_env .gl-select_panel { top: auto; bottom: calc(100% + 0.5rem); max-height: none; }
+  .gl-visor_background_sublabel { display: none; }
+  .gl-visor_background_options_env { display: none; }
   .gl-visor_layers { left: 0.75rem; right: 0.75rem; bottom: 0px; height: 3.5rem; column-gap: 0.75rem; }
   .gl-visor_layers_caption { line-height: 1.35; letter-spacing: 0.04em; }
   .gl-visor_panel_header { display: none; }

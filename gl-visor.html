@@ -39,7 +39,7 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/variables.css?v=3703e9fe">
-  <link rel="stylesheet" href="css/project.css?v=adf0ad17">
+  <link rel="stylesheet" href="css/project.css?v=9e7c4efb">
 
   <script type="application/ld+json">
   {
@@ -136,6 +136,14 @@
         <div id="glass3d" class="gl-visor_scene_img"></div>
         <div class="gl-visor_scene_label">
           <span class="gl-mono gl-mono_muted" data-flwr-id="l10n-gl-visor-2q">Arrastra para rotar — Selecciona un vidrio para cambiar la muestra</span>
+        </div>
+        <div class="gl-visor_scene_env">
+          <select class="gl-visor_env_select" data-background-env-select aria-label="Ambiente">
+            <option value="line">Línea</option>
+            <option value="atmosphere">Bruma</option>
+            <option value="grid">Retícula</option>
+            <option value="empty">Vacío</option>
+          </select>
         </div>
         <div class="gl-visor_scene_controls" role="toolbar" aria-label="Controles de la muestra">
           <button type="button" class="gl-visor_tool gl-visor_tool_rotate" data-action="rotate-up" aria-label="Rotar hacia arriba" title="Rotar hacia arriba">
@@ -444,7 +452,7 @@
     }
   }
   </script>
-  <script type="module" src="js/gl-visor-glass3d.js?v=15"></script>
+  <script type="module" src="js/gl-visor-glass3d.js?v=16"></script>
 
   <!-- FULLSCREEN MENU -->
   <aside class="gl-dock" aria-label="Navegacion flotante" data-flwr-id="l10n-gl-visor-r">
@@ -503,6 +511,7 @@
   <script src='js/gl-menu.js?v=7bcdfa99'></script>
   <script src='js/gl-nav-scroll.js?v=652db92a'></script>
   <script src="js/newsletter.js?v=6d3257eb"></script>
+  <script src="js/custom-select.js?v=c098697f"></script>
   <script src="js/gl-lente.js?v=8f9d1149"></script><script src="js/gl-dock-vitrina.js?v=ade98636"></script>
   <script src="js/gl-dock.js?v=b71aab41"></script>
 </body>

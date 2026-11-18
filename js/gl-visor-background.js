@@ -94,6 +94,8 @@ export function createBackgroundControls({ renderer, scene, camera, mount, ui, s
   const status = ui.querySelector('[data-background-status]');
   const blurRow = ui.querySelector('[data-control="background-blur"]');
   const envButtons = [...ui.querySelectorAll('[data-background-env]')];
+  // Stage dropdown (opposite the zoom tools) so the change is seen where it happens, on phones too.
+  const envSelect = stage.querySelector('[data-background-env-select]');
   const pmrem = new THREE.PMREMGenerator(renderer);
   // Draw beige through the native screen background, including the transmission
   // pass. A clear color skips that pass's color conversion in Three r160.
@@ -132,7 +134,7 @@ export function createBackgroundControls({ renderer, scene, camera, mount, ui, s
   shadow.position.set(.18, -.3, -.6);
   shadow.visible = false;
   scene.add(shadow);
-  let mode = 'dark', blur = 30, source = null, fileName = '';
+  let mode = 'dark', lastTone = 'dark', blur = 30, source = null, fileName = '';
   let backgroundTexture = null, imageEnvironment = null;
   let generation = 0, timer = 0, disposed = false;
   const pendingUrls = new Set();
@@ -154,6 +156,10 @@ export function createBackgroundControls({ renderer, scene, camera, mount, ui, s
       button.setAttribute('aria-pressed', String(button.dataset.backgroundEnv === environment));
       button.disabled = mode === 'image';
     });
+    if (envSelect && envSelect.value !== environment) {
+      envSelect.value = environment;
+      envSelect.dispatchEvent(new Event('change'));
+    }
   }
 
   function setMode(next, cancelPending = true) {
@@ -161,6 +167,7 @@ export function createBackgroundControls({ renderer, scene, camera, mount, ui, s
     if (!['dark', 'beige', 'image'].includes(next)) return;
     if (cancelPending) generation++;
     mode = next;
+    if (mode !== 'image') lastTone = mode;
     if (mode === 'image') {
       if (!backgroundTexture) rebuildImage();
       scene.background = backgroundTexture;
@@ -232,13 +239,15 @@ export function createBackgroundControls({ renderer, scene, camera, mount, ui, s
 
   listen(upload, 'click', () => input.click());
   options.forEach(button => listen(button, 'click', () => setMode(button.dataset.backgroundMode)));
-  envButtons.forEach(button => listen(button, 'click', () => {
-    const next = button.dataset.backgroundEnv;
-    if (!BACKGROUND_ENVIRONMENTS.includes(next) || mode === 'image') return;
+  function setEnvironment(next) {
+    if (!BACKGROUND_ENVIRONMENTS.includes(next) || next === environment) return;
     environment = next;
     try { localStorage.setItem('gl-visor-environment', next); } catch (error) { /* not saved, still applied */ }
-    setMode(mode);
-  }));
+    // Choosing an ambience from the photo returns to the last tone (dark/beige).
+    setMode(mode === 'image' ? lastTone : mode);
+  }
+  envButtons.forEach(button => listen(button, 'click', () => { if (mode !== 'image') setEnvironment(button.dataset.backgroundEnv); }));
+  if (envSelect) listen(envSelect, 'change', () => setEnvironment(envSelect.value));
   listen(input, 'change', async () => {
     const file = input.files?.[0];
     input.value = ''; // Choosing the same file again must still fire change.
