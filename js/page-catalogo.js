@@ -188,54 +188,92 @@ function initHoverPreview(helpers) {
     }, CYCLE_DELAY);
   }
 
-  document.querySelectorAll('.gl-catalogo_grid .gl-cell_filled[data-code]').forEach(function (cell) {
-    cell.addEventListener('mouseenter', function () {
-      var code = cell.dataset.code;
-      var p = helpers.getProduct(code);
-      if (!p) return;
-      activeCell = cell;
+  function show(cell) {
+    var code = cell.dataset.code;
+    var p = helpers.getProduct(code);
+    if (!p) return false;
+    activeCell = cell;
 
-      var slides = (p.media && Array.isArray(p.media.heroSlides) && p.media.heroSlides.length)
-        ? p.media.heroSlides
-        : (p.media && p.media.hero ? [p.media.hero] : []);
-      setSlides(slides, (p.name && p.name.es) || code);
-      symEl.textContent  = p.code;
-      slotEl.textContent = String(p.slot).padStart(3, '0');
-      nameEl.textContent = (p.name && p.name.es) || (p.shortName && p.shortName.es) || p.code;
+    var slides = (p.media && Array.isArray(p.media.heroSlides) && p.media.heroSlides.length)
+      ? p.media.heroSlides
+      : (p.media && p.media.hero ? [p.media.hero] : []);
+    setSlides(slides, (p.name && p.name.es) || code);
+    symEl.textContent  = p.code;
+    slotEl.textContent = String(p.slot).padStart(3, '0');
+    nameEl.textContent = (p.name && p.name.es) || (p.shortName && p.shortName.es) || p.code;
 
-      tagsEl.innerHTML = '';
-      var cat = helpers.getCategory(p.category);
-      if (cat) addTag(tagsEl, cat.name.es);
-      var sub = helpers.getSubcategory(p.category, p.subcategory);
-      if (sub) addTag(tagsEl, sub.name.es);
-      var a = p.attributes || {};
-      if (a.tier) addTag(tagsEl, a.tier === 'premium' ? 'Premium' : 'Alternativa');
-      if (a.personalizacionColor === '300-colores') addTag(tagsEl, '300 colores');
-      if (a.disponibilidad === 'custom')        addTag(tagsEl, 'Custom');
-      if (a.disponibilidad === 'proximamente')  addTag(tagsEl, 'Próximamente');
+    tagsEl.innerHTML = '';
+    var cat = helpers.getCategory(p.category);
+    if (cat) addTag(tagsEl, cat.name.es);
+    var sub = helpers.getSubcategory(p.category, p.subcategory);
+    if (sub) addTag(tagsEl, sub.name.es);
+    var a = p.attributes || {};
+    if (a.tier) addTag(tagsEl, a.tier === 'premium' ? 'Premium' : 'Alternativa');
+    if (a.personalizacionColor === '300-colores') addTag(tagsEl, '300 colores');
+    if (a.disponibilidad === 'custom')        addTag(tagsEl, 'Custom');
+    if (a.disponibilidad === 'proximamente')  addTag(tagsEl, 'Próximamente');
 
-      preview.style.display = 'block';
-      requestAnimationFrame(function () { preview.style.opacity = '1'; });
-    });
+    preview.style.display = 'block';
+    requestAnimationFrame(function () { preview.style.opacity = '1'; });
+    return true;
+  }
 
-    cell.addEventListener('mouseleave', function () {
-      activeCell = null;
-      stopCycle();
-      preview.style.opacity = '0';
-      setTimeout(function () { if (!activeCell) preview.style.display = 'none'; }, 120);
-    });
-  });
+  function hide() {
+    activeCell = null;
+    stopCycle();
+    preview.style.opacity = '0';
+    setTimeout(function () { if (!activeCell) preview.style.display = 'none'; }, 120);
+  }
 
-  /* Follow cursor */
-  document.addEventListener('mousemove', function (e) {
-    if (!activeCell) return;
-    var pad = 16, w = 280, h = preview.offsetHeight || 320;
-    var x = e.clientX + pad, y = e.clientY + pad;
-    if (x + w > window.innerWidth)  x = e.clientX - w - pad;
-    if (y + h > window.innerHeight) y = e.clientY - h - pad;
+  /* Beside the pointer, flipped when it would leave the screen, then clamped
+     so it is never cut off (a tap in the middle of a phone fits neither side). */
+  function place(cx, cy) {
+    var pad = 16, vw = window.innerWidth, vh = window.innerHeight;
+    var w = preview.offsetWidth || 280, h = preview.offsetHeight || 320;
+    var x = cx + pad, y = cy + pad;
+    if (x + w > vw - 8)  x = cx - w - pad;
+    if (y + h > vh - 8)  y = cy - h - pad;
+    x = Math.max(8, Math.min(x, vw - w - 8));
+    y = Math.max(8, Math.min(y, vh - h - 8));
     preview.style.left = x + 'px';
     preview.style.top  = y + 'px';
-  });
+  }
+
+  var canHover = !window.matchMedia ||
+    window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  if (canHover) {
+    document.querySelectorAll('.gl-catalogo_grid .gl-cell_filled[data-code]').forEach(function (cell) {
+      cell.addEventListener('mouseenter', function () { show(cell); });
+      cell.addEventListener('mouseleave', hide);
+    });
+    /* Follow cursor */
+    document.addEventListener('mousemove', function (e) {
+      if (!activeCell) return;
+      place(e.clientX, e.clientY);
+    });
+  } else {
+    /* Touch: the first tap on a glass shows its preview, a second tap on the
+       SAME glass opens it, a tap on another glass moves the preview there, and
+       a tap anywhere else closes it. Emulated mouse events are ignored here,
+       so iOS can no longer treat the second glass as already "hovered". */
+    if (window.__glCatalogoTap) window.removeEventListener('click', window.__glCatalogoTap, true);
+    window.__glCatalogoTap = function (e) {
+      if (!preview.isConnected) return;
+      var cell = e.target.closest && e.target.closest('.gl-catalogo_grid .gl-cell_filled[data-code]');
+      if (cell && cell === activeCell) { hide(); return; } // second tap: let the link open
+      if (cell) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        if (show(cell)) place(e.clientX, e.clientY);
+        return;
+      }
+      if (activeCell) hide();
+    };
+    // window capture: runs before gl-page-transition's document-capture navigation.
+    window.addEventListener('click', window.__glCatalogoTap, true);
+    window.addEventListener('scroll', function () { if (activeCell) hide(); }, { passive: true });
+  }
 }
 
 function addTag(container, text) {

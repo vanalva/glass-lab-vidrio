@@ -39,7 +39,7 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/variables.css?v=3703e9fe">
-  <link rel="stylesheet" href="../css/project.css?v=9e7c4efb">
+  <link rel="stylesheet" href="../css/project.css?v=e9c29a60">
 
   <script type="application/ld+json">
   {
@@ -141,6 +141,10 @@
         <div class="gl-vidrio_hero_slider" data-gl-lightbox="[data-bind=name]" data-bind="heroSlider" tabindex="0" aria-roledescription="carousel" aria-label="Glass views" data-flwr-id="l10n-gl-vidrio-2b">
           <!-- slides injected by page-vidrio.js -->
         </div>
+        <!-- Open this glass in the 3D visor. page-vidrio.js adds ?glass=<code>. -->
+        <a href="/en/visor" class="gl-visor_tool gl-vidrio_hero_visor" data-bind="visorLink" aria-label="Ver este vidrio en el visor 3D" title="Ver en el visor 3D">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3zM4 7.5l8 4.5 8-4.5M12 12v9"/></svg>
+        </a>
         <div class="gl-vidrio_hero_controls" data-hero-controls hidden>
           <button class="gl-vidrio_hero_arrow gl-vidrio_hero_arrow--prev" data-hero-arrow="prev" type="button" aria-label="Previous view" data-flwr-id="l10n-gl-vidrio-2a">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
@@ -401,7 +405,7 @@
   </footer>
 
   <script src="../js/data-loader.js?v=af676964"></script>
-  <script src="../js/page-vidrio.js?v=0fd8037e"></script>
+  <script src="../js/page-vidrio.js?v=2"></script>
 
   <!-- GSAP -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js'></script>

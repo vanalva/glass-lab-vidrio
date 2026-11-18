@@ -50,6 +50,8 @@ function crossBrandHref(path) {
 window.GL_DATA.then(({ glass, helpers }) => {
   const code = helpers.getCodeFromUrl('Vc');
   const product = helpers.getProduct(code);
+  const visorLink = document.querySelector('[data-bind="visorLink"]');
+  if (visorLink) visorLink.setAttribute('href', visorLink.getAttribute('href').split('?')[0] + '?glass=' + encodeURIComponent(code));
 
   if (!product) {
     renderNotFound(code);

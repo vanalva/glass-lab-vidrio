@@ -1097,7 +1097,7 @@ a.gl-catalogo_hero-caption { text-decoration-line: none; }
 
 .gl-vidrio_hero { display: grid; grid-template-columns: minmax(0px, 1.4fr) minmax(0px, 1fr); grid-template-rows: auto; min-height: 0px; max-height: none; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); }
 
-.gl-vidrio_hero_visual { display: grid; grid-template-rows: auto auto; grid-template-columns: minmax(0px, 1fr); row-gap: var(--_spacing---space--3); padding-top: var(--_spacing---space--7); padding-bottom: var(--_spacing---space--7); padding-left: var(--site--margin); padding-right: var(--_spacing---space--5); border-right-width: 1px; border-right-style: solid; border-right-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); min-width: 0px; min-height: 0px; overflow: hidden; }
+.gl-vidrio_hero_visual { position: relative; display: grid; grid-template-rows: auto auto; grid-template-columns: minmax(0px, 1fr); row-gap: var(--_spacing---space--3); padding-top: var(--_spacing---space--7); padding-bottom: var(--_spacing---space--7); padding-left: var(--site--margin); padding-right: var(--_spacing---space--5); border-right-width: 1px; border-right-style: solid; border-right-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); min-width: 0px; min-height: 0px; overflow: hidden; }
 
 .gl-vidrio_hero_slider { width: 100%; height: auto; aspect-ratio: 5 / 4; min-width: 0px; min-height: 0px; display: flex; flex-flow: row; overflow: auto hidden; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; border-top-left-radius: var(--radius--subtle); border-top-right-radius: var(--radius--subtle); border-bottom-left-radius: var(--radius--subtle); border-bottom-right-radius: var(--radius--subtle); outline: none; background-color: color-mix(in srgb, var(--_theme---text) 3%, transparent); }
 
@@ -1168,6 +1168,7 @@ a.gl-catalogo_hero-caption { text-decoration-line: none; }
 @media (max-width: 991px) {
   .gl-vidrio_hero { grid-template-columns: 1fr; min-height: auto; }
   .gl-vidrio_hero_visual { border-right-width: 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); padding-right: var(--site--margin); }
+  .gl-vidrio_hero_visor { right: calc(var(--site--margin) + 0.75rem); }
   .gl-vidrio_hero_slider { aspect-ratio: 1 / 1; }
   .gl-vidrio_hero_info { padding-left: var(--site--margin); }
   .gl-vidrio_props_grid { grid-template-columns: repeat(2, 1fr); }
@@ -1233,6 +1234,9 @@ a.gl-catalogo_hero-caption { text-decoration-line: none; }
 .gl-visor_tool:focus-visible { outline-width: 2px; outline-style: solid; outline-color: var(--_theme---text); outline-offset: 2px; }
 
 .gl-visor_tool_step { display: none; }
+
+/* Glass page: "open in the 3D visor" button, top-right of the hero image (same look as the visor tools). */
+.gl-vidrio_hero_visor { position: absolute; top: calc(var(--_spacing---space--7) + 0.75rem); right: calc(var(--_spacing---space--5) + 0.75rem); z-index: 2; text-decoration-line: none; }
 
 /* Ambience dropdown on the stage, opposite the zoom tools (custom-select.js, same look as the tool buttons). */
 .gl-visor_scene_env { position: absolute; top: 1.5rem; right: 1.5rem; width: 9.5rem; z-index: 3; }
@@ -4448,12 +4452,14 @@ button.gl-menu_link { width: 100%; background-color: transparent; border-width: 
   .gl-filter-search-input { flex-grow: 1; flex-shrink: 1; flex-basis: 0%; min-width: 0px; }
   .gl-filter-cat-pill { grid-column-start: span 1; grid-column-end: auto; min-width: 0px; min-height: 2.5rem; padding-left: 0.375rem; padding-right: 0.375rem; }
   .gl-filter-cat-pill_swatch { position: absolute; top: 0.3125rem; left: 0.3125rem; width: 0.4375rem; height: 0.4375rem; }
-  .gl-catalogo_tag-row { display: flex; grid-column-start: 1; grid-column-end: -1; column-gap: var(--_spacing---space--1); overflow-x: auto; overflow-y: hidden; margin-left: calc(-1 * var(--site--margin)); margin-right: calc(-1 * var(--site--margin)); padding-left: var(--site--margin); padding-right: var(--site--margin); }
-  .gl-filter-tag-pill { flex-grow: 0; flex-shrink: 0; flex-basis: auto; min-width: 0px; min-height: 2.5rem; padding-left: 0.875rem; padding-right: 0.875rem; }
+  /* Juan, 2026-11-18: no sideways scroll. The type tags wrap and each row grows to the full width. */
+  .gl-catalogo_tag-row { display: flex; flex-wrap: wrap; grid-column-start: 1; grid-column-end: -1; row-gap: var(--_spacing---space--1); column-gap: var(--_spacing---space--1); }
+  .gl-filter-tag-pill { flex-grow: 1; flex-shrink: 0; flex-basis: auto; justify-content: center; min-width: 0px; min-height: 2.5rem; padding-left: 0.875rem; padding-right: 0.875rem; }
   .gl-catalogo_tags-area { margin-top: var(--_spacing---space--1); row-gap: var(--_spacing---space--1); column-gap: var(--_spacing---space--1); }
   .gl-catalogo_filter-hint { display: none; }
-  .gl-catalogo_filter-hint.is-active { display: inline-flex; min-height: 2.5rem; }
-  .gl-filter-tag { min-height: 2.5rem; }
+  .gl-catalogo_tags-area { width: 100%; }
+  .gl-catalogo_filter-hint.is-active { display: inline-flex; flex-grow: 1; justify-content: center; min-height: 2.5rem; }
+  .gl-filter-tag { flex-grow: 1; justify-content: space-between; min-height: 2.5rem; }
 }
 /* ══════════════════════════════════════════════════════════════════════
    CONTACT FORMS — real controls (gl-contacto / pg-contacto)

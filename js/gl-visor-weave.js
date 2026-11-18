@@ -3,9 +3,14 @@ import * as THREE from 'three';
 // Visual construction study from the original Aq / Qo_2 sample photographs.
 // The plan outline is the existing Visor outline; ply and wire dimensions are
 // illustrative scene units, not supplier specifications or measured millimetres.
-export function createQuboSample(w, h, coarse = false, woven = false) {
+// `options` extends the study to the other insert meshes, all photographed in
+// the same laminate: count (wires across the 250 mm swatch), radius (wire
+// radius as a fraction of the pitch), aspect (cell height / width), color,
+// metalness, roughness. `textile` replaces the wire geometry with a woven
+// texture for fabrics too fine to model strand by strand.
+export function createQuboSample(w, h, coarse = false, woven = false, options = {}) {
   const group = new THREE.Group();
-  group.name = woven ? 'At · laminated woven metal' : 'Aq · laminated woven metal';
+  group.name = options.name || (woven ? 'At · laminated woven metal' : 'Aq · laminated woven metal');
   const outline = swatchOutline(w, h);
   const plyThickness = 0.036;
   const coreThickness = 0.024;
@@ -62,11 +67,19 @@ export function createQuboSample(w, h, coarse = false, woven = false) {
   group.add(bond);
 
   const wireMat = new THREE.MeshStandardMaterial({
-    color: woven ? '#9e9277' : '#a68e57', metalness: 0.88, roughness: 0.32,
+    color: options.color || (woven ? '#9e9277' : '#a68e57'),
+    metalness: options.metalness ?? 0.88, roughness: options.roughness ?? 0.32,
     envMapIntensity: 1.05,
   });
-  const wire = new THREE.Mesh(wovenWireGeometry(w, h, coarse, woven ? 92 : 64), wireMat);
-  wire.name = woven ? 'Tejida · continuous metallic weave' : 'Qubo · continuous metallic weave';
+  let wire;
+  if (options.textile) {
+    wire = textileLayer(w, h, options.textile, wireMat);
+    wire.name = 'Woven textile layer';
+  } else {
+    wire = new THREE.Mesh(wovenWireGeometry(w, h, coarse,
+      options.count || (woven ? 92 : 64), options), wireMat);
+    wire.name = woven ? 'Tejida · continuous metallic weave' : 'Qubo · continuous metallic weave';
+  }
   group.add(wire);
 
   let separation = 0;
@@ -164,9 +177,10 @@ export function perimeterBand(points, thickness) {
   return geo;
 }
 
-export function wovenWireGeometry(w, h, coarse, countAcross = 64) {
-  const pitch = w / countAcross;
-  const radius = pitch * 0.12, amplitude = radius * 1.03;
+export function wovenWireGeometry(w, h, coarse, countAcross = 64, { radius: radiusRatio = 0.12, aspect = 1 } = {}) {
+  // Vertical strands sit every pitchX and cross a weft every pitchY.
+  const pitchX = w / countAcross, pitchY = pitchX * aspect;
+  const radius = pitchX * radiusRatio, amplitude = radius * 1.03;
   const inset = 0.055;
   const poly = insetPolygon(swatchOutline(w, h), inset + radius);
   const sides = coarse ? 5 : 6, samples = coarse ? 3 : 4;
@@ -190,16 +204,18 @@ export function wovenWireGeometry(w, h, coarse, countAcross = 64) {
     const range = limits(fixed, vertical);
     if (!range) return;
     const [start, end] = range;
-    const count = Math.ceil((end - start) / pitch * samples);
+    // A strand crosses the perpendicular set at that set's spacing.
+    const along = vertical ? pitchY : pitchX;
+    const count = Math.ceil((end - start) / along * samples);
     const base = positions.length / 3;
     // At every crossing warp is above weft, then below at the next crossing.
     // Opposite phases ensure strands do not intersect at their centers.
     const sign = (index % 2 === 0 ? 1 : -1) * (vertical ? 1 : -1);
     for (let j = 0; j <= count; j++) {
       const t = start + (end - start) * j / count;
-      const phase = Math.PI * t / pitch;
+      const phase = Math.PI * t / along;
       const z = sign * amplitude * Math.cos(phase);
-      const slope = -sign * amplitude * Math.PI / pitch * Math.sin(phase);
+      const slope = -sign * amplitude * Math.PI / along * Math.sin(phase);
       const length = Math.sqrt(1 + slope * slope);
       for (let k = 0; k <= sides; k++) {
         const theta = k / sides * Math.PI * 2;
@@ -224,7 +240,7 @@ export function wovenWireGeometry(w, h, coarse, countAcross = 64) {
       const center = positions.length / 3;
       const t = endRing ? end : start;
       positions.push(vertical ? fixed : t, vertical ? t : fixed,
-        sign * amplitude * Math.cos(Math.PI * t / pitch));
+        sign * amplitude * Math.cos(Math.PI * t / along));
       normals.push(vertical ? 0 : (endRing ? 1 : -1), vertical ? (endRing ? 1 : -1) : 0, 0);
       for (let k = 0; k < sides; k++) {
         const a = base + endRing * (sides + 1) + k;
@@ -233,8 +249,8 @@ export function wovenWireGeometry(w, h, coarse, countAcross = 64) {
       }
     }
   }
-  for (let i = Math.ceil(-w / 2 / pitch); i <= Math.floor(w / 2 / pitch); i++) strand(i * pitch, i, true);
-  for (let j = Math.ceil(-h / 2 / pitch); j <= Math.floor(h / 2 / pitch); j++) strand(j * pitch, j, false);
+  for (let i = Math.ceil(-w / 2 / pitchX); i <= Math.floor(w / 2 / pitchX); i++) strand(i * pitchX, i, true);
+  for (let j = Math.ceil(-h / 2 / pitchY); j <= Math.floor(h / 2 / pitchY); j++) strand(j * pitchY, j, false);
   const geo = new THREE.BufferGeometry();
   geo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
   geo.setAttribute('normal', new THREE.Float32BufferAttribute(normals, 3));
@@ -265,4 +281,88 @@ export function makeQuboBackdrop() {
   const texture = new THREE.CanvasTexture(canvas);
   texture.colorSpace = THREE.SRGBColorSpace;
   return texture;
+}
+
+// Fabrics too fine to model strand by strand (Fabric, Lisa, Zigzag,
+// Herringbone, Lino). One woven tile is drawn per crossing: the under-thread
+// first, the over-thread on top, leaving open pores only at the corners.
+// alphaHash keeps the layer in the opaque list, so the transmission pass of the
+// front ply sees it; a transparent fabric would vanish behind the glass.
+// spec: { pattern: plain|twill|zigzag|herringbone, threads (across the swatch),
+//         gap (pore size as a fraction of a thread), color, bump }
+export function textileLayer(w, h, spec, material) {
+  const N = 16, cell = 16, T = N * cell;
+  const over = weaveRule(spec.pattern || 'plain');
+  const color = document.createElement('canvas');
+  const alpha = document.createElement('canvas');
+  const height = document.createElement('canvas');
+  for (const c of [color, alpha, height]) c.width = c.height = T;
+  const gc = color.getContext('2d'), ga = alpha.getContext('2d'), gh = height.getContext('2d');
+  const base = new THREE.Color(spec.color || '#a59c8c');
+  const shade = k => '#' + base.clone().multiplyScalar(k).getHexString();
+  // Pores keep the mean thread colour so mipmaps never darken the fabric.
+  gc.fillStyle = shade(.82); gc.fillRect(0, 0, T, T);
+  ga.fillStyle = '#000'; ga.fillRect(0, 0, T, T);
+  gh.fillStyle = '#000'; gh.fillRect(0, 0, T, T);
+  const g = (spec.gap ?? .14) * cell, yarn = cell - g;
+  function thread(i, j, vertical, top) {
+    const x = i * cell, y = j * cell;
+    const rect = vertical ? [x + g / 2, y, yarn, cell] : [x, y + g / 2, cell, yarn];
+    const grad = vertical
+      ? gc.createLinearGradient(rect[0], 0, rect[0] + yarn, 0)
+      : gc.createLinearGradient(0, rect[1], 0, rect[1] + yarn);
+    const k = top ? 1 : .62;
+    grad.addColorStop(0, shade(.55 * k)); grad.addColorStop(.5, shade(1.12 * k)); grad.addColorStop(1, shade(.55 * k));
+    gc.fillStyle = grad; gc.fillRect(...rect);
+    ga.fillStyle = '#fff'; ga.fillRect(...rect);
+    const hg = vertical
+      ? gh.createLinearGradient(rect[0], 0, rect[0] + yarn, 0)
+      : gh.createLinearGradient(0, rect[1], 0, rect[1] + yarn);
+    const v = top ? 255 : 120;
+    hg.addColorStop(0, 'rgb(20,20,20)'); hg.addColorStop(.5, `rgb(${v},${v},${v})`); hg.addColorStop(1, 'rgb(20,20,20)');
+    gh.fillStyle = hg; gh.fillRect(...rect);
+  }
+  for (let i = 0; i < N; i++) for (let j = 0; j < N; j++) {
+    const warpTop = over(i, j);
+    thread(i, j, !warpTop, false);
+    thread(i, j, warpTop, true);
+  }
+  const repeat = new THREE.Vector2(spec.threads / N, spec.threads / N * h / w);
+  const texture = canvas => {
+    const t = new THREE.CanvasTexture(canvas);
+    t.wrapS = t.wrapT = THREE.RepeatWrapping;
+    t.repeat.copy(repeat);
+    t.anisotropy = 8;
+    return t;
+  };
+  material.map = texture(color);
+  material.map.colorSpace = THREE.SRGBColorSpace;
+  material.alphaMap = texture(alpha);
+  material.alphaHash = true;
+  material.bumpMap = texture(height);
+  material.bumpScale = spec.bump ?? 1.2;
+  material.color.set('#ffffff');
+  material.side = THREE.DoubleSide;
+  const outline = insetPolygon(swatchOutline(w, h), 0.055);
+  const geo = new THREE.ShapeGeometry(new THREE.Shape(outline));
+  const p = geo.attributes.position, uv = [];
+  for (let i = 0; i < p.count; i++) uv.push(p.getX(i) / w + .5, p.getY(i) / h + .5);
+  geo.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
+  return new THREE.Mesh(geo, material);
+}
+
+// true = the warp (vertical thread) passes over the weft at crossing (i, j).
+function weaveRule(pattern) {
+  const mod = (a, n) => ((a % n) + n) % n;
+  if (pattern === 'twill') return (i, j) => mod(i + j, 4) < 2;
+  if (pattern === 'zigzag' || pattern === 'herringbone') {
+    // Twill whose diagonal reverses every 8 threads. Herringbone also breaks
+    // the line at each reversal, zigzag keeps it continuous.
+    return (i, j) => {
+      const band = Math.floor(i / 8), k = mod(i, 8);
+      const ii = band % 2 ? 7 - k + (pattern === 'herringbone' ? 2 : 0) : k;
+      return mod(ii + j, 4) < 2;
+    };
+  }
+  return (i, j) => (i + j) % 2 === 0;
 }
