@@ -29,8 +29,8 @@ export const presets = {
  Imc:['Impresión cuadros','Una retícula negra impresa en la interlámina, entre dos vidrios claros.','print'],
  Iml:['Impresión líneas','Bandas verticales negras impresas en la interlámina, entre dos vidrios claros.','print'],
  Tl:['Tela lino','Un tejido muy fino de tono lino claro, protegido entre dos vidrios. Filtra la luz como una cortina.','textile'],
- Ae:['Malla SA-Entramado','Un entramado de hilo grueso en gris topo, denso y de poros pequeños.','mesh'],
- Ap:['Malla SA-Pulida','Hilos claros y brillantes en un tejido abierto, como una arpillera metálica.','mesh'],
+ Ae:['Malla SA-Entramado','Un entramado de hilo grueso en gris topo, denso y de poros pequeños.','textile'],
+ Ap:['Malla SA-Pulida','Hilos claros y brillantes en un tejido abierto, como una arpillera metálica.','textile'],
  Af:['Malla SA-Fabric','Un tejido metálico muy fino y cerrado que se lee como una tela.','textile'],
  Al:['Malla SA-Lisa','Una trama lisa y fina en gris plata, uniforme en toda la superficie.','textile'],
  Az:['Malla SA-Zigzag','Hilos metálicos en sarga quebrada: el tejido dibuja un zigzag que brilla con el ángulo.','textile'],
@@ -40,9 +40,9 @@ export const presets = {
  At:['Malla SA-Tejida','Un tejido metálico más cerrado y de tono cálido, protegido entre dos vidrios.','woven'],
  Ac:['Malla SA-Cuadros','Una cuadrícula de alambre plateado de celdas cuadradas. Casi toda la luz pasa.','mesh'],
  Bq:['Malla SB-Qubo','La misma malla Qubo de la Serie A, en la línea alternativa.','qubo'],
- Be:['Malla SB-Entramado','Un entramado más abierto e irregular que el de la Serie A, en gris claro.','mesh'],
+ Be:['Malla SB-Entramado','Un entramado más abierto e irregular que el de la Serie A, en gris claro.','textile'],
  Bl:['Malla SB-Lisa','Una malla cuadrada fina de tono latón, densa y cálida.','mesh'],
- Bp:['Malla SB-Pulida','La malla pulida en la línea alternativa: hilos claros y brillantes en un tejido abierto.','mesh'],
+ Bp:['Malla SB-Pulida','La malla pulida en la línea alternativa: hilos claros y brillantes en un tejido abierto.','textile'],
  Cm:['Malla SC-Mosquitera','Una mosquitera de alambre fino: celdas pequeñas y casi toda la luz pasa.','mesh'],
  Cn:['Malla SC-Negra','Una malla cuadrada negra que dibuja una retícula gráfica sobre el fondo.','mesh'],
  Ec:['Espejo claro','Un frente de vidrio limpio y un respaldo reflectante continuo.','mirror'],
@@ -216,26 +216,36 @@ const SPEC = {
   Etf: { film: '#d9ad3a', surface: 'stipple' }, Etp: { film: 'poly', surface: 'cords' },
 };
 
-// Insert meshes, read from each -04-detail-surface photograph. count = wires
-// across the 250 mm swatch, radius = wire radius / pitch, aspect = cell
-// height / width. Fabrics too fine for wire geometry use a woven texture.
-// Bq is the same mesh as Aq (esEquivalenteIdenticoDe) and Bp shares Ap's
-// photographs, so they share parameters.
-const AP = { count: 56, radius: .24, color: '#c2b8a3', metalness: .8, roughness: .28 };
+// Insert meshes, read from each -04-detail-surface photograph. Wire grids
+// (count = wires across the 250 mm swatch, radius = wire radius / pitch,
+// aspect = cell height / width) for the open metal screens; woven yarn
+// textures (see textileLayer in gl-visor-weave.js) for everything that reads
+// as fabric. Each fabric sits at its own tone, openness and pattern scale so
+// no two read alike. Bq is the same mesh as Aq (esEquivalenteIdenticoDe) and
+// Bp shares Ap's photographs, so they share parameters.
+const AP = { textile: { pattern: 'plain', threads: 80, gap: .42, jitter: .3, slub: .25, fibers: 4, twist: .3, color: '#c4baa5', bump: 1.8 }, metalness: .7, roughness: .35 };
 const MESH = {
-  Ae: { count: 72, radius: .22, color: '#8d8576', metalness: .55, roughness: .55 },
-  Ap: AP, Bp: AP,
   Ab: { count: 20, radius: .045, aspect: 1.3, color: '#d3d6d3', metalness: .92, roughness: .2 },
   Ac: { count: 30, radius: .05, color: '#d3d6d3', metalness: .92, roughness: .2 },
-  Be: { count: 60, radius: .14, color: '#aaa08c', metalness: .6, roughness: .5 },
-  Bl: { count: 84, radius: .16, color: '#b49a5f', metalness: .88, roughness: .3 },
+  Bl: { count: 100, radius: .2, color: '#c9ae6b', metalness: .9, roughness: .28 },
   Cm: { count: 52, radius: .06, color: '#bcc0bc', metalness: .85, roughness: .3 },
-  Cn: { count: 40, radius: .1, color: '#1c1d1e', metalness: .4, roughness: .45 },
-  Af: { textile: { pattern: 'plain', threads: 220, gap: .38, color: '#7a7468' }, metalness: .5, roughness: .55 },
-  Al: { textile: { pattern: 'plain', threads: 180, gap: .44, color: '#85827b' }, metalness: .6, roughness: .45 },
-  Az: { textile: { pattern: 'zigzag', threads: 130, gap: .3, color: '#6e6b65' }, metalness: .85, roughness: .35 },
-  Ah: { textile: { pattern: 'herringbone', threads: 80, gap: .25, color: '#8a8376', bump: 2 }, metalness: .5, roughness: .55 },
-  Tl: { textile: { pattern: 'plain', threads: 240, gap: .42, color: '#bdb8ac' }, metalness: .3, roughness: .6 },
+  Cn: { count: 40, radius: .1, color: '#2a2c2e', metalness: .6, roughness: .35 },
+  // Linen: pale, dense, threads too fine to resolve; slubs give the streaks.
+  Tl: { textile: { pattern: 'plain', threads: 380, gap: .1, jitter: .12, slub: .35, fibers: 2, color: '#d3ccbc' }, metalness: .2, roughness: .7 },
+  // Fabric: mid taupe canvas, dense.
+  Af: { textile: { pattern: 'plain', threads: 240, gap: .14, jitter: .1, slub: .15, fibers: 3, color: '#8a8072' }, metalness: .45, roughness: .55 },
+  // Lisa: cool silver, very even, slightly open, shiny.
+  Al: { textile: { pattern: 'plain', threads: 280, gap: .26, jitter: .03, slub: .04, color: '#a6a8a7' }, metalness: .8, roughness: .3 },
+  // Zigzag: dark steel twill in chevrons, sparkling.
+  Az: { textile: { pattern: 'zigzag', threads: 140, gap: .12, slub: .1, fibers: 3, twist: .15, color: '#7b7770' }, metalness: .85, roughness: .3 },
+  // Herringbone: chunky twisted greige strands, the coarsest weave.
+  Ah: { textile: { pattern: 'herringbone', threads: 64, gap: .1, jitter: .08, slub: .2, fibers: 4, twist: .6, color: '#aaa190', bump: 2.5 }, metalness: .35, roughness: .6 },
+  // Entramado A: dense grey-taupe yarn, small pores.
+  Ae: { textile: { pattern: 'plain', threads: 150, gap: .22, jitter: .12, slub: .2, fibers: 3, color: '#857c6e', bump: 1.6 }, metalness: .4, roughness: .6 },
+  // Pulida: loose, chunky, bright burlap with irregular open pores.
+  Ap: AP, Bp: AP,
+  // Entramado B: open, irregular pale gauze.
+  Be: { textile: { pattern: 'plain', threads: 110, gap: .55, jitter: .35, slub: .2, fibers: 2, color: '#b5ac96' }, metalness: .55, roughness: .45 },
 };
 
 // attributes are copied verbatim from glass-types.json (regenerate, do not hand-edit).

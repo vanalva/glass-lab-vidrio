@@ -39,7 +39,7 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/variables.css?v=3703e9fe">
-  <link rel="stylesheet" href="../css/project.css?v=3db68872">
+  <link rel="stylesheet" href="../css/project.css?v=a2dad958">
 
   <script type="application/ld+json">
   {
@@ -134,6 +134,8 @@
       <!-- LEFT: ARCHITECTURAL SCENE -->
       <div class="gl-visor_scene">
         <div id="glass3d" class="gl-visor_scene_img"></div>
+        <!-- Phones: the panel header is hidden, so the back link floats on the stage (top-left). -->
+        <a href="/en/catalogo" class="gl-vidrio_back gl-visor_back gl-visor_back_scene" data-gl-back><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-gl-back-label>Catálogo completo</span></a>
         <div class="gl-visor_scene_label">
           <span class="gl-mono gl-mono_muted" data-flwr-id="l10n-gl-visor-2q">Drag to rotate — Select a glass to change the sample</span>
         </div>
@@ -176,6 +178,7 @@
       <!-- RIGHT: GLASS SELECTOR PANEL -->
       <div class="gl-visor_panel">
         <div class="gl-visor_panel_header">
+          <a href="/en/catalogo" class="gl-vidrio_back gl-visor_back" data-gl-back><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-gl-back-label>Catálogo completo</span></a>
           <span class="gl-mono" data-flwr-id="l10n-gl-visor-2d">Glass selector</span>
         </div>
 
@@ -701,9 +704,10 @@
     }
   }
   </script>
-  <script type="module" src="../js/gl-visor-glass3d.js?v=17"></script>
+  <script type="module" src="../js/gl-visor-glass3d.js?v=18"></script>
   <!-- After the engine (both deferred, document order) so the active cell exists. -->
   <script defer src="../js/gl-visor-browse.js?v=2"></script>
+  <script src="../js/gl-back.js?v=061c1327"></script>
 
   <!-- FULLSCREEN MENU -->
   <aside class="gl-dock" aria-label="Floating navigation" data-flwr-id="l10n-gl-visor-r">

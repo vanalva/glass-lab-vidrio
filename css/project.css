@@ -1094,7 +1094,7 @@ a.gl-catalogo_hero-caption { text-decoration-line: none; }
   .gl-catalogo_grid { grid-template-columns: repeat(auto-fit, minmax(4.5rem, 1fr)); }
 }
 
-.gl-vidrio_back { display: inline-flex; align-items: center; column-gap: var(--_spacing---space--1); color: color-mix(in srgb, var(--_theme---text) 35%, transparent); text-decoration-line: none; font-family: var(--_typography---font--secondary-family); font-size: var(--_typography---font-size--label-sm); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: var(--_spacing---space--4); transition-property: color; transition-duration: 0.15s; transition-timing-function: ease; }
+.gl-vidrio_back { display: inline-flex; align-items: center; column-gap: var(--_spacing---space--1); color: color-mix(in srgb, var(--_theme---text) 62%, transparent); text-decoration-line: none; font-family: var(--_typography---font--secondary-family); font-size: var(--_typography---font-size--label-sm); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: var(--_spacing---space--4); transition-property: color; transition-duration: 0.15s; transition-timing-function: ease; }
 
 .gl-vidrio_back:hover { color: var(--_theme---text); }
 
@@ -1237,6 +1237,13 @@ a.gl-catalogo_hero-caption { text-decoration-line: none; }
 .gl-visor_tool:focus-visible { outline-width: 2px; outline-style: solid; outline-color: var(--_theme---text); outline-offset: 2px; }
 
 .gl-visor_tool_step { display: none; }
+
+/* Back link (gl-back.js): in the panel header on desktop/tablet, floating on the stage on phones. */
+.gl-visor_back { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; }
+
+.gl-visor_panel_header .gl-visor_back { display: flex; width: fit-content; margin-bottom: var(--_spacing---space--3); }
+
+.gl-visor_back_scene { display: none; }
 
 /* Glass page: "open in the 3D visor" button, top-right of the hero image (same look as the visor tools). */
 .gl-vidrio_hero_visor { position: absolute; top: calc(var(--_spacing---space--7) + 0.75rem); right: calc(var(--_spacing---space--5) + 0.75rem); z-index: 2; text-decoration-line: none; }
@@ -1394,6 +1401,7 @@ button.gl-visor_env_select.gl-select_trigger:hover,
   .gl-visor_tool_rotate { display: none; }
   .gl-visor_tool_zoom { display: none; }
   .gl-visor_tool_step { display: inline-flex; }
+  .gl-visor_back_scene { display: inline-flex; position: absolute; top: 0.75rem; left: 0.75rem; z-index: 3; min-height: 2.5rem; padding-top: 0px; padding-right: 0.85rem; padding-bottom: 0px; padding-left: 0.6rem; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); border-right-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); border-bottom-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); border-left-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); border-top-left-radius: var(--radius--subtle); border-top-right-radius: var(--radius--subtle); border-bottom-left-radius: var(--radius--subtle); border-bottom-right-radius: var(--radius--subtle); background-color: color-mix(in srgb, var(--_theme---background) 55%, transparent); color: var(--_theme---text); }
   .gl-visor_scene_env { top: auto; bottom: 4.25rem; right: 0.75rem; width: 8.5rem; }
   .gl-visor_scene_env .gl-select_panel { top: auto; bottom: calc(100% + 0.5rem); max-height: none; }
   .gl-visor_background_sublabel { display: none; }

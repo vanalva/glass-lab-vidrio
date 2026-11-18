@@ -283,49 +283,83 @@ export function makeQuboBackdrop() {
   return texture;
 }
 
-// Fabrics too fine to model strand by strand (Fabric, Lisa, Zigzag,
-// Herringbone, Lino). One woven tile is drawn per crossing: the under-thread
-// first, the over-thread on top, leaving open pores only at the corners.
-// alphaHash keeps the layer in the opaque list, so the transmission pass of the
-// front ply sees it; a transparent fabric would vanish behind the glass.
-// spec: { pattern: plain|twill|zigzag|herringbone, threads (across the swatch),
-//         gap (pore size as a fraction of a thread), color, bump }
+// Woven inserts drawn as yarn rather than wire: Lino, Fabric, Lisa, Zigzag,
+// Herringbone, Entramado, Pulida. One tile of 32 x 32 crossings is drawn
+// (under-thread first, over-thread on top); pores open where yarns do not
+// cover. alphaHash keeps the layer in the opaque list, so the front ply's
+// transmission pass sees it; a transparent fabric would vanish behind glass.
+// spec (all read from the -04-detail-surface photographs):
+//   pattern  plain | twill | zigzag | herringbone
+//   threads  threads across the 250 mm swatch (pattern scale)
+//   gap      pore between neighbouring yarns, fraction of the pitch (openness)
+//   jitter   per-thread width/position irregularity (gauze, burlap)
+//   slub     per-thread tone/thickness variation (linen streaks)
+//   fibers   fibre strands drawn along each yarn; twist = their slant per crossing
+//   color, bump
 export function textileLayer(w, h, spec, material) {
-  const N = 16, cell = 16, T = N * cell;
+  const N = 32, cell = 16, T = N * cell;
   const over = weaveRule(spec.pattern || 'plain');
+  let seed = spec.seed || 11;
+  const rnd = () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
+  const jitter = spec.jitter ?? 0, slub = spec.slub ?? 0;
+  const threads = vertical => Array.from({ length: N }, () => ({
+    width: 1 + (rnd() * 2 - 1) * jitter,
+    offset: (rnd() * 2 - 1) * jitter * .35 * cell,
+    tone: 1 + (rnd() * 2 - 1) * slub,
+  }));
+  const warp = threads(true), weft = threads(false);
   const color = document.createElement('canvas');
   const alpha = document.createElement('canvas');
   const height = document.createElement('canvas');
   for (const c of [color, alpha, height]) c.width = c.height = T;
   const gc = color.getContext('2d'), ga = alpha.getContext('2d'), gh = height.getContext('2d');
   const base = new THREE.Color(spec.color || '#a59c8c');
-  const shade = k => '#' + base.clone().multiplyScalar(k).getHexString();
+  const shade = k => '#' + base.clone().multiplyScalar(Math.max(0, k)).getHexString();
   // Pores keep the mean thread colour so mipmaps never darken the fabric.
-  gc.fillStyle = shade(.82); gc.fillRect(0, 0, T, T);
+  gc.fillStyle = shade(.8); gc.fillRect(0, 0, T, T);
   ga.fillStyle = '#000'; ga.fillRect(0, 0, T, T);
   gh.fillStyle = '#000'; gh.fillRect(0, 0, T, T);
-  const g = (spec.gap ?? .14) * cell, yarn = cell - g;
-  function thread(i, j, vertical, top) {
-    const x = i * cell, y = j * cell;
-    const rect = vertical ? [x + g / 2, y, yarn, cell] : [x, y + g / 2, cell, yarn];
-    const grad = vertical
-      ? gc.createLinearGradient(rect[0], 0, rect[0] + yarn, 0)
-      : gc.createLinearGradient(0, rect[1], 0, rect[1] + yarn);
-    const k = top ? 1 : .62;
-    grad.addColorStop(0, shade(.55 * k)); grad.addColorStop(.5, shade(1.12 * k)); grad.addColorStop(1, shade(.55 * k));
-    gc.fillStyle = grad; gc.fillRect(...rect);
-    ga.fillStyle = '#fff'; ga.fillRect(...rect);
-    const hg = vertical
-      ? gh.createLinearGradient(rect[0], 0, rect[0] + yarn, 0)
-      : gh.createLinearGradient(0, rect[1], 0, rect[1] + yarn);
-    const v = top ? 255 : 120;
-    hg.addColorStop(0, 'rgb(20,20,20)'); hg.addColorStop(.5, `rgb(${v},${v},${v})`); hg.addColorStop(1, 'rgb(20,20,20)');
-    gh.fillStyle = hg; gh.fillRect(...rect);
+  const yarn = cell * (1 - (spec.gap ?? .14));
+  const fibers = spec.fibers ?? 0, twist = (spec.twist ?? 0) * cell;
+
+  function segment(i, j, vertical, top) {
+    const t = vertical ? warp[i] : weft[j];
+    const width = Math.min(cell * 1.1, Math.max(2, yarn * t.width));
+    const centre = (vertical ? i : j) * cell + cell / 2 + t.offset;
+    const along = (vertical ? j : i) * cell;
+    const k = (top ? 1 : .6) * t.tone;
+    // Draw again one tile over when a yarn crosses the tile edge (seamless).
+    for (const wrap of [-T, 0, T]) {
+      const c0 = centre - width / 2 + wrap;
+      if (c0 + width < 0 || c0 > T) continue;
+      const rect = vertical ? [c0, along, width, cell] : [along, c0, cell, width];
+      const grad = vertical ? gc.createLinearGradient(c0, 0, c0 + width, 0) : gc.createLinearGradient(0, c0, 0, c0 + width);
+      grad.addColorStop(0, shade(.5 * k)); grad.addColorStop(.5, shade(1.12 * k)); grad.addColorStop(1, shade(.5 * k));
+      gc.fillStyle = grad; gc.fillRect(...rect);
+      if (fibers) {
+        gc.save(); gc.beginPath(); gc.rect(...rect); gc.clip();
+        gc.lineWidth = 1;
+        for (let f = 0; f < fibers + 2; f++) {
+          const p = c0 + (f - .5) / fibers * width;
+          gc.strokeStyle = shade((.7 + rnd() * .6) * k);
+          gc.beginPath();
+          if (vertical) { gc.moveTo(p, along); gc.lineTo(p + twist, along + cell); }
+          else { gc.moveTo(along, p); gc.lineTo(along + cell, p + twist); }
+          gc.stroke();
+        }
+        gc.restore();
+      }
+      ga.fillStyle = '#fff'; ga.fillRect(...rect);
+      const hg = vertical ? gh.createLinearGradient(c0, 0, c0 + width, 0) : gh.createLinearGradient(0, c0, 0, c0 + width);
+      const v = Math.round((top ? 255 : 120) * Math.min(1, t.tone));
+      hg.addColorStop(0, 'rgb(20,20,20)'); hg.addColorStop(.5, `rgb(${v},${v},${v})`); hg.addColorStop(1, 'rgb(20,20,20)');
+      gh.fillStyle = hg; gh.fillRect(...rect);
+    }
   }
   for (let i = 0; i < N; i++) for (let j = 0; j < N; j++) {
     const warpTop = over(i, j);
-    thread(i, j, !warpTop, false);
-    thread(i, j, warpTop, true);
+    segment(i, j, !warpTop, false);
+    segment(i, j, warpTop, true);
   }
   const repeat = new THREE.Vector2(spec.threads / N, spec.threads / N * h / w);
   const texture = canvas => {

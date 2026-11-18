@@ -261,7 +261,7 @@ function boot(mount) {
     if (updateUrl) {
       const url = new URL(location.href);
       url.searchParams.set('glass', code);
-      history.replaceState(null, '', url);
+      history.replaceState(history.state, '', url); // keep the page-transition flag (gl-back.js reads it)
     }
     wake();
   }
