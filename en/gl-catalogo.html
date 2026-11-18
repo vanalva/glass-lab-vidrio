@@ -59,7 +59,7 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/variables.css?v=3703e9fe">
-  <link rel="stylesheet" href="../css/project.css?v=ef09bebe">
+  <link rel="stylesheet" href="../css/project.css?v=010723a1">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -209,7 +209,7 @@
                      data-flwr-list-field="cat"
                      data-flwr-list-value="colores"
                      data-flwr-list-list="#gl-catalogo-grid">
-              <span class="gl-catalogo_legend_swatch gl-catalogo_legend_swatch_filled gl-cell_cat-colores"></span>
+              <span class="gl-catalogo_legend_swatch gl-catalogo_legend_swatch_filled gl-cell_cat-colores gl-filter-cat-pill_swatch"></span>
               <span data-flwr-id="l10n-gl-catalogo-5b">Colours</span>
             </label>
             <label class="gl-filter-input gl-filter-radio-pill gl-filter-cat-pill">
@@ -217,7 +217,7 @@
                      data-flwr-list-field="cat"
                      data-flwr-list-value="inserciones"
                      data-flwr-list-list="#gl-catalogo-grid">
-              <span class="gl-catalogo_legend_swatch gl-catalogo_legend_swatch_filled gl-cell_cat-inserciones"></span>
+              <span class="gl-catalogo_legend_swatch gl-catalogo_legend_swatch_filled gl-cell_cat-inserciones gl-filter-cat-pill_swatch"></span>
               <span data-flwr-id="l10n-gl-catalogo-5a">Inserts</span>
             </label>
             <label class="gl-filter-input gl-filter-radio-pill gl-filter-cat-pill">
@@ -225,7 +225,7 @@
                      data-flwr-list-field="cat"
                      data-flwr-list-value="reflectivos"
                      data-flwr-list-list="#gl-catalogo-grid">
-              <span class="gl-catalogo_legend_swatch gl-catalogo_legend_swatch_filled gl-cell_cat-reflectivos"></span>
+              <span class="gl-catalogo_legend_swatch gl-catalogo_legend_swatch_filled gl-cell_cat-reflectivos gl-filter-cat-pill_swatch"></span>
               <span data-flwr-id="l10n-gl-catalogo-59">Reflectives</span>
             </label>
 
@@ -241,14 +241,17 @@
                  transparency label, and that a material filter is the more
                  useful question. It reads off the mallas-serie-* subcategories
                  (16 glasses) rather than a transparency value. -->
-            <label class="gl-filter-input gl-filter-radio-pill">
+            <!-- Tag row: display-contents on desktop/tablet (the tags stay
+                 cells of the filters grid); one horizontal scroll row <=767px. -->
+            <div class="gl-catalogo_tag-row">
+            <label class="gl-filter-input gl-filter-radio-pill gl-filter-tag-pill">
               <input type="checkbox" class="gl-sr-only"
                      data-flwr-list-field="transparencia"
                      data-flwr-list-value="translucido"
                      data-flwr-list-list="#gl-catalogo-grid">
               <span data-flwr-id="l10n-gl-catalogo-58">Translucent</span>
             </label>
-            <label class="gl-filter-input gl-filter-radio-pill">
+            <label class="gl-filter-input gl-filter-radio-pill gl-filter-tag-pill">
               <input type="checkbox" class="gl-sr-only"
                      data-flwr-list-field="familia"
                      data-flwr-list-value="malla"
@@ -256,48 +259,49 @@
               <span data-flwr-id="l10n-gl-catalogo-57">Mesh</span>
             </label>
 
-            <label class="gl-filter-input gl-filter-radio-pill">
+            <label class="gl-filter-input gl-filter-radio-pill gl-filter-tag-pill">
               <input type="checkbox" class="gl-sr-only"
                      data-flwr-list-field="acabado"
                      data-flwr-list-value="laminado"
                      data-flwr-list-list="#gl-catalogo-grid">
               <span data-flwr-id="l10n-gl-catalogo-56">Laminated</span>
             </label>
-            <label class="gl-filter-input gl-filter-radio-pill">
+            <label class="gl-filter-input gl-filter-radio-pill gl-filter-tag-pill">
               <input type="checkbox" class="gl-sr-only"
                      data-flwr-list-field="acabado"
                      data-flwr-list-value="espejado"
                      data-flwr-list-list="#gl-catalogo-grid">
               <span data-flwr-id="l10n-gl-catalogo-55">Mirrored</span>
             </label>
-            <label class="gl-filter-input gl-filter-radio-pill">
+            <label class="gl-filter-input gl-filter-radio-pill gl-filter-tag-pill">
               <input type="checkbox" class="gl-sr-only"
                      data-flwr-list-field="acabado"
                      data-flwr-list-value="esmerilado"
                      data-flwr-list-list="#gl-catalogo-grid">
               <span data-flwr-id="l10n-gl-catalogo-54">Frosted</span>
             </label>
-            <label class="gl-filter-input gl-filter-radio-pill">
+            <label class="gl-filter-input gl-filter-radio-pill gl-filter-tag-pill">
               <input type="checkbox" class="gl-sr-only"
                      data-flwr-list-field="acabado"
                      data-flwr-list-value="impreso"
                      data-flwr-list-list="#gl-catalogo-grid">
               <span data-flwr-id="l10n-gl-catalogo-53">Printed</span>
             </label>
-            <label class="gl-filter-input gl-filter-radio-pill">
+            <label class="gl-filter-input gl-filter-radio-pill gl-filter-tag-pill">
               <input type="checkbox" class="gl-sr-only"
                      data-flwr-list-field="acabado"
                      data-flwr-list-value="interlayer"
                      data-flwr-list-list="#gl-catalogo-grid">
               <span data-flwr-id="l10n-gl-catalogo-52">Interlayer</span>
             </label>
-            <label class="gl-filter-input gl-filter-radio-pill">
+            <label class="gl-filter-input gl-filter-radio-pill gl-filter-tag-pill">
               <input type="checkbox" class="gl-sr-only"
                      data-flwr-list-field="acabado"
                      data-flwr-list-value="metalizado"
                      data-flwr-list-list="#gl-catalogo-grid">
               <span data-flwr-id="l10n-gl-catalogo-51">Metallised</span>
             </label>
+            </div>
 
           </div>
 

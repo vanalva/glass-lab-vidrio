@@ -79,6 +79,47 @@ function boot(mount) {
     '<span class="gl-btn_skew_element gl-btn_skew_element_sm"><span class="gl-btn_skew_text gl-btn_skew_text_sm">Separar capas</span></span></button>';
   mount.parentElement.appendChild(layerTools);
   const layerButton = layerTools.querySelector('button');
+  // Phones: the glass grid becomes a horizontal strip. Prev/next arrows (same as the
+  // glass page photo slider) sit right of the caption; a soft thumb shows the scroll.
+  const strip = ui.querySelector('.gl-visor_panel_grid');
+  if (strip) {
+    const chevron = d => '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="' + d +
+      '" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    const nav = document.createElement('div');
+    nav.className = 'gl-visor_strip_nav';
+    nav.innerHTML = '<button type="button" class="gl-vidrio_hero_arrow gl-vidrio_hero_arrow--prev" data-strip="prev" aria-label="Vidrios anteriores">' + chevron('M12 4L6 10L12 16') + '</button>' +
+      '<button type="button" class="gl-vidrio_hero_arrow gl-vidrio_hero_arrow--next" data-strip="next" aria-label="Más vidrios">' + chevron('M8 4L14 10L8 16') + '</button>';
+    layerTools.appendChild(nav);
+    const bar = document.createElement('div');
+    bar.className = 'gl-visor_strip_bar';
+    bar.setAttribute('aria-hidden', 'true');
+    bar.innerHTML = '<span class="gl-visor_strip_thumb"></span>';
+    strip.after(bar);
+    const thumb = bar.firstChild;
+    const prev = nav.querySelector('[data-strip="prev"]');
+    const next = nav.querySelector('[data-strip="next"]');
+    let stripFrame = 0;
+    const syncStrip = () => {
+      stripFrame = 0;
+      const max = strip.scrollWidth - strip.clientWidth;
+      const track = bar.clientWidth;
+      if (max <= 1 || !track) { bar.dataset.idle = ''; prev.disabled = next.disabled = true; return; }
+      delete bar.dataset.idle;
+      const size = Math.max(32, track * strip.clientWidth / strip.scrollWidth);
+      const at = Math.min(1, Math.max(0, strip.scrollLeft / max));
+      thumb.style.width = size + 'px';
+      thumb.style.transform = 'translateX(' + (at * (track - size)) + 'px)';
+      prev.disabled = strip.scrollLeft <= 1;
+      next.disabled = strip.scrollLeft >= max - 1;
+    };
+    const queueStrip = () => { if (!stripFrame) stripFrame = requestAnimationFrame(syncStrip); };
+    listen(strip, 'scroll', queueStrip, { passive: true });
+    listen(window, 'resize', queueStrip);
+    const page = dir => strip.scrollBy({ left: dir * strip.clientWidth * .8, behavior: 'smooth' });
+    listen(prev, 'click', () => page(-1));
+    listen(next, 'click', () => page(1));
+    queueStrip();
+  }
   const layerText = layerButton.querySelector('.gl-btn_skew_text');
   const layerCaption = layerTools.querySelector('.gl-visor_layers_caption');
   const sliders = new Map();

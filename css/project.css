@@ -925,6 +925,11 @@ a.gl-catalogo_hero-caption { text-decoration-line: none; }
 
 .gl-filter-cat-pill { grid-column: span 2; }
 
+/* Wraps the 8 type tags. Contents above 767px, so the tags stay cells of
+   the filters grid; a horizontal scroll row on mobile (block at the end of
+   the mobile overrides below). */
+.gl-catalogo_tag-row { display: contents; }
+
 .gl-catalogo_tags-area { flex: 1 1 0%; display: flex; flex-wrap: wrap; place-content: flex-start flex-end; align-items: flex-start; row-gap: var(--_spacing---space--2); column-gap: var(--_spacing---space--2); }
 
 .gl-catalogo_active-filters { display: contents; }
@@ -1221,13 +1226,22 @@ a.gl-catalogo_hero-caption { text-decoration-line: none; }
 
 .gl-visor_scene_controls { position: absolute; top: 1.5rem; left: 1.5rem; display: flex; flex-direction: row; align-items: center; column-gap: 0.35rem; row-gap: 0.35rem; z-index: 2; }
 
-.gl-visor_tool { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); border-right-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); border-bottom-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); border-left-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); background-color: color-mix(in srgb, var(--_theme---background) 55%, transparent); color: var(--_theme---text); font-family: inherit; cursor: pointer; }
+.gl-visor_tool { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; border-top-left-radius: var(--radius--subtle); border-top-right-radius: var(--radius--subtle); border-bottom-left-radius: var(--radius--subtle); border-bottom-right-radius: var(--radius--subtle); padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); border-right-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); border-bottom-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); border-left-color: color-mix(in srgb, var(--_theme---text) 30%, transparent); background-color: color-mix(in srgb, var(--_theme---background) 55%, transparent); color: var(--_theme---text); font-family: inherit; cursor: pointer; }
 
 .gl-visor_tool:hover { background-color: color-mix(in srgb, var(--_theme---text) 16%, transparent); }
 
 .gl-visor_tool:focus-visible { outline-width: 2px; outline-style: solid; outline-color: var(--_theme---text); outline-offset: 2px; }
 
 .gl-visor_tool_step { display: none; }
+
+/* Glass strip helpers (phones only): arrows right of the stage caption, soft floating thumb under the strip. */
+.gl-visor_strip_nav { display: none; flex-grow: 0; flex-shrink: 0; align-items: center; column-gap: 0.25rem; }
+
+.gl-visor_strip_bar { display: none; }
+
+@media (max-width: 478px) {
+  .gl-visor_layers_button .gl-btn_skew_element_sm { padding-top: 0.6rem; padding-right: 0.85rem; padding-bottom: 0.35rem; padding-left: 0.7rem; }
+}
 
 /* Stage bottom bar, injected by gl-visor-glass3d.js: caption left, "Separar capas" right. */
 .gl-visor_layers { position: absolute; left: 1.5rem; right: 1.5rem; bottom: 1.5rem; display: flex; flex-direction: row; align-items: center; justify-content: space-between; column-gap: 1.5rem; row-gap: 0.5rem; z-index: 2; pointer-events: none; }
@@ -1356,16 +1370,32 @@ a.gl-catalogo_hero-caption { text-decoration-line: none; }
   .gl-visor_tool_zoom { display: none; }
   .gl-visor_tool_step { display: inline-flex; }
   .gl-visor_layers { left: 0.75rem; right: 0.75rem; bottom: 0px; height: 3.5rem; column-gap: 0.75rem; }
-  .gl-visor_layers_caption { line-height: 1.4; }
+  .gl-visor_layers_caption { line-height: 1.35; letter-spacing: 0.04em; }
   .gl-visor_panel_header { display: none; }
   .gl-visor_panel_grid { order: 1; display: flex; flex-direction: row; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; scrollbar-width: none; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); }
   .gl-visor_panel_grid::-webkit-scrollbar { display: none; }
   .gl-visor_panel_grid .gl-cell { flex-grow: 0; flex-shrink: 0; flex-basis: 5.5rem; aspect-ratio: 1 / 1; scroll-snap-align: start; padding-top: 0.5rem; padding-right: 0.5rem; padding-bottom: 0.5rem; padding-left: 0.5rem; }
   .gl-visor_panel_grid .gl-cell_symbol { font-size: 1.6rem; }
+  .gl-visor_strip_nav { display: flex; }
+  .gl-visor_strip_nav .gl-vidrio_hero_arrow { width: 2rem; height: 2.25rem; color: color-mix(in srgb, var(--_theme---text) 80%, transparent); }
+  .gl-visor_strip_nav .gl-vidrio_hero_arrow:disabled { opacity: 0.25; }
+  .gl-visor_strip_bar { order: 1; display: block; position: relative; height: 0px; margin-left: 0.75rem; margin-right: 0.75rem; z-index: 1; pointer-events: none; }
+  .gl-visor_strip_bar[data-idle] { display: none; }
+  .gl-visor_strip_thumb { position: absolute; top: 0.45rem; left: 0px; width: 3rem; height: 4px; background-color: var(--swatch--light-100); opacity: 0.85; border-top-left-radius: var(--radius--subtle); border-top-right-radius: var(--radius--subtle); border-bottom-left-radius: var(--radius--subtle); border-bottom-right-radius: var(--radius--subtle); box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.35); transition-property: opacity; transition-duration: 200ms; transition-timing-function: ease; transition-delay: 0s; }
   .gl-visor_panel_info { order: 2; }
-  .gl-visor_panel_controls { order: 3; padding-top: 0px; padding-bottom: 5.5rem; row-gap: var(--_spacing---space--3); }
-  .gl-visor_settings { border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); }
-  .gl-visor_settings_summary { display: block; }
+  .gl-visor_panel_controls { order: 3; padding-top: 0px; padding-bottom: 5.5rem; row-gap: var(--_spacing---space--3); border-top-width: 0px; }
+  /* Phones: scene background is always visible, right under the glass info,
+     above the Ajustes disclosure (sliders stay inside it). */
+  .gl-visor_background_controls { order: 1; row-gap: var(--_spacing---space--3); padding-top: var(--_spacing---space--4); padding-bottom: var(--_spacing---space--4); border-top-width: 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); }
+  .gl-visor_settings { order: 2; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); }
+  .gl-visor_control_buttons { order: 3; }
+  .gl-visor_section_label { font-size: var(--_typography---font-size--label); letter-spacing: 0.12em; color: var(--_theme---text); }
+  .gl-visor_background_options .gl-tag { min-height: 44px; align-items: center; padding-top: 0.5rem; padding-bottom: 0.5rem; font-size: var(--_typography---font-size--label); }
+  .gl-visor_background_upload { align-self: stretch; min-height: 44px; }
+  .gl-visor_background_upload .gl-btn_skew_element { width: 100%; }
+  .gl-visor_settings_summary { display: flex; flex-direction: row; align-items: center; justify-content: space-between; min-height: 44px; padding-top: 0px; padding-bottom: 0px; }
+  .gl-visor_settings_summary::after { content: ''; float: none; width: 0.55rem; height: 0.55rem; margin-right: 0.25rem; border-right-width: 1.5px; border-right-style: solid; border-right-color: currentcolor; border-bottom-width: 1.5px; border-bottom-style: solid; border-bottom-color: currentcolor; transform: translateY(-25%) rotate(45deg); transition-property: transform; transition-duration: 0.2s; transition-timing-function: ease; transition-delay: 0s; }
+  .gl-visor_settings[open] .gl-visor_settings_summary::after { content: ''; transform: translateY(25%) rotate(-135deg); }
   .gl-visor_settings_body { padding-bottom: var(--_spacing---space--4); }
 }
 
@@ -4335,7 +4365,6 @@ button.gl-menu_link { width: 100%; background-color: transparent; border-width: 
   .gl-statement_descriptor { max-width: 100%; text-align: left; }
   .gl-statement_body { max-width: 100%; }
   .gl-statement_coda { max-width: 100%; }
-  .gl-catalogo_filters-grid { grid-template-columns: repeat(3, minmax(0px, 1fr)); }
   .gl-catalogo_proximas_inner { grid-template-columns: minmax(0px, 1fr); row-gap: var(--_spacing---space--6); }
   .pg-sistema_specs_table { max-width: 100%; }
   .pg-sistema_specs_row { column-gap: var(--_spacing---space--3); }
@@ -4370,10 +4399,38 @@ button.gl-menu_link { width: 100%; background-color: transparent; border-width: 
 }
 
 @media (max-width: 478px) {
-  .gl-catalogo_filters-grid { grid-template-columns: repeat(2, minmax(0px, 1fr)); }
   .pg-sistema_specs_row { grid-template-columns: minmax(0px, 1fr); row-gap: var(--_spacing---space--1); }
   .gl-spec-row { flex-direction: column; align-items: flex-start; row-gap: var(--_spacing---space--1); }
   .pg-index_hero_media-wrap { min-height: 52svh; }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   CATALOGO HEADER — mobile (<=767px)
+   Juan, 2026-11-18: the prism photo sat right behind the search and the
+   filters were a narrow one-column stack, 330px tall. Now: the photo is a
+   corner atmosphere (top-right, part off-canvas, faded into the page
+   black), the filters take the full content width, and the block is
+   search / three equal category segments / one scrolling row of type tags.
+   Placed after the 991px block above so it wins at equal specificity.
+   ══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  .gl-catalogo_header .gl-hero-poster { top: 0px; right: -34%; left: auto; width: 96%; height: 54svh; opacity: 0.72; background-image: linear-gradient(to bottom, transparent 30%, var(--_theme---background) 96%), linear-gradient(to right, var(--_theme---background) 0%, transparent 55%), url("../assets/media/glass-lab/glass-render-hero-poster.jpg"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
+  .gl-catalogo_header_inner { flex-direction: column; align-items: flex-start; row-gap: var(--_spacing---space--2); }
+  .gl-catalogo_monogram-wrap { align-items: stretch; }
+  .gl-catalogo_monogram-wrap--bottom { margin-top: var(--_spacing---space--5); }
+  .gl-catalogo_monogram { width: 5rem; height: 5rem; }
+  .gl-catalogo_filters { width: 100%; margin-top: var(--_spacing---space--3); }
+  .gl-catalogo_filters-grid { max-width: none; grid-template-columns: repeat(3, minmax(0px, 1fr)); row-gap: var(--_spacing---space--1); column-gap: var(--_spacing---space--1); }
+  .gl-filter-input_search { display: flex; min-height: 2.5rem; }
+  .gl-filter-search-input { flex-grow: 1; flex-shrink: 1; flex-basis: 0%; min-width: 0px; }
+  .gl-filter-cat-pill { grid-column-start: span 1; grid-column-end: auto; min-width: 0px; min-height: 2.5rem; padding-left: 0.375rem; padding-right: 0.375rem; }
+  .gl-filter-cat-pill_swatch { position: absolute; top: 0.3125rem; left: 0.3125rem; width: 0.4375rem; height: 0.4375rem; }
+  .gl-catalogo_tag-row { display: flex; grid-column-start: 1; grid-column-end: -1; column-gap: var(--_spacing---space--1); overflow-x: auto; overflow-y: hidden; margin-left: calc(-1 * var(--site--margin)); margin-right: calc(-1 * var(--site--margin)); padding-left: var(--site--margin); padding-right: var(--site--margin); }
+  .gl-filter-tag-pill { flex-grow: 0; flex-shrink: 0; flex-basis: auto; min-width: 0px; min-height: 2.5rem; padding-left: 0.875rem; padding-right: 0.875rem; }
+  .gl-catalogo_tags-area { margin-top: var(--_spacing---space--1); row-gap: var(--_spacing---space--1); column-gap: var(--_spacing---space--1); }
+  .gl-catalogo_filter-hint { display: none; }
+  .gl-catalogo_filter-hint.is-active { display: inline-flex; min-height: 2.5rem; }
+  .gl-filter-tag { min-height: 2.5rem; }
 }
 /* ══════════════════════════════════════════════════════════════════════
    CONTACT FORMS — real controls (gl-contacto / pg-contacto)

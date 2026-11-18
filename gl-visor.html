@@ -39,7 +39,7 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/variables.css?v=3703e9fe">
-  <link rel="stylesheet" href="css/project.css?v=ef09bebe">
+  <link rel="stylesheet" href="css/project.css?v=010723a1">
 
   <script type="application/ld+json">
   {
@@ -266,7 +266,7 @@
         <!-- CONTROLS -->
         <div class="gl-visor_panel_controls">
           <details class="gl-visor_settings" open>
-            <summary class="gl-visor_settings_summary gl-mono gl-mono_label">Ajustes</summary>
+            <summary class="gl-visor_settings_summary gl-mono gl-mono_label gl-visor_section_label">Ajustes</summary>
             <div class="gl-visor_settings_body">
           <div class="gl-visor_control_row" data-control="transparency">
             <div class="gl-visor_control_header">
@@ -298,9 +298,12 @@
               <div class="gl-visor_slider_thumb"></div>
             </div>
           </div>
+            </div>
+          </details>
+          <!-- Scene background: outside the Ajustes disclosure so phones always see it (CSS order puts it above Ajustes on <=767px). -->
           <div class="gl-visor_background_controls">
             <div class="gl-visor_control_header">
-              <span class="gl-mono gl-mono_label">Fondo de escena</span>
+              <span class="gl-mono gl-mono_label gl-visor_section_label">Fondo de escena</span>
             </div>
             <div class="gl-visor_background_options" role="group" aria-label="Fondo de escena">
               <button type="button" class="gl-tag" data-background-mode="dark" aria-pressed="true">Oscuro</button>
@@ -326,8 +329,6 @@
               </div>
             </div>
           </div>
-            </div>
-          </details>
           <div class="gl-visor_control_buttons">
             <div class="gl-btn_skew_wrap gl-btn_skew_wrap_filled">
               <svg class="gl-btn_skew_shape" viewBox="0 0 240 56" preserveAspectRatio="none" fill="none">
@@ -436,7 +437,7 @@
     }
   }
   </script>
-  <script type="module" src="js/gl-visor-glass3d.js?v=13"></script>
+  <script type="module" src="js/gl-visor-glass3d.js?v=14"></script>
 
   <!-- FULLSCREEN MENU -->
   <aside class="gl-dock" aria-label="Navegacion flotante" data-flwr-id="l10n-gl-visor-r">
