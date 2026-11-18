@@ -3,8 +3,8 @@
  * stacks separate; surface relief and mirror coatings remain bonded.
  */
 import * as THREE from 'three';
-import { createSample, presets, CATALOGUE } from './gl-visor-materials.js?v=4';
-import { makeQuboStudio } from './gl-visor-weave.js?v=2';
+import { createSample, presets, CATALOGUE } from './gl-visor-materials.js?v=5';
+import { makeQuboStudio } from './gl-visor-weave.js?v=3';
 import { createBackgroundControls } from './gl-visor-background.js?v=6';
 
 const clamp = THREE.MathUtils.clamp;

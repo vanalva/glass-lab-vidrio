@@ -289,16 +289,17 @@ export function makeQuboBackdrop() {
 // cover. alphaHash keeps the layer in the opaque list, so the front ply's
 // transmission pass sees it; a transparent fabric would vanish behind glass.
 // spec (all read from the -04-detail-surface photographs):
-//   pattern  plain | twill | zigzag | herringbone
+//   pattern  plain | twill | zigzag | herringbone | stitch (knitted V columns)
 //   threads  threads across the 250 mm swatch (pattern scale)
 //   gap      pore between neighbouring yarns, fraction of the pitch (openness)
 //   jitter   per-thread width/position irregularity (gauze, burlap)
 //   slub     per-thread tone/thickness variation (linen streaks)
 //   fibers   fibre strands drawn along each yarn; twist = their slant per crossing
+//   band     zigzag / herringbone: threads between reversals (4 or 8; tile is 32)
 //   color, bump
 export function textileLayer(w, h, spec, material) {
   const N = 32, cell = 16, T = N * cell;
-  const over = weaveRule(spec.pattern || 'plain');
+  const over = weaveRule(spec.pattern || 'plain', spec.band);
   let seed = spec.seed || 11;
   const rnd = () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
   const jitter = spec.jitter ?? 0, slub = spec.slub ?? 0;
@@ -356,10 +357,41 @@ export function textileLayer(w, h, spec, material) {
       gh.fillStyle = hg; gh.fillRect(...rect);
     }
   }
-  for (let i = 0; i < N; i++) for (let j = 0; j < N; j++) {
+  if (spec.pattern === 'stitch') stitches();
+  else for (let i = 0; i < N; i++) for (let j = 0; j < N; j++) {
     const warpTop = over(i, j);
     segment(i, j, !warpTop, false);
     segment(i, j, warpTop, true);
+  }
+
+  // Herringbone (Ah) is photographed as columns of plump V stitches, like a
+  // knitted stockinette, which no over/under matrix reproduces. Each stitch
+  // is two twisted cords meeting at the bottom; pores open between them.
+  function stitches() {
+    const s = cell * 2, cols = T / s;
+    const cord = (x0, y0, x1, y1, k) => {
+      for (const [dx, dy] of [[0, 0], [-T, 0], [T, 0], [0, -T], [0, T]]) {
+        const line = (ctx, style, width) => {
+          ctx.strokeStyle = style; ctx.lineWidth = width; ctx.lineCap = 'round';
+          ctx.beginPath(); ctx.moveTo(x0 + dx, y0 + dy); ctx.lineTo(x1 + dx, y1 + dy); ctx.stroke();
+        };
+        const wdt = s * (1 - (spec.gap ?? .14)) * .5;
+        line(gc, shade(.5 * k), wdt); line(gc, shade(.9 * k), wdt * .62); line(gc, shade(1.15 * k), wdt * .22);
+        line(ga, '#fff', wdt);
+        line(gh, 'rgb(40,40,40)', wdt); line(gh, 'rgb(150,150,150)', wdt * .62); line(gh, 'rgb(255,255,255)', wdt * .22);
+        // Twist: short slanted fibre ticks along the cord.
+        gc.lineWidth = 1; gc.strokeStyle = shade(.6 * k);
+        for (let t = .15; t < 1; t += .18) {
+          const x = x0 + (x1 - x0) * t + dx, y = y0 + (y1 - y0) * t + dy;
+          gc.beginPath(); gc.moveTo(x - wdt * .3, y - wdt * .1); gc.lineTo(x + wdt * .3, y + wdt * .25); gc.stroke();
+        }
+      }
+    };
+    for (let c = 0; c < cols; c++) for (let r = 0; r < cols; r++) {
+      const k = warp[c % N].tone * weft[r % N].tone, x = c * s, y = r * s, mid = x + s / 2;
+      cord(x + s * .12, y - s * .05, mid - s * .04, y + s * .92, k * .96);
+      cord(x + s * .88, y - s * .05, mid + s * .04, y + s * .92, k);
+    }
   }
   const repeat = new THREE.Vector2(spec.threads / N, spec.threads / N * h / w);
   const texture = canvas => {
@@ -386,15 +418,15 @@ export function textileLayer(w, h, spec, material) {
 }
 
 // true = the warp (vertical thread) passes over the weft at crossing (i, j).
-function weaveRule(pattern) {
+function weaveRule(pattern, band = 8) {
   const mod = (a, n) => ((a % n) + n) % n;
   if (pattern === 'twill') return (i, j) => mod(i + j, 4) < 2;
   if (pattern === 'zigzag' || pattern === 'herringbone') {
-    // Twill whose diagonal reverses every 8 threads. Herringbone also breaks
-    // the line at each reversal, zigzag keeps it continuous.
+    // Twill whose diagonal reverses every `band` threads. Herringbone also
+    // breaks the line at each reversal, zigzag keeps it continuous.
     return (i, j) => {
-      const band = Math.floor(i / 8), k = mod(i, 8);
-      const ii = band % 2 ? 7 - k + (pattern === 'herringbone' ? 2 : 0) : k;
+      const b = Math.floor(i / band), k = mod(i, band);
+      const ii = b % 2 ? band - 1 - k + (pattern === 'herringbone' ? 2 : 0) : k;
       return mod(ii + j, 4) < 2;
     };
   }

@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import {swatchOutline, beveledSlab, perimeterBand, createQuboSample} from './gl-visor-weave.js?v=1';
+import {swatchOutline, beveledSlab, perimeterBand, createQuboSample} from './gl-visor-weave.js?v=3';
 
 // [nombre, descripción, kind]. kind picks the construction; per-code
 // deviations (tint, flute pitch, acid-etched face, film colour, mesh gauge)
@@ -238,8 +238,8 @@ const MESH = {
   Al: { textile: { pattern: 'plain', threads: 280, gap: .26, jitter: .03, slub: .04, color: '#a6a8a7' }, metalness: .8, roughness: .3 },
   // Zigzag: dark steel twill in chevrons, sparkling.
   Az: { textile: { pattern: 'zigzag', threads: 140, gap: .12, slub: .1, fibers: 3, twist: .15, color: '#7b7770' }, metalness: .85, roughness: .3 },
-  // Herringbone: chunky twisted greige strands, the coarsest weave.
-  Ah: { textile: { pattern: 'herringbone', threads: 64, gap: .1, jitter: .08, slub: .2, fibers: 4, twist: .6, color: '#aaa190', bump: 2.5 }, metalness: .35, roughness: .6 },
+  // Herringbone: columns of chunky twisted V stitches (48 across), greige.
+  Ah: { textile: { pattern: 'stitch', threads: 96, gap: .1, slub: .07, color: '#aaa190', bump: 2.5 }, metalness: .35, roughness: .6 },
   // Entramado A: dense grey-taupe yarn, small pores.
   Ae: { textile: { pattern: 'plain', threads: 150, gap: .22, jitter: .12, slub: .2, fibers: 3, color: '#857c6e', bump: 1.6 }, metalness: .4, roughness: .6 },
   // Pulida: loose, chunky, bright burlap with irregular open pores.
