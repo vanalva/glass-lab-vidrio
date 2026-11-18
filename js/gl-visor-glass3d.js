@@ -3,8 +3,8 @@
  * stacks separate; surface relief and mirror coatings remain bonded.
  */
 import * as THREE from 'three';
-import { createSample, presets, CATALOGUE } from './gl-visor-materials.js?v=3';
-import { makeQuboStudio } from './gl-visor-weave.js?v=1';
+import { createSample, presets, CATALOGUE } from './gl-visor-materials.js?v=4';
+import { makeQuboStudio } from './gl-visor-weave.js?v=2';
 import { createBackgroundControls } from './gl-visor-background.js?v=6';
 
 const clamp = THREE.MathUtils.clamp;
@@ -419,15 +419,15 @@ function boot(mount) {
 function updateInfo(ui, code) {
   const product = CATALOGUE[code];
   const categories = { colores: 'Colores', inserciones: 'Inserciones', reflectivos: 'Reflectivos' };
-  const transparency = { transparente: 'Transparente', translucido: 'Translúcido', semitransparente: 'Semitransparente', espejo: 'Espejo' };
-  const finishes = { Vc: 'Vidrio float', Va: 'Acanalado', Ve: 'Satinado', Vd: 'Patrón diamante', Vab: 'Tinte bronce',
-    Gr: 'Transición de color', Ds: 'Película dicroica', In: '300 colores', Aq: 'Malla metálica', At: 'Malla metálica', Ec: 'Reflectante', Ed: 'Patrón diamante' };
+  // Every transparencia value in glass-types.json, including `opaco` (Veb, Ven).
+  // Unmapped values fall back to the raw token rather than rendering an empty tag.
+  const transparency = { transparente: 'Transparente', translucido: 'Translúcido', semitransparente: 'Semitransparente', espejo: 'Espejo', opaco: 'Opaco' };
   ui.querySelector('.gl-visor_panel_info_symbol').textContent = code;
   ui.querySelector('.gl-visor_panel_info_top .gl-mono:not(.gl-mono_muted)').textContent = product.name;
   ui.querySelector('.gl-visor_panel_info_top .gl-mono_muted').textContent =
-    `${categories[product.category]} · ${finishes[code]} · ${String(product.slot).padStart(3, '0')}`;
+    `${categories[product.category]} · ${product.finish} · ${String(product.slot).padStart(3, '0')}`;
   const tags = ui.querySelector('.gl-visor_panel_info_tags');
-  tags.replaceChildren(...[transparency[product.attributes.transparencia], finishes[code],
+  tags.replaceChildren(...[transparency[product.attributes.transparencia] || product.attributes.transparencia, product.finish,
     product.attributes.espesorMm.join(' / ') + ' mm'].map(text => {
     const span = document.createElement('span'); span.className = 'gl-tag'; span.textContent = text; return span;
   }));

@@ -39,7 +39,7 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/variables.css?v=3703e9fe">
-  <link rel="stylesheet" href="../css/project.css?v=e9c29a60">
+  <link rel="stylesheet" href="../css/project.css?v=b002c7e4">
 
   <script type="application/ld+json">
   {
@@ -195,80 +195,327 @@
           </div>
         </div>
 
-        <!-- GLASS GRID THUMBNAILS -->
+        <!-- GLASS SELECTOR: the six homepage favourites first (on phones this grid is
+             the swipe strip, which the engine binds to the FIRST .gl-visor_panel_grid),
+             then search and the full catalogue in collapsible category sections.
+             Every .gl-visor_panel_grid .gl-cell is a selectable glass. -->
+        <div class="gl-visor_featured_header">
+          <span class="gl-mono gl-mono_muted" data-flwr-id="l10n-gl-visor-32">Featured</span>
+        </div>
         <div class="gl-visor_panel_grid u-gap-collapse u-radius-inner-4">
-          <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores" role="button" tabindex="0">
+          <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores gl-visor_cell_featured" role="button" tabindex="0" data-gl-search="vc vidrio claro clear glass claro clear vidrios base claros base clear glass colores colors">
+            <div class="gl-home_catalog_cell-meta gl-visor_cell_extra">
+              <span class="gl-cell_code" data-flwr-id="l10n-gl-visor-33">001</span>
+            </div>
             <span class="gl-cell_symbol" data-flwr-id="l10n-gl-visor-26">Vc</span>
             <div class="gl-home_catalog_cell-meta">
               <span class="gl-cell_name" data-flwr-id="l10n-gl-visor-25">Clear</span>
+              <span class="gl-cell_code gl-visor_cell_extra" data-flwr-id="l10n-gl-visor-34">Colours</span>
             </div>
           </a>
-          <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores" role="button" tabindex="0">
-            <span class="gl-cell_symbol" data-flwr-id="l10n-gl-visor-24">Va</span>
-            <div class="gl-home_catalog_cell-meta">
-              <span class="gl-cell_name" data-flwr-id="l10n-gl-visor-23">Reeded</span>
+          <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_featured" role="button" tabindex="0" data-gl-search="in interlayer interlayer interlayer interlayer interlayer color color interlayer inserciones insertions">
+            <div class="gl-home_catalog_cell-meta gl-visor_cell_extra">
+              <span class="gl-cell_code" data-flwr-id="l10n-gl-visor-35">022</span>
             </div>
-          </a>
-          <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores" role="button" tabindex="0">
-            <span class="gl-cell_symbol" data-flwr-id="l10n-gl-visor-22">Ve</span>
-            <div class="gl-home_catalog_cell-meta">
-              <span class="gl-cell_name" data-flwr-id="l10n-gl-visor-21">Frosted</span>
-            </div>
-          </a>
-          <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores" role="button" tabindex="0">
-            <span class="gl-cell_symbol" data-flwr-id="l10n-gl-visor-20">Vd</span>
-            <div class="gl-home_catalog_cell-meta">
-              <span class="gl-cell_name" data-flwr-id="l10n-gl-visor-1z">Diamond</span>
-            </div>
-          </a>
-          <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores" role="button" tabindex="0">
-            <span class="gl-cell_symbol" data-flwr-id="l10n-gl-visor-1y">Vab</span>
-            <div class="gl-home_catalog_cell-meta">
-              <span class="gl-cell_name" data-flwr-id="l10n-gl-visor-1x">Aca-Bronce</span>
-            </div>
-          </a>
-          <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" role="button" tabindex="0">
-            <span class="gl-cell_symbol" data-flwr-id="l10n-gl-visor-1w">Gr</span>
-            <div class="gl-home_catalog_cell-meta">
-              <span class="gl-cell_name" data-flwr-id="l10n-gl-visor-1v">Gradient</span>
-            </div>
-          </a>
-          <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" role="button" tabindex="0">
-            <span class="gl-cell_symbol" data-flwr-id="l10n-gl-visor-1u">Ds</span>
-            <div class="gl-home_catalog_cell-meta">
-              <span class="gl-cell_name" data-flwr-id="l10n-gl-visor-1t">Sunset</span>
-            </div>
-          </a>
-          <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" role="button" tabindex="0">
             <span class="gl-cell_symbol" data-flwr-id="l10n-gl-visor-1s">In</span>
             <div class="gl-home_catalog_cell-meta">
               <span class="gl-cell_name" data-flwr-id="l10n-gl-visor-1r">Interlayer</span>
+              <span class="gl-cell_code gl-visor_cell_extra" data-flwr-id="l10n-gl-visor-36">Inserts</span>
             </div>
           </a>
-          <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones" role="button" tabindex="0">
+          <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_featured" role="button" tabindex="0" data-gl-search="ds dichroic sunset dichroic sunset sunset sunset dicroicos dichroic inserciones insertions">
+            <div class="gl-home_catalog_cell-meta gl-visor_cell_extra">
+              <span class="gl-cell_code" data-flwr-id="l10n-gl-visor-37">020</span>
+            </div>
+            <span class="gl-cell_symbol" data-flwr-id="l10n-gl-visor-1u">Ds</span>
+            <div class="gl-home_catalog_cell-meta">
+              <span class="gl-cell_name" data-flwr-id="l10n-gl-visor-1t">Sunset</span>
+              <span class="gl-cell_code gl-visor_cell_extra" data-flwr-id="l10n-gl-visor-38">Inserts</span>
+            </div>
+          </a>
+          <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_featured" role="button" tabindex="0" data-gl-search="aq malla serie a — qubo mesh a — cube sa-qubo sa-cube mallas serie a mesh series a inserciones insertions">
+            <div class="gl-home_catalog_cell-meta gl-visor_cell_extra">
+              <span class="gl-cell_code" data-flwr-id="l10n-gl-visor-39">036</span>
+            </div>
             <span class="gl-cell_symbol" data-flwr-id="l10n-gl-visor-1q">Aq</span>
             <div class="gl-home_catalog_cell-meta">
               <span class="gl-cell_name" data-flwr-id="l10n-gl-visor-1p">SA-Qubo</span>
+              <span class="gl-cell_code gl-visor_cell_extra" data-flwr-id="l10n-gl-visor-3a">Inserts</span>
             </div>
           </a>
-          <div class="gl-cell gl-visor_cell_active gl-cell_cat-inserciones">
-            <span class="gl-cell_symbol" data-flwr-id="l10n-gl-visor-1o">At</span>
-            <div class="gl-home_catalog_cell-meta">
-              <span class="gl-cell_name" data-flwr-id="l10n-gl-visor-1n">SA-Tejida</span>
+          <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos gl-visor_cell_featured" role="button" tabindex="0" data-gl-search="ec espejo claro clear mirror es-claro es-clear espejos base base mirrors reflectivos reflective">
+            <div class="gl-home_catalog_cell-meta gl-visor_cell_extra">
+              <span class="gl-cell_code" data-flwr-id="l10n-gl-visor-3b">091</span>
             </div>
-          </div>
-          <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos" role="button" tabindex="0">
             <span class="gl-cell_symbol" data-flwr-id="l10n-gl-visor-1m">Ec</span>
             <div class="gl-home_catalog_cell-meta">
               <span class="gl-cell_name" data-flwr-id="l10n-gl-visor-1l">Es-Claro</span>
+              <span class="gl-cell_code gl-visor_cell_extra" data-flwr-id="l10n-gl-visor-3c">Reflectives</span>
             </div>
           </a>
-          <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos" role="button" tabindex="0">
-            <span class="gl-cell_symbol" data-flwr-id="l10n-gl-visor-1k">Ed</span>
+          <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_featured" role="button" tabindex="0" data-gl-search="at malla serie a — tejida mesh a — woven sa-tejida sa-woven mallas serie a mesh series a inserciones insertions">
+            <div class="gl-home_catalog_cell-meta gl-visor_cell_extra">
+              <span class="gl-cell_code" data-flwr-id="l10n-gl-visor-3d">039</span>
+            </div>
+            <span class="gl-cell_symbol" data-flwr-id="l10n-gl-visor-1o">At</span>
             <div class="gl-home_catalog_cell-meta">
-              <span class="gl-cell_name" data-flwr-id="l10n-gl-visor-1j">Es-Diamante</span>
+              <span class="gl-cell_name" data-flwr-id="l10n-gl-visor-1n">SA-Tejida</span>
+              <span class="gl-cell_code gl-visor_cell_extra" data-flwr-id="l10n-gl-visor-3e">Inserts</span>
             </div>
           </a>
+        </div>
+
+        <div class="gl-visor_browse">
+          <div class="gl-visor_search">
+            <input type="search" class="gl-filter-input gl-visor_search_input" placeholder="Search by name or code" aria-label="Search glass" autocomplete="off" spellcheck="false" data-flwr-id="l10n-gl-visor-3f">
+            <span class="gl-mono gl-mono_muted gl-visor_search_empty gl-visor_hidden" role="status" data-flwr-id="l10n-gl-visor-3g">No results</span>
+          </div>
+          <details class="gl-visor_group" data-gl-category="colores">
+            <summary class="gl-visor_group_summary">
+              <span class="gl-visor_group_dot gl-visor_group_dot_colores" aria-hidden="true"></span>
+              <span class="gl-mono gl-visor_group_title" data-flwr-id="l10n-gl-visor-3h">Colours</span>
+              <span class="gl-mono gl-mono_muted gl-visor_group_count" data-flwr-id="l10n-gl-visor-3i">15</span>
+              <span class="gl-visor_group_icon" aria-hidden="true"></span>
+            </summary>
+            <div class="gl-visor_panel_grid gl-visor_group_grid u-gap-collapse">
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="vc vidrio claro clear glass claro clear vidrios base claros base clear glass colores colors">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-3j">Vc</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-3k">Clear</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="vu vidrio ultraclaro ultra-clear glass ultraclaro ultraclear vidrios base claros base clear glass colores colors">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-3l">Vu</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-3m">Ultra-clear</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="vp vidrio pacifica pacific glass pacifica pacific vidrios tintados tinted glass colores colors">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-3n">Vp</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-3o">Pacífica</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="vi vidrio indigo indigo glass indigo indigo vidrios tintados tinted glass colores colors">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-3p">Vi</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-3q">Indigo</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="vb vidrio bronce bronze glass bronce bronze vidrios tintados tinted glass colores colors">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-3r">Vb</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-3s">Bronze</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="vg vidrio gris grey glass gris grey vidrios tintados tinted glass colores colors">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-3t">Vg</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-3u">Grey</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="va vidrio acanalado reeded glass acanalado reeded vidrios acanalados reeded glass colores colors">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-24">Va</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-23">Reeded</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="val vidrio acanalado lite light reeded glass acanalado-lite reeded-lite vidrios acanalados reeded glass colores colors">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-3v">Val</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-3w">Acanalado-lite</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="vab vidrio acanalado bronce bronze reeded glass acanalado bronce bronze reeded vidrios acanalados reeded glass colores colors">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-1y">Vab</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-1x">Aca-Bronce</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="vag vidrio acanalado gris grey reeded glass acanalado gris grey reeded vidrios acanalados reeded glass colores colors">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-3x">Vag</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-3y">Grey Reeded</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="ve vidrio esmerilado frosted glass esmerilado frosted vidrios texturizados textured glass colores colors">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-22">Ve</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-21">Frosted</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="vt vidrio texturizado textured glass texturizado textured vidrios texturizados textured glass colores colors">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-3z">Vt</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-40">Textured</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="vd vidrio diamante diamond glass diamante diamond vidrios texturizados textured glass colores colors">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-20">Vd</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-1z">Diamond</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="veb vidrio eva blanca white eva glass eva blanca white eva vidrios eva opacos opaque eva glass colores colors">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-41">Veb</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-42">Eva Blanca</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-colores gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="ven vidrio eva negra black eva glass eva negra black eva vidrios eva opacos opaque eva glass colores colors">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-43">Ven</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-44">Eva Negra</span>
+            </a>
+            </div>
+          </details>
+          <details class="gl-visor_group" data-gl-category="inserciones">
+            <summary class="gl-visor_group_summary">
+              <span class="gl-visor_group_dot gl-visor_group_dot_inserciones" aria-hidden="true"></span>
+              <span class="gl-mono gl-visor_group_title" data-flwr-id="l10n-gl-visor-45">Inserts</span>
+              <span class="gl-mono gl-mono_muted gl-visor_group_count" data-flwr-id="l10n-gl-visor-46">25</span>
+              <span class="gl-visor_group_icon" aria-hidden="true"></span>
+            </summary>
+            <div class="gl-visor_panel_grid gl-visor_group_grid u-gap-collapse">
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="gr gradient gradient gradient gradient gradientes gradients inserciones insertions">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-1w">Gr</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-1v">Gradient</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="gra gradient acidado acid-etched gradient gra-acidado acid gradient gradientes gradients inserciones insertions">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-47">Gra</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-48">Gra-Acidado</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="ds dichroic sunset dichroic sunset sunset sunset dicroicos dichroic inserciones insertions">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-49">Ds</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-4a">Sunset</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="dsa dichroic sunset acidado acid dichroic sunset di-acidado acid dichroic dicroicos dichroic inserciones insertions">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-4b">Dsa</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-4c">Di-Acidado</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="in interlayer interlayer interlayer interlayer interlayer color color interlayer inserciones insertions">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-4d">In</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-4e">Interlayer</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="ina interlayer acidado acid interlayer int-acidado acid interlayer interlayer color color interlayer inserciones insertions">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-4f">Ina</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-4g">Int-Acidado</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="imc impresion cuadros grid print imp-cuadros grid print impresiones prints inserciones insertions">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-4h">Imc</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-4i">Imp-Cuadros</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="iml impresion lineas line print imp-lineas line print impresiones prints inserciones insertions">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-4j">Iml</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-4k">Imp-líneas</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="tl tela lino linen textile te-lino linen textiles textiles inserciones insertions">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-4l">Tl</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-4m">Te-Lino</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="ae malla serie a — entramado mesh a — gauze sa-entramado sa-gauze mallas serie a mesh series a inserciones insertions">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-4n">Ae</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-4o">SA-Entramado</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="ap malla serie a — pulida mesh a — polished sa-pulida sa-polished mallas serie a mesh series a inserciones insertions">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-4p">Ap</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-4q">SA-Pulida</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="af malla serie a — fabric mesh a — fabric sa-fabric sa-fabric mallas serie a mesh series a inserciones insertions">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-4r">Af</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-4s">SA-Fabric</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="al malla serie a — lisa mesh a — plain sa-lisa sa-plain mallas serie a mesh series a inserciones insertions">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-4t">Al</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-4u">SA-Lisa</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="az malla serie a — zigzag mesh a — zigzag sa-zigzag sa-zigzag mallas serie a mesh series a inserciones insertions">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-4v">Az</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-4w">SA-Zigzag</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="aq malla serie a — qubo mesh a — cube sa-qubo sa-cube mallas serie a mesh series a inserciones insertions">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-4x">Aq</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-4y">SA-Qubo</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="ah malla serie a — herringbone mesh a — herringbone sa-herringbone sa-herringbone mallas serie a mesh series a inserciones insertions">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-4z">Ah</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-50">SA-Herringbone</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="ab malla serie a — bilineal mesh a — bilinear sa-bilineal sa-bilinear mallas serie a mesh series a inserciones insertions">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-51">Ab</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-52">SA-Bilineal</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="at malla serie a — tejida mesh a — woven sa-tejida sa-woven mallas serie a mesh series a inserciones insertions">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-53">At</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-54">SA-Tejida</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="ac malla serie a — cuadros mesh a — square grid sa-cuadros sa-grid mallas serie a mesh series a inserciones insertions">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-55">Ac</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-56">SA-Cuadros</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="bq malla serie b — qubo mesh b — cube sb-qubo sb-cube mallas serie b mesh series b inserciones insertions">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-57">Bq</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-58">SB-Qubo</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="be malla serie b — entramado mesh b — gauze sb-entramado sb-gauze mallas serie b mesh series b inserciones insertions">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-59">Be</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-5a">SB-Entramado</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="bl malla serie b — lisa mesh b — plain sb-lisa sb-plain mallas serie b mesh series b inserciones insertions">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-5b">Bl</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-5c">SB-Lisa</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="bp malla serie b — pulida mesh b — polished sb-pulida sb-polished mallas serie b mesh series b inserciones insertions">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-5d">Bp</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-5e">SB-Pulida</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="cm malla serie c — mosquitera mesh c — mosquito sc-mosquitera sc-mosquito mallas serie c mesh series c inserciones insertions">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-5f">Cm</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-5g">SC-Mosquitera</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-inserciones gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="cn malla serie c — negra mesh c — black sc-negra sc-black mallas serie c mesh series c inserciones insertions">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-5h">Cn</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-5i">SC-Negra</span>
+            </a>
+            </div>
+          </details>
+          <details class="gl-visor_group" data-gl-category="reflectivos">
+            <summary class="gl-visor_group_summary">
+              <span class="gl-visor_group_dot gl-visor_group_dot_reflectivos" aria-hidden="true"></span>
+              <span class="gl-mono gl-visor_group_title" data-flwr-id="l10n-gl-visor-5j">Reflectives</span>
+              <span class="gl-mono gl-mono_muted gl-visor_group_count" data-flwr-id="l10n-gl-visor-5k">14</span>
+              <span class="gl-visor_group_icon" aria-hidden="true"></span>
+            </summary>
+            <div class="gl-visor_panel_grid gl-visor_group_grid u-gap-collapse">
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="ec espejo claro clear mirror es-claro es-clear espejos base base mirrors reflectivos reflective">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-5l">Ec</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-5m">Es-Claro</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="eb espejo bronce bronze mirror es-bronce es-bronze espejos base base mirrors reflectivos reflective">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-5n">Eb</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-5o">Es-Bronce</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="eg espejo gris grey mirror es-gris es-grey espejos base base mirrors reflectivos reflective">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-5p">Eg</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-5q">Es-Gris</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="ei espejo interlayer interlayer mirror es-interlayer es-interlayer espejo color (interlayer) color mirror (interlayer) reflectivos reflective">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-5r">Ei</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-5s">Es-Interlayer</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="ep espejo polychromatico polychromatic mirror es-poly es-poly espejos custom custom mirrors reflectivos reflective">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-5t">Ep</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-5u">Es-Poly</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="eep espejo polychromatico polychromatic mirror es-espoly es-polychromatic espejos custom custom mirrors reflectivos reflective">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-5v">Eep</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-5w">Es-Espoly</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="ea espejo acanalado reeded mirror es-acanalado es-reeded espejos texturizados textured mirrors reflectivos reflective">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-5x">Ea</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-5y">Es-Acanalado</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="eal espejo acanalado lite light reeded mirror es-acalite es-reeded-lite espejos texturizados textured mirrors reflectivos reflective">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-5z">Eal</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-60">Es-Acalite</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="ed espejo diamante diamond mirror es-diamante es-diamond espejos texturizados textured mirrors reflectivos reflective">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-1k">Ed</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-1j">Es-Diamante</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="ee espejo esmerilado frosted mirror es-esmerilado es-frosted espejos texturizados textured mirrors reflectivos reflective">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-61">Ee</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-62">Es-Esmerilado</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="et espejo texturizado textured mirror es-texturizado es-textured espejos texturizados textured mirrors reflectivos reflective">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-63">Et</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-64">Es-Texturizado</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="eef espejo esmerilado film frosted mirror film es-esfilm es-frosted-film espejos con film/poly mirrors with film/poly reflectivos reflective">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-65">Eef</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-66">Es-Esfilm</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="etf espejo texturizado film textured mirror film es-textfilm es-textured-film espejos con film/poly mirrors with film/poly reflectivos reflective">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-67">Etf</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-68">Es-Textfilm</span>
+            </a>
+            <a class="gl-link-reset gl-cell gl-cell_filled gl-cell_cat-reflectivos gl-visor_cell_compact" role="button" tabindex="0" data-gl-search="etp espejo texturizado poly textured mirror poly es-textpoly es-textured-poly espejos con film/poly mirrors with film/poly reflectivos reflective">
+              <span class="gl-cell_symbol gl-visor_cell_symbol_sm" data-flwr-id="l10n-gl-visor-69">Etp</span>
+              <span class="gl-cell_name gl-visor_cell_name_sm" data-flwr-id="l10n-gl-visor-6a">Es-Textpoly</span>
+            </a>
+            </div>
+          </details>
         </div>
 
         <!-- CONTROLS -->
@@ -453,6 +700,8 @@
   }
   </script>
   <script type="module" src="../js/gl-visor-glass3d.js?v=16"></script>
+  <!-- After the engine (both deferred, document order) so the active cell exists. -->
+  <script defer src="../js/gl-visor-browse.js?v=64f01408"></script>
 
   <!-- FULLSCREEN MENU -->
   <aside class="gl-dock" aria-label="Floating navigation" data-flwr-id="l10n-gl-visor-r">

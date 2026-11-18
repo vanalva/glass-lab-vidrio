@@ -915,6 +915,9 @@ a.gl-catalogo_hero-caption { text-decoration-line: none; }
 
 .gl-catalogo_header_desc { margin-top: var(--_spacing---space--3); max-width: 32rem; }
 
+/* Juan, 2026-11-18: the subtitle always reads as two lines. */
+.gl-catalogo_header_desc-line { display: block; }
+
 .gl-catalogo_monogram-wrap--bottom { margin-bottom: 0px; position: relative; z-index: 3; }
 
 .gl-catalogo_filters { display: contents; }
@@ -4441,7 +4444,7 @@ button.gl-menu_link { width: 100%; background-color: transparent; border-width: 
    Placed after the 991px block above so it wins at equal specificity.
    ══════════════════════════════════════════════════════════════════════ */
 @media (max-width: 767px) {
-  .gl-catalogo_header .gl-hero-poster { top: 0px; right: -34%; left: auto; width: 96%; height: 54svh; opacity: 0.72; background-image: linear-gradient(to bottom, transparent 30%, var(--_theme---background) 96%), linear-gradient(to right, var(--_theme---background) 0%, transparent 55%), url("../assets/media/glass-lab/glass-render-hero-poster.jpg"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
+  .gl-catalogo_header .gl-hero-poster { top: 0px; right: -40%; left: auto; width: 118%; height: 64svh; opacity: 0.72; background-image: linear-gradient(to bottom, transparent 30%, var(--_theme---background) 96%), linear-gradient(to right, var(--_theme---background) 0%, transparent 55%), url("../assets/media/glass-lab/glass-render-hero-poster.jpg"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
   .gl-catalogo_header_inner { flex-direction: column; align-items: flex-start; row-gap: var(--_spacing---space--2); }
   .gl-catalogo_monogram-wrap { align-items: stretch; }
   .gl-catalogo_monogram-wrap--bottom { margin-top: var(--_spacing---space--5); }
@@ -4454,7 +4457,12 @@ button.gl-menu_link { width: 100%; background-color: transparent; border-width: 
   .gl-filter-cat-pill_swatch { position: absolute; top: 0.3125rem; left: 0.3125rem; width: 0.4375rem; height: 0.4375rem; }
   /* Juan, 2026-11-18: no sideways scroll. The type tags wrap and each row grows to the full width. */
   .gl-catalogo_tag-row { display: flex; flex-wrap: wrap; grid-column-start: 1; grid-column-end: -1; row-gap: var(--_spacing---space--1); column-gap: var(--_spacing---space--1); }
-  .gl-filter-tag-pill { flex-grow: 1; flex-shrink: 0; flex-basis: auto; justify-content: center; min-width: 0px; min-height: 2.5rem; padding-left: 0.875rem; padding-right: 0.875rem; }
+  /* Three per row; a short last row splits the width (2 = halves, 1 = full) so no tag sits alone. */
+  .gl-catalogo_tag-row { display: grid; grid-template-columns: repeat(6, minmax(0px, 1fr)); }
+  .gl-filter-tag-pill { grid-column-end: span 2; justify-content: center; min-width: 0px; min-height: 2.5rem; padding-left: 0.25rem; padding-right: 0.25rem; letter-spacing: 0.06em; white-space: nowrap; }
+  .gl-filter-tag-pill:nth-child(3n+1):nth-last-child(2),
+  .gl-filter-tag-pill:nth-child(3n+1):nth-last-child(2) + .gl-filter-tag-pill { grid-column-end: span 3; }
+  .gl-filter-tag-pill:nth-child(3n+1):last-child { grid-column-end: span 6; }
   .gl-catalogo_tags-area { margin-top: var(--_spacing---space--1); row-gap: var(--_spacing---space--1); column-gap: var(--_spacing---space--1); }
   .gl-catalogo_filter-hint { display: none; }
   .gl-catalogo_tags-area { width: 100%; }
@@ -4908,3 +4916,78 @@ button.pg-contacto_form-select.gl-select_trigger.is-invalid {
 .gl-select_lift { z-index: 60; }
 
 .gl-select_lift-rel { position: relative; }
+
+/* ── Visor selector: 54 glasses (featured six + search + category sections) ──
+   Markup in gl-visor.html, behaviour in gl-visor-browse.js; the engine
+   (gl-visor-glass3d.js) selects any .gl-visor_panel_grid .gl-cell. The featured
+   grid stays the FIRST .gl-visor_panel_grid: on phones it is the swipe strip the
+   engine wires its arrows to. Category grids carry .gl-visor_group_grid as a
+   combo, so they undo the strip and stay a plain grid at every width. */
+.gl-visor_featured_header { padding-top: var(--_spacing---space--3); padding-right: var(--_spacing---space--4); padding-bottom: var(--_spacing---space--2); padding-left: var(--_spacing---space--4); }
+
+.gl-cell.gl-visor_cell_featured { aspect-ratio: 1 / 1; }
+
+.gl-visor_browse { display: flex; flex-direction: column; border-top-width: 1px; border-top-style: solid; border-top-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); }
+
+.gl-visor_search { display: flex; flex-direction: column; row-gap: var(--_spacing---space--2); padding-top: var(--_spacing---space--3); padding-right: var(--_spacing---space--4); padding-bottom: var(--_spacing---space--3); padding-left: var(--_spacing---space--4); }
+
+.gl-filter-input.gl-visor_search_input { width: 100%; min-width: 0px; min-height: 44px; padding-top: 0.6rem; padding-right: 0.75rem; padding-bottom: 0.6rem; padding-left: 0.75rem; }
+
+.gl-filter-input.gl-visor_search_input:focus-visible { border-top-color: var(--_theme---text); border-right-color: var(--_theme---text); border-bottom-color: var(--_theme---text); border-left-color: var(--_theme---text); }
+
+.gl-visor_search_empty { font-size: var(--_typography---font-size--label-sm); letter-spacing: 0.08em; }
+
+.gl-visor_group { display: block; border-top-width: 1px; border-top-style: solid; border-top-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); }
+
+.gl-visor_group_summary { display: flex; flex-direction: row; align-items: center; column-gap: 0.6rem; min-height: 44px; padding-top: 0.75rem; padding-right: var(--_spacing---space--4); padding-bottom: 0.75rem; padding-left: var(--_spacing---space--4); cursor: pointer; list-style-type: none; }
+
+.gl-visor_group_summary::-webkit-details-marker { display: none; }
+
+.gl-visor_group_summary:hover { background-color: color-mix(in srgb, var(--_theme---text) 5%, transparent); }
+
+.gl-visor_group_summary:focus-visible { outline-width: 2px; outline-style: solid; outline-color: var(--_theme---text); outline-offset: -2px; }
+
+.gl-visor_group_dot { flex-grow: 0; flex-shrink: 0; width: 0.5rem; height: 0.5rem; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: color-mix(in srgb, var(--_theme---text) 35%, transparent); border-right-color: color-mix(in srgb, var(--_theme---text) 35%, transparent); border-bottom-color: color-mix(in srgb, var(--_theme---text) 35%, transparent); border-left-color: color-mix(in srgb, var(--_theme---text) 35%, transparent); }
+
+.gl-visor_group_dot_colores { background-color: var(--swatch--brand-300); }
+
+.gl-visor_group_dot_inserciones { background-color: var(--swatch--brand-500); }
+
+.gl-visor_group_dot_reflectivos { background-color: var(--swatch--brand-700); }
+
+.gl-visor_group_title { flex-grow: 1; letter-spacing: 0.12em; }
+
+.gl-visor_group_count { font-size: var(--_typography---font-size--label-sm); letter-spacing: 0.08em; }
+
+.gl-visor_group_icon { flex-grow: 0; flex-shrink: 0; width: 0.5rem; height: 0.5rem; margin-left: 0.35rem; border-right-width: 1.5px; border-right-style: solid; border-right-color: currentcolor; border-bottom-width: 1.5px; border-bottom-style: solid; border-bottom-color: currentcolor; transform: translateY(-25%) rotate(45deg); transition-property: transform; transition-duration: 0.2s; transition-timing-function: ease; transition-delay: 0s; }
+
+.gl-visor_group_icon.is-open { transform: translateY(25%) rotate(-135deg); }
+
+.gl-visor_panel_grid.gl-visor_group_grid { grid-template-columns: repeat(4, minmax(0px, 1fr)); }
+
+.gl-cell.gl-visor_cell_compact { aspect-ratio: 1 / 1; padding-top: var(--_spacing---space--1); padding-right: var(--_spacing---space--1); padding-bottom: var(--_spacing---space--1); padding-left: var(--_spacing---space--1); }
+
+.gl-cell_symbol.gl-visor_cell_symbol_sm { font-size: 1.6rem; }
+
+.gl-cell_name.gl-visor_cell_name_sm { font-size: var(--_typography---font-size--label-sm); letter-spacing: 0.04em; }
+
+.gl-cell.gl-visor_cell_hidden { display: none; }
+
+.gl-visor_group.gl-visor_group_hidden { display: none; }
+
+.gl-visor_hidden { display: none; }
+
+@media (max-width: 991px) {
+  .gl-visor_panel_grid.gl-visor_group_grid { grid-template-columns: repeat(8, minmax(0px, 1fr)); }
+}
+
+@media (max-width: 767px) {
+  .gl-visor_featured_header { display: none; }
+  .gl-visor_cell_extra { display: none; }
+  .gl-visor_browse { order: 2; border-top-width: 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: color-mix(in srgb, var(--_theme---text) 8%, transparent); }
+  .gl-visor_search { padding-left: 0.75rem; padding-right: 0.75rem; }
+  .gl-visor_group_summary { padding-left: 0.75rem; padding-right: 0.75rem; }
+  .gl-visor_panel_grid.gl-visor_group_grid { order: 0; display: grid; grid-template-columns: repeat(4, minmax(0px, 1fr)); overflow-x: visible; overflow-y: visible; scroll-snap-type: none; }
+  .gl-cell.gl-visor_cell_compact { height: auto; flex-basis: auto; scroll-snap-align: none; }
+  .gl-cell_symbol.gl-visor_cell_symbol_sm { font-size: 1.35rem; }
+}

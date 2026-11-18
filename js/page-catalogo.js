@@ -258,8 +258,17 @@ function initHoverPreview(helpers) {
        a tap anywhere else closes it. Emulated mouse events are ignored here,
        so iOS can no longer treat the second glass as already "hovered". */
     if (window.__glCatalogoTap) window.removeEventListener('click', window.__glCatalogoTap, true);
+    // The preview card itself is a tap target on touch: it opens the glass it shows.
+    preview.style.pointerEvents = 'auto';
+    preview.style.cursor = 'pointer';
     window.__glCatalogoTap = function (e) {
       if (!preview.isConnected) return;
+      if (activeCell && preview.contains(e.target)) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        activeCell.click(); // same cell again: the handler below lets the link (and page transition) open it
+        return;
+      }
       var cell = e.target.closest && e.target.closest('.gl-catalogo_grid .gl-cell_filled[data-code]');
       if (cell && cell === activeCell) { hide(); return; } // second tap: let the link open
       if (cell) {
